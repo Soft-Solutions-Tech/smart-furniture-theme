@@ -62,7 +62,7 @@
         "image_iFTETr": {
           "type": "image",
           "settings": {
-            "color_scheme": "",
+            "color_scheme": "scheme-1",
             "column_count": "4",
             "row_count": 1,
             "add_padding": false,
@@ -80,7 +80,7 @@
         "image_j8MJbJ": {
           "type": "image",
           "settings": {
-            "color_scheme": "",
+            "color_scheme": "scheme-1",
             "column_count": "4",
             "row_count": 1,
             "add_padding": false,
@@ -98,7 +98,7 @@
         "image_dRAjai": {
           "type": "image",
           "settings": {
-            "color_scheme": "",
+            "color_scheme": "scheme-1",
             "column_count": "4",
             "row_count": 1,
             "add_padding": false,
@@ -116,7 +116,7 @@
         "image_webg8y": {
           "type": "image",
           "settings": {
-            "color_scheme": "",
+            "color_scheme": "scheme-1",
             "column_count": "4",
             "row_count": 1,
             "add_padding": false,
@@ -125,7 +125,7 @@
             "content": "",
             "link_text": "Explore",
             "link_url": "",
-            "link_style": "solid",
+            "link_style": "outline",
             "text_position": "place-self-center text-center",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -134,7 +134,7 @@
         "image_MNDFxh": {
           "type": "image",
           "settings": {
-            "color_scheme": "",
+            "color_scheme": "scheme-1",
             "column_count": "4",
             "row_count": 1,
             "add_padding": false,
@@ -152,7 +152,7 @@
         "image_mgGUEr": {
           "type": "image",
           "settings": {
-            "color_scheme": "",
+            "color_scheme": "scheme-1",
             "column_count": "4",
             "row_count": 1,
             "add_padding": false,
