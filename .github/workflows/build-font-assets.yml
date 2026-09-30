@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - brand-refresh-v2
+      - visual-refinement
       - main
     paths:
       - "Eng Fonts/**"
