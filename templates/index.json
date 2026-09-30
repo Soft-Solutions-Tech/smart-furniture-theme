@@ -178,7 +178,7 @@
       ],
       "name": "Shop By Room",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "separate_section_with_border": true,
         "desktop_row_height": 290,
         "mobile_row_height": 200,
