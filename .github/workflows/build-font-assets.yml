@@ -1,0 +1,100 @@
+name: Build web font assets
+
+on:
+  push:
+    branches:
+      - brand-refresh-v2
+      - main
+    paths:
+      - "Eng Fonts/**"
+      - "Arab Fonts/**"
+      - ".github/workflows/build-font-assets.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-fonts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install font conversion tools
+        run: pip install fonttools brotli zopfli
+
+      - name: Build Shopify font assets
+        shell: bash
+        run: |
+          python <<'PY'
+          from pathlib import Path
+          from shutil import copy2
+          from fontTools.ttLib import TTFont, TTCollection
+
+          assets = Path("assets")
+          assets.mkdir(exist_ok=True)
+
+          fonts = [
+              ("Eng Fonts/Fontfabric - NexaHeavy.otf", "smart-nexa-heavy"),
+              ("Eng Fonts/Fontfabric - Nexa-Book.otf", "smart-nexa-book"),
+              ("Eng Fonts/Fontfabric - Nexa-Regular-Italic.otf", "smart-nexa-regular-italic"),
+              ("Arab Fonts/NeoSansArabic-Bold.ttf", "smart-neosans-arabic-bold"),
+              ("Arab Fonts/NeoSansArabic-Medium.ttf", "smart-neosans-arabic-medium"),
+          ]
+
+          def save_web_formats(source, stem):
+              source = Path(source)
+              if not source.exists():
+                  print(f"Skipping missing font: {source}")
+                  return
+
+              original_ext = source.suffix.lower()
+              copy2(source, assets / f"{stem}{original_ext}")
+
+              for flavor in ("woff2", "woff"):
+                  font = TTFont(str(source))
+                  font.flavor = flavor
+                  font.save(str(assets / f"{stem}.{flavor}"))
+
+          for source, stem in fonts:
+              save_web_formats(source, stem)
+
+          avenir = Path("Eng Fonts/Avenir.ttc")
+          if avenir.exists():
+              collection = TTCollection(str(avenir))
+              if not collection.fonts:
+                  raise RuntimeError("Avenir.ttc contains no font faces")
+
+              font = collection.fonts[0]
+              font.flavor = None
+              font.save(str(assets / "smart-avenir.ttf"))
+
+              for flavor in ("woff2", "woff"):
+                  out_font = TTFont(str(assets / "smart-avenir.ttf"))
+                  out_font.flavor = flavor
+                  out_font.save(str(assets / f"smart-avenir.{flavor}"))
+
+              copy2(avenir, assets / "smart-avenir.ttc")
+          else:
+              print("Avenir.ttc has not been uploaded yet, so Avenir web assets were not generated.")
+          PY
+
+      - name: Commit generated font assets
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/smart-*
+          if git diff --cached --quiet; then
+            echo "No font asset changes to commit."
+          else
+            git commit -m "Generate cross-browser web font assets"
+            git push
+          fi
