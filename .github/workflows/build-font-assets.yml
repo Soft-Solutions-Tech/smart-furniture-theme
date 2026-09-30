@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - brand-refresh-v2
+      - main
     paths:
       - "Eng Fonts/**"
       - "Arab Fonts/**"
