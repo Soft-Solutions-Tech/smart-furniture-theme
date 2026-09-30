@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - brand-refresh-v2
+      - visual-refinement
       - main
     paths:
       - "Eng Fonts/**"
@@ -47,6 +48,9 @@ jobs:
               ("Eng Fonts/Fontfabric - Nexa-Regular-Italic.otf", "smart-nexa-regular-italic"),
               ("Arab Fonts/NeoSansArabic-Bold.ttf", "smart-neosans-arabic-bold"),
               ("Arab Fonts/NeoSansArabic-Medium.ttf", "smart-neosans-arabic-medium"),
+              ("Arab Fonts/Hacen Tunisia Bold.ttf", "smart-hacen-tunisia-bold"),
+              ("Arab Fonts/Hacen Tunisia.ttf", "smart-hacen-tunisia-regular"),
+              ("Arab Fonts/Hacen Tunisia Lt.ttf", "smart-hacen-tunisia-light"),
           ]
 
           def save_web_formats(source, stem):
