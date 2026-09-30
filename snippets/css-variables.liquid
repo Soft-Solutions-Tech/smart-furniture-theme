@@ -7,6 +7,76 @@
 {%- assign language_code = localization.language.iso_code | split: '-' | first -%}
 
 <style>
+  /*
+   * Smart Furniture brand fonts
+   * WOFF2 is preferred for modern browsers, WOFF is the compatibility fallback,
+   * and the original OTF/TTF is retained as a final fallback.
+   */
+  @font-face {
+    font-family: 'Smart Nexa';
+    src:
+      url({{ 'smart-nexa-heavy.woff2' | asset_url }}) format('woff2'),
+      url({{ 'smart-nexa-heavy.woff' | asset_url }}) format('woff'),
+      url({{ 'smart-nexa-heavy.otf' | asset_url }}) format('opentype');
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Smart Nexa';
+    src:
+      url({{ 'smart-nexa-book.woff2' | asset_url }}) format('woff2'),
+      url({{ 'smart-nexa-book.woff' | asset_url }}) format('woff'),
+      url({{ 'smart-nexa-book.otf' | asset_url }}) format('opentype');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Smart Nexa';
+    src:
+      url({{ 'smart-nexa-regular-italic.woff2' | asset_url }}) format('woff2'),
+      url({{ 'smart-nexa-regular-italic.woff' | asset_url }}) format('woff'),
+      url({{ 'smart-nexa-regular-italic.otf' | asset_url }}) format('opentype');
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Smart Avenir';
+    src:
+      url({{ 'smart-avenir.woff2' | asset_url }}) format('woff2'),
+      url({{ 'smart-avenir.woff' | asset_url }}) format('woff'),
+      url({{ 'smart-avenir.ttf' | asset_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Smart NeoSans Arabic';
+    src:
+      url({{ 'smart-neosans-arabic-bold.woff2' | asset_url }}) format('woff2'),
+      url({{ 'smart-neosans-arabic-bold.woff' | asset_url }}) format('woff'),
+      url({{ 'smart-neosans-arabic-bold.ttf' | asset_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Smart NeoSans Arabic';
+    src:
+      url({{ 'smart-neosans-arabic-medium.woff2' | asset_url }}) format('woff2'),
+      url({{ 'smart-neosans-arabic-medium.woff' | asset_url }}) format('woff'),
+      url({{ 'smart-neosans-arabic-medium.ttf' | asset_url }}) format('truetype');
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+  }
   {%- assign heading_font_italic = settings.heading_font | font_modify: 'style', 'italic' -%}
   {%- assign text_font_italic = settings.text_font | font_modify: 'style', 'italic' -%}
   {%- assign text_font_bold = settings.text_font | font_modify: 'weight', 'bolder' -%}
@@ -75,14 +145,14 @@
      */
 
     /* Font properties */
-    --heading-font-family: {{ settings.heading_font.family }}, {{ settings.heading_font.fallback_families }};
-    --heading-font-weight: {{ settings.heading_font.weight }};
-    --heading-font-style: {{ settings.heading_font.style }};
+    --heading-font-family: {% if language_code == 'ar' %}'Smart NeoSans Arabic', {{ settings.heading_font.family }}, {{ settings.heading_font.fallback_families }}{% else %}'Smart Nexa', {{ settings.heading_font.family }}, {{ settings.heading_font.fallback_families }}{% endif %};
+    --heading-font-weight: {% if language_code == 'ar' %}700{% else %}800{% endif %};
+    --heading-font-style: normal;
     --heading-text-transform: {{ settings.heading_text_transform }};
     --heading-letter-spacing: {% if language_code == 'ar' %}0{% else %}{{ settings.heading_letter_spacing | divided_by: 100.0 }}{% endif %}em;
-    --text-font-family: {{ settings.text_font.family }}, {{ settings.text_font.fallback_families }};
-    --text-font-weight: {{ settings.text_font.weight }};
-    --text-font-style: {{ settings.text_font.style }};
+    --text-font-family: {% if language_code == 'ar' %}'Smart NeoSans Arabic', {{ settings.text_font.family }}, {{ settings.text_font.fallback_families }}{% else %}'Smart Avenir', 'Smart Nexa', {{ settings.text_font.family }}, {{ settings.text_font.fallback_families }}{% endif %};
+    --text-font-weight: {% if language_code == 'ar' %}500{% else %}400{% endif %};
+    --text-font-style: normal;
     --text-letter-spacing: {% if language_code == 'ar' %}0{% else %}{{ settings.text_font_letter_spacing | divided_by: 100.0 }}{% endif %}em;
     --button-font: {% if settings.button_text_font == 'heading' %}var(--heading-font-style) var(--heading-font-weight) var(--text-sm) / 1.65 var(--heading-font-family){% else %}var(--text-font-style) var(--text-font-weight) var(--text-sm) / 1.65 var(--text-font-family){% endif %};
     --button-text-transform: {{ settings.button_text_transform }};
