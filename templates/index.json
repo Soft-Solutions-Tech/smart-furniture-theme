@@ -421,7 +421,7 @@
           "type": "collection",
           "settings": {
             "collection": "bestsellers",
-            "products_count": 8,
+            "products_count": 20,
             "title": "",
             "link_url": "",
             "link_text": "View all"
