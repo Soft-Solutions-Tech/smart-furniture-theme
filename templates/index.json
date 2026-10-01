@@ -421,7 +421,7 @@
           "type": "collection",
           "settings": {
             "collection": "bestsellers",
-            "products_count": 25,
+            "products_count": 50,
             "title": "",
             "link_url": "",
             "link_text": ""
@@ -436,7 +436,7 @@
         "color_scheme": "",
         "separate_section_with_border": true,
         "hide_product_information": false,
-        "stack_products": false,
+        "stack_products": true,
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 4,
         "horizontal_spacing_factor": 1,
@@ -446,40 +446,6 @@
         "subheading": "Bestsellers",
         "subheading_2": "Discover some of our most loved furniture pieces, selected by our customers for their style, comfort and quality.",
         "hide_collection_title": false
-      }
-    },
-    "featured_collections_mtFhE6": {
-      "type": "featured-collections",
-      "blocks": {
-        "collection_4bkwNQ": {
-          "type": "collection",
-          "settings": {
-            "collection": "dressers",
-            "products_count": 8,
-            "title": "",
-            "link_url": "",
-            "link_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection_4bkwNQ"
-      ],
-      "name": "Bestsellers",
-      "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": true,
-        "hide_product_information": false,
-        "stack_products": false,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 4,
-        "horizontal_spacing_factor": 1,
-        "vertical_spacing_factor": 1,
-        "header_alignment": "left",
-        "heading_style": "h1",
-        "subheading": "Bestsellers",
-        "subheading_2": "",
-        "hide_collection_title": true
       }
     },
     "featured_collections_6mpnE4": {
@@ -813,7 +779,6 @@
     "custom_liquid_MbgV8d",
     "image_with_text_overlay_WdcApb",
     "bestsellers_collections_URHg6n",
-    "featured_collections_mtFhE6",
     "featured_collections_6mpnE4",
     "image_with_text_overlay_a78XRh",
     "rich_text_4j3yjy",
