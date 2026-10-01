@@ -20,6 +20,7 @@
       {%- assign wrapper_carousel_id = 'new-arrivals-collections-carousel-' | append: section.id -%}
 
       <div class="section-stack">
+
         {%- liquid
           assign hide_section_header = false
 
@@ -29,6 +30,7 @@
         -%}
 
         {%- unless hide_section_header -%}
+
           <div class="v-stack justify-self-{{ section.settings.header_alignment | replace: 'left', 'start' | replace: 'right', 'end' }} gap-4 text-center sm:gap-5">
 
             {%- if section.settings.subheading != blank -%}
@@ -50,14 +52,18 @@
                 class="featured-collections-navigation scroll-area bleed"
                 aria-controls="{{ wrapper_carousel_id }}"
               >
+
                 {%- for block in section.blocks -%}
+
                   <button
                     class="{{ section.settings.heading_style }}"
                     aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
                   >
                     {{- block.settings.title | default: block.settings.collection.title | default: 'Collection' -}}
                   </button>
+
                 {%- endfor -%}
+
               </carousel-navigation>
 
             {%- elsif section.settings.hide_collection_title != true -%}
@@ -69,7 +75,9 @@
             {%- endif -%}
 
           </div>
+
         {%- endunless -%}
+
 
         <featured-collections-carousel
           id="{{ wrapper_carousel_id }}"
@@ -91,7 +99,9 @@
                   {%- assign should_reveal = true -%}
                 {%- endif -%}
 
+
                 {%- assign new_arrivals_list = block.settings.collection.metafields.custom.new_arrivals_list.value -%}
+
 
                 {%- if new_arrivals_list != blank and new_arrivals_list.items.value != blank -%}
 
@@ -103,7 +113,7 @@
 
                       {%- assign product = selected_variant.product -%}
 
-                      {%- render 'product-card-bestseller',
+                      {%- render 'product-card-new-arrivals',
                         product: product,
                         variant: selected_variant,
                         custom_badge: new_arrivals_item.badge.value,
@@ -120,21 +130,26 @@
                 {%- else -%}
 
                   {%- for i in (1..block.settings.products_count) -%}
+
                     {%- render 'product-card-placeholder',
                       reveal: should_reveal,
                       loop_index: forloop.index0,
                       hide_product_information: section.settings.hide_product_information
                     -%}
+
                   {%- endfor -%}
 
                 {%- endif -%}
 
               {%- endcapture -%}
 
+
               {%- if section.settings.stack_products -%}
 
                 <product-list class="product-list {% if section.settings.hide_product_information %}product-list--compact{% endif %} justify-center">
+
                   {{- product_list -}}
+
                 </product-list>
 
               {%- else -%}
@@ -147,18 +162,23 @@
                     class="floating-controls-container__control"
                     aria-controls="{{ product_carousel_id }}"
                   >
+
                     <button
                       type="button"
                       class="prev-next-button prev-next-button--prev circle-button hover:animate-icon-inline"
                       disabled
                     >
+
                       <span class="sr-only">
                         {{ 'general.accessibility.previous' | t }}
                       </span>
 
                       {%- render 'icon' with 'arrow-left', direction_aware: true -%}
+
                     </button>
+
                   </carousel-prev-button>
+
 
                   <scroll-carousel
                     id="{{ product_carousel_id }}"
@@ -166,38 +186,48 @@
                     allow-drag
                     class="product-list {% if section.settings.hide_product_information %}product-list--compact{% endif %} product-list--carousel scroll-area bleed md:unbleed"
                   >
+
                     {{- product_list -}}
+
                   </scroll-carousel>
+
 
                   <carousel-next-button
                     class="floating-controls-container__control"
                     aria-controls="{{ product_carousel_id }}"
                   >
+
                     <button
                       type="button"
                       class="prev-next-button prev-next-button--next circle-button hover:animate-icon-inline"
                     >
+
                       <span class="sr-only">
                         {{ 'general.accessibility.next' | t }}
                       </span>
 
                       {%- render 'icon' with 'arrow-right', direction_aware: true -%}
+
                     </button>
+
                   </carousel-next-button>
 
                 </product-list>
 
               {%- endif -%}
 
+
               {%- if block.settings.link_text != blank -%}
 
                 {%- assign button_link = block.settings.link_url | default: block.settings.collection.url | default: '#' -%}
 
                 <div class="justify-self-center">
+
                   {%- render 'button',
                     href: button_link,
                     content: block.settings.link_text
                   -%}
+
                 </div>
 
               {%- endif -%}
@@ -207,9 +237,11 @@
           {%- endfor -%}
 
         </featured-collections-carousel>
+
       </div>
     </div>
   </div>
+
 {%- endif -%}
 
 
@@ -218,11 +250,14 @@
   "name": "New Arrivals Collection",
   "class": "shopify-section--featured-collections",
   "tag": "section",
+
   "disabled_on": {
     "templates": ["password"],
     "groups": ["header", "custom.overlay"]
   },
+
   "max_blocks": 5,
+
   "settings": [
     {
       "type": "color_scheme",
@@ -363,10 +398,12 @@
       "default": false
     }
   ],
+
   "blocks": [
     {
       "type": "collection",
       "name": "t:sections.featured_collections.blocks.collection.name",
+
       "settings": [
         {
           "type": "collection",
@@ -402,10 +439,12 @@
       ]
     }
   ],
+
   "presets": [
     {
       "name": "New Arrivals Collection",
       "category": "t:global.categories.collections",
+
       "blocks": [
         {
           "type": "collection"
