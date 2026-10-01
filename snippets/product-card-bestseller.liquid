@@ -1,9 +1,10 @@
 {%- doc -%}
-  Prestige product card customized for an explicitly selected product variant.
+  This component is based on the Prestige product-card component,
+  adapted to render a specifically selected variant.
 
-  @param {object} product
-  @param {object} variant
-  @param {string} [custom_badge]
+  @param {object} [product] - the product to render
+  @param {object} [variant] - the exact variant to render
+  @param {string} [custom_badge] - optional badge from Bestseller Item
   @param {boolean} [stacked]
   @param {boolean} [reveal]
   @param {number} [position]
@@ -30,7 +31,7 @@
     assign show_prices = false
     assign show_swatches = false
     assign show_quick_buy = show_quick_buy | default: settings.show_quick_buy, allow_false: true
-    assign show_secondary_image = false
+    assign show_secondary_image = show_secondary_image | default: settings.show_secondary_image, allow_false: true
   else
     assign show_badges = show_badges | default: true, allow_false: true
     assign show_rating = show_rating | default: settings.show_product_rating, allow_false: true
@@ -38,8 +39,8 @@
     assign show_quick_buy = show_quick_buy | default: settings.show_quick_buy, allow_false: true
     assign show_title = true
     assign show_prices = true
-    assign show_secondary_image = show_secondary_image | default: false, allow_false: true
-    assign show_swatches = show_swatches | default: false, allow_false: true
+    assign show_secondary_image = show_secondary_image | default: settings.show_secondary_image, allow_false: true
+    assign show_swatches = show_swatches | default: true, allow_false: true
     assign is_last_chance = product.metafields.custom.last_chance.value
   endif
 
@@ -58,6 +59,12 @@
   handle="{{ product.handle | escape }}"
 >
 
+  {%- comment -%}
+    --------------------------------------------------------------------------------------------------------------------
+    PRODUCT MEDIA
+    --------------------------------------------------------------------------------------------------------------------
+  {%- endcomment -%}
+
   {%- if product.media.size > 0 -%}
 
     <div class="product-card__figure">
@@ -72,11 +79,9 @@
 
       {%- elsif is_last_chance -%}
 
-        <badge-list class="badge-list badge-list--vertical">
-          <span class="badge badge--on-sale">
-            LAST CHANCE
-          </span>
-        </badge-list>
+        <span class="badge badge--on-sale last-chance-badge">
+          LAST CHANCE
+        </span>
 
       {%- elsif show_badges -%}
 
@@ -97,17 +102,23 @@
       >
 
         {%- capture sizes -%}
+
           {%- assign products_per_row_desktop = section.settings.products_per_row_desktop | default: 3 -%}
 
           {%- if stacked -%}
+
             (max-width: 699px) calc(100vw / {{ section.settings.products_per_row_mobile | default: 2 }}),
             (max-width: 999px) calc(100vw / {{ 3 | at_most: products_per_row_desktop }} - 64px),
             calc((100vw - 96px) / {{ products_per_row_desktop }} - (24px / {{ products_per_row_desktop }} * {{ products_per_row_desktop | minus: 1 }}))
+
           {%- else -%}
+
             (max-width: 699px) 74vw,
             (max-width: 999px) 38vw,
             calc((100vw - 96px) / {{ products_per_row_desktop }} - (24px / {{ products_per_row_desktop }} * {{ products_per_row_desktop | minus: 1 }}))
+
           {%- endif -%}
+
         {%- endcapture -%}
 
         {%- liquid
@@ -128,9 +139,11 @@
           endif
         -%}
 
-        {%- if featured_media != blank -%}
+        {%- capture main_image_classes -%}
+          product-card__image product-card__image--primary {% if settings.product_image_aspect_ratio contains 'crop' %}object-cover{% endif %} aspect-{{ settings.product_image_aspect_ratio | split: '_' | first }}
+        {%- endcapture -%}
 
-          {%- capture main_image_classes -%}product-card__image product-card__image--primary {% if settings.product_image_aspect_ratio contains 'crop' %}object-cover{% endif %} aspect-{{ settings.product_image_aspect_ratio | split: '_' | first }}{%- endcapture -%}
+        {%- if featured_media != blank -%}
 
           {{-
             featured_media
@@ -145,6 +158,16 @@
 
         {%- endif -%}
 
+        {%- liquid
+          if show_secondary_image and product.media.size > 1
+            assign next_media = product.metafields.custom.card_hover_image.value | default: product.media[product.featured_media.position] | default: product.media[1]
+
+            if next_media != blank
+              echo next_media | image_url: width: next_media.width | image_tag: class: 'product-card__image product-card__image--secondary', loading: 'lazy', fetchpriority: 'low', sizes: sizes, widths: '200,300,400,500,600,700,800,1000,1200,1400,1600,1800', draggable: 'false', aria-hidden: 'true'
+            endif
+          endif
+        -%}
+
       </a>
 
       {%- if show_quick_buy and selected_variant.available -%}
@@ -152,24 +175,42 @@
         {%- if product.variants.size == 1 and product.selling_plan_groups.size == 0 -%}
 
           <product-form>
+
             {%- form 'product', product -%}
 
-              <input type="hidden" name="on_success" value="force_open_drawer">
-              <input type="hidden" name="quantity" value="1">
-              <input type="hidden" name="id" value="{{ selected_variant.id }}">
+              <input
+                type="hidden"
+                name="on_success"
+                value="force_open_drawer"
+              >
+
+              <input
+                type="hidden"
+                name="quantity"
+                value="1"
+              >
+
+              <input
+                type="hidden"
+                name="id"
+                value="{{ selected_variant.id }}"
+              >
 
               <button
                 type="submit"
                 class="product-card__quick-add-button"
               >
+
                 <span class="sr-only">
                   {{ 'product.general.add_to_cart_button' | t }}
                 </span>
 
                 {%- render 'icon' with 'plus' -%}
+
               </button>
 
             {%- endform -%}
+
           </product-form>
 
         {%- else -%}
@@ -181,11 +222,13 @@
             aria-controls="{{ quick_buy_id }}"
             class="product-card__quick-add-button"
           >
+
             <span class="sr-only">
               {{ 'product.general.choose_options' | t }}
             </span>
 
             {%- render 'icon' with 'plus' -%}
+
           </button>
 
           <quick-buy-modal
@@ -204,6 +247,13 @@
 
   {%- endif -%}
 
+
+  {%- comment -%}
+    --------------------------------------------------------------------------------------------------------------------
+    PRODUCT INFO
+    --------------------------------------------------------------------------------------------------------------------
+  {%- endcomment -%}
+
   <div class="product-card__info empty:hidden">
 
     {%- assign text_class = '' -%}
@@ -218,7 +268,7 @@
 
         {%- if show_vendor and product.vendor != blank -%}
 
-          {%- capture vendor_class -%}smallcaps {% if settings.product_card_text_font == 'heading' %}heading{% endif %}{%- endcapture -%}
+          {%- capture vendor_class -%}smallcaps {% if settings.product_card_text_font == 'heading' %}heading{% endif %}{% endcapture %}
 
           {%- render 'vendor' with product.vendor, class: vendor_class -%}
 
@@ -259,6 +309,67 @@
       </div>
 
     {%- endif -%}
+
+
+    {%- if show_swatches and settings.product_color_display != 'hide' -%}
+
+      {%- liquid
+        assign matched_product_option = null
+        assign color_label_list = 'general.label.color' | t | replace: ', ', ',' | downcase | split: ','
+
+        for color_label in color_label_list
+          if product.options_by_name[color_label] != blank
+            assign matched_product_option = product.options_by_name[color_label]
+            break
+          endif
+        endfor
+
+        if matched_product_option == blank
+          for product_option in product.options_with_values
+            assign values_with_swatch = product_option.values | where: 'swatch'
+
+            if values_with_swatch.size > 0
+              assign matched_product_option = product_option
+              break
+            endif
+          endfor
+        endif
+      -%}
+
+      {%- if matched_product_option != blank -%}
+
+        {%- case settings.product_color_display -%}
+
+          {%- when 'count' -%}
+
+            <p class="smallcaps text-subdued">
+              {{- 'product.general.available_colors_count' | t: count: matched_product_option.values.size -}}
+            </p>
+
+          {%- when 'swatch' -%}
+
+            <fieldset class="h-stack wrap justify-center gap-1">
+
+              <legend class="sr-only">
+                {{ matched_product_option.name }}
+              </legend>
+
+              {%- capture param_name -%}swatch-{{ quick_buy_context }}-{{ section.id }}-{{ block.id }}-{{ product.id }}-{{ matched_product_option.position }}{%- endcapture -%}
+
+             {%- liquid
+  for option_value in matched_product_option.values
+    render 'option-value', type: 'swatch', option_value: option_value, param_name: param_name, option_position: matched_product_option.position, output_variant_media: true, size: 'sm'
+  endfor
+-%}
+
+            </fieldset>
+
+        {%- endcase -%}
+
+      {%- endif -%}
+
+    {%- endif -%}
+
 
     {%- if show_rating -%}
 
