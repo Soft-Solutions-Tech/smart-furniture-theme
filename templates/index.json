@@ -421,10 +421,10 @@
           "type": "collection",
           "settings": {
             "collection": "bestsellers",
-            "products_count": 20,
+            "products_count": 25,
             "title": "",
             "link_url": "",
-            "link_text": "View all"
+            "link_text": ""
           }
         }
       },
