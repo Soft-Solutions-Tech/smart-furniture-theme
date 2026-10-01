@@ -414,40 +414,6 @@
         "overlay_opacity": 30
       }
     },
-    "final_stock_variants_rXEMMW": {
-      "type": "final-stock-variants",
-      "blocks": {
-        "collection_pUPNex": {
-          "type": "collection",
-          "settings": {
-            "collection": "final-stock-collection",
-            "products_count": 8,
-            "title": "",
-            "link_url": "",
-            "link_text": "View all"
-          }
-        }
-      },
-      "block_order": [
-        "collection_pUPNex"
-      ],
-      "name": "Final Stock Collection",
-      "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": true,
-        "hide_product_information": false,
-        "stack_products": false,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 4,
-        "horizontal_spacing_factor": 1,
-        "vertical_spacing_factor": 1,
-        "header_alignment": "center",
-        "heading_style": "h2",
-        "subheading": "Final Stock",
-        "subheading_2": "",
-        "hide_collection_title": false
-      }
-    },
     "bestsellers_collections_URHg6n": {
       "type": "Bestsellers-Collections",
       "blocks": {
@@ -477,29 +443,29 @@
         "vertical_spacing_factor": 1,
         "header_alignment": "center",
         "heading_style": "h2",
-        "subheading": "Bestsellers",
+        "subheading": "",
         "subheading_2": "Discover some of our most loved furniture pieces, selected by our customers for their style, comfort and quality.",
         "hide_collection_title": false
       }
     },
-    "featured_collections_6mpnE4": {
-      "type": "featured-collections",
+    "final_stock_variants_rXEMMW": {
+      "type": "final-stock-variants",
       "blocks": {
-        "collection_3LC4yQ": {
+        "collection_pUPNex": {
           "type": "collection",
           "settings": {
-            "collection": "dressers",
-            "products_count": 8,
-            "title": "&nbsp;A final opportunity to bring home some of our most loved furniture pieces with exclusive offers.&nbsp;Available in limited quantities and for a short time only—secure your favorite design before it’s gone.&nbsp;",
-            "link_url": "shopify://collections/last-chance",
-            "link_text": "Go to see Last Chance"
+            "collection": "final-stock-collection",
+            "products_count": 19,
+            "title": "A final opportunity to bring home some of our most loved furniture pieces with exclusive offers.&nbsp;Available in limited quantities and for a short time only—secure your favorite design before it’s gone. &nbsp;",
+            "link_url": "",
+            "link_text": "View all"
           }
         }
       },
       "block_order": [
-        "collection_3LC4yQ"
+        "collection_pUPNex"
       ],
-      "name": "Final Stock Section",
+      "name": "Final Stock Collection",
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": true,
@@ -507,11 +473,11 @@
         "stack_products": false,
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 4,
-        "horizontal_spacing_factor": 0.2,
-        "vertical_spacing_factor": 0.2,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
         "header_alignment": "center",
-        "heading_style": "h4",
-        "subheading": "<strong>Some pieces are simply too special to last forever&nbsp;</strong>",
+        "heading_style": "h2",
+        "subheading": "&nbsp;<strong>Some pieces are simply too special to last forever </strong>&nbsp;",
         "subheading_2": "",
         "hide_collection_title": false
       }
@@ -812,9 +778,8 @@
     "shop_the_look_pifGAT",
     "custom_liquid_MbgV8d",
     "image_with_text_overlay_WdcApb",
-    "final_stock_variants_rXEMMW",
     "bestsellers_collections_URHg6n",
-    "featured_collections_6mpnE4",
+    "final_stock_variants_rXEMMW",
     "image_with_text_overlay_a78XRh",
     "rich_text_4j3yjy",
     "slideshow_bUD6ri",
