@@ -448,6 +448,40 @@
         "hide_collection_title": false
       }
     },
+    "new_arrivals_variants_TeKwDV": {
+      "type": "new-arrivals-variants",
+      "blocks": {
+        "collection_WkRinw": {
+          "type": "collection",
+          "settings": {
+            "collection": "new-arrivals",
+            "products_count": 8,
+            "title": "",
+            "link_url": "",
+            "link_text": "View all"
+          }
+        }
+      },
+      "block_order": [
+        "collection_WkRinw"
+      ],
+      "name": "New Arrivals Collection",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "header_alignment": "center",
+        "heading_style": "h2",
+        "subheading": "New Arrivals",
+        "subheading_2": "",
+        "hide_collection_title": false
+      }
+    },
     "final_stock_variants_rXEMMW": {
       "type": "final-stock-variants",
       "blocks": {
@@ -779,6 +813,7 @@
     "custom_liquid_MbgV8d",
     "image_with_text_overlay_WdcApb",
     "bestsellers_collections_URHg6n",
+    "new_arrivals_variants_TeKwDV",
     "final_stock_variants_rXEMMW",
     "image_with_text_overlay_a78XRh",
     "rich_text_4j3yjy",
