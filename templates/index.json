@@ -56,6 +56,18 @@
         "controls_color": "#ffffff"
       }
     },
+    "custom_liquid_ymMcXn": {
+      "type": "custom-liquid",
+      "name": "USPs ",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": true,
+        "liquid": "<!-- ════════════════════════════════════════════════════════════════════════\n     Trust badges strip  (REUSABLE)\n     Paste this whole block into a Custom Liquid / HTML section anywhere the\n     four trust icons are needed. Self-contained, no JS.\n\n     To reuse with different items, copy a .trust-badges__item block and swap\n     the icon src, title and subtitle.\n     ════════════════════════════════════════════════════════════════════ -->\n<style>\n  .trust-badges {\n    /* ── Smart Furniture palette ── */\n    --tb-navy: #002659;\n    --tb-yellow: #fad163;\n\n    /* ── Neutrals ── */\n    --tb-ink: #16181d;\n    --tb-muted: #8a9099;\n\n    /* ── Type ── */\n    --tb-font: inherit; /* set a stack here to override the theme font */\n\n    margin: 0;\n    padding: 0;\n    background: #ffffff\n    color: var(--tb-ink);\n    font-family: var(--tb-font);\n  }\n\n  /* The section stays flush; the inner wrapper carries all spacing. */\n  .trust-badges__inner {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: stretch;\n    justify-content: center;\n    gap: clamp(20px, 3vw, 48px);\n    max-width: 1200px;\n    margin-inline: auto;\n    padding-inline: clamp(20px, 4vw, 48px);\n    padding-block: clamp(20px, 2.4vw, 28px);\n    box-sizing: border-box;\n  }\n\n  .trust-badges__item {\n    display: flex;\n    align-items: center;\n    gap: 14px;\n  }\n\n  .trust-badges__icon {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 42px;\n    height: 42px;\n    flex-shrink: 0;\n    border-radius: 11px;\n    background: var(--tb-navy);\n  }\n  .trust-badges__icon img {\n    width: 22px;\n    height: 22px;\n    object-fit: contain;\n  }\n\n  .trust-badges__title {\n    margin: 0 0 2px;\n    font-size: 14px;\n    font-weight: 700;\n    line-height: 1.2;\n    letter-spacing: -0.01em;\n  }\n  .trust-badges__subtitle {\n    margin: 0;\n    font-size: 12px;\n    line-height: 1.3;\n    color: var(--tb-muted);\n  }\n\n  /* ══ Responsive ══ */\n  @media screen and (max-width: 767px) {\n    .trust-badges__inner {\n      display: grid;\n      grid-template-columns: repeat(2, 1fr);\n      gap: 18px 20px;\n    }\n  }\n  @media screen and (max-width: 399px) {\n    .trust-badges__inner {\n      grid-template-columns: 1fr;\n    }\n  }\n</style>\n\n<section class=\"trust-badges\" aria-label=\"Why shop with us\">\n  <div class=\"trust-badges__inner\">\n    <div class=\"trust-badges__item\">\n      <span class=\"trust-badges__icon\">\n        <img\n          src=\"https://cdn.shopify.com/s/files/1/0978/4967/2043/files/factory-icon.png?v=1784372578\"\n          alt=\"\"\n          loading=\"lazy\"\n          decoding=\"async\"\n          width=\"22\"\n          height=\"22\"\n        />\n      </span>\n      <div>\n        <p class=\"trust-badges__title\">Factory-direct price</p>\n        <p class=\"trust-badges__subtitle\">No middleman markup</p>\n      </div>\n    </div>\n\n    <div class=\"trust-badges__item\">\n      <span class=\"trust-badges__icon\">\n        <img\n          src=\"https://cdn.shopify.com/s/files/1/0978/4967/2043/files/truck-icon.png?v=1784372594\"\n          alt=\"\"\n          loading=\"lazy\"\n          decoding=\"async\"\n          width=\"22\"\n          height=\"22\"\n        />\n      </span>\n      <div>\n        <p class=\"trust-badges__title\">Free delivery &amp; assembly</p>\n        <p class=\"trust-badges__subtitle\">On every order, everywhere</p>\n      </div>\n    </div>\n\n    <div class=\"trust-badges__item\">\n      <span class=\"trust-badges__icon\">\n        <img\n          src=\"https://cdn.shopify.com/s/files/1/0978/4967/2043/files/warranty-Icon.png?v=1784372586\"\n          alt=\"\"\n          loading=\"lazy\"\n          decoding=\"async\"\n          width=\"22\"\n          height=\"22\"\n        />\n      </span>\n      <div>\n        <p class=\"trust-badges__title\">5-year maker's warranty</p>\n        <p class=\"trust-badges__subtitle\">Backed by us, not a policy</p>\n      </div>\n    </div>\n\n    <div class=\"trust-badges__item\">\n      <span class=\"trust-badges__icon\">\n        <img\n          src=\"https://cdn.shopify.com/s/files/1/0978/4967/2043/files/location-icon.png?v=1784372581\"\n          alt=\"\"\n          loading=\"lazy\"\n          decoding=\"async\"\n          width=\"22\"\n          height=\"22\"\n        />\n      </span>\n      <div>\n        <p class=\"trust-badges__title\">30+ showrooms across Egypt</p>\n        <p class=\"trust-badges__subtitle\">See it in person before you buy</p>\n      </div>\n    </div>\n  </div>\n</section>",
+        "text_alignment": "center"
+      }
+    },
     "collection_list_hdgLJc": {
       "type": "collection-list",
       "blocks": {
@@ -152,7 +164,7 @@
         "collection_BMrnPg",
         "collection_WGF7B8"
       ],
-      "name": "t:sections.collection_list.presets.collection_list.name",
+      "name": "Shop by Room",
       "settings": {
         "color_scheme": "scheme-3",
         "separate_section_with_border": true,
@@ -837,6 +849,7 @@
   },
   "order": [
     "slideshow",
+    "custom_liquid_ymMcXn",
     "collection_list_hdgLJc",
     "media_grid_pxpbJM",
     "new_arrivals_variants_TeKwDV",
