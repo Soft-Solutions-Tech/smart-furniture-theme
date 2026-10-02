@@ -637,7 +637,7 @@
         "vertical_spacing_factor": 1,
         "header_alignment": "center",
         "heading_style": "h5",
-        "subheading": "Featured collection",
+        "subheading": "",
         "subheading_2": "",
         "hide_collection_title": false
       }
