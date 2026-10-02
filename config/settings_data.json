@@ -82,7 +82,7 @@
         "settings": {
           "background": "#f6f3ef",
           "background_gradient": "",
-          "text_color": "#2e3338",
+          "text_color": "#002659",
           "primary_button_background": "#002659",
           "primary_button_text_color": "#ffffff",
           "circle_button_background": "#ffffff",
@@ -126,7 +126,7 @@
         "settings": {
           "background": "#002659",
           "background_gradient": "",
-          "text_color": "#FFFFFF",
+          "text_color": "#ffffff",
           "primary_button_background": "#002659",
           "primary_button_text_color": "#ffffff",
           "circle_button_background": "#f7f5f2",

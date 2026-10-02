@@ -26,16 +26,16 @@
             "button_1_text": "Shop now",
             "button_1_link": "",
             "button_1_style": "fill",
-            "button_1_background": "#ffffff",
-            "button_1_text_color": "#1c1c1c",
+            "button_1_background": "#002659",
+            "button_1_text_color": "#FFFFFF",
             "button_2_text": "Learn more",
             "button_2_link": "",
             "button_2_style": "solid",
-            "button_2_background": "#000000",
-            "button_2_text_color": "#ffffff",
+            "button_2_background": "#FFFFFF",
+            "button_2_text_color": "#002659",
             "background": "",
             "background_opacity": 50,
-            "text_color": "#ffffff",
+            "text_color": "#FFFFFF",
             "border_color": "",
             "gradient_overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0) 100%)"
           }
@@ -60,7 +60,7 @@
       "type": "custom-liquid",
       "name": "USPs ",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "separate_section_with_border": false,
         "remove_vertical_spacing": true,
         "remove_horizontal_spacing": true,
@@ -335,7 +335,7 @@
       ],
       "name": "New Arrivals Collection",
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-3",
         "separate_section_with_border": false,
         "hide_product_information": false,
         "stack_products": false,
@@ -354,7 +354,7 @@
       "type": "custom-liquid",
       "name": "Buy Now Pay Later ",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "separate_section_with_border": false,
         "remove_vertical_spacing": true,
         "remove_horizontal_spacing": true,
@@ -381,7 +381,7 @@
       ],
       "name": "Bestsellers Collection",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "separate_section_with_border": false,
         "hide_product_information": false,
         "stack_products": true,
@@ -430,7 +430,7 @@
       ],
       "name": "Built in Egypt for egypt ",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-17d4397d-ae6c-4c8b-9e1a-e77b4d3ecf15",
         "image_size": "auto",
         "allow_transparent_header": false,
         "reveal_on_scroll": true,
@@ -498,7 +498,7 @@
       ],
       "name": "Built in Egypt for egypt ",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "separate_section_with_border": false,
         "columns_per_row": 4,
         "stack_on_mobile": false,
@@ -530,7 +530,7 @@
       ],
       "name": "t:sections.rich_text.presets.rich_text.name",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "separate_section_with_border": false,
         "content_width": "sm",
         "text_position": "center",
@@ -562,7 +562,7 @@
             "products_count": 8,
             "title": "",
             "link_url": "",
-            "link_text": "View all"
+            "link_text": ""
           }
         },
         "collection_7HQLnw": {
@@ -572,7 +572,7 @@
             "products_count": 8,
             "title": "&nbsp;Newely Wed&nbsp;",
             "link_url": "",
-            "link_text": "View all"
+            "link_text": ""
           }
         },
         "collection_AUnFFM": {
@@ -582,7 +582,7 @@
             "products_count": 8,
             "title": "&nbsp;Room Refersh&nbsp;",
             "link_url": "",
-            "link_text": "View all"
+            "link_text": ""
           }
         }
       },
@@ -593,7 +593,7 @@
       ],
       "name": "Furnish your home one Checklist at a time",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "separate_section_with_border": true,
         "hide_product_information": false,
         "stack_products": false,
