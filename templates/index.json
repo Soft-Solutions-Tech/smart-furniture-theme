@@ -669,6 +669,41 @@
         "text_alignment": "center"
       }
     },
+    "featured_collections_x97qN6": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_NptVWr": {
+          "type": "collection",
+          "settings": {
+            "collection": "dining-sets",
+            "products_count": 8,
+            "title": "",
+            "link_url": "",
+            "link_text": "View all"
+          }
+        }
+      },
+      "block_order": [
+        "collection_NptVWr"
+      ],
+      "name": "t:sections.featured_collections.presets.featured_collections.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "show_card_add_to_cart": true,
+        "stack_products": false,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "header_alignment": "center",
+        "heading_style": "h2",
+        "subheading": "Featured collection",
+        "subheading_2": "",
+        "hide_collection_title": false
+      }
+    },
     "testimonials_tq4n6P": {
       "type": "testimonials",
       "blocks": {
@@ -771,6 +806,7 @@
     "featured_var_collections_WbmrJG",
     "image_with_text_VAXx3U",
     "custom_liquid_tANtrf",
+    "featured_collections_x97qN6",
     "testimonials_tq4n6P",
     "custom_liquid_TKX4bX"
   ]
