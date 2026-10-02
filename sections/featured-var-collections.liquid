@@ -14,8 +14,10 @@
   {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
 
   <div class="section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }}
+
   {% if section.settings.separate_section_with_border %}
     bordered-section
+
   {% endif %}
   ">
 
@@ -32,20 +34,22 @@
 
       {%- unless hide_section_header -%}
 
-        <div class="v-stack justify-self-{{ section.settings.header_alignment | replace: 'left', 'start' | replace: 'right', 'end' }} gap-4 text-center sm:gap-5">
+        <div class="v-stack justify-self-{{ section.settings.header_alignment | replace: 'left', 'start' | replace: 'right', 'end' }} gap-4 sm:gap-5" style="text-align: {{ section.settings.header_alignment }};">
 
           {%- if section.settings.subheading != blank -%}
 
-            <p class="h6 text-center">
+            <p class="h6" style="text-align: inherit;">
             {{- section.settings.subheading -}}
+
             </p>
 
           {%- endif -%}
 
           {%- if section.settings.subheading_2 != blank -%}
 
-            <p class="text-center">
+            <p style="text-align: inherit;">
             {{- section.settings.subheading_2 -}}
+
             </p>
 
           {%- endif -%}
@@ -55,10 +59,13 @@
 
             {%- for block in section.blocks -%}
               <button class="{{ section.settings.heading_style }}" aria-current="
+
               {% if forloop.first %}
                 true
+
               {% else %}
                 false
+
               {% endif %}
               ">
               {{- block.settings.title | default: block.settings.collection.title | default: 'Collection' -}}
@@ -84,8 +91,10 @@
       {%- for block in section.blocks -%}
 
         <div class="featured-collections-carousel__item
+
         {% if forloop.first %}
           is-selected
+
         {% endif %}
         " {{ block.shopify_attributes }}>
 
@@ -118,6 +127,7 @@
                 reveal: should_reveal,
                 position: forloop.index,
                 hide_product_information: section.settings.hide_product_information,
+                show_card_add_to_cart: section.settings.show_card_add_to_cart,
                 block: block
                 -%}
 
@@ -138,6 +148,7 @@
               reveal: should_reveal,
               position: forloop.index,
               hide_product_information: section.settings.hide_product_information,
+              show_card_add_to_cart: section.settings.show_card_add_to_cart,
               block: block
               -%}
 
@@ -160,8 +171,10 @@
 
         {%- if section.settings.stack_products -%}
           <product-list class="product-list
+
           {% if section.settings.hide_product_information %}
             product-list--compact
+
           {% endif %}
           justify-center">
           {{- product_list -}}
@@ -182,8 +195,10 @@
           group-cells
           allow-drag
           class="product-list
+
           {% if section.settings.hide_product_information %}
             product-list--compact
+
           {% endif %}
           product-list--carousel scroll-area bleed md:unbleed"
           >
@@ -216,9 +231,7 @@
     </featured-collections-carousel>
 
   </div>
-
 </div>
-
 </div>
 {%- endif -%}
 {% schema %}
@@ -249,6 +262,12 @@
   "id": "hide_product_information",
   "label": "t:global.product_list.hide_product_information",
   "info": "t:global.product_list.hide_product_information_info"
+  },
+  {
+  "type": "checkbox",
+  "id": "show_card_add_to_cart",
+  "label": "Show Add to cart button",
+  "default": false
   },
   {
   "type": "header",
