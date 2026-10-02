@@ -608,6 +608,41 @@
         "hide_collection_title": false
       }
     },
+    "featured_collections_JjX3UH": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_9AnzFi": {
+          "type": "collection",
+          "settings": {
+            "collection": "dining-chairs",
+            "products_count": 8,
+            "title": "",
+            "link_url": "",
+            "link_text": "View all"
+          }
+        }
+      },
+      "block_order": [
+        "collection_9AnzFi"
+      ],
+      "name": "t:sections.featured_collections.presets.featured_collections.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "show_card_add_to_cart": true,
+        "stack_products": false,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "header_alignment": "center",
+        "heading_style": "h2",
+        "subheading": "Featured collection",
+        "subheading_2": "",
+        "hide_collection_title": false
+      }
+    },
     "image_with_text_VAXx3U": {
       "type": "image-with-text",
       "blocks": {
@@ -769,6 +804,7 @@
     "rich_text_4j3yjy",
     "slideshow_bUD6ri",
     "featured_var_collections_WbmrJG",
+    "featured_collections_JjX3UH",
     "image_with_text_VAXx3U",
     "custom_liquid_tANtrf",
     "testimonials_tq4n6P",
