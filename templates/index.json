@@ -542,7 +542,7 @@
         "heading_FC94ea": {
           "type": "heading",
           "settings": {
-            "text": "Heading",
+            "text": "&nbsp;Build your home one checklist at a time&nbsp;",
             "heading_tag": "h1"
           }
         }
@@ -617,7 +617,7 @@
       "name": "Furnish your home one Checklist at a time",
       "settings": {
         "color_scheme": "",
-        "separate_section_with_border": true,
+        "separate_section_with_border": false,
         "hide_product_information": false,
         "stack_products": false,
         "products_per_row_mobile": "2",
@@ -627,7 +627,7 @@
         "header_alignment": "center",
         "heading_style": "h5",
         "subheading": "",
-        "subheading_2": "Build your home one checklist at a time",
+        "subheading_2": "",
         "hide_collection_title": true
       }
     },
