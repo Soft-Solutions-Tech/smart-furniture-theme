@@ -56,6 +56,115 @@
         "controls_color": "#ffffff"
       }
     },
+    "collection_list_hdgLJc": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_xQWwqR": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "",
+            "image": "shopify://shop_images/Hany_Muhammed_Ali.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-center text-center",
+            "subheading": "",
+            "title": "",
+            "button_text": "View products",
+            "button_link": "",
+            "button_style": "link",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_XEPfFp": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "View products",
+            "button_link": "",
+            "button_style": "link",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_fFAtVC": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "View products",
+            "button_link": "",
+            "button_style": "link",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_BMrnPg": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "View products",
+            "button_link": "",
+            "button_style": "link",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_WGF7B8": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "View products",
+            "button_link": "",
+            "button_style": "link",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_xQWwqR",
+        "collection_XEPfFp",
+        "collection_fFAtVC",
+        "collection_BMrnPg",
+        "collection_WGF7B8"
+      ],
+      "name": "t:sections.collection_list.presets.collection_list.name",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "separate_section_with_border": true,
+        "image_size": "auto",
+        "show_text_outside": true,
+        "space_items": true,
+        "stack_collections": false,
+        "collections_per_row_desktop": 4,
+        "stack_collections_mobile": false,
+        "collections_per_row_mobile": "2",
+        "subheading": "",
+        "title": "",
+        "heading_style": "h2",
+        "content": ""
+      }
+    },
     "media_grid_pxpbJM": {
       "type": "media-grid",
       "blocks": {
@@ -63,7 +172,8 @@
           "type": "image",
           "settings": {
             "color_scheme": "scheme-1",
-            "column_count": "4",
+            "image": "shopify://shop_images/Hany_Muhammed_Ali.png",
+            "column_count": "3",
             "row_count": 1,
             "add_padding": false,
             "title": "Teens",
@@ -71,8 +181,8 @@
             "content": "",
             "link_text": "Explore",
             "link_url": "",
-            "link_style": "solid",
-            "text_position": "place-self-center text-center",
+            "link_style": "link",
+            "text_position": "place-self-end-center text-center",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
@@ -807,6 +917,7 @@
   },
   "order": [
     "slideshow",
+    "collection_list_hdgLJc",
     "media_grid_pxpbJM",
     "featured_product_CVPQct",
     "shop_the_look_pifGAT",
