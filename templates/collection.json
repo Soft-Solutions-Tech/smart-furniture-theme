@@ -34,6 +34,8 @@
         "image_ArFHVi": {
           "type": "image",
           "settings": {
+            "image": "{{ collection.metafields.custom.collection_banner_desktop.value }}",
+            "mobile_image": "{{ collection.metafields.custom.collection_banner_mobile.value }}",
             "subheading": "Tell your story",
             "title": "Slide 2",
             "heading_style": "h1",
