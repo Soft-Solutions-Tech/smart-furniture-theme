@@ -1,95 +1,142 @@
 {%- if section.blocks.size > 0 -%}
   <style>
-    #shopify-section-{{ section.id }} {
-      --multi-column-gap: {% if section.settings.spacing == 'xs' %}1.5rem{% elsif section.settings.spacing == 'sm' %}2.5rem{% elsif section.settings.spacing == 'md' %}3.125rem{% else %}4.375rem{% endif %};
-      --multi-column-column-width: {% if section.settings.stack_on_mobile %}100%{% else %}53vw{% endif %};
-      --multi-column-grid: {% if section.settings.stack_on_mobile %}auto / repeat(auto-fit, var(--multi-column-column-width)){% else %}auto / auto-flow var(--multi-column-column-width){% endif %};
-      --multi-column-content-alignment: safe {{ section.settings.content_alignment }};
+  #shopify-section-{{ section.id }} {
+    --multi-column-gap: {% if section.settings.spacing == 'xs' %}1.5rem{% elsif section.settings.spacing == 'sm' %}2.5rem{% elsif section.settings.spacing == 'md' %}3.125rem{% else %}4.375rem{% endif %};
+
+    --multi-column-column-width: {% if section.settings.stack_on_mobile %}100%{% else %}53vw{% endif %};
+
+    --multi-column-grid: {% if section.settings.stack_on_mobile %}auto / repeat(auto-fit, var(--multi-column-column-width)){% else %}auto / auto-flow var(--multi-column-column-width){% endif %};
+
+    --multi-column-content-alignment: safe {{ section.settings.content_alignment }};
+  }
+
+
+  /* ============================================
+     MOBILE SWIPE HINT
+     ============================================ */
+
+  #shopify-section-{{ section.id }} .mobile-scroll-hint {
+    display: none;
+  }
+
+
+  #shopify-section-{{ section.id }} .multi-column-scroll-wrapper {
+    position: relative;
+  }
+
+
+  @media screen and (max-width: 699px) {
+
+    /* Keep heading + swipe hint on same line */
+
+    #shopify-section-{{ section.id }} .multi-column-heading-row {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 1rem;
+
+      width: 100%;
     }
 
-    /* ============================================
-       MOBILE SWIPE HINT
-       ============================================ */
+
+    #shopify-section-{{ section.id }} .multi-column-heading-row__header {
+      flex: 1;
+
+      min-width: 0;
+    }
+
+
+    /* Swipe hint uses the theme body font */
 
     #shopify-section-{{ section.id }} .mobile-scroll-hint {
-      display: none;
+      display: block;
+
+      flex-shrink: 0;
+
+      margin: 0;
+
+      font-family: var(--text-font-family);
+      font-weight: var(--text-font-weight);
+      font-style: var(--text-font-style);
+
+      font-size: 0.7rem;
+      line-height: 1.2;
+
+      letter-spacing: normal;
+      text-transform: none;
+
+      white-space: nowrap;
+
+      text-align: right;
     }
 
-    #shopify-section-{{ section.id }} .multi-column-scroll-wrapper {
-      position: relative;
+
+    /* Right edge fade */
+
+    #shopify-section-{{ section.id }} .multi-column-scroll-wrapper--hint::after {
+      content: "";
+
+      position: absolute;
+
+      z-index: 2;
+
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      width: 3rem;
+
+      pointer-events: none;
+
+      background: linear-gradient(
+        to right,
+        transparent,
+        {{ section.settings.color_scheme.settings.background }}
+      );
     }
+  }
 
-    @media screen and (max-width: 699px) {
 
-      /* Keep heading + swipe hint on same line */
-      #shopify-section-{{ section.id }} .multi-column-heading-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        width: 100%;
-      }
+  /* ============================================
+     TABLET
+     ============================================ */
 
-      #shopify-section-{{ section.id }} .multi-column-heading-row__header {
-        flex: 1;
-        min-width: 0;
-      }
+  @media screen and (min-width: 700px) {
 
-      #shopify-section-{{ section.id }} .mobile-scroll-hint {
-        display: block;
-        flex-shrink: 0;
-        margin: 0;
-        font-size: 0.7rem;
-        line-height: 1;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        white-space: nowrap;
-        text-align: right;
-      }
+    #shopify-section-{{ section.id }} {
+      --multi-column-columns-per-row: 2;
 
-      /* Right edge fade */
-      #shopify-section-{{ section.id }} .multi-column-scroll-wrapper--hint::after {
-        content: "";
-        position: absolute;
-        z-index: 2;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 3rem;
-        pointer-events: none;
-
-        background: linear-gradient(
-          to right,
-          transparent,
-          {{ section.settings.color_scheme.settings.background }}
-        );
-      }
+      --multi-column-column-width: {% if section.settings.stack_on_mobile %}calc(100% / var(--multi-column-columns-per-row) - var(--multi-column-gap) * ((var(--multi-column-columns-per-row) - 1) / var(--multi-column-columns-per-row))){% else %}38vw{% endif %};
     }
+  }
 
-    /* ============================================
-       TABLET
-       ============================================ */
 
-    @media screen and (min-width: 700px) {
-      #shopify-section-{{ section.id }} {
-        --multi-column-columns-per-row: 2;
-        --multi-column-column-width: {% if section.settings.stack_on_mobile %}calc(100% / var(--multi-column-columns-per-row) - var(--multi-column-gap) * ((var(--multi-column-columns-per-row) - 1) / var(--multi-column-columns-per-row))){% else %}38vw{% endif %};
-      }
+  /* ============================================
+     DESKTOP
+     ============================================ */
+
+  @media screen and (min-width: 999px) {
+
+    #shopify-section-{{ section.id }} {
+      --multi-column-gap: {% if section.settings.spacing == 'xs' %}1.875rem{% elsif section.settings.spacing == 'sm' %}3.125rem{% elsif section.settings.spacing == 'md' %}4.375rem{% else %}5.625rem{% endif %};
+
+      --multi-column-columns-per-row: {{ section.settings.columns_per_row }};
+
+      --multi-column-column-width: calc(
+        100% / var(--multi-column-columns-per-row)
+        - var(--multi-column-gap)
+        * ((var(--multi-column-columns-per-row) - 1) / var(--multi-column-columns-per-row))
+      );
+
+      --multi-column-grid: auto / repeat(
+        auto-fit,
+        var(--multi-column-column-width)
+      );
     }
-
-    /* ============================================
-       DESKTOP
-       ============================================ */
-
-    @media screen and (min-width: 999px) {
-      #shopify-section-{{ section.id }} {
-        --multi-column-gap: {% if section.settings.spacing == 'xs' %}1.875rem{% elsif section.settings.spacing == 'sm' %}3.125rem{% elsif section.settings.spacing == 'md' %}4.375rem{% else %}5.625rem{% endif %};
-        --multi-column-columns-per-row: {{ section.settings.columns_per_row }};
-        --multi-column-column-width: calc(100% / var(--multi-column-columns-per-row) - var(--multi-column-gap) * ((var(--multi-column-columns-per-row) - 1) / var(--multi-column-columns-per-row)));
-        --multi-column-grid: auto / repeat(auto-fit, var(--multi-column-column-width));
-      }
-    }
-  </style>
+  }
+</style>
 
   {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
 
