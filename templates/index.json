@@ -73,7 +73,7 @@
             "button_link": "shopify://collections/master-bedrooms",
             "button_style": "link",
             "overlay_color": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         },
         "collection_XEPfFp": {
