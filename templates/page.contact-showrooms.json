@@ -191,48 +191,6 @@
         "item_color_scheme": "",
         "separate_section_with_border": true
       }
-    },
-    "before_after_6zGp7i": {
-      "type": "before-after",
-      "blocks": {
-        "before_QDXC3p": {
-          "type": "before",
-          "settings": {
-            "color_scheme": "",
-            "text": "&nbsp;Find a Showroom Near You&nbsp;",
-            "link_text": "View Locations",
-            "link_url": "#shopify-section-template--28188381118827__17843073756ebc09c9",
-            "link_style": "link"
-          }
-        },
-        "after_NGeP43": {
-          "type": "after",
-          "settings": {
-            "color_scheme": "",
-            "text": "&nbsp;We’re Here to Help&nbsp;",
-            "link_text": "Get in Touch",
-            "link_url": "#shopify-section-template--28188381118827__contact_R6zTfH",
-            "link_style": "link"
-          }
-        }
-      },
-      "block_order": [
-        "before_QDXC3p",
-        "after_NGeP43"
-      ],
-      "name": "t:sections.before_after.presets.before_after.name",
-      "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": false,
-        "subheading": "Visit one of our showrooms or contact our team for assistance.&nbsp;",
-        "title": "&nbsp;WE’RE HERE TO HELP&nbsp;",
-        "heading_style": "h2",
-        "content": "",
-        "cursor_direction": "horizontal",
-        "cursor_initial_position": 50,
-        "cursor_background": "#ffffff",
-        "cursor_arrows_color": "#000000"
-      }
     }
   },
   "order": [
@@ -242,7 +200,6 @@
     "custom_liquid_3jxX4T",
     "custom_liquid_yeB664",
     "1790784958e87d1dd4",
-    "timeline_4n8V4J",
-    "before_after_6zGp7i"
+    "timeline_4n8V4J"
   ]
 }
