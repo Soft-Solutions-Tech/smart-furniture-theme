@@ -586,6 +586,62 @@
         "controls_color": "#ffffff"
       }
     },
+    "featured_var_collections_WbmrJG": {
+      "type": "featured-var-collections",
+      "blocks": {
+        "collection_iUw6td": {
+          "type": "collection",
+          "settings": {
+            "collection": "final-stock-collection",
+            "products_count": 8,
+            "title": "",
+            "link_url": "",
+            "link_text": "View all"
+          }
+        },
+        "collection_7HQLnw": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "products_count": 8,
+            "title": "",
+            "link_url": "",
+            "link_text": "View all"
+          }
+        },
+        "collection_AUnFFM": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "products_count": 8,
+            "title": "",
+            "link_url": "",
+            "link_text": "View all"
+          }
+        }
+      },
+      "block_order": [
+        "collection_iUw6td",
+        "collection_7HQLnw",
+        "collection_AUnFFM"
+      ],
+      "name": "Featured var collections",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "header_alignment": "center",
+        "heading_style": "h5",
+        "subheading": "Featured collection",
+        "subheading_2": "",
+        "hide_collection_title": false
+      }
+    },
     "featured_collections_dVJPWR": {
       "type": "featured-collections",
       "blocks": {
@@ -860,6 +916,7 @@
     "multi_column_YtqFXt",
     "rich_text_4j3yjy",
     "slideshow_bUD6ri",
+    "featured_var_collections_WbmrJG",
     "featured_collections_dVJPWR",
     "blocks_qGH7Bh",
     "image_with_text_VAXx3U",
