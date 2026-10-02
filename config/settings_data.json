@@ -94,8 +94,8 @@
           "background": "#ffffff",
           "background_gradient": "",
           "text_color": "#002659",
-          "primary_button_background": "#fad163",
-          "primary_button_text_color": "#002659",
+          "primary_button_background": "#002659",
+          "primary_button_text_color": "#FFFFFF",
           "circle_button_background": "#ffffff",
           "circle_button_icon": "#002659"
         }

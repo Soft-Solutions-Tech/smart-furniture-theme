@@ -649,7 +649,7 @@
       ],
       "name": "30+ Showrooms",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "separate_section_with_border": false,
         "reveal_on_scroll": true,
         "image_position": "start",
