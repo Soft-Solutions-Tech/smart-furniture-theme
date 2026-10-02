@@ -496,7 +496,8 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".last-chance-badge {background: #d60000 !important; color: #ffffff !important;}"
+      ".last-chance-badge {background: #d60000 !important; color: #ffffff !important;}",
+      ".badge,.badge * {color: #ffffff !important;}"
     ]
   }
 }
