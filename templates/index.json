@@ -89,7 +89,7 @@
             "button_link": "",
             "button_style": "link",
             "overlay_color": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         },
         "collection_fFAtVC": {
@@ -105,7 +105,7 @@
             "button_link": "",
             "button_style": "link",
             "overlay_color": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         },
         "collection_BMrnPg": {
@@ -121,7 +121,7 @@
             "button_link": "",
             "button_style": "link",
             "overlay_color": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         },
         "collection_WGF7B8": {
@@ -137,7 +137,7 @@
             "button_link": "",
             "button_style": "link",
             "overlay_color": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         }
       },
