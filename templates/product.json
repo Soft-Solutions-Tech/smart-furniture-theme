@@ -172,7 +172,7 @@
       "name": "t:sections.related_products.presets.related_products.name",
       "settings": {
         "color_scheme": "",
-        "separate_section_with_border": true,
+        "separate_section_with_border": false,
         "hide_product_information": false,
         "stack_products": false,
         "recommendations_count": 10,
