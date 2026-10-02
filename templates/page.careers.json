@@ -263,7 +263,7 @@
         "richtext_gGT4d7": {
           "type": "richtext",
           "settings": {
-            "content": "<h6>Do not see a role that fits? Send us an <a href=\"#shopify-section-template--28188381053291__1790786724786f5393\" target=\"_blank\" title=\"#shopify-section-template--28188381053291__1790786724786f5393\">open application</a>. We Keep all CVs on file and reach out when the right role opens.</h6>"
+            "content": "<h6>Do not see a role that fits? Send us an <a href=\"/pages/open-cv\" target=\"_blank\" title=\"Open CV\">open application</a>. We Keep all CVs on file and reach out when the right role opens.</h6>"
           }
         }
       },
