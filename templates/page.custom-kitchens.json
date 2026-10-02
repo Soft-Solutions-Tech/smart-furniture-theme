@@ -44,8 +44,8 @@
       ],
       "name": "t:sections.slideshow.presets.slideshow.name",
       "settings": {
-        "allow_transparent_header": true,
-        "show_next_section_button": true,
+        "allow_transparent_header": false,
+        "show_next_section_button": false,
         "media_size": "auto",
         "show_initial_transition": false,
         "autoplay": true,
@@ -145,84 +145,6 @@
         "title": "&nbsp;Our Kitchens&nbsp;",
         "heading_style": "h2",
         "content": ""
-      }
-    },
-    "image_with_text_xTjJMh": {
-      "type": "image-with-text",
-      "blocks": {
-        "subheading_xggCVc": {
-          "type": "subheading",
-          "settings": {
-            "text": "Subheading"
-          }
-        },
-        "heading_FUheAa": {
-          "type": "heading",
-          "settings": {
-            "text": "Image with text",
-            "heading_tag": "h1"
-          }
-        },
-        "richtext_Rypg4a": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "subheading_xggCVc",
-        "heading_FUheAa",
-        "richtext_Rypg4a"
-      ],
-      "disabled": true,
-      "name": "t:sections.image_with_text.presets.image_with_text.name",
-      "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": true,
-        "reveal_on_scroll": true,
-        "image_position": "start",
-        "content_width": "sm",
-        "remove_vertical_spacing": true
-      }
-    },
-    "image_with_text_gWBQaE": {
-      "type": "image-with-text",
-      "blocks": {
-        "subheading_9GCAB8": {
-          "type": "subheading",
-          "settings": {
-            "text": "Subheading"
-          }
-        },
-        "heading_TJBgUF": {
-          "type": "heading",
-          "settings": {
-            "text": "Image with text",
-            "heading_tag": "h1"
-          }
-        },
-        "richtext_9XjD6U": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "subheading_9GCAB8",
-        "heading_TJBgUF",
-        "richtext_9XjD6U"
-      ],
-      "disabled": true,
-      "name": "t:sections.image_with_text.presets.image_with_text.name",
-      "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": true,
-        "reveal_on_scroll": true,
-        "image_position": "end",
-        "content_width": "sm",
-        "remove_vertical_spacing": true
       }
     },
     "multi_column_JVKnBf": {
@@ -494,16 +416,35 @@
         "content": ""
       }
     },
-    "contact_8aF7eQ": {
-      "type": "contact",
-      "name": "t:sections.contact.presets.contact_form.name",
+    "1790958244730519cf": {
+      "type": "apps",
+      "blocks": {
+        "forms_inline_wXAUxq": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#FFFFFF",
+            "links_color": "#1878B9",
+            "errors_color": "#E02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 24,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_wXAUxq"
+      ],
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": true,
-        "subheading": "",
-        "title": "Request a designer meeting",
-        "heading_style": "h2",
-        "content": ""
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
       }
     },
     "main": {
@@ -624,12 +565,10 @@
     "slideshow_aRGEft",
     "custom_liquid_3CHJjQ",
     "media_grid_8FECta",
-    "image_with_text_xTjJMh",
-    "image_with_text_gWBQaE",
     "multi_column_JVKnBf",
     "multi_column_ARc3KF",
     "media_grid_Un7yPp",
-    "contact_8aF7eQ",
+    "1790958244730519cf",
     "main",
     "slideshow_Q4GKFJ",
     "slideshow_aRyaRR",
