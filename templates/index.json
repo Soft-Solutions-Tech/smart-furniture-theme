@@ -404,7 +404,7 @@
       "name": "Final Stock Collection",
       "settings": {
         "color_scheme": "",
-        "separate_section_with_border": true,
+        "separate_section_with_border": false,
         "hide_product_information": false,
         "stack_products": false,
         "products_per_row_mobile": "2",
@@ -416,6 +416,78 @@
         "subheading": "",
         "subheading_2": "",
         "hide_collection_title": false
+      }
+    },
+    "multi_column_YtqFXt": {
+      "type": "multi-column",
+      "blocks": {
+        "image_with_text_T4dax8": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/1G4A6752.jpg",
+            "title": "",
+            "heading_tag": "h3",
+            "content": "",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_tR6BTT": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/1G4A6769.jpg",
+            "title": "",
+            "heading_tag": "h3",
+            "content": "",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_KTaY9m": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/1G4A6667.jpg",
+            "title": "",
+            "heading_tag": "h3",
+            "content": "",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_aFP8cY": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/1G4A6771.jpg",
+            "title": "",
+            "heading_tag": "h3",
+            "content": "",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_T4dax8",
+        "image_with_text_tR6BTT",
+        "image_with_text_KTaY9m",
+        "image_with_text_aFP8cY"
+      ],
+      "name": "Built in Egypt for egypt ",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "columns_per_row": 4,
+        "stack_on_mobile": false,
+        "show_mobile_scroll_hint": false,
+        "mobile_scroll_hint_text": "Swipe to see more →",
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "sm",
+        "subheading": "",
+        "title": "&nbsp;Crafted by S.A.I Solutions &nbsp;",
+        "heading_style": "h2",
+        "content": "<p>Smart Furniture is backed by the manufacturing expertise of S.A.I Solutions, with a furniture manufacturing journey dating back to 2004.&nbsp;<br/>Our modern production capabilities allow us to create quality furniture for residential and hospitality spaces, combining contemporary design, manufacturing experience, and attention to detail.</p>"
       }
     },
     "image_with_text_overlay_a78XRh": {
@@ -771,6 +843,7 @@
     "custom_liquid_MbgV8d",
     "bestsellers_collections_URHg6n",
     "final_stock_variants_rXEMMW",
+    "multi_column_YtqFXt",
     "image_with_text_overlay_a78XRh",
     "rich_text_4j3yjy",
     "slideshow_bUD6ri",
