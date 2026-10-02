@@ -231,7 +231,7 @@
         "image_with_text_U98qb8": {
           "type": "image_with_text",
           "settings": {
-            "image": "shopify://shop_images/About-banner-trans.png",
+            "image": "shopify://shop_images/Black_Aswan_6_web.webp",
             "title": "",
             "heading_tag": "h3",
             "content": "<p>Matte White</p>",
@@ -398,102 +398,6 @@
         "image_with_text_ke69DE",
         "image_with_text_3q6bM6",
         "image_with_text_VqJwFm"
-      ],
-      "name": "t:sections.multi_column.presets.multi_column.name",
-      "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": false,
-        "columns_per_row": 6,
-        "stack_on_mobile": false,
-        "show_mobile_scroll_hint": true,
-        "mobile_scroll_hint_text": "Swipe to see more →",
-        "overlap_image": false,
-        "content_alignment": "start",
-        "text_alignment": "center",
-        "spacing": "md",
-        "subheading": "",
-        "title": "",
-        "heading_style": "h6",
-        "content": ""
-      }
-    },
-    "multi_column_XAUDfM": {
-      "type": "multi-column",
-      "blocks": {
-        "image_with_text_qXcpTm": {
-          "type": "image_with_text",
-          "settings": {
-            "image": "shopify://shop_images/About-banner-trans.png",
-            "title": "",
-            "heading_tag": "h3",
-            "content": "<p>Matte White</p>",
-            "link_url": "",
-            "link_text": ""
-          }
-        },
-        "image_with_text_tK76gf": {
-          "type": "image_with_text",
-          "settings": {
-            "image": "shopify://shop_images/About-banner-trans.png",
-            "title": "",
-            "heading_tag": "h3",
-            "content": "<p>Matte White</p>",
-            "link_url": "",
-            "link_text": ""
-          }
-        },
-        "image_with_text_aFaKUn": {
-          "type": "image_with_text",
-          "settings": {
-            "image": "shopify://shop_images/About-banner-trans.png",
-            "title": "",
-            "heading_tag": "h3",
-            "content": "<p>Matte White</p>",
-            "link_url": "",
-            "link_text": ""
-          }
-        },
-        "image_with_text_8fcWj6": {
-          "type": "image_with_text",
-          "settings": {
-            "image": "shopify://shop_images/About-banner-trans.png",
-            "title": "",
-            "heading_tag": "h3",
-            "content": "<p>Matte White</p>",
-            "link_url": "",
-            "link_text": ""
-          }
-        },
-        "image_with_text_PwccCA": {
-          "type": "image_with_text",
-          "settings": {
-            "image": "shopify://shop_images/About-banner-trans.png",
-            "title": "",
-            "heading_tag": "h3",
-            "content": "<p>Matte White</p>",
-            "link_url": "",
-            "link_text": ""
-          }
-        },
-        "image_with_text_JV8Mrw": {
-          "type": "image_with_text",
-          "settings": {
-            "image": "shopify://shop_images/About-banner-trans.png",
-            "title": "",
-            "heading_tag": "h3",
-            "content": "<p>Matte White</p>",
-            "link_url": "",
-            "link_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_with_text_qXcpTm",
-        "image_with_text_tK76gf",
-        "image_with_text_aFaKUn",
-        "image_with_text_8fcWj6",
-        "image_with_text_PwccCA",
-        "image_with_text_JV8Mrw"
       ],
       "name": "t:sections.multi_column.presets.multi_column.name",
       "settings": {
@@ -712,7 +616,6 @@
     "image_with_text_gWBQaE",
     "multi_column_JVKnBf",
     "multi_column_ARc3KF",
-    "multi_column_XAUDfM",
     "media_grid_Un7yPp",
     "contact_8aF7eQ",
     "main",
