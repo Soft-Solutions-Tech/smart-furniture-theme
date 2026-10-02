@@ -304,6 +304,40 @@
         "content": ""
       }
     },
+    "new_arrivals_variants_TeKwDV": {
+      "type": "new-arrivals-variants",
+      "blocks": {
+        "collection_WkRinw": {
+          "type": "collection",
+          "settings": {
+            "collection": "new-arrivals",
+            "products_count": 8,
+            "title": "",
+            "link_url": "",
+            "link_text": "View all"
+          }
+        }
+      },
+      "block_order": [
+        "collection_WkRinw"
+      ],
+      "name": "New Arrivals Collection",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 0.2,
+        "vertical_spacing_factor": 0.2,
+        "header_alignment": "center",
+        "heading_style": "h2",
+        "subheading": "",
+        "subheading_2": "",
+        "hide_collection_title": false
+      }
+    },
     "custom_liquid_MbgV8d": {
       "type": "custom-liquid",
       "name": "Buy Now Pay Later ",
@@ -393,40 +427,6 @@
         "heading_style": "h2",
         "subheading": "",
         "subheading_2": "Discover some of our most loved furniture pieces, selected by our customers for their style, comfort and quality.",
-        "hide_collection_title": false
-      }
-    },
-    "new_arrivals_variants_TeKwDV": {
-      "type": "new-arrivals-variants",
-      "blocks": {
-        "collection_WkRinw": {
-          "type": "collection",
-          "settings": {
-            "collection": "new-arrivals",
-            "products_count": 8,
-            "title": "",
-            "link_url": "",
-            "link_text": "View all"
-          }
-        }
-      },
-      "block_order": [
-        "collection_WkRinw"
-      ],
-      "name": "New Arrivals Collection",
-      "settings": {
-        "color_scheme": "scheme-1",
-        "separate_section_with_border": true,
-        "hide_product_information": false,
-        "stack_products": false,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 4,
-        "horizontal_spacing_factor": 0.2,
-        "vertical_spacing_factor": 0.2,
-        "header_alignment": "center",
-        "heading_style": "h2",
-        "subheading": "New Arrivals",
-        "subheading_2": "",
         "hide_collection_title": false
       }
     },
