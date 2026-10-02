@@ -11,13 +11,11 @@ This component is used in collection and featured collection to render a single 
 @param {boolean} [show_secondary_image] - show or not the secondary media on hover. If nothing is set, the theme uses the default product card setting
 @param {boolean} [show_swatches] - show or not the swatches. The swatch type is inferred from setting, and will default to true
 @param {boolean} [hide_product_information] - if set to true, all content are not rendered, to create image-based grid
-@param {boolean} [show_card_add_to_cart] - show the optional full-width Add to cart / Choose options button
 @param {string} [quick_buy_context] - a unique text to dissociate quick buy if the same product is embedded multiple times
 @param {object} [section]
 @param {object} [block]
 {%- enddoc -%}
 {%- liquid
-assign show_card_add_to_cart = show_card_add_to_cart | default: false, allow_false: true
 if hide_product_information
 assign show_badges = false
 assign show_rating = false
@@ -25,7 +23,6 @@ assign show_vendor = false
 assign show_title = false
 assign show_prices = false
 assign show_swatches = false
-assign show_card_add_to_cart = false
 assign show_quick_buy = show_quick_buy | default: settings.show_quick_buy, allow_false: true
 assign show_secondary_image = show_secondary_image | default: settings.show_secondary_image, allow_false: true
 else
@@ -64,8 +61,10 @@ endif
 -%}
 <product-card
 class="product-card"
+
 {% if reveal %}
   reveal-on-scroll="true"
+
 {% endif %}
 handle="{{ product.handle | escape }}"
 >
@@ -74,6 +73,7 @@ handle="{{ product.handle | escape }}"
 PRODUCT MEDIA
 --------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
+
 {%- if product.media.size > 0 -%}
 
   <div class="product-card__figure">
@@ -126,10 +126,8 @@ PRODUCT MEDIA
 
     {%- capture main_image_classes -%}
       product-card__image product-card__image--primary
-
       {% if settings.product_image_aspect_ratio contains 'crop' %}
         object-cover
-
       {% endif %}
       aspect-{{ settings.product_image_aspect_ratio | split: '_' | first }}
 
@@ -220,12 +218,14 @@ PRODUCT MEDIA
     {%- endif -%}
 
   </div>
+
 {%- endif -%}
 {%- comment -%}
 --------------------------------------------------------------------------------------------------------------------
 PRODUCT INFO
 --------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
+
 <div class="product-card__info empty:hidden">
   {%- assign text_class = '' -%}
 
@@ -242,10 +242,8 @@ PRODUCT INFO
 
         {%- capture vendor_class -%}
           smallcaps
-
           {% if settings.product_card_text_font == 'heading' %}
             heading
-
           {% endif %}
 
         {%- endcapture -%}
@@ -261,15 +259,12 @@ PRODUCT INFO
             <a
             href="{{ product.url }}"
             class="product-title
-
             {% if text_class != blank %}
               {{ text_class }}
-
             {% endif %}
 
             {% if settings.product_title_max_lines > 0 %}
               line-clamp
-
             {% endif %}
             "
 
@@ -442,79 +437,5 @@ PRODUCT INFO
 
   {%- endif -%}
 
-  {%- if show_card_add_to_cart -%}
-
-    <div class="product-card__bottom-button" style="width: 100%; margin-top: 10px;">
-
-      {%- if product.available -%}
-
-        {%- if product.variants.size == 1 and product.selling_plan_groups.size == 0 -%}
-          <product-form style="display: block; width: 100%;">
-
-          {%- form 'product', product -%}
-
-            <input
-            type="hidden"
-            name="on_success"
-            value="force_open_drawer"
-            >
-
-            <input
-            type="hidden"
-            name="quantity"
-            value="1"
-            >
-
-            <input
-            type="hidden"
-            name="id"
-            value="{{ product.selected_or_first_available_variant.id }}"
-            >
-
-            {%- capture bottom_add_to_cart_text -%}
-              {{ 'product.general.add_to_cart_button' | t }}
-
-            {%- endcapture -%}
-            {%- render 'button',
-            content: bottom_add_to_cart_text,
-            type: 'submit',
-            stretch: true
-            -%}
-
-          {%- endform -%}
-          </product-form>
-
-        {%- else -%}
-
-          {%- capture bottom_quick_buy_id -%}
-            product-bottom-quick-buy-{{ section.id }}-{{ block.id }}-{{ quick_buy_context }}-{{ product.id }}
-
-          {%- endcapture -%}
-
-          {%- capture bottom_choose_options_text -%}
-            {{ 'product.general.choose_options' | t }}
-
-          {%- endcapture -%}
-          {%- render 'button',
-          content: bottom_choose_options_text,
-          type: 'button',
-          stretch: true,
-          aria_controls: bottom_quick_buy_id
-          -%}
-          <quick-buy-modal
-          handle="{{ product.handle }}?variant={{ product.selected_or_first_available_variant.id }}"
-          class="quick-buy-modal modal"
-          id="{{ bottom_quick_buy_id | strip }}"
-          aria-label="{{ 'product.general.choose_options_with_title' | t: title: product.title | escape }}"
-          >
-          </quick-buy-modal>
-
-        {%- endif -%}
-
-      {%- endif -%}
-
-    </div>
-
-  {%- endif -%}
 </div>
 </product-card>
