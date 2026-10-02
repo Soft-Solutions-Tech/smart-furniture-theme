@@ -132,11 +132,12 @@
           "settings": {
             "color_scheme": "scheme-3",
             "collection": "",
+            "image": "shopify://shop_images/Kitchen.webp",
             "expand_collection": false,
             "content_position": "place-self-center text-center",
             "subheading": "",
             "title": "",
-            "button_text": "View products",
+            "button_text": "Kitchens",
             "button_link": "",
             "button_style": "link",
             "overlay_color": "#000000",
