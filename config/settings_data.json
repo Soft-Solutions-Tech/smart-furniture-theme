@@ -496,8 +496,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "@media screen and (max-width: 699px) {.justify-self-center {width: 100%; } .justify-self-center .button {width: 100%; display: flex; justify-content: center; }}",
-      "@media screen and (max-width: 699px) {.justify-self-center {width: 100%; } .button {width: 100%; display: flex; justify-content: center; }}"
+      ".last-chance-badge {background: #d60000 !important; color: #ffffff !important;}"
     ]
   }
 }
