@@ -62,9 +62,9 @@
         "collection_xQWwqR": {
           "type": "collection",
           "settings": {
-            "color_scheme": "",
+            "color_scheme": "scheme-3",
             "collection": "master-bedrooms",
-            "image": "shopify://shop_images/WhatsApp_Image_2026-10-02_at_2.21.41_PM.jpg",
+            "image": "shopify://shop_images/stone.webp",
             "expand_collection": false,
             "content_position": "place-self-end-center text-center",
             "subheading": "",
@@ -79,7 +79,7 @@
         "collection_XEPfFp": {
           "type": "collection",
           "settings": {
-            "color_scheme": "",
+            "color_scheme": "scheme-3",
             "collection": "",
             "expand_collection": false,
             "content_position": "place-self-center text-center",
@@ -95,7 +95,7 @@
         "collection_fFAtVC": {
           "type": "collection",
           "settings": {
-            "color_scheme": "",
+            "color_scheme": "scheme-3",
             "collection": "",
             "expand_collection": false,
             "content_position": "place-self-center text-center",
@@ -111,7 +111,7 @@
         "collection_BMrnPg": {
           "type": "collection",
           "settings": {
-            "color_scheme": "",
+            "color_scheme": "scheme-3",
             "collection": "",
             "expand_collection": false,
             "content_position": "place-self-center text-center",
@@ -127,7 +127,7 @@
         "collection_WGF7B8": {
           "type": "collection",
           "settings": {
-            "color_scheme": "",
+            "color_scheme": "scheme-3",
             "collection": "",
             "expand_collection": false,
             "content_position": "place-self-center text-center",
@@ -172,7 +172,7 @@
           "type": "image",
           "settings": {
             "color_scheme": "scheme-1",
-            "image": "shopify://shop_images/Hany_Muhammed_Ali.png",
+            "image": "shopify://shop_images/stone.webp",
             "column_count": "3",
             "row_count": 1,
             "add_padding": false,

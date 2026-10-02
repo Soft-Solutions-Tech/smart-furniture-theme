@@ -82,9 +82,9 @@
       },
       "scheme-3": {
         "settings": {
-          "background": "#002659",
+          "background": "#FFFFFF",
           "background_gradient": "",
-          "text_color": "#ffffff",
+          "text_color": "#002659",
           "primary_button_background": "#fad163",
           "primary_button_text_color": "#002659",
           "circle_button_background": "#ffffff",
