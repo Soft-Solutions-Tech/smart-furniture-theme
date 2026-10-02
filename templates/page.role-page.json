@@ -18,99 +18,35 @@
         "page_width": "xs"
       }
     },
-    "slideshow_DezCCF": {
-      "type": "slideshow",
+    "1790958096b71ae622": {
+      "type": "apps",
       "blocks": {
-        "image_gYz8yQ": {
-          "type": "image",
+        "forms_inline_bKVWe7": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
           "settings": {
-            "subheading": "Tell your story",
-            "title": "Slide 1",
-            "heading_style": "h1",
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "content_max_width": 780,
-            "button_1_text": "",
-            "button_1_link": "",
-            "button_1_style": "solid",
-            "button_1_background": "#ffffff",
-            "button_1_text_color": "#000000",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_style": "outline",
-            "button_2_background": "#ffffff",
-            "button_2_text_color": "#000000",
-            "background": "",
-            "background_opacity": 50,
-            "text_color": "#ffffff",
-            "border_color": "",
-            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2) 0%, rgba(4, 4, 4, 0.65) 100%)"
+            "form_id": "1177443",
+            "text_color": "#002659",
+            "button_background_color": "#002659",
+            "button_label_color": "#FFFFFF",
+            "links_color": "#1878B9",
+            "errors_color": "#E02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 24,
+            "padding_right": 0,
+            "padding_left": 0
           }
         }
       },
       "block_order": [
-        "image_gYz8yQ"
+        "forms_inline_bKVWe7"
       ],
-      "name": "t:sections.slideshow.presets.slideshow.name",
-      "settings": {
-        "allow_transparent_header": true,
-        "show_next_section_button": true,
-        "media_size": "auto",
-        "show_initial_transition": false,
-        "autoplay": true,
-        "autoplay_pause_on_video": true,
-        "cycle_speed": 5,
-        "background": "#000000",
-        "controls_color": "#ffffff"
-      }
-    },
-    "rich_text_XBAjiG": {
-      "type": "rich-text",
-      "blocks": {
-        "subheading_im9d7W": {
-          "type": "subheading",
-          "settings": {
-            "text": "Role Details"
-          }
-        },
-        "heading_yVDiJc": {
-          "type": "heading",
-          "settings": {
-            "text": "ddd",
-            "heading_tag": "h5"
-          }
-        },
-        "richtext_DBFVBP": {
-          "type": "richtext",
-          "settings": {
-            "content": ""
-          }
-        }
-      },
-      "block_order": [
-        "subheading_im9d7W",
-        "heading_yVDiJc",
-        "richtext_DBFVBP"
-      ],
-      "name": "t:sections.rich_text.presets.rich_text.name",
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": true,
-        "content_width": "sm",
-        "text_position": "start",
-        "remove_vertical_spacing": false
-      }
-    },
-    "contact_ENyBTQ": {
-      "type": "contact",
-      "name": "t:sections.contact.presets.contact_form.name",
-      "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": true,
-        "subheading": "",
-        "title": "Apply Now",
-        "heading_style": "h2",
-        "content": ""
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
       }
     },
     "custom_liquid_3ULeGh": {
@@ -128,9 +64,7 @@
   },
   "order": [
     "main",
-    "slideshow_DezCCF",
-    "rich_text_XBAjiG",
-    "contact_ENyBTQ",
+    "1790958096b71ae622",
     "custom_liquid_3ULeGh"
   ]
 }
