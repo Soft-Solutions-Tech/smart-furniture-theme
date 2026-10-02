@@ -155,13 +155,13 @@
         "item_n68mar": {
           "type": "item",
           "settings": {
-            "label": "Find a Showroom Near You &nbsp;",
-            "subheading": "",
-            "title": "",
+            "label": "About Us",
+            "subheading": "ssssss",
+            "title": "ssssss",
             "heading_style": "h2",
-            "content": "",
-            "link_text": "View Locations ",
-            "link_url": "#shopify-section-template--28188381118827__17843073756ebc09c9",
+            "content": "<p>sssssssss</p>",
+            "link_text": "Know ore us",
+            "link_url": "shopify://pages/about",
             "link_style": "link",
             "mobile_text_color": "#ffffff"
           }
@@ -169,13 +169,13 @@
         "item_MiqBXJ": {
           "type": "item",
           "settings": {
-            "label": "We’re Here to Help &nbsp;",
-            "subheading": "Subheading",
-            "title": "Heading",
+            "label": "&nbsp;Catalogues&nbsp;",
+            "subheading": "",
+            "title": "",
             "heading_style": "h2",
-            "content": "<p>Use this text to share information about what happened to your brand at a specific time.</p>",
-            "link_text": "",
-            "link_url": "",
+            "content": "",
+            "link_text": "Know all the Catalogues",
+            "link_url": "shopify://pages/catalog",
             "link_style": "link",
             "mobile_text_color": "#ffffff"
           }
