@@ -418,6 +418,52 @@
         "hide_collection_title": false
       }
     },
+    "image_with_text_overlay_a78XRh": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_YbgQML": {
+          "type": "heading",
+          "settings": {
+            "text": "Crafted by S.A.I Solutions&nbsp;",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_hBETK8": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Smart Furniture is backed by the manufacturing expertise of S.A.I Solutions, with a furniture manufacturing journey dating back to 2004.&nbsp;<br/>Our modern production capabilities allow us to create quality furniture for residential and hospitality spaces, combining contemporary design, manufacturing experience, and attention to detail.</p>"
+          }
+        },
+        "button_ECKrwf": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Get To Know More Us",
+            "url": "shopify://pages/about",
+            "background": "#002659",
+            "text_color": "#FFFFFF"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YbgQML",
+        "richtext_hBETK8",
+        "button_ECKrwf"
+      ],
+      "name": "Built in Egypt for egypt ",
+      "settings": {
+        "color_scheme": "",
+        "image_size": "auto",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
     "multi_column_YtqFXt": {
       "type": "multi-column",
       "blocks": {
@@ -488,52 +534,6 @@
         "title": "&nbsp;Crafted by S.A.I Solutions &nbsp;",
         "heading_style": "h2",
         "content": "<p>Smart Furniture is backed by the manufacturing expertise of S.A.I Solutions, with a furniture manufacturing journey dating back to 2004.&nbsp;<br/>Our modern production capabilities allow us to create quality furniture for residential and hospitality spaces, combining contemporary design, manufacturing experience, and attention to detail.</p><p><a href=\"/pages/about\" title=\"About\">Learn More</a></p>"
-      }
-    },
-    "image_with_text_overlay_a78XRh": {
-      "type": "image-with-text-overlay",
-      "blocks": {
-        "heading_YbgQML": {
-          "type": "heading",
-          "settings": {
-            "text": "Crafted by S.A.I Solutions&nbsp;",
-            "heading_tag": "h2"
-          }
-        },
-        "richtext_hBETK8": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Smart Furniture is backed by the manufacturing expertise of S.A.I Solutions, with a furniture manufacturing journey dating back to 2004.&nbsp;<br/>Our modern production capabilities allow us to create quality furniture for residential and hospitality spaces, combining contemporary design, manufacturing experience, and attention to detail.</p>"
-          }
-        },
-        "button_ECKrwf": {
-          "type": "button",
-          "settings": {
-            "style": "solid",
-            "text": "Get To Know More Us",
-            "url": "shopify://pages/about",
-            "background": "#002659",
-            "text_color": "#FFFFFF"
-          }
-        }
-      },
-      "block_order": [
-        "heading_YbgQML",
-        "richtext_hBETK8",
-        "button_ECKrwf"
-      ],
-      "name": "Built in Egypt for egypt ",
-      "settings": {
-        "color_scheme": "",
-        "image_size": "auto",
-        "allow_transparent_header": false,
-        "reveal_on_scroll": true,
-        "remove_vertical_spacing": true,
-        "content_width": "md",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "overlay_color": "#000000",
-        "overlay_opacity": 30
       }
     },
     "rich_text_4j3yjy": {
@@ -843,8 +843,8 @@
     "custom_liquid_MbgV8d",
     "bestsellers_collections_URHg6n",
     "final_stock_variants_rXEMMW",
-    "multi_column_YtqFXt",
     "image_with_text_overlay_a78XRh",
+    "multi_column_YtqFXt",
     "rich_text_4j3yjy",
     "slideshow_bUD6ri",
     "featured_collections_dVJPWR",
