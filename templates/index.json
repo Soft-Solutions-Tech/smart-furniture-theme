@@ -16,7 +16,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/home_page-WEBSITE-04.webp",
-            "mobile_image": "shopify://shop_images/Home_Page-MOBILE-01_1.webp",
+            "mobile_image": "shopify://shop_images/Home_Page-MOBILE-01web.webp",
             "subheading": "",
             "title": "new collection",
             "heading_style": "h1",
