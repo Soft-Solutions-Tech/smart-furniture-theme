@@ -110,9 +110,9 @@
           "type": "complementary_products",
           "settings": {
             "title": "Pairs well with",
-            "products_count": 2,
-            "show_below_gallery": true,
-            "stack_products": true,
+            "products_count": 10,
+            "show_below_gallery": false,
+            "stack_products": false,
             "show_quick_buy": true
           }
         }
