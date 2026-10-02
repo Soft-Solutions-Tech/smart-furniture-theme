@@ -184,63 +184,15 @@
         "remove_horizontal_spacing": false
       }
     },
-    "text_with_icons_DyEE6L": {
-      "type": "text-with-icons",
-      "blocks": {
-        "item_McwXjR": {
-          "type": "item",
-          "settings": {
-            "icon": "picto-delivery-truck",
-            "icon_width": 24,
-            "mobile_icon_width": 24,
-            "title": "Free shipping",
-            "content": "<p>Free worldwide shipping and returns - customs and duties taxes included</p>"
-          }
-        },
-        "item_8KBaxz": {
-          "type": "item",
-          "settings": {
-            "icon": "picto-customer-support",
-            "icon_width": 24,
-            "mobile_icon_width": 24,
-            "title": "Customer service",
-            "content": "<p>We are available from monday to friday to answer your questions.</p>"
-          }
-        },
-        "item_ErLFLk": {
-          "type": "item",
-          "settings": {
-            "icon": "picto-shield",
-            "icon_width": 24,
-            "mobile_icon_width": 24,
-            "title": "Secure payment",
-            "content": "<p>Your payment information is processed securely.</p>"
-          }
-        },
-        "item_dFCPrc": {
-          "type": "item",
-          "settings": {
-            "icon": "picto-shield",
-            "icon_width": 24,
-            "mobile_icon_width": 24,
-            "title": "Secure payment",
-            "content": "<p>Your payment information is processed securely.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "item_McwXjR",
-        "item_8KBaxz",
-        "item_ErLFLk",
-        "item_dFCPrc"
-      ],
-      "name": "t:sections.text_with_icons.presets.text_with_icons.name",
+    "custom_liquid_XUYLXb": {
+      "type": "custom-liquid",
+      "name": "USPs ",
       "settings": {
         "color_scheme": "",
-        "separate_section_with_border": true,
-        "stack_on_mobile": false,
-        "icon_color": "",
-        "text_color": "",
+        "separate_section_with_border": false,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": true,
+        "liquid": "<!-- ════════════════════════════════════════════════════════════════════════\n     Trust badges strip\n     6 items\n     Automatically changes text + image for Arabic\n     Desktop: 6 columns full width\n     Mobile: 2 columns = 3 rows\n     ════════════════════════════════════════════════════════════════════ -->\n\n{%- assign is_arabic = false -%}\n{%- if localization.language.iso_code == 'ar' -%}\n  {%- assign is_arabic = true -%}\n{%- endif -%}\n\n\n<style>\n  .trust-badges {\n    --tb-navy: #002659;\n    --tb-yellow: #fad163;\n\n    --tb-ink: #16181d;\n    --tb-muted: #8a9099;\n\n    --tb-font: inherit;\n\n    width: 100%;\n    margin: 0;\n    padding: 0;\n\n    background: #ffffff;\n    color: var(--tb-ink);\n\n    font-family: var(--tb-font);\n  }\n\n\n  /* ==================================================\n     DESKTOP\n     6 EQUAL COLUMNS × 1 ROW\n     ================================================== */\n\n  .trust-badges > .trust-badges__inner {\n    display: grid !important;\n\n    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;\n    grid-template-rows: 1fr !important;\n\n    width: 100% !important;\n    max-width: none !important;\n\n    margin: 0 !important;\n\n    padding: 24px 22px !important;\n\n    column-gap: 10px !important;\n    row-gap: 0 !important;\n\n    box-sizing: border-box;\n  }\n\n\n  .trust-badges .trust-badges__item {\n    display: grid !important;\n\n    grid-template-columns: 42px minmax(0, 1fr);\n\n    align-items: center;\n\n    column-gap: 12px;\n\n    width: 100% !important;\n    min-width: 0 !important;\n\n    padding-inline: 6px;\n\n    box-sizing: border-box;\n  }\n\n\n  /* ==================================================\n     ICON BOX\n     KEEP BACKGROUND SAME SIZE\n     ================================================== */\n\n  .trust-badges .trust-badges__icon {\n    display: flex;\n\n    align-items: center;\n    justify-content: center;\n\n    width: 42px;\n    height: 42px;\n\n    min-width: 42px;\n    min-height: 42px;\n\n    flex: 0 0 42px;\n\n    border-radius: 11px;\n\n    background: var(--tb-navy);\n\n    overflow: hidden;\n\n    box-sizing: border-box;\n  }\n\n\n  /*\n    ONLY THE IMAGE GETS BIGGER\n    BLUE BACKGROUND REMAINS 42 × 42\n  */\n\n  .trust-badges .trust-badges__icon img {\n    display: block;\n\n    width: 32px !important;\n    height: 32px !important;\n\n    max-width: none !important;\n\n    object-fit: contain;\n\n    transform: scale(1.18);\n    transform-origin: center;\n  }\n\n\n  /* ==================================================\n     TEXT\n     KEEP ALL 6 CONSISTENT\n     ================================================== */\n\n  .trust-badges .trust-badges__text {\n    display: grid;\n\n    grid-template-rows: 20px 18px;\n\n    align-content: center;\n\n    min-width: 0;\n\n    text-align: left;\n  }\n\n\n  .trust-badges .trust-badges__title {\n    display: block;\n\n    width: 100%;\n\n    margin: 0;\n\n    font-size: clamp(12px, 0.8vw, 14px);\n    font-weight: 700;\n\n    line-height: 20px;\n\n    letter-spacing: -0.01em;\n\n    white-space: nowrap;\n  }\n\n\n  .trust-badges .trust-badges__subtitle {\n    display: block;\n\n    width: 100%;\n\n    margin: 0;\n\n    font-size: clamp(10px, 0.66vw, 12px);\n\n    line-height: 18px;\n\n    letter-spacing: -0.015em;\n\n    color: var(--tb-muted);\n\n    white-space: nowrap;\n  }\n\n\n\n  /* ==================================================\n     ARABIC\n     ================================================== */\n\n  .trust-badges--arabic {\n    direction: rtl;\n  }\n\n\n  .trust-badges--arabic .trust-badges__item {\n    direction: rtl;\n  }\n\n\n  .trust-badges--arabic .trust-badges__text {\n    text-align: right;\n  }\n\n\n\n  /* ==================================================\n     MOBILE\n     2 COLUMNS × 3 ROWS\n     ================================================== */\n\n  @media screen and (max-width: 767px) {\n\n    .trust-badges > .trust-badges__inner {\n      display: grid !important;\n\n      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;\n      grid-template-rows: repeat(3, auto) !important;\n\n      width: 100% !important;\n\n      padding: 20px 12px !important;\n\n      column-gap: 12px !important;\n      row-gap: 22px !important;\n    }\n\n\n    .trust-badges .trust-badges__item {\n      display: grid !important;\n\n      grid-template-columns: 40px minmax(0, 1fr);\n\n      align-items: center;\n\n      column-gap: 10px;\n\n      width: 100% !important;\n\n      padding-inline: 5px;\n    }\n\n\n    /* Blue box stays the same mobile size */\n\n    .trust-badges .trust-badges__icon {\n      width: 40px;\n      height: 40px;\n\n      min-width: 40px;\n      min-height: 40px;\n\n      flex: 0 0 40px;\n\n      border-radius: 10px;\n    }\n\n\n    /* Only image grows inside */\n\n    .trust-badges .trust-badges__icon img {\n      width: 30px !important;\n      height: 30px !important;\n\n      max-width: none !important;\n\n      transform: scale(1.18);\n    }\n\n\n    .trust-badges .trust-badges__text {\n      display: flex;\n\n      flex-direction: column;\n      justify-content: center;\n\n      min-height: 40px;\n    }\n\n\n    .trust-badges .trust-badges__title {\n      margin: 0 0 3px;\n\n      font-size: 12px;\n\n      line-height: 1.2;\n\n      white-space: normal;\n    }\n\n\n    .trust-badges .trust-badges__subtitle {\n      margin: 0;\n\n      min-height: 28px;\n\n      font-size: 10px;\n\n      line-height: 1.4;\n\n      white-space: normal;\n    }\n  }\n</style>\n\n\n<section\n  class=\"trust-badges {% if is_arabic %}trust-badges--arabic{% endif %}\"\n  {% if is_arabic %}\n    dir=\"rtl\"\n    aria-label=\"مميزات التسوق\"\n  {% else %}\n    dir=\"ltr\"\n    aria-label=\"Why shop with us\"\n  {% endif %}\n>\n  <div class=\"trust-badges__inner\">\n\n    <!-- 1. DELIVERY -->\n    <div class=\"trust-badges__item\">\n      <span class=\"trust-badges__icon\">\n        {% if is_arabic %}\n          <img\n            src=\"https://cdn.shopify.com/s/files/1/0978/4967/2043/files/icons_des-01-09_0b70b216-49a8-4e10-a4df-a7c3114273d7.png?v=1790953733\"\n            alt=\"\"\n            loading=\"lazy\"\n            decoding=\"async\"\n            width=\"22\"\n            height=\"22\"\n          >\n        {% else %}\n          <img\n            src=\"https://cdn.shopify.com/s/files/1/0978/4967/2043/files/icons_des-01-05.png?v=1790952866\"\n            alt=\"\"\n            loading=\"lazy\"\n            decoding=\"async\"\n            width=\"22\"\n            height=\"22\"\n          >\n        {% endif %}\n      </span>\n      <div class=\"trust-badges__text\">\n        {% if is_arabic %}\n          <p class=\"trust-badges__title\">التوصيل</p>\n          <p class=\"trust-badges__subtitle\">خدمة توصيل موثوقة</p>\n        {% else %}\n          <p class=\"trust-badges__title\">Delivery</p>\n          <p class=\"trust-badges__subtitle\">Reliable delivery service</p>\n        {% endif %}\n      </div>\n    </div>\n\n    <!-- 2. FREE INSTALLATION -->\n    <div class=\"trust-badges__item\">\n      <span class=\"trust-badges__icon\">\n        {% if is_arabic %}\n          <img\n            src=\"https://cdn.shopify.com/s/files/1/0978/4967/2043/files/icons_des-07.png?v=1790952938\"\n            alt=\"\"\n            loading=\"lazy\"\n            decoding=\"async\"\n            width=\"22\"\n            height=\"22\"\n          >\n        {% else %}\n          <img\n            src=\"https://cdn.shopify.com/s/files/1/0978/4967/2043/files/icons_des-01-02.png?v=1790952942\"\n            alt=\"\"\n            loading=\"lazy\"\n            decoding=\"async\"\n            width=\"22\"\n            height=\"22\"\n          >\n        {% endif %}\n      </span>\n      <div class=\"trust-badges__text\">\n        {% if is_arabic %}\n          <p class=\"trust-badges__title\">تركيب مجاني</p>\n          <p class=\"trust-badges__subtitle\">تركيب مجاني لمنتجاتنا</p>\n        {% else %}\n          <p class=\"trust-badges__title\">Free Installation</p>\n          <p class=\"trust-badges__subtitle\">Professional installation included</p>\n        {% endif %}\n      </div>\n    </div>\n\n    <!-- 3. FREE SHIPPING -->\n    <div class=\"trust-badges__item\">\n      <span class=\"trust-badges__icon\">\n        {% if is_arabic %}\n          <img\n            src=\"https://cdn.shopify.com/s/files/1/0978/4967/2043/files/icons_des-01.png?v=1790952950\"\n            alt=\"\"\n            loading=\"lazy\"\n            decoding=\"async\"\n            width=\"22\"\n            height=\"22\"\n          >\n        {% else %}\n          <img\n            src=\"https://cdn.shopify.com/s/files/1/0978/4967/2043/files/icons_des-01.png?v=1790952950\"\n            alt=\"\"\n            loading=\"lazy\"\n            decoding=\"async\"\n            width=\"22\"\n            height=\"22\"\n          >\n        {% endif %}\n      </span>\n      <div class=\"trust-badges__text\">\n        {% if is_arabic %}\n          <p class=\"trust-badges__title\">شحن مجاني</p>\n          <p class=\"trust-badges__subtitle\">بدون رسوم شحن</p>\n        {% else %}\n          <p class=\"trust-badges__title\">Free Shipping</p>\n          <p class=\"trust-badges__subtitle\">No shipping fees</p>\n        {% endif %}\n      </div>\n    </div>\n\n    <!-- 4. HOTLINE -->\n    <div class=\"trust-badges__item\">\n      <span class=\"trust-badges__icon\">\n        {% if is_arabic %}\n          <img\n            src=\"https://cdn.shopify.com/s/files/1/0978/4967/2043/files/icons_des-01-10.png?v=1790952957\"\n            alt=\"\"\n            loading=\"lazy\"\n            decoding=\"async\"\n            width=\"22\"\n            height=\"22\"\n          >\n        {% else %}\n          <img\n            src=\"https://cdn.shopify.com/s/files/1/0978/4967/2043/files/icons_des-01-04.png?v=1790952962\"\n            alt=\"\"\n            loading=\"lazy\"\n            decoding=\"async\"\n            width=\"22\"\n            height=\"22\"\n          >\n        {% endif %}\n      </span>\n      <div class=\"trust-badges__text\">\n        {% if is_arabic %}\n          <p class=\"trust-badges__title\">الخط الساخن</p>\n          <p class=\"trust-badges__subtitle\">نحن هنا لمساعدتك</p>\n        {% else %}\n          <p class=\"trust-badges__title\">Hotline</p>\n          <p class=\"trust-badges__subtitle\">We're here to help</p>\n        {% endif %}\n      </div>\n    </div>\n\n    <!-- 5. INSTALLMENTS -->\n    <div class=\"trust-badges__item\">\n      <span class=\"trust-badges__icon\">\n        {% if is_arabic %}\n          <img\n            src=\"https://cdn.shopify.com/s/files/1/0978/4967/2043/files/icons_des-01-08.png?v=1790952967\"\n            alt=\"\"\n            loading=\"lazy\"\n            decoding=\"async\"\n            width=\"22\"\n            height=\"22\"\n          >\n        {% else %}\n          <img\n            src=\"https://cdn.shopify.com/s/files/1/0978/4967/2043/files/icons_des-03.png?v=1790952971\"\n            alt=\"\"\n            loading=\"lazy\"\n            decoding=\"async\"\n            width=\"22\"\n            height=\"22\"\n          >\n        {% endif %}\n      </span>\n      <div class=\"trust-badges__text\">\n        {% if is_arabic %}\n          <p class=\"trust-badges__title\">التقسيط</p>\n          <p class=\"trust-badges__subtitle\">خيارات دفع مرنة</p>\n        {% else %}\n          <p class=\"trust-badges__title\">Installments</p>\n          <p class=\"trust-badges__subtitle\">Flexible payment options</p>\n        {% endif %}\n      </div>\n    </div>\n\n    <!-- 6. WARRANTY -->\n    <div class=\"trust-badges__item\">\n      <span class=\"trust-badges__icon\">\n        {% if is_arabic %}\n          <img\n            src=\"https://cdn.shopify.com/s/files/1/0978/4967/2043/files/icons_des-01-14.png?v=1790952981\"\n            alt=\"\"\n            loading=\"lazy\"\n            decoding=\"async\"\n            width=\"22\"\n            height=\"22\"\n          >\n        {% else %}\n          <img\n            src=\"https://cdn.shopify.com/s/files/1/0978/4967/2043/files/icons_des-01-11.png?v=1790952998\"\n            alt=\"\"\n            loading=\"lazy\"\n            decoding=\"async\"\n            width=\"22\"\n            height=\"22\"\n          >\n        {% endif %}\n      </span>\n      <div class=\"trust-badges__text\">\n        {% if is_arabic %}\n          <p class=\"trust-badges__title\">الضمان</p>\n          <p class=\"trust-badges__subtitle\">ضمان على منتجاتنا</p>\n        {% else %}\n          <p class=\"trust-badges__title\">Warranty</p>\n          <p class=\"trust-badges__subtitle\">Warranty-backed products</p>\n        {% endif %}\n      </div>\n    </div>\n\n  </div>\n</section>",
         "text_alignment": "center"
       }
     }
@@ -250,6 +202,6 @@
     "slideshow_YGQtAY",
     "multi_column_ze8xVP",
     "17871342225c2e5f79",
-    "text_with_icons_DyEE6L"
+    "custom_liquid_XUYLXb"
   ]
 }
