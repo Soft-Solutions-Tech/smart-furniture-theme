@@ -438,7 +438,7 @@
           "type": "button",
           "settings": {
             "style": "solid",
-            "text": "Get to Know More Us",
+            "text": "Get To Know More Us",
             "url": "shopify://pages/about",
             "background": "#002659",
             "text_color": "#FFFFFF"
