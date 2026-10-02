@@ -38,7 +38,7 @@
     "product_card_text_casing": "inherit",
     "product_color_display": "hide",
     "show_product_rating": false,
-    "show_quick_buy": true,
+    "show_quick_buy": false,
     "show_discount": true,
     "discount_mode": "percentage",
     "cart_icon": "shopping_cart",
