@@ -3436,7 +3436,8 @@ onRerender_fn = function(event) {
       "inventory",
       "buy-buttons",
       "pickup-availability",
-      "liquid"
+      "liquid",
+      "accordion"
     ];
     blockTypes.forEach((blockType) => {
       this.querySelectorAll(`[data-block-type="${blockType}"]`).forEach((element) => {
