@@ -40,7 +40,7 @@
       ],
       "name": "t:sections.announcement_bar.name",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-17d4397d-ae6c-4c8b-9e1a-e77b4d3ecf15",
         "enable_sticky": true,
         "autoplay": true,
         "cycle_speed": 5,

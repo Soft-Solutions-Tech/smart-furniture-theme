@@ -49,6 +49,15 @@
     "social_youtube": "https://www.youtube.com/@smartfurnitureegypt",
     "social_tiktok": "https://www.tiktok.com/@smartfurnitureegypt",
     "social_linkedin": "https://eg.linkedin.com/company/smart-furniture",
+    "sections": {
+      "main-gift-card": {
+        "type": "main-gift-card",
+        "settings": {
+          "color_scheme": "",
+          "show_qr_code": true
+        }
+      }
+    },
     "content_for_index": [],
     "blocks": {
       "13768625480086291342": {
@@ -110,6 +119,17 @@
           "primary_button_background": "#57b4a9",
           "primary_button_text_color": "#002659",
           "circle_button_background": "#ffffff",
+          "circle_button_icon": "#002659"
+        }
+      },
+      "scheme-17d4397d-ae6c-4c8b-9e1a-e77b4d3ecf15": {
+        "settings": {
+          "background": "#002659",
+          "background_gradient": "",
+          "text_color": "#FFFFFF",
+          "primary_button_background": "#002659",
+          "primary_button_text_color": "#ffffff",
+          "circle_button_background": "#f7f5f2",
           "circle_button_icon": "#002659"
         }
       }
