@@ -396,40 +396,6 @@
         "hide_collection_title": false
       }
     },
-    "final_stock_variants_rXEMMW": {
-      "type": "final-stock-variants",
-      "blocks": {
-        "collection_pUPNex": {
-          "type": "collection",
-          "settings": {
-            "collection": "final-stock-collection",
-            "products_count": 19,
-            "title": "",
-            "link_url": "shopify://collections/final-stock-collection",
-            "link_text": "View all"
-          }
-        }
-      },
-      "block_order": [
-        "collection_pUPNex"
-      ],
-      "name": "Final Stock Collection",
-      "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": false,
-        "hide_product_information": false,
-        "stack_products": false,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 4,
-        "horizontal_spacing_factor": 0.2,
-        "vertical_spacing_factor": 0.2,
-        "header_alignment": "center",
-        "heading_style": "h2",
-        "subheading": "",
-        "subheading_2": "",
-        "hide_collection_title": false
-      }
-    },
     "image_with_text_overlay_a78XRh": {
       "type": "image-with-text-overlay",
       "blocks": {
@@ -602,7 +568,7 @@
         "collection_7HQLnw": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "newely-wed-collection",
             "products_count": 8,
             "title": "&nbsp;Newely Wed&nbsp;",
             "link_url": "",
@@ -612,7 +578,7 @@
         "collection_AUnFFM": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "room-refresh-collection",
             "products_count": 8,
             "title": "&nbsp;Room Refersh&nbsp;",
             "link_url": "",
@@ -798,7 +764,6 @@
     "new_arrivals_variants_TeKwDV",
     "custom_liquid_MbgV8d",
     "bestsellers_collections_URHg6n",
-    "final_stock_variants_rXEMMW",
     "image_with_text_overlay_a78XRh",
     "multi_column_YtqFXt",
     "rich_text_4j3yjy",
