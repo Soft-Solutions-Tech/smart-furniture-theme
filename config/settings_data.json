@@ -39,8 +39,8 @@
     "product_color_display": "hide",
     "show_product_rating": false,
     "show_quick_buy": true,
-    "show_discount": true,
-    "discount_mode": "saving",
+    "show_discount": false,
+    "discount_mode": "percentage",
     "cart_icon": "shopping_cart",
     "social_facebook": "https://www.facebook.com/smartfurnitureeg1",
     "social_pinterest": "https://www.pinterest.com/smartfurnitureegypt/_created",
@@ -82,7 +82,7 @@
       },
       "scheme-3": {
         "settings": {
-          "background": "#FFFFFF",
+          "background": "#ffffff",
           "background_gradient": "",
           "text_color": "#002659",
           "primary_button_background": "#fad163",

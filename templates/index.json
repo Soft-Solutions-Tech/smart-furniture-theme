@@ -605,6 +605,62 @@
         "hide_collection_title": true
       }
     },
+    "blocks_qGH7Bh": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_cad0a5c_abwf7L": {
+          "type": "ai_gen_block_cad0a5c",
+          "settings": {
+            "product_list": [
+              "3t3",
+              "3t-t5",
+              "airo-bed",
+              "airo-dresser"
+            ],
+            "products_to_show": 4,
+            "columns_desktop": 4,
+            "columns_mobile": "2",
+            "grid_gap": 20,
+            "desktop_width_percent": 100,
+            "card_background": "#ffffff",
+            "card_padding": 16,
+            "card_border_radius": 8,
+            "badge_background": "#14b8a6",
+            "badge_text_color": "#ffffff",
+            "show_wishlist": true,
+            "wishlist_background": "#ffffff",
+            "wishlist_icon_color": "#1c1c1c",
+            "show_category": true,
+            "category_color": "#9ca3af",
+            "title_font_size": 16,
+            "title_color": "#1c1c1c",
+            "price_font_size": 16,
+            "price_color": "#1c1c1c",
+            "compare_price_color": "#9ca3af",
+            "show_installment": true,
+            "installment_months": 6,
+            "installment_provider": "Valu",
+            "installment_color": "#f97316",
+            "button_text": "Add to Cart",
+            "button_background": "#1e3a8a",
+            "button_hover_background": "#1e40af",
+            "button_text_color": "#ffffff",
+            "button_border_radius": 4
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_cad0a5c_abwf7L"
+      ],
+      "name": "Product card grid",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
+      }
+    },
     "image_with_text_VAXx3U": {
       "type": "image-with-text",
       "blocks": {
@@ -766,6 +822,7 @@
     "rich_text_4j3yjy",
     "slideshow_bUD6ri",
     "featured_collections_dVJPWR",
+    "blocks_qGH7Bh",
     "image_with_text_VAXx3U",
     "custom_liquid_tANtrf",
     "testimonials_tq4n6P",
