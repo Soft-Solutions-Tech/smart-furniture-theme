@@ -132,7 +132,7 @@
       ],
       "name": "Catalogs & Leaflets",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "separate_section_with_border": true,
         "columns_per_row": 3,
         "stack_on_mobile": false,
@@ -178,7 +178,7 @@
         "real3d_flipbook_flipbook_embed_4Mj4LW"
       ],
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "separate_section_with_border": true,
         "remove_vertical_spacing": false,
         "remove_horizontal_spacing": false

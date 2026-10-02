@@ -94,7 +94,7 @@
       ],
       "name": "Leading furniture manufaturer",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "separate_section_with_border": false,
         "reveal_on_scroll": true,
         "image_position": "end",
@@ -191,7 +191,7 @@
       ],
       "name": "Working at smart furniture benefits",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "separate_section_with_border": false,
         "show_categories": false,
         "subheading": "",
@@ -241,7 +241,7 @@
       ],
       "name": "Current Opportunities",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "separate_section_with_border": false,
         "columns_per_row": 3,
         "stack_on_mobile": false,
@@ -272,7 +272,7 @@
       ],
       "name": "open application",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "separate_section_with_border": false,
         "content_width": "sm",
         "text_position": "center",

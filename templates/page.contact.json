@@ -22,7 +22,7 @@
       "type": "contact",
       "name": "t:sections.contact.presets.contact_form.name",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "separate_section_with_border": true,
         "subheading": "",
         "title": "Contact",
