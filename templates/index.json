@@ -350,52 +350,6 @@
         "text_alignment": "start"
       }
     },
-    "image_with_text_overlay_WdcApb": {
-      "type": "image-with-text-overlay",
-      "blocks": {
-        "heading_zphHYU": {
-          "type": "heading",
-          "settings": {
-            "text": "Built in Egypt Loved Nation Wide",
-            "heading_tag": "h4"
-          }
-        },
-        "richtext_YFBTAM": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Add your own custom content to give more information about your store, availability details...</p>"
-          }
-        },
-        "button_qxEqdM": {
-          "type": "button",
-          "settings": {
-            "style": "solid",
-            "text": "Get to Know mORE US",
-            "url": "shopify://pages/about",
-            "background": "",
-            "text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_zphHYU",
-        "richtext_YFBTAM",
-        "button_qxEqdM"
-      ],
-      "name": "Built in Egypt Loved Nation wide",
-      "settings": {
-        "color_scheme": "",
-        "image_size": "auto",
-        "allow_transparent_header": false,
-        "reveal_on_scroll": true,
-        "remove_vertical_spacing": true,
-        "content_width": "md",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "overlay_color": "#000000",
-        "overlay_opacity": 30
-      }
-    },
     "bestsellers_collections_URHg6n": {
       "type": "Bestsellers-Collections",
       "blocks": {
@@ -815,7 +769,6 @@
     "media_grid_pxpbJM",
     "new_arrivals_variants_TeKwDV",
     "custom_liquid_MbgV8d",
-    "image_with_text_overlay_WdcApb",
     "bestsellers_collections_URHg6n",
     "final_stock_variants_rXEMMW",
     "image_with_text_overlay_a78XRh",
