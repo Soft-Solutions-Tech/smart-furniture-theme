@@ -424,24 +424,24 @@
         "heading_YbgQML": {
           "type": "heading",
           "settings": {
-            "text": "Built in Egypt for Egypt",
-            "heading_tag": "h4"
+            "text": "Crafted by S.A.I Solutions&nbsp;",
+            "heading_tag": "h2"
           }
         },
         "richtext_hBETK8": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Add your own custom content to give more information about your store, availability details...</p>"
+            "content": "<p>Smart Furniture is backed by the manufacturing expertise of S.A.I Solutions, with a furniture manufacturing journey dating back to 2004.&nbsp;<br/>Our modern production capabilities allow us to create quality furniture for residential and hospitality spaces, combining contemporary design, manufacturing experience, and attention to detail.</p>"
           }
         },
         "button_ECKrwf": {
           "type": "button",
           "settings": {
             "style": "solid",
-            "text": "Get to Know mORE US",
+            "text": "Get to Know More Us",
             "url": "shopify://pages/about",
-            "background": "",
-            "text_color": ""
+            "background": "#002659",
+            "text_color": "#FFFFFF"
           }
         }
       },
