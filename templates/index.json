@@ -392,8 +392,8 @@
           "settings": {
             "collection": "final-stock-collection",
             "products_count": 19,
-            "title": "A final opportunity to bring home some of our most loved furniture pieces with exclusive offers.&nbsp;Available in limited quantities and for a short time only—secure your favorite design before it’s gone. &nbsp;",
-            "link_url": "",
+            "title": "",
+            "link_url": "shopify://collections/final-stock-collection",
             "link_text": "View all"
           }
         }
@@ -413,7 +413,7 @@
         "vertical_spacing_factor": 0.2,
         "header_alignment": "center",
         "heading_style": "h2",
-        "subheading": "&nbsp;<strong>Some pieces are simply too special to last forever </strong>&nbsp;",
+        "subheading": "",
         "subheading_2": "",
         "hide_collection_title": false
       }
