@@ -69,13 +69,13 @@
         "sidebar_text_font": "heading",
         "sidebar_show_dividers": false,
         "sidebar_open_second_level_menus": false,
-        "layout": "logo_left_navigation_center",
+        "layout": "logo_left_navigation_below",
         "show_icons": true,
         "show_country_selector": true,
         "show_country_name": false,
         "show_country_flag": true,
         "show_locale_selector": true,
-        "transparent_header_text_color": "#F6F3EF"
+        "transparent_header_text_color": "#f6f3ef"
       }
     }
   },
