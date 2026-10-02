@@ -483,7 +483,7 @@
         "overlap_image": false,
         "content_alignment": "center",
         "text_alignment": "center",
-        "spacing": "sm",
+        "spacing": "xs",
         "subheading": "",
         "title": "&nbsp;Crafted by S.A.I Solutions &nbsp;",
         "heading_style": "h2",
