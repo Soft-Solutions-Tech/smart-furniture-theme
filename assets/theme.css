@@ -8384,3 +8384,33 @@ ul {
   padding: 4px 8px;
   line-height: 1;
 }
+
+
+/* Keep all Add to cart buttons aligned at the bottom */
+.product-card__info {
+  display: flex !important;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card__bottom-button {
+  width: 100%;
+  margin-top: auto !important;
+  padding-top: 10px;
+}
+
+/* Make CURRENT price red ONLY on Last Chance cards */
+.product-card:has(.last-chance-badge) sale-price {
+  color: #e50b0b !important;
+}
+
+/* Make Last Chance badge red */
+.last-chance-badge {
+  background: #e50b0b !important;
+}
+
+/* Make text inside ANY badge white */
+.badge,
+.badge * {
+  color: #ffffff !important;
+}
