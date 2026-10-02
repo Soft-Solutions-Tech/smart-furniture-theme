@@ -68,8 +68,8 @@
             "show_below_gallery": false,
             "icon": "none",
             "title": "Description",
-            "content": "{{ product.description }}",
-            "liquid": "",
+            "content": "",
+            "liquid": "{% assign current_variant = product.selected_or_first_available_variant %}\n\n{% if current_variant.metafields.custom.description != blank %}\n  {{ current_variant.metafields.custom.description | metafield_tag }}\n{% elsif product.metafields.custom.description != blank %}\n  {{ product.metafields.custom.description | metafield_tag }}\n{% elsif product.description != blank %}\n  {{ product.description }}\n{% endif %}",
             "page": ""
           }
         },
@@ -79,8 +79,8 @@
             "show_below_gallery": false,
             "icon": "none",
             "title": "Warranty",
-            "content": "<p>{{ product.metafields.custom.warranty.value }}</p>",
-            "liquid": "",
+            "content": "",
+            "liquid": "{% assign current_variant = product.selected_or_first_available_variant %}\n\n{% if current_variant.metafields.custom.warranty != blank %}\n  {{ current_variant.metafields.custom.warranty | metafield_tag }}\n{% elsif product.metafields.custom.warranty != blank %}\n  {{ product.metafields.custom.warranty | metafield_tag }}\n{% endif %}",
             "page": ""
           }
         },
@@ -91,7 +91,7 @@
             "icon": "none",
             "title": "Dimensions",
             "content": "<p>Share some content to your customers about your products.</p>",
-            "liquid": "",
+            "liquid": "{% assign current_variant = product.selected_or_first_available_variant %}\n\n{% if current_variant.metafields.custom.dimensions != blank %}\n  {{ current_variant.metafields.custom.dimensions | metafield_tag }}\n{% elsif product.metafields.custom.dimensions != blank %}\n  {{ product.metafields.custom.dimensions | metafield_tag }}\n{% endif %}",
             "page": ""
           }
         },
@@ -102,7 +102,7 @@
             "icon": "none",
             "title": "Delivery",
             "content": "<p>Share some content to your customers about your products.</p>",
-            "liquid": "",
+            "liquid": "{% assign current_variant = product.selected_or_first_available_variant %}\n\n{% if current_variant.metafields.custom.delivery != blank %}\n  {{ current_variant.metafields.custom.delivery | metafield_tag }}\n{% elsif product.metafields.custom.delivery != blank %}\n  {{ product.metafields.custom.delivery | metafield_tag }}\n{% endif %}",
             "page": ""
           }
         },
