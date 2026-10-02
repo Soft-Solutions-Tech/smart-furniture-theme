@@ -39,7 +39,7 @@
     "product_color_display": "hide",
     "show_product_rating": false,
     "show_quick_buy": true,
-    "show_discount": false,
+    "show_discount": true,
     "discount_mode": "percentage",
     "cart_icon": "shopping_cart",
     "social_facebook": "https://www.facebook.com/smartfurnitureeg1",
@@ -95,7 +95,7 @@
           "background_gradient": "",
           "text_color": "#002659",
           "primary_button_background": "#002659",
-          "primary_button_text_color": "#FFFFFF",
+          "primary_button_text_color": "#ffffff",
           "circle_button_background": "#ffffff",
           "circle_button_icon": "#002659"
         }
