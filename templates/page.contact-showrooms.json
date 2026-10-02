@@ -149,6 +149,49 @@
         "remove_horizontal_spacing": false
       }
     },
+    "timeline_4n8V4J": {
+      "type": "timeline",
+      "blocks": {
+        "item_n68mar": {
+          "type": "item",
+          "settings": {
+            "label": "Find a Showroom Near You &nbsp;",
+            "subheading": "",
+            "title": "",
+            "heading_style": "h2",
+            "content": "",
+            "link_text": "View Locations ",
+            "link_url": "#shopify-section-template--28188381118827__17843073756ebc09c9",
+            "link_style": "link",
+            "mobile_text_color": "#ffffff"
+          }
+        },
+        "item_MiqBXJ": {
+          "type": "item",
+          "settings": {
+            "label": "We’re Here to Help &nbsp;",
+            "subheading": "Subheading",
+            "title": "Heading",
+            "heading_style": "h2",
+            "content": "<p>Use this text to share information about what happened to your brand at a specific time.</p>",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "mobile_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "item_n68mar",
+        "item_MiqBXJ"
+      ],
+      "name": "t:sections.timeline.presets.timeline.name",
+      "settings": {
+        "color_scheme": "",
+        "item_color_scheme": "",
+        "separate_section_with_border": true
+      }
+    },
     "before_after_6zGp7i": {
       "type": "before-after",
       "blocks": {
@@ -185,7 +228,7 @@
         "title": "&nbsp;WE’RE HERE TO HELP&nbsp;",
         "heading_style": "h2",
         "content": "",
-        "cursor_direction": "vertical",
+        "cursor_direction": "horizontal",
         "cursor_initial_position": 50,
         "cursor_background": "#ffffff",
         "cursor_arrows_color": "#000000"
@@ -199,6 +242,7 @@
     "custom_liquid_3jxX4T",
     "custom_liquid_yeB664",
     "1790784958e87d1dd4",
+    "timeline_4n8V4J",
     "before_after_6zGp7i"
   ]
 }
