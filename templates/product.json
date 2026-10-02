@@ -115,10 +115,6 @@
             "stack_products": true,
             "show_quick_buy": true
           }
-        },
-        "sellup_upsell_add_ons_checkbox_onpage_offers_DtPqwc": {
-          "type": "shopify://apps/sellup-add-ons-cart-upsell/blocks/checkbox_onpage_offers/001ec440-29ea-4cbf-9265-4963fa825261",
-          "settings": {}
         }
       },
       "block_order": [
@@ -134,8 +130,7 @@
         "accordion_7PCWkj",
         "accordion_piUPbR",
         "accordion_zJgY7T",
-        "complementary_products",
-        "sellup_upsell_add_ons_checkbox_onpage_offers_DtPqwc"
+        "complementary_products"
       ],
       "settings": {
         "color_scheme": "",
