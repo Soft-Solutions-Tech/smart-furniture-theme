@@ -115,6 +115,7 @@
           "settings": {
             "color_scheme": "scheme-3",
             "collection": "",
+            "image": "shopify://shop_images/BC13.webp",
             "expand_collection": false,
             "content_position": "place-self-center text-center",
             "subheading": "",
