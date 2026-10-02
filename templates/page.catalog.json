@@ -139,7 +139,7 @@
         "show_mobile_scroll_hint": false,
         "mobile_scroll_hint_text": "Swipe to see more →",
         "overlap_image": false,
-        "content_alignment": "center",
+        "content_alignment": "start",
         "text_alignment": "center",
         "spacing": "md",
         "subheading": "",
