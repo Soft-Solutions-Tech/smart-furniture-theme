@@ -1,0 +1,185 @@
+{% liquid
+  assign featured_collections = collection.metafields.custom.featured_collections.value
+%}
+
+{% if featured_collections != blank %}
+  <section class="dynamic-collection-list">
+    <div class="container">
+      {% if section.settings.heading != blank %}
+        <div
+          class="dynamic-collection-list__header"
+          style="text-align: {{ section.settings.heading_alignment }};"
+        >
+          <h2 class="h2">
+            {{ section.settings.heading }}
+          </h2>
+        </div>
+      {% endif %}
+
+      <div
+        class="dynamic-collection-list__grid"
+        style="
+          --collections-per-row-desktop: {{ section.settings.collections_per_row_desktop }};
+          --collections-per-row-mobile: {{ section.settings.collections_per_row_mobile }};
+        "
+      >
+        {% for linked_collection in featured_collections %}
+          <a
+            href="{{ linked_collection.url }}"
+            class="dynamic-collection-card"
+          >
+            {% if linked_collection.image != blank %}
+              {{
+                linked_collection.image
+                | image_url: width: 1200
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '300,400,500,600,800,1000,1200',
+                  class: 'dynamic-collection-card__image',
+                  alt: linked_collection.title
+              }}
+            {% endif %}
+
+            {% if section.settings.show_titles %}
+              <div class="dynamic-collection-card__title">
+                {{ linked_collection.title }}
+              </div>
+            {% endif %}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+<style>
+  #shopify-section-{{ section.id }} .dynamic-collection-list {
+    padding-block: {{ section.settings.padding_top }}px {{ section.settings.padding_bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .dynamic-collection-list__header {
+    margin-bottom: 24px;
+  }
+
+  #shopify-section-{{ section.id }} .dynamic-collection-list__grid {
+    display: grid;
+    grid-template-columns: repeat(
+      var(--collections-per-row-mobile),
+      minmax(0, 1fr)
+    );
+    gap: 16px;
+  }
+
+  #shopify-section-{{ section.id }} .dynamic-collection-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  #shopify-section-{{ section.id }} .dynamic-collection-card__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: {{ section.settings.image_radius }}px;
+  }
+
+  #shopify-section-{{ section.id }} .dynamic-collection-card__title {
+    margin-top: 10px;
+    text-align: center;
+    font-family: var(--heading-font-family);
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 700px) {
+    #shopify-section-{{ section.id }} .dynamic-collection-list__grid {
+      grid-template-columns: repeat(
+        var(--collections-per-row-desktop),
+        minmax(0, 1fr)
+      );
+      gap: 24px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Dynamic collection list",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by category"
+    },
+    {
+      "type": "text_alignment",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "collections_per_row_desktop",
+      "label": "Collections per row on desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "collections_per_row_mobile",
+      "label": "Collections per row on mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_titles",
+      "label": "Show collection titles",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Image corner radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dynamic collection list"
+    }
+  ]
+}
+{% endschema %}
