@@ -46,7 +46,7 @@
       "settings": {
         "allow_transparent_header": false,
         "show_next_section_button": false,
-        "media_size": "auto",
+        "media_size": "lg",
         "show_initial_transition": false,
         "autoplay": true,
         "autoplay_pause_on_video": true,
@@ -204,6 +204,7 @@
         "color_scheme": "scheme-3",
         "separate_section_with_border": true,
         "hide_product_information": false,
+        "show_card_add_to_cart": false,
         "stack_products": false,
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 4,
