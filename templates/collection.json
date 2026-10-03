@@ -81,6 +81,7 @@
       "settings": {
         "color_scheme": "scheme-3",
         "hide_product_information": false,
+        "show_card_add_to_cart": true,
         "products_per_page": 48,
         "products_per_row_mobile": "2",
         "products_size_desktop": "medium",
