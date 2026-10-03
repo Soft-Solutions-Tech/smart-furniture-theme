@@ -1,6 +1,6 @@
 <style>
   #shopify-section-{{ section.id }}:has(recently-viewed-products:empty) {
-    display: none; /* Hide the whole section if it does not have any products to show */
+    display: none;
   }
 
   #shopify-section-{{ section.id }} {
@@ -43,7 +43,13 @@
               {%- assign product = search.results | where: 'id', id | first -%}
 
               {%- if product != blank -%}
-                {%- render 'product-card', product: product, reveal: settings.stagger_products_apparition, position: forloop.index, hide_product_information: section.settings.hide_product_information -%}
+                {%- render 'product-card',
+                  product: product,
+                  reveal: settings.stagger_products_apparition,
+                  position: forloop.index,
+                  hide_product_information: section.settings.hide_product_information,
+                  show_card_add_to_cart: section.settings.show_card_add_to_cart
+                -%}
               {%- endif -%}
             {%- endfor -%}
           {%- endcapture -%}
@@ -56,9 +62,19 @@
             {%- assign carousel_id = 'carousel-' | append: section.id -%}
 
             <product-list class="floating-controls-container floating-controls-container--inside floating-controls-container--on-hover">
-              <carousel-prev-button class="floating-controls-container__control" aria-controls="{{ carousel_id }}">
-                <button type="button" class="prev-next-button prev-next-button--prev circle-button hover:animate-icon-inline" disabled>
-                  <span class="sr-only">{{ 'general.accessibility.previous' | t }}</span>
+              <carousel-prev-button
+                class="floating-controls-container__control"
+                aria-controls="{{ carousel_id }}"
+              >
+                <button
+                  type="button"
+                  class="prev-next-button prev-next-button--prev circle-button hover:animate-icon-inline"
+                  disabled
+                >
+                  <span class="sr-only">
+                    {{ 'general.accessibility.previous' | t }}
+                  </span>
+
                   {%- render 'icon' with 'arrow-left', direction_aware: true -%}
                 </button>
               </carousel-prev-button>
@@ -72,9 +88,18 @@
                 {{- product_list -}}
               </scroll-carousel>
 
-              <carousel-next-button class="floating-controls-container__control" aria-controls="{{ carousel_id }}">
-                <button type="button" class="prev-next-button prev-next-button--next circle-button hover:animate-icon-inline">
-                  <span class="sr-only">{{ 'general.accessibility.next' | t }}</span>
+              <carousel-next-button
+                class="floating-controls-container__control"
+                aria-controls="{{ carousel_id }}"
+              >
+                <button
+                  type="button"
+                  class="prev-next-button prev-next-button--next circle-button hover:animate-icon-inline"
+                >
+                  <span class="sr-only">
+                    {{ 'general.accessibility.next' | t }}
+                  </span>
+
                   {%- render 'icon' with 'arrow-right', direction_aware: true -%}
                 </button>
               </carousel-next-button>
@@ -113,6 +138,12 @@
       "id": "hide_product_information",
       "label": "t:global.product_list.hide_product_information",
       "info": "t:global.product_list.hide_product_information_info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_card_add_to_cart",
+      "label": "Show Add to cart button",
+      "default": false
     },
     {
       "type": "header",
