@@ -42,6 +42,7 @@
     "show_discount": true,
     "discount_mode": "percentage",
     "cart_icon": "shopping_cart",
+    "cart_show_free_shipping_bar": false,
     "social_facebook": "https://www.facebook.com/smartfurnitureeg1",
     "social_pinterest": "https://www.pinterest.com/smartfurnitureegypt/_created",
     "social_instagram": "https://www.instagram.com/smartfurnitureonline/",
