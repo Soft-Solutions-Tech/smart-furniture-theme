@@ -488,24 +488,26 @@ PRODUCT INFO
 
           {%- capture bottom_quick_buy_id -%}
             product-bottom-quick-buy-{{ section.id }}-{{ block.id }}-{{ quick_buy_context }}-{{ product.id }}
-
           {%- endcapture -%}
+
+          {%- assign bottom_quick_buy_id = bottom_quick_buy_id | strip -%}
 
           {%- capture bottom_choose_options_text -%}
             {{ 'product.general.choose_options' | t }}
-
           {%- endcapture -%}
+
           {%- render 'button',
-          content: bottom_choose_options_text,
-          type: 'button',
-          stretch: true,
-          aria_controls: bottom_quick_buy_id
+            content: bottom_choose_options_text,
+            type: 'button',
+            stretch: true,
+            aria_controls: bottom_quick_buy_id
           -%}
+
           <quick-buy-modal
-          handle="{{ product.handle }}?variant={{ product.selected_or_first_available_variant.id }}"
-          class="quick-buy-modal modal"
-          id="{{ bottom_quick_buy_id | strip }}"
-          aria-label="{{ 'product.general.choose_options_with_title' | t: title: product.title | escape }}"
+            handle="{{ product.handle }}?variant={{ product.selected_or_first_available_variant.id }}"
+            class="quick-buy-modal modal"
+            id="{{ bottom_quick_buy_id }}"
+            aria-label="{{ 'product.general.choose_options_with_title' | t: title: product.title | escape }}"
           >
           </quick-buy-modal>
 
