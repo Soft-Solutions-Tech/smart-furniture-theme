@@ -216,6 +216,7 @@ PRODUCT MEDIA
           product-quick-buy-{{ section.id }}-{{ block.id }}-{{ quick_buy_context }}-{{ selected_variant.id }}
 
         {%- endcapture -%}
+        {%- assign quick_buy_id = quick_buy_id | strip -%}
         <button
         type="button"
         aria-controls="{{ quick_buy_id }}"
