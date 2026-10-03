@@ -1,606 +1,219 @@
 <style>
   #shopify-section-{{ section.id }} {
-    --footer-content-justify-items: {{ section.settings.content_justification }};
-    --footer-custom-block-gap: {{ section.settings.block_gap }}px;
-  }
-
-  #shopify-section-{{ section.id }} .footer {
-    padding-block-start: {{ section.settings.padding_top }}px;
-    padding-block-end: {{ section.settings.padding_bottom }}px;
-  }
-
-  #shopify-section-{{ section.id }} .footer__block-list {
-    gap: var(--footer-custom-block-gap);
-  }
-
-  #shopify-section-{{ section.id }} .footer__block {
-    text-align: {{ section.settings.content_alignment }};
-  }
-
-  #shopify-section-{{ section.id }} .footer__block .v-stack,
-  #shopify-section-{{ section.id }} .footer__block .prose {
-    justify-items: {% if section.settings.content_alignment == 'center' %}center{% elsif section.settings.content_alignment == 'right' %}end{% else %}start{% endif %};
-  }
-
-  #shopify-section-{{ section.id }} .footer__block--links .unstyled-list {
-    gap: {{ section.settings.menu_link_gap }}px;
-  }
-
-  #shopify-section-{{ section.id }} .footer__image-wrapper--left {
-    text-align: left;
-  }
-
-  #shopify-section-{{ section.id }} .footer__image-wrapper--center {
-    text-align: center;
-  }
-
-  #shopify-section-{{ section.id }} .footer__image-wrapper--right {
-    text-align: right;
-  }
-
-  #shopify-section-{{ section.id }} .footer__image-wrapper--left .constrained-image {
-    margin-inline-start: 0;
-    margin-inline-end: auto;
-  }
-
-  #shopify-section-{{ section.id }} .footer__image-wrapper--center .constrained-image {
-    margin-inline: auto;
-  }
-
-  #shopify-section-{{ section.id }} .footer__image-wrapper--right .constrained-image {
-    margin-inline-start: auto;
-    margin-inline-end: 0;
-  }
-
-  #shopify-section-{{ section.id }} .footer__social-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: {% if section.settings.social_alignment == 'center' %}center{% elsif section.settings.social_alignment == 'right' %}flex-end{% else %}flex-start{% endif %};
-    text-align: {{ section.settings.social_alignment }};
-  }
-
-  #shopify-section-{{ section.id }} .footer__bottom-menu {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 18px;
-    justify-content: {% if section.settings.bottom_alignment == 'center' %}center{% elsif section.settings.bottom_alignment == 'right' %}flex-end{% else %}flex-start{% endif %};
-  }
-
-  #shopify-section-{{ section.id }} .footer__aside {
-    text-align: {{ section.settings.bottom_alignment }};
-  }
-
-  #shopify-section-{{ section.id }} .footer__bottom-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 18px;
-    align-items: center;
-    justify-content: {% if section.settings.bottom_alignment == 'center' %}center{% elsif section.settings.bottom_alignment == 'right' %}flex-end{% else %}flex-start{% endif %};
-  }
-
-  @media screen and (max-width: 699px) {
-    #shopify-section-{{ section.id }} .footer__block {
-      text-align: {{ section.settings.mobile_content_alignment }};
-    }
-
-    #shopify-section-{{ section.id }} .footer__block .v-stack,
-    #shopify-section-{{ section.id }} .footer__block .prose {
-      justify-items: {% if section.settings.mobile_content_alignment == 'center' %}center{% elsif section.settings.mobile_content_alignment == 'right' %}end{% else %}start{% endif %};
-    }
+    --footer-content-justify-items: {% if section.settings.blocks.size <= 2 %}start{% else %}space-between{% endif %};
   }
 </style>
 
-
-
 {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
 
-
-
 <div class="footer color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
-
   <div class="container">
-
     <div class="footer__inner">
-
       {%- comment -%}
-
         ------------------------------------------------------------------------------------------------------------------
-
         FOOTER BLOCKS (MAIN CONTENT)
-
         ------------------------------------------------------------------------------------------------------------------
-
       {%- endcomment -%}
 
-
-
       {%- if section.blocks.size > 0 -%}
-
         <div class="footer__block-list">
-
           {%- assign accordion_group_content = '' -%}
 
-
-
           {%- for block in section.blocks -%}
-
             {%- capture block_content -%}
-
               {%- case block.type -%}
-
                 {%- when '@app' -%}
-
                   {%- render block -%}
 
-
-
                 {%- when 'image' -%}
-
                   {%- if block.settings.image != blank -%}
-
                     {%- capture sizes -%}{{ block.settings.image_width }}px{%- endcapture -%}
-
                     {%- capture widths -%}{{ block.settings.image_width }}, {{ block.settings.image_width | times: 2 | at_most: block.settings.image.width }}{%- endcapture -%}
-
                     {%- capture style -%}--image-max-width: {{ block.settings.image_width }}px{%- endcapture -%}
 
-                    <div class="footer__image-wrapper footer__image-wrapper--{{ block.settings.alignment }}">
-                      {%- if block.settings.link != blank -%}
-
-                        <a href="{{ block.settings.link }}">
-
-                          {{- block.settings.image | image_url: width: block.settings.image.width | image_tag: sizes: sizes, widths: widths, style: style, class: 'constrained-image' -}}
-
-                        </a>
-
-                      {%- else -%}
-
+                    {%- if block.settings.link != blank -%}
+                      <a href="{{ block.settings.link }}">
                         {{- block.settings.image | image_url: width: block.settings.image.width | image_tag: sizes: sizes, widths: widths, style: style, class: 'constrained-image' -}}
-
-                      {%- endif -%}
-                    </div>
-
+                      </a>
+                    {%- else -%}
+                      {{- block.settings.image | image_url: width: block.settings.image.width | image_tag: sizes: sizes, widths: widths, style: style, class: 'constrained-image' -}}
+                    {%- endif -%}
                   {%- endif -%}
-
-
 
                 {%- when 'text' -%}
-
                   {%- if block.settings.title != blank or block.settings.content != blank or shop.features.follow_on_shop? and block.settings.enable_follow_on_shop -%}
-
                     <div class="v-stack gap-4 sm:gap-5">
-
                       {%- if block.settings.title != blank -%}
-
-                        <p class="{{ section.settings.block_heading_style }}">{{ block.settings.title }}</p>
-
+                        <p class="h6">{{ block.settings.title }}</p>
                       {%- endif -%}
-
-
 
                       {%- if block.settings.content != blank -%}
-
                         <div class="prose text-subdued">
-
                           {{- block.settings.content -}}
-
                         </div>
-
                       {%- endif -%}
-
-
 
                       {%- if shop.features.follow_on_shop? and block.settings.enable_follow_on_shop -%}
-
                         <div class="follow-on-shop">
-
                           {{- shop | login_button: action: 'follow' -}}
-
                         </div>
-
                       {%- endif -%}
-
                     </div>
-
                   {%- endif -%}
-
-
 
                 {%- when 'links' -%}
-
                   {%- assign menu = block.settings.menu -%}
 
-
-
                   {%- if menu != blank and menu.links.size > 0 -%}
-
                     {%- assign menu_title = block.settings.menu_title | default: menu.title -%}
-
-
-
+                    
                     {%- capture menu_content -%}
-
                       <ul class="v-stack gap-2.5 unstyled-list" role="list">
-
                         {%- for link in menu.links -%}
-
                           <li>
-
                             <a href="{{ link.url }}" class="link-faded">{{ link.title }}</a>
-
                           </li>
-
                         {%- endfor -%}
-
                       </ul>
-
                     {%- endcapture -%}
 
-
-
                     <div class="v-stack gap-4 sm:gap-5 {% if block.settings.collapse_on_mobile %}sm-max:hidden{% endif %}">
-
                       {%- if block.settings.show_menu_title != blank -%}
-
-                        <p class="{{ section.settings.block_heading_style }}">{{ menu_title }}</p>
-
+                        <p class="h6">{{ menu_title }}</p>
                       {%- endif -%}
-
-
 
                       {{- menu_content -}}
-
                     </div>
-
-
 
                     {%- if block.settings.collapse_on_mobile -%}
-
                       {%- render 'accordion', title: menu_title, content: menu_content, class: 'sm:hidden' -%}
-
                     {%- endif -%}
-
-                  {%- endif -%}
-
-
-
-                {%- when 'contact' -%}
-                  {%- if block.settings.title != blank or block.settings.phone != blank or block.settings.email != blank or block.settings.address != blank or block.settings.hours != blank or block.settings.whatsapp_link != blank -%}
-                    <div class="v-stack gap-4 sm:gap-5">
-                      {%- if block.settings.title != blank -%}
-                        <p class="{{ section.settings.block_heading_style }}">{{ block.settings.title }}</p>
-                      {%- endif -%}
-
-                      <div class="v-stack gap-2 text-subdued">
-                        {%- if block.settings.phone != blank -%}
-                          {%- assign phone_href = block.settings.phone | replace: ' ', '' | replace: '-', '' | replace: '(', '' | replace: ')', '' -%}
-                          <a href="tel:{{ phone_href }}" class="link-faded">{{ block.settings.phone }}</a>
-                        {%- endif -%}
-
-                        {%- if block.settings.email != blank -%}
-                          <a href="mailto:{{ block.settings.email }}" class="link-faded">{{ block.settings.email }}</a>
-                        {%- endif -%}
-
-                        {%- if block.settings.address != blank -%}
-                          <div class="prose">{{ block.settings.address }}</div>
-                        {%- endif -%}
-
-                        {%- if block.settings.hours != blank -%}
-                          <div class="prose">{{ block.settings.hours }}</div>
-                        {%- endif -%}
-
-                        {%- if block.settings.whatsapp_link != blank -%}
-                          <a href="{{ block.settings.whatsapp_link }}" class="link-faded" target="_blank" rel="noopener">
-                            {{- block.settings.whatsapp_label | default: 'WhatsApp' -}}
-                          </a>
-                        {%- endif -%}
-                      </div>
-                    </div>
-                  {%- endif -%}
-
-                {%- when 'cta' -%}
-                  {%- if block.settings.title != blank or block.settings.content != blank or block.settings.button_text != blank -%}
-                    <div class="v-stack gap-4 sm:gap-5">
-                      {%- if block.settings.title != blank -%}
-                        <p class="{{ section.settings.block_heading_style }}">{{ block.settings.title }}</p>
-                      {%- endif -%}
-
-                      {%- if block.settings.content != blank -%}
-                        <div class="prose text-subdued">
-                          {{- block.settings.content -}}
-                        </div>
-                      {%- endif -%}
-
-                      {%- if block.settings.button_text != blank and block.settings.button_link != blank -%}
-                        <div>
-                          {%- render 'button',
-                            content: block.settings.button_text,
-                            href: block.settings.button_link,
-                            style: block.settings.button_style,
-                            stretch: block.settings.button_stretch
-                          -%}
-                        </div>
-                      {%- endif -%}
-                    </div>
-                  {%- endif -%}
-
-                {%- when 'custom_liquid' -%}
-                  {%- if block.settings.custom_liquid != blank -%}
-                    <div class="footer__custom-liquid">
-                      {{- block.settings.custom_liquid -}}
-                    </div>
                   {%- endif -%}
 
                 {%- when 'newsletter' -%}
-
                   <div class="v-stack gap-4 sm:gap-5">
-
                     {%- if block.settings.title != blank -%}
-
-                      <p class="{{ section.settings.block_heading_style }}">{{ block.settings.title }}</p>
-
+                      <p class="h6">{{ block.settings.title }}</p>
                     {%- endif -%}
-
-
 
                     {%- if block.settings.content != blank -%}
-
                       <div class="prose text-subdued">
-
                         {{- block.settings.content -}}
-
                       </div>
-
                     {%- endif -%}
-
-
 
                     {%- assign newsletter_form_id = 'newsletter-form-' | append: section.id -%}
 
-
-
                     {%- form 'customer', id: newsletter_form_id, class: 'form' -%}
-
                       {%- if form.posted_successfully? -%}
-
                         {%- assign success_message = 'general.newsletter.subscribed_successfully' | t -%}
-
                         {%- render 'banner', content: success_message, status: 'success' -%}
-
                       {%- else -%}
-
                         {%- if form.errors -%}
-
                           {%- capture error_message -%}{{ form.errors.translated_fields['email'] }} {{ form.errors.messages['email'] }}{%- endcapture -%}
-
                           {%- render 'banner', content: error_message, status: 'error' -%}
-
                         {%- endif -%}
-
-
 
                         <input type="hidden" name="contact[tags]" value="newsletter">
 
-
-
                         {%- assign input_label = 'general.newsletter.email' | t -%}
-
                         {%- render 'input', name: 'contact[email]', label: input_label, type: 'email', required: true, autocomplete: 'email', enterkeyhint: 'send' -%}
 
-
-
-                        <div class="{% if block.settings.button_stretch %}w-full{% else %}align-self-start{% endif %}">
-
-                          {%- assign default_button_label = 'general.newsletter.subscribe' | t -%}
-                          {%- assign button_label = block.settings.button_label | default: default_button_label -%}
-
-                          {%- render 'button', type: 'submit', content: button_label, background: block.settings.button_background, text_color: block.settings.button_text_color, stretch: block.settings.button_stretch -%}
-
+                        <div class="align-self-start">
+                          {%- assign button_label = 'general.newsletter.subscribe' | t -%}
+                          {%- render 'button', type: 'submit', content: button_label, background: block.settings.button_background, text_color: block.settings.button_text_color -%}
                         </div>
-
                       {%- endif -%}
-
                     {%- endform -%}
-
                   </div>
-
-
 
               {%- endcase -%}
-
             {%- endcapture -%}
 
-
-
             {%- if block_content != blank -%}
-
               {%- liquid
-
                 assign collapse_block = false
 
-
-
                 if block.type == 'links' and block.settings.collapse_on_mobile
-
                   assign collapse_block = true
-
                 endif
-
               -%}
-
-
 
               {%- capture current_block -%}
-
                 <div class="footer__block footer__block--{{ block.type | remove_first: '@' }}" {{ block.shopify_attributes }}>
-
                   {{- block_content -}}
-
                 </div>
-
               {%- endcapture -%}
 
-
-
               {%- if collapse_block -%}
-
                 {%- assign accordion_group_content = accordion_group_content | append: current_block -%}
-
               {%- else -%}
-
                 {%- if accordion_group_content != blank -%}
-
                   <div class="footer__accordion-group accordion-group">
-
                     {{- accordion_group_content -}}
-
                   </div>
-
                   {%- assign accordion_group_content = '' -%}
-
                 {%- endif -%}
 
-
-
                 {{- current_block -}}
-
               {%- endif -%}
-
             {%- endif -%}
-
           {%- endfor -%}
 
-
-
           {%- if accordion_group_content != blank -%}
-
             <div class="footer__accordion-group accordion-group">
-
               {{- accordion_group_content -}}
-
             </div>
-
           {%- endif -%}
-
         </div>
-
       {%- endif -%}
 
-
-
       {%- comment -%}
-
         ------------------------------------------------------------------------------------------------------------------
-
         FOOTER SOCIAL MEDIA
-
         ------------------------------------------------------------------------------------------------------------------
-
       {%- endcomment -%}
-
-
 
       {%- if section.settings.show_social_media -%}
-        <div class="footer__social-wrap">
-          {%- if section.settings.social_heading != blank -%}
-            <p class="{{ section.settings.block_heading_style }}">{{ section.settings.social_heading }}</p>
-          {%- endif -%}
-
-          {%- render 'social-media', layout: 'list' -%}
-        </div>
+        {%- render 'social-media', layout: 'list' -%}
       {%- endif -%}
 
-
-
       {%- comment -%}
-
         ------------------------------------------------------------------------------------------------------------------
-
         FOOTER ASIDE (COPYRIGHT + LOCALIZATION SELECTORS + PAYMENT METHODS)
-
         ------------------------------------------------------------------------------------------------------------------
-
       {%- endcomment -%}
 
-
-
       <div class="footer__aside">
-
         {%- if section.settings.show_country_selector and localization.available_countries.size > 1 -%}
-
           {%- assign show_country_selector = true -%}
-
         {%- endif -%}
-
-
 
         {%- if section.settings.show_locale_selector and localization.available_languages.size > 1 -%}
-
           {%- assign show_locale_selector = true -%}
-
         {%- endif -%}
-
-
 
         {%- if show_country_selector or show_locale_selector -%}
-
           <div class="localization-selectors">
-
             {%- if show_country_selector -%}
-
               {%- render 'localization-selector',
-
                 type: 'country',
-
                 placement: 'top-start',
-
                 show_country_name: section.settings.show_country_name,
-
                 show_country_flag: section.settings.show_country_flag
-
               -%}
-
             {%- endif -%}
-
-
 
             {%- if show_locale_selector -%}
-
               {%- render 'localization-selector', type: 'locale', placement: 'top-start' -%}
-
             {%- endif -%}
-
           </div>
-
         {%- endif -%}
 
-
-
-        {%- if section.settings.show_bottom_menu and section.settings.bottom_menu != blank -%}
-          <ul class="footer__bottom-menu unstyled-list" role="list">
-            {%- for link in section.settings.bottom_menu.links -%}
-              <li><a href="{{ link.url }}" class="link-faded">{{ link.title }}</a></li>
-            {%- endfor -%}
-          </ul>
-        {%- endif -%}
-
-        <div class="footer__bottom-actions">
-          <p class="heading text-subdued text-xxs">
-            {%- if section.settings.show_current_year -%}© {{ 'now' | date: '%Y' }}{% endif -%}
-            {%- if section.settings.show_shop_name -%}{% if section.settings.show_current_year %} - {% endif %}{{ shop.name }}{% endif -%}
-            {%- if section.settings.copyright_text != blank -%}
-              {% if section.settings.show_current_year or section.settings.show_shop_name %} · {% endif %}{{ section.settings.copyright_text }}
-            {%- endif -%}
-            {%- if section.settings.show_powered_by_shopify -%} {{ powered_by_link }}{%- endif -%}
-          </p>
-
-          {%- if section.settings.show_back_to_top -%}
-            <a href="#main" allow-hash-change class="link-faded text-xxs">
-              {{- section.settings.back_to_top_label | default: 'Back to top' -}}
-            </a>
-          {%- endif -%}
-        </div>
+        <p class="heading text-subdued text-xxs">
+          © {{ 'now' | date: '%Y' }} - {{ shop.name }}
+          {%- if section.settings.show_powered_by_shopify -%}{{ powered_by_link }}{%- endif -%}
+        </p>
 
         {%- if section.settings.show_payment_icons and shop.enabled_payment_types.size > 0 -%}
           <ul class="payment-methods unstyled-list">
@@ -609,125 +222,23 @@
             {%- endfor -%}
           </ul>
         {%- endif -%}
-
       </div>
-
     </div>
-
   </div>
-
 </div>
-
-
 
 {% schema %}
 {
   "name": "t:sections.footer.name",
   "class": "shopify-section--footer",
   "tag": "footer",
-  "max_blocks": 10,
+  "max_blocks": 6,
   "settings": [
     {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:global.colors.scheme",
       "default": "scheme-2"
-    },
-    {
-      "type": "header",
-      "content": "Footer layout"
-    },
-    {
-      "type": "select",
-      "id": "content_justification",
-      "label": "Block distribution",
-      "options": [
-        {
-          "value": "start",
-          "label": "Start"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "space-between",
-          "label": "Space between"
-        }
-      ],
-      "default": "space-between"
-    },
-    {
-      "type": "text_alignment",
-      "id": "content_alignment",
-      "label": "Desktop content alignment",
-      "default": "left"
-    },
-    {
-      "type": "text_alignment",
-      "id": "mobile_content_alignment",
-      "label": "Mobile content alignment",
-      "default": "left"
-    },
-    {
-      "type": "select",
-      "id": "block_heading_style",
-      "label": "Block heading size",
-      "options": [
-        {
-          "value": "h4",
-          "label": "H4"
-        },
-        {
-          "value": "h5",
-          "label": "H5"
-        },
-        {
-          "value": "h6",
-          "label": "H6"
-        }
-      ],
-      "default": "h6"
-    },
-    {
-      "type": "range",
-      "id": "block_gap",
-      "label": "Gap between footer blocks",
-      "min": 8,
-      "max": 80,
-      "step": 4,
-      "unit": "px",
-      "default": 32
-    },
-    {
-      "type": "range",
-      "id": "menu_link_gap",
-      "label": "Gap between menu links",
-      "min": 4,
-      "max": 24,
-      "step": 2,
-      "unit": "px",
-      "default": 10
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "label": "Top padding",
-      "min": 0,
-      "max": 120,
-      "step": 4,
-      "unit": "px",
-      "default": 48
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "label": "Bottom padding",
-      "min": 0,
-      "max": 120,
-      "step": 4,
-      "unit": "px",
-      "default": 48
     },
     {
       "type": "checkbox",
@@ -743,17 +254,6 @@
       "default": true
     },
     {
-      "type": "text",
-      "id": "social_heading",
-      "label": "Social media heading"
-    },
-    {
-      "type": "text_alignment",
-      "id": "social_alignment",
-      "label": "Social media alignment",
-      "default": "left"
-    },
-    {
       "type": "checkbox",
       "id": "show_payment_icons",
       "label": "t:sections.footer.show_payment_icons",
@@ -764,58 +264,6 @@
       "id": "show_powered_by_shopify",
       "label": "t:sections.footer.show_powered_by_shopify",
       "default": true
-    },
-    {
-      "type": "header",
-      "content": "Footer bottom area"
-    },
-    {
-      "type": "text_alignment",
-      "id": "bottom_alignment",
-      "label": "Bottom area alignment",
-      "default": "left"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_bottom_menu",
-      "label": "Show bottom menu",
-      "default": false
-    },
-    {
-      "type": "link_list",
-      "id": "bottom_menu",
-      "label": "Bottom menu",
-      "visible_if": "{{ section.settings.show_bottom_menu }}"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_current_year",
-      "label": "Show current year",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_shop_name",
-      "label": "Show shop name",
-      "default": true
-    },
-    {
-      "type": "inline_richtext",
-      "id": "copyright_text",
-      "label": "Additional copyright text"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_back_to_top",
-      "label": "Show Back to top link",
-      "default": false
-    },
-    {
-      "type": "text",
-      "id": "back_to_top_label",
-      "label": "Back to top label",
-      "default": "Back to top",
-      "visible_if": "{{ section.settings.show_back_to_top }}"
     },
     {
       "type": "header",
@@ -882,26 +330,6 @@
           "type": "url",
           "id": "link",
           "label": "t:global.text.link"
-        },
-        {
-          "type": "select",
-          "id": "alignment",
-          "label": "Image alignment",
-          "options": [
-            {
-              "value": "left",
-              "label": "Left"
-            },
-            {
-              "value": "center",
-              "label": "Center"
-            },
-            {
-              "value": "right",
-              "label": "Right"
-            }
-          ],
-          "default": "left"
         }
       ]
     },
@@ -963,115 +391,6 @@
       ]
     },
     {
-      "type": "contact",
-      "name": "Contact information",
-      "settings": [
-        {
-          "type": "inline_richtext",
-          "id": "title",
-          "label": "Heading",
-          "default": "Contact us"
-        },
-        {
-          "type": "text",
-          "id": "phone",
-          "label": "Phone"
-        },
-        {
-          "type": "text",
-          "id": "email",
-          "label": "Email"
-        },
-        {
-          "type": "richtext",
-          "id": "address",
-          "label": "Address"
-        },
-        {
-          "type": "richtext",
-          "id": "hours",
-          "label": "Working hours"
-        },
-        {
-          "type": "url",
-          "id": "whatsapp_link",
-          "label": "WhatsApp link"
-        },
-        {
-          "type": "text",
-          "id": "whatsapp_label",
-          "label": "WhatsApp label",
-          "default": "Chat on WhatsApp"
-        }
-      ]
-    },
-    {
-      "type": "cta",
-      "name": "Call to action",
-      "settings": [
-        {
-          "type": "inline_richtext",
-          "id": "title",
-          "label": "Heading",
-          "default": "Need help?"
-        },
-        {
-          "type": "richtext",
-          "id": "content",
-          "label": "Content",
-          "default": "<p>Get in touch with our team.</p>"
-        },
-        {
-          "type": "text",
-          "id": "button_text",
-          "label": "Button text",
-          "default": "Contact us"
-        },
-        {
-          "type": "url",
-          "id": "button_link",
-          "label": "Button link"
-        },
-        {
-          "type": "select",
-          "id": "button_style",
-          "label": "Button style",
-          "options": [
-            {
-              "value": "solid",
-              "label": "Solid"
-            },
-            {
-              "value": "outline",
-              "label": "Outline"
-            },
-            {
-              "value": "link",
-              "label": "Link"
-            }
-          ],
-          "default": "solid"
-        },
-        {
-          "type": "checkbox",
-          "id": "button_stretch",
-          "label": "Full width button",
-          "default": false
-        }
-      ]
-    },
-    {
-      "type": "custom_liquid",
-      "name": "Custom Liquid",
-      "settings": [
-        {
-          "type": "liquid",
-          "id": "custom_liquid",
-          "label": "Custom Liquid"
-        }
-      ]
-    },
-    {
       "type": "newsletter",
       "name": "t:sections.footer.blocks.newsletter.name",
       "limit": 1,
@@ -1101,18 +420,6 @@
           "type": "color",
           "id": "button_text_color",
           "label": "t:global.colors.button_text"
-        },
-        {
-          "type": "text",
-          "id": "button_label",
-          "label": "Button label",
-          "default": "Subscribe"
-        },
-        {
-          "type": "checkbox",
-          "id": "button_stretch",
-          "label": "Full width button",
-          "default": false
         }
       ]
     }
