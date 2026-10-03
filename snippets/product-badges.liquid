@@ -18,11 +18,14 @@
     {%- assign stripped_badge_type = badge_type | strip -%}
 
     {%- case stripped_badge_type -%}
+
       {%- when 'custom' -%}
         {%- assign custom_badges = product.metafields.custom.badges.value -%}
 
         {%- for custom_badge in custom_badges -%}
-          <span class="badge badge--custom badge--{{ custom_badge | handle }}">{{ custom_badge }}</span>
+          <span class="badge badge--custom badge--{{ custom_badge | handle }}">
+            {{- custom_badge -}}
+          </span>
         {%- endfor -%}
 
       {%- when 'sold_out' -%}
@@ -33,45 +36,64 @@
         {%- endif -%}
 
       {%- when 'discount' -%}
+
         {%- if settings.show_discount -%}
-          {%- liquid
-            assign show_on_sale_badge = false
 
-            if context == 'product'
-              if variant.compare_at_price > variant.price
-                assign show_on_sale_badge = true
-              endif
-            elsif context == 'card'
-              if product.compare_at_price > product.price
-                assign show_on_sale_badge = true
-              endif
-            endif
-          -%}
+          {%- if context == 'product' -%}
 
-          {%- if product.compare_at_price > product.price -%}
-            {%- if settings.discount_mode == 'percentage' -%}
-              {%- assign savings = variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | round | append: '%' -%}
-            {%- else -%}
-              {%- capture savings -%}{{ variant.compare_at_price | minus: variant.price | money }}{%- endcapture -%}
-            {%- endif -%}
+            {%- if variant.compare_at_price > variant.price -%}
 
-            {%- if show_on_sale_badge -%}
+              {%- assign savings = variant.compare_at_price
+                | minus: variant.price
+                | times: 100.0
+                | divided_by: variant.compare_at_price
+                | round
+                | append: '%'
+              -%}
+
               <on-sale-badge class="badge badge--on-sale">
-                {%- liquid
-                  if context == 'product'
-                    echo 'product.general.discount_badge_html' | t: savings: savings
-                  elsif context == 'card'
-                    if product.compare_at_price_varies or variant.compare_at_price == blank
-                      echo 'product.general.on_sale_badge' | t
-                    else
-                      echo 'product.general.discount_badge_html' | t: savings: savings
-                    endif
-                  endif
-                -%}
+                {{- 'product.general.discount_badge_html' | t: savings: savings -}}
               </on-sale-badge>
+
             {%- endif -%}
+
+          {%- elsif context == 'card' -%}
+
+            {%- assign max_discount = 0 -%}
+
+            {%- for badge_variant in product.variants -%}
+
+              {%- if badge_variant.compare_at_price > badge_variant.price -%}
+
+                {%- assign variant_discount = badge_variant.compare_at_price
+                  | minus: badge_variant.price
+                  | times: 100.0
+                  | divided_by: badge_variant.compare_at_price
+                  | round
+                -%}
+
+                {%- if variant_discount > max_discount -%}
+                  {%- assign max_discount = variant_discount -%}
+                {%- endif -%}
+
+              {%- endif -%}
+
+            {%- endfor -%}
+
+            {%- if max_discount > 0 -%}
+
+              {%- assign savings = max_discount | append: '%' -%}
+
+              <on-sale-badge class="badge badge--on-sale">
+                {{- 'product.general.discount_badge_html' | t: savings: savings -}}
+              </on-sale-badge>
+
+            {%- endif -%}
+
           {%- endif -%}
+
         {%- endif -%}
+
     {%- endcase -%}
   {%- endfor -%}
 {%- endcapture -%}
