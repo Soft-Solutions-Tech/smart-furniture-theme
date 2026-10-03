@@ -152,9 +152,10 @@
     "related-products": {
       "type": "related-products",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-3",
         "separate_section_with_border": false,
         "hide_product_information": false,
+        "show_card_add_to_cart": true,
         "stack_products": false,
         "recommendations_count": 10,
         "products_per_row_mobile": "2",
@@ -174,6 +175,7 @@
         "color_scheme": "scheme-3",
         "separate_section_with_border": false,
         "hide_product_information": false,
+        "show_card_add_to_cart": true,
         "stack_products": false,
         "recommendations_count": 10,
         "products_per_row_mobile": "2",
@@ -193,6 +195,7 @@
         "separate_section_with_border": true,
         "color_scheme": "scheme-3",
         "hide_product_information": false,
+        "show_card_add_to_cart": true,
         "stack_products": false,
         "products_count": 9,
         "products_per_row_mobile": "2",
