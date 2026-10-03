@@ -76,7 +76,7 @@
         "heading_kJGRtT": {
           "type": "heading",
           "settings": {
-            "text": "Leading furniture manufaturer",
+            "text": "Leading furniture manufacturer",
             "heading_tag": "h1"
           }
         },
@@ -109,7 +109,7 @@
           "type": "question",
           "name": "<strong>Benefits of Working at Smart Furniture</strong> &nbsp;",
           "settings": {
-            "question": "<strong>Benefits of Working at Smart Furniture</strong> &nbsp;",
+            "question": "Benefits of Working at Smart Furniture &nbsp;",
             "answer": "<p>At Smart Furniture, we believe that our people are at the heart of our success. We are committed to creating a professional, supportive, and rewarding work environment where employees can develop their skills, build meaningful careers, and grow within the furniture industry.</p>"
           }
         },
@@ -117,7 +117,7 @@
           "type": "question",
           "name": "<strong>Career Growth & Development</strong> &nbsp;",
           "settings": {
-            "question": "<strong>Career Growth & Development</strong> &nbsp;",
+            "question": "Career Growth & Development &nbsp;",
             "answer": "<p>Join a growing furniture brand and gain valuable experience in sales, customer service, interior design, retail, and the home furnishing industry. We encourage continuous learning and provide opportunities for professional development.</p>"
           }
         },
@@ -125,7 +125,7 @@
           "type": "question",
           "name": "Career Growth & Development ",
           "settings": {
-            "question": "<strong>Career Growth & Development</strong> &nbsp;",
+            "question": "Career Growth & Development &nbsp;",
             "answer": "<p>Enjoy a competitive compensation package with a fixed basic salary and attractive commission opportunities based on performance.</p>"
           }
         },
@@ -133,7 +133,7 @@
           "type": "question",
           "name": "Social & Medical Insurance ",
           "settings": {
-            "question": "<strong>Social & Medical Insurance</strong> &nbsp;",
+            "question": "Social & Medical Insurance &nbsp;",
             "answer": "<p>Benefit from comprehensive social and medical insurance programs designed to provide greater security and peace of mind.</p>"
           }
         },
@@ -141,7 +141,7 @@
           "type": "question",
           "name": "Life Insurance ",
           "settings": {
-            "question": "<strong>Life Insurance</strong> &nbsp;",
+            "question": "Life Insurance &nbsp;",
             "answer": "<p>Our employees are supported through life insurance coverage as part of our commitment to their long-term well-being.</p>"
           }
         },
@@ -149,7 +149,7 @@
           "type": "question",
           "name": "Professional Work Environment ",
           "settings": {
-            "question": "<strong>Professional Work Environment</strong> &nbsp;",
+            "question": "Professional Work Environment &nbsp;",
             "answer": "<p>Work within a professional and collaborative environment that encourages teamwork, creativity, responsibility, and continuous improvement.</p>"
           }
         },
@@ -157,7 +157,7 @@
           "type": "question",
           "name": "Employee Development ",
           "settings": {
-            "question": "<strong>Employee Development</strong> &nbsp;",
+            "question": "Employee Development &nbsp;",
             "answer": "<p>We value talent and support employees in developing their professional and interpersonal skills through practical experience and ongoing learning opportunities.</p>"
           }
         },
@@ -165,7 +165,7 @@
           "type": "question",
           "name": "Be Part of the Furniture Industry ",
           "settings": {
-            "question": "<strong>Be Part of the Furniture Industry</strong> &nbsp;",
+            "question": "Be Part of the Furniture Industry &nbsp;",
             "answer": "<p>Build your career with Smart Furniture and gain hands-on experience in one of Egypt’s leading furniture and home furnishing environments, working with customers and products designed to enhance modern living spaces.</p>"
           }
         },
@@ -173,7 +173,7 @@
           "type": "question",
           "name": "Join Smart Furniture ",
           "settings": {
-            "question": "<strong>Join Smart Furniture</strong> &nbsp;",
+            "question": "Join Smart Furniture &nbsp;",
             "answer": "<p>Whether you are starting your career or looking for your next professional opportunity, Smart Furniture offers an environment where talent, dedication, and ambition can turn into long-term career growth.</p>"
           }
         }
@@ -189,13 +189,14 @@
         "question_MfhLA9",
         "question_6TCBjH"
       ],
+      "custom_css": [],
       "name": "Working at smart furniture benefits",
       "settings": {
         "color_scheme": "scheme-3",
         "separate_section_with_border": false,
         "show_categories": false,
         "subheading": "",
-        "title": "&nbsp;Working at smart furniture benefits&nbsp;",
+        "title": "Working at smart furniture benefits&nbsp;",
         "heading_style": "h2",
         "content": ""
       }
@@ -207,7 +208,7 @@
           "type": "image_with_text",
           "settings": {
             "title": "&nbsp;Indoor Sales Representative - Cairo&nbsp;",
-            "heading_tag": "h3",
+            "heading_tag": "h5",
             "content": "<p>Join our Cairo sales team and help customers find the right furniture solutions.</p>",
             "link_url": "shopify://pages/indoor-sales-representative-cairo",
             "link_text": "Apply Now"
@@ -217,7 +218,7 @@
           "type": "image_with_text",
           "settings": {
             "title": "&nbsp;Indoor Sales Representative - Hurghada&nbsp;",
-            "heading_tag": "h3",
+            "heading_tag": "h5",
             "content": "<p>Support customers in our Hurghada showroom and deliver a strong in-store sales experience.</p>",
             "link_url": "shopify://pages/indoor-sales-representative-hurghada",
             "link_text": "Apply Now"
@@ -227,7 +228,7 @@
           "type": "image_with_text",
           "settings": {
             "title": "&nbsp;Kitchen Designer",
-            "heading_tag": "h3",
+            "heading_tag": "h5",
             "content": "<p>Create functional, stylish kitchen solutions tailored to each customer’s needs and space.</p>",
             "link_url": "shopify://pages/kitchen-designer-cairo",
             "link_text": "Apply Now"
@@ -251,8 +252,8 @@
         "content_alignment": "center",
         "text_alignment": "center",
         "spacing": "md",
-        "subheading": "Explore our open roles and find the opportunity that matches your skills, experience, and career goals. &nbsp;",
-        "title": "Current Opportunities &nbsp;",
+        "subheading": "",
+        "title": "Explore our open roles and find the opportunity that matches your skills, experience, and career goals. &nbsp;",
         "heading_style": "h2",
         "content": ""
       }
