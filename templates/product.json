@@ -149,25 +149,6 @@
         "max_image_zoom_level": 3
       }
     },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "color_scheme": "scheme-3",
-        "separate_section_with_border": false,
-        "hide_product_information": false,
-        "show_card_add_to_cart": true,
-        "stack_products": false,
-        "recommendations_count": 10,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 4,
-        "horizontal_spacing_factor": 0.2,
-        "vertical_spacing_factor": 0.2,
-        "subheading": "",
-        "title": "You May also like",
-        "heading_style": "h2",
-        "content": ""
-      }
-    },
     "related_products_exkMqF": {
       "type": "related-products",
       "name": "t:sections.related_products.presets.related_products.name",
@@ -183,7 +164,7 @@
         "horizontal_spacing_factor": 0.2,
         "vertical_spacing_factor": 0.2,
         "subheading": "",
-        "title": "Pairs well with",
+        "title": "&nbsp;Complete your room&nbsp;",
         "heading_style": "h2",
         "content": ""
       }
@@ -223,7 +204,6 @@
   },
   "order": [
     "main",
-    "related-products",
     "related_products_exkMqF",
     "recently_viewed_products_XGVyVw",
     "custom_liquid_4Nb8Xy"
