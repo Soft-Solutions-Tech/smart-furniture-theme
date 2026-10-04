@@ -73,9 +73,10 @@ align-items: center;
 gap: 8px;
 color: #e50b0b !important;
 font-weight: 700;
+position: relative;
 }
-#shopify-section-{{ section.id }} .header__last-chance-link::before {
-content: "";
+/* Keep the red dot permanently beside the text. */
+#shopify-section-{{ section.id }} .header__last-chance-dot {
 display: block;
 width: 9px;
 height: 9px;
@@ -83,9 +84,16 @@ flex: 0 0 9px;
 border-radius: 50%;
 background: #e50b0b;
 }
+/* Prestige uses ::before for the navigation hover underline.
+Keep that underline, but make it red and position it only below the text. */
+#shopify-section-{{ section.id }} .header__primary-nav-item .header__last-chance-link[data-title]::before {
+content: "";
+width: calc(100% - 17px);
+background: #e50b0b !important;
+inset-inline-start: 17px;
+}
 #shopify-section-{{ section.id }} .header__last-chance-link:hover {
 color: #e50b0b !important;
-opacity: 0.8;
 }
 </style>
 <height-observer variable="header">
@@ -217,7 +225,13 @@ PRIMARY NAVIGATION AREA
 
             {% endif %}
             >
-            {{- link.title -}}
+
+            {%- if link_title_downcase contains 'last chance' -%}
+              <span class="header__last-chance-dot" aria-hidden="true"></span>
+
+            {%- endif -%}
+            <span>
+            {{- link.title -}}</span>
             </a>
 
           {%- else -%}
