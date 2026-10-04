@@ -723,7 +723,7 @@
       ],
       "name": "t:sections.testimonials.presets.testimonials.name",
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-17d4397d-ae6c-4c8b-9e1a-e77b4d3ecf15",
         "separate_section_with_border": false,
         "auto_rotate_between_testimonials": true,
         "cycle_speed": 3,
