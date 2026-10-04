@@ -67,15 +67,12 @@ z-index: 4;
   }
 {%- endif -%}
 /* LAST CHANCE NAVIGATION LINK */
-#shopify-section-{{ section.id }} .header__last-chance-link {
-display: inline-flex;
+#shopify-section-{{ section.id }} .header__last-chance-item {
+display: flex;
 align-items: center;
 gap: 8px;
-color: #e50b0b !important;
-font-weight: 700;
-position: relative;
 }
-/* Keep the red dot permanently beside the text. */
+/* Permanent red dot beside Last Chance. */
 #shopify-section-{{ section.id }} .header__last-chance-dot {
 display: block;
 width: 9px;
@@ -84,16 +81,13 @@ flex: 0 0 9px;
 border-radius: 50%;
 background: #e50b0b;
 }
-/* Prestige uses ::before for the navigation hover underline.
-Keep that underline, but make it red and position it only below the text. */
-#shopify-section-{{ section.id }} .header__primary-nav-item .header__last-chance-link[data-title]::before {
-content: "";
-width: calc(100% - 17px);
-background: #e50b0b !important;
-inset-inline-start: 17px;
-}
-#shopify-section-{{ section.id }} .header__last-chance-link:hover {
+#shopify-section-{{ section.id }} .header__last-chance-link {
 color: #e50b0b !important;
+font-weight: 700;
+}
+/* Prestige's original underline stays untouched. Only its color changes. */
+#shopify-section-{{ section.id }} .header__primary-nav-item .header__last-chance-link[data-title]::before {
+background: #e50b0b !important;
 }
 </style>
 <height-observer variable="header">
@@ -201,152 +195,155 @@ PRIMARY NAVIGATION AREA
         endfor
         %}
 
-        <li class="header__primary-nav-item">
+        <li class="header__primary-nav-item
+        {% if link_title_downcase contains 'last chance' %}
+          header__last-chance-item
+        {% endif %}
+        ">
 
-          {%- if link.levels == 0 and mega_menu_block == '' -%}
-            <a
-            href="{{ link.url }}"
-            data-title="{{ link.title | escape }}"
-            class="block
+        {%- if link.levels == 0 and mega_menu_block == '' -%}
 
-            {% if section.settings.menu_text_font == 'heading' %}
-              h6
+          {%- if link_title_downcase contains 'last chance' -%}
+            <span class="header__last-chance-dot" aria-hidden="true"></span>
 
-            {% endif %}
+          {%- endif -%}
+          <a
+          href="{{ link.url }}"
+          data-title="{{ link.title | escape }}"
+          class="block
 
-            {% if link_title_downcase contains 'last chance' %}
-              header__last-chance-link
+          {% if section.settings.menu_text_font == 'heading' %}
+            h6
 
-            {% endif %}
-            "
+          {% endif %}
 
-            {% if link.current %}
-              aria-current="page"
+          {% if link_title_downcase contains 'last chance' %}
+            header__last-chance-link
 
-            {% endif %}
-            >
+          {% endif %}
+          "
 
-            {%- if link_title_downcase contains 'last chance' -%}
-              <span class="header__last-chance-dot" aria-hidden="true"></span>
+          {% if link.current %}
+            aria-current="page"
 
-            {%- endif -%}
-            <span>
-            {{- link.title -}}</span>
-            </a>
-
-          {%- else -%}
-
-            {%- capture disclosure_content -%}
-
-              <details class="header__menu-disclosure">
-
-                <summary data-follow-link="{{ link.url }}"
-
-                {% if section.settings.menu_text_font == 'heading' %}
-                  class="h6"
-
-                {% endif %}
-                data-title="{{ link.title | escape }}">
-                {{- link.title -}}
-
-              </summary>
-
-              {%- if mega_menu_block != '' -%}
-                {%- render 'mega-menu', link: link, block: mega_menu_block -%}
-
-              {%- else -%}
-
-                <ul class="header__dropdown-menu
-
-                {% if link.levels <= 1 %}
-                  header__dropdown-menu--restrictable
-
-                {% endif %}
-                unstyled-list" role="list">
-
-                {%- for sub_link in link.links -%}
-
-                  <li>
-
-                    {%- if sub_link.levels == 0 -%}
-                      <a href="{{ sub_link.url }}" class="link-faded-reverse"
-
-                      {% if sub_link.current %}
-                        aria-current="page"
-
-                      {% endif %}
-                      >
-                      {{ sub_link.title }}</a>
-
-                    {%- else -%}
-                      <dropdown-menu-disclosure follow-summary-link trigger="{{ section.settings.menu_open_trigger }}" class="contents">
-
-                      <details class="header__menu-disclosure">
-
-                        <summary data-follow-link="{{ sub_link.url }}" class="link-faded-reverse">
-
-                          <div class="h-stack gap-4 justify-between">
-                            {{- sub_link.title -}}
-                            {%- render 'icon' with 'arrow-right', width: 8, direction_aware: true -%}
-
-                          </div>
-
-                        </summary>
-
-                        <ul class="header__dropdown-menu unstyled-list" role="list">
-
-                          {%- for sub_sub_link in sub_link.links -%}
-
-                            <li>
-                              <a href="{{ sub_sub_link.url }}" class="link-faded-reverse"
-
-                              {% if sub_sub_link.current %}
-                                aria-current="page"
-
-                              {% endif %}
-                              >
-                              {{ sub_sub_link.title }}</a>
-
-                            </li>
-
-                          {%- endfor -%}
-
-                        </ul>
-
-                      </details>
-                      </dropdown-menu-disclosure>
-
-                    {%- endif -%}
-
-                  </li>
-
-                {%- endfor -%}
-
-              </ul>
-
-            {%- endif -%}
-
-          </details>
-
-        {%- endcapture -%}
-
-        {% if mega_menu_block != '' %}
-          <mega-menu-disclosure follow-summary-link trigger="{{ section.settings.menu_open_trigger }}" class="contents">
-          {{- disclosure_content -}}
-          </mega-menu-disclosure>
+          {% endif %}
+          >
+          {{- link.title -}}
+          </a>
 
         {%- else -%}
-          <dropdown-menu-disclosure follow-summary-link trigger="{{ section.settings.menu_open_trigger }}">
-          {{- disclosure_content -}}
-          </dropdown-menu-disclosure>
 
-        {%- endif -%}
+          {%- capture disclosure_content -%}
+
+            <details class="header__menu-disclosure">
+
+              <summary data-follow-link="{{ link.url }}"
+
+              {% if section.settings.menu_text_font == 'heading' %}
+                class="h6"
+
+              {% endif %}
+              data-title="{{ link.title | escape }}">
+              {{- link.title -}}
+
+            </summary>
+
+            {%- if mega_menu_block != '' -%}
+              {%- render 'mega-menu', link: link, block: mega_menu_block -%}
+
+            {%- else -%}
+
+              <ul class="header__dropdown-menu
+
+              {% if link.levels <= 1 %}
+                header__dropdown-menu--restrictable
+
+              {% endif %}
+              unstyled-list" role="list">
+
+              {%- for sub_link in link.links -%}
+
+                <li>
+
+                  {%- if sub_link.levels == 0 -%}
+                    <a href="{{ sub_link.url }}" class="link-faded-reverse"
+
+                    {% if sub_link.current %}
+                      aria-current="page"
+
+                    {% endif %}
+                    >
+                    {{ sub_link.title }}</a>
+
+                  {%- else -%}
+                    <dropdown-menu-disclosure follow-summary-link trigger="{{ section.settings.menu_open_trigger }}" class="contents">
+
+                    <details class="header__menu-disclosure">
+
+                      <summary data-follow-link="{{ sub_link.url }}" class="link-faded-reverse">
+
+                        <div class="h-stack gap-4 justify-between">
+                          {{- sub_link.title -}}
+                          {%- render 'icon' with 'arrow-right', width: 8, direction_aware: true -%}
+
+                        </div>
+
+                      </summary>
+
+                      <ul class="header__dropdown-menu unstyled-list" role="list">
+
+                        {%- for sub_sub_link in sub_link.links -%}
+
+                          <li>
+                            <a href="{{ sub_sub_link.url }}" class="link-faded-reverse"
+
+                            {% if sub_sub_link.current %}
+                              aria-current="page"
+
+                            {% endif %}
+                            >
+                            {{ sub_sub_link.title }}</a>
+
+                          </li>
+
+                        {%- endfor -%}
+
+                      </ul>
+
+                    </details>
+                    </dropdown-menu-disclosure>
+
+                  {%- endif -%}
+
+                </li>
+
+              {%- endfor -%}
+
+            </ul>
+
+          {%- endif -%}
+
+        </details>
+
+      {%- endcapture -%}
+
+      {% if mega_menu_block != '' %}
+        <mega-menu-disclosure follow-summary-link trigger="{{ section.settings.menu_open_trigger }}" class="contents">
+        {{- disclosure_content -}}
+        </mega-menu-disclosure>
+
+      {%- else -%}
+        <dropdown-menu-disclosure follow-summary-link trigger="{{ section.settings.menu_open_trigger }}">
+        {{- disclosure_content -}}
+        </dropdown-menu-disclosure>
 
       {%- endif -%}
 
-    </li>
+    {%- endif -%}
 
-  {%- endfor -%}
+  </li>
+
+{%- endfor -%}
 </ul>
 {%- endif -%}
 </nav>
