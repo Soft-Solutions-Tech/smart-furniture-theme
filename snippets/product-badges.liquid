@@ -48,11 +48,10 @@
                 | times: 100.0
                 | divided_by: variant.compare_at_price
                 | round
-                | append: '%'
               -%}
 
               <on-sale-badge class="badge badge--on-sale">
-                {{- 'product.general.discount_badge_html' | t: savings: savings -}}
+                -{{- savings -}}%
               </on-sale-badge>
 
             {%- endif -%}
@@ -82,10 +81,8 @@
 
             {%- if max_discount > 0 -%}
 
-              {%- assign savings = max_discount | append: '%' -%}
-
               <on-sale-badge class="badge badge--on-sale">
-                {{- 'product.general.discount_badge_html' | t: savings: savings -}}
+                -{{- max_discount -}}%
               </on-sale-badge>
 
             {%- endif -%}

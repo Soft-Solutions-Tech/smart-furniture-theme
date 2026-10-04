@@ -50,6 +50,14 @@ is calculated from that variant's current selling price.
 endcomment
 assign valu_monthly_price = selected_variant.price | divided_by: 36
 comment
+LAST CHANCE DISCOUNT BADGE
+Uses the exact selected variant so the percentage matches the card.
+endcomment
+assign selected_variant_discount = 0
+if selected_variant.compare_at_price > selected_variant.price
+assign selected_variant_discount = selected_variant.compare_at_price | minus: selected_variant.price | times: 100.0 | divided_by: selected_variant.compare_at_price | round
+endif
+comment
 LAST CHANCE STOCK
 Because this card represents one exact selected variant, show the
 inventory for that exact variant rather than total product inventory.
@@ -89,9 +97,18 @@ PRODUCT MEDIA
       </badge-list>
 
     {%- elsif is_last_chance -%}
+      <badge-list class="badge-list">
       <span class="badge badge--on-sale last-chance-badge">
       LAST CHANCE
       </span>
+
+      {%- if selected_variant_discount > 0 -%}
+        <span class="badge badge--on-sale">
+        -{{ selected_variant_discount }}%
+        </span>
+
+      {%- endif -%}
+      </badge-list>
 
     {%- elsif show_badges -%}
       {%- render 'product-badges',
@@ -314,27 +331,31 @@ PRODUCT INFO
             Uses the exact selected variant price divided by 36 months.
             {%- endcomment -%}
 
-            <p
-            class="text-subdued"
-            style="
-            margin: 2px 0 0;
-            font-size: 12px;
-            line-height: 1.3;
-            text-align: center;
-            "
-            >
+            {%- unless is_last_chance -%}
 
-            {%- if localization.language.iso_code == 'ar' -%}
-              أو {{ valu_monthly_price | money_without_currency }} جنيه/شهريًا بدون فوائد -
-              <strong style="color: rgb(var(--text-color));">Valu</strong>
+              <p
+              class="text-subdued"
+              style="
+              margin: 2px 0 0;
+              font-size: 12px;
+              line-height: 1.3;
+              text-align: center;
+              "
+              >
 
-            {%- else -%}
-              Or {{ valu_monthly_price | money_without_currency }} EGP/mo with 0% interest -
-              <strong style="color: rgb(var(--text-color));">Valu</strong>
+              {%- if localization.language.iso_code == 'ar' -%}
+                أو {{ valu_monthly_price | money_without_currency }} جنيه/شهريًا بدون فوائد -
+                <strong style="color: rgb(var(--text-color));">Valu</strong>
 
-            {%- endif -%}
+              {%- else -%}
+                Or {{ valu_monthly_price | money_without_currency }} EGP/mo with 0% interest -
+                <strong style="color: rgb(var(--text-color));">Valu</strong>
 
-            </p>
+              {%- endif -%}
+
+              </p>
+
+            {%- endunless -%}
             {%- comment -%}
             LAST CHANCE STOCK
             Only appears for Last Chance products and uses the exact

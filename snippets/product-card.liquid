@@ -45,6 +45,22 @@ Current Shopify product price divided by 36 months.
 endcomment
 assign valu_monthly_price = product.price | divided_by: 36
 comment
+LAST CHANCE DISCOUNT BADGE
+Uses the highest percentage discount across the product variants,
+matching the regular product card discount logic.
+endcomment
+assign last_chance_discount = 0
+if is_last_chance
+for badge_variant in product.variants
+if badge_variant.compare_at_price > badge_variant.price
+assign variant_discount = badge_variant.compare_at_price | minus: badge_variant.price | times: 100.0 | divided_by: badge_variant.compare_at_price | round
+if variant_discount > last_chance_discount
+assign last_chance_discount = variant_discount
+endif
+endif
+endfor
+endif
+comment
 LAST CHANCE INVENTORY
 Adds together the remaining positive inventory
 from all inventory-tracked variants.
@@ -79,9 +95,18 @@ PRODUCT MEDIA
   <div class="product-card__figure">
 
     {%- if is_last_chance -%}
+      <badge-list class="badge-list">
       <span class="badge badge--on-sale last-chance-badge">
       LAST CHANCE
       </span>
+
+      {%- if last_chance_discount > 0 -%}
+        <span class="badge badge--on-sale">
+        -{{ last_chance_discount }}%
+        </span>
+
+      {%- endif -%}
+      </badge-list>
 
     {%- elsif show_badges -%}
       {%- render 'product-badges',
@@ -296,27 +321,31 @@ PRODUCT INFO
             ------------------------------------------------------------
             {%- endcomment -%}
 
-            <p
-            class="text-subdued"
-            style="
-            margin: 2px 0 0;
-            font-size: 12px;
-            line-height: 1.3;
-            text-align: center;
-            "
-            >
+            {%- unless is_last_chance -%}
 
-            {%- if localization.language.iso_code == 'ar' -%}
-              أو {{ valu_monthly_price | money_without_currency }} جنيه/شهريًا بدون فوائد -
-              <strong style="color: rgb(var(--text-color));">Valu</strong>
+              <p
+              class="text-subdued"
+              style="
+              margin: 2px 0 0;
+              font-size: 12px;
+              line-height: 1.3;
+              text-align: center;
+              "
+              >
 
-            {%- else -%}
-              Or {{ valu_monthly_price | money_without_currency }} EGP/mo with 0% interest -
-              <strong style="color: rgb(var(--text-color));">Valu</strong>
+              {%- if localization.language.iso_code == 'ar' -%}
+                أو {{ valu_monthly_price | money_without_currency }} جنيه/شهريًا بدون فوائد -
+                <strong style="color: rgb(var(--text-color));">Valu</strong>
 
-            {%- endif -%}
+              {%- else -%}
+                Or {{ valu_monthly_price | money_without_currency }} EGP/mo with 0% interest -
+                <strong style="color: rgb(var(--text-color));">Valu</strong>
 
-            </p>
+              {%- endif -%}
+
+              </p>
+
+            {%- endunless -%}
             {%- comment -%}
             ------------------------------------------------------------
             LAST CHANCE STOCK
@@ -488,26 +517,25 @@ PRODUCT INFO
 
           {%- capture bottom_quick_buy_id -%}
             product-bottom-quick-buy-{{ section.id }}-{{ block.id }}-{{ quick_buy_context }}-{{ product.id }}
-          {%- endcapture -%}
 
+          {%- endcapture -%}
           {%- assign bottom_quick_buy_id = bottom_quick_buy_id | strip -%}
 
           {%- capture bottom_choose_options_text -%}
             {{ 'product.general.choose_options' | t }}
+
           {%- endcapture -%}
-
           {%- render 'button',
-            content: bottom_choose_options_text,
-            type: 'button',
-            stretch: true,
-            aria_controls: bottom_quick_buy_id
+          content: bottom_choose_options_text,
+          type: 'button',
+          stretch: true,
+          aria_controls: bottom_quick_buy_id
           -%}
-
           <quick-buy-modal
-            handle="{{ product.handle }}?variant={{ product.selected_or_first_available_variant.id }}"
-            class="quick-buy-modal modal"
-            id="{{ bottom_quick_buy_id }}"
-            aria-label="{{ 'product.general.choose_options_with_title' | t: title: product.title | escape }}"
+          handle="{{ product.handle }}?variant={{ product.selected_or_first_available_variant.id }}"
+          class="quick-buy-modal modal"
+          id="{{ bottom_quick_buy_id }}"
+          aria-label="{{ 'product.general.choose_options_with_title' | t: title: product.title | escape }}"
           >
           </quick-buy-modal>
 
