@@ -8368,23 +8368,6 @@ ul {
   display: -webkit-box;
   overflow: hidden;
 }
-  /* new */
-/* Last Chance badge */
-.product-card__figure {
-  position: relative;
-}
-
-.product-card__figure .last-chance-badge {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  z-index: 10;
-  border-radius: 0;
-  font-size: 11px;
-  padding: 4px 8px;
-  line-height: 1;
-}
-
 
 /* Keep all Add to cart buttons aligned at the bottom */
 .product-card__info {
