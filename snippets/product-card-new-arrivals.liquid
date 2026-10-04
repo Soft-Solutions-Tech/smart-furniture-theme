@@ -49,7 +49,7 @@ is calculated from that variant's current selling price.
 endcomment
 assign valu_monthly_price = selected_variant.price | divided_by: 36
 comment
-LAST CHANCE DISCOUNT BADGE
+SELECTED VARIANT DISCOUNT BADGE
 Uses the exact selected variant so the percentage matches the card.
 endcomment
 assign selected_variant_discount = 0
@@ -91,12 +91,27 @@ PRODUCT MEDIA
     {%- if custom_badge != blank -%}
       <badge-list class="badge-list badge-list--vertical">
       <span class="badge badge--custom">
-      {{- custom_badge -}}
+      {%- assign custom_badge_normalized = custom_badge | strip | downcase -%}
+
+      {%- if custom_badge_normalized == 'new arrivals' -%}
+        New Arrival
+
+      {%- else -%}
+        {{- custom_badge -}}
+
+      {%- endif -%}
       </span>
+
+      {%- if selected_variant_discount > 0 -%}
+        <span class="badge badge--on-sale">
+        -{{ selected_variant_discount }}%
+        </span>
+
+      {%- endif -%}
       </badge-list>
 
     {%- elsif is_last_chance -%}
-      <badge-list class="badge-list">
+      <badge-list class="badge-list badge-list--vertical">
       <span class="badge badge--on-sale last-chance-badge">
       LAST CHANCE
       </span>
