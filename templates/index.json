@@ -663,16 +663,6 @@
     "testimonials_tq4n6P": {
       "type": "testimonials",
       "blocks": {
-        "testimonial_DABTmR": {
-          "type": "testimonial",
-          "settings": {
-            "content": "<p>احب اتوجه بالشكر لكل فريق Smart furniture على تفانيهم في العمل و اختيار الطاقم بجد المدرب الزوق و بنصح الناس بالتعامل معاهم عشان بجد هما ناس محترمه ♥️♥️♥️</p>",
-            "image": "shopify://shop_images/Hany_Muhammed_Ali.png",
-            "logo_max_width": 140,
-            "logo_mobile_max_width": 100,
-            "author": "&nbsp;Hany Muhammed Ali &nbsp;"
-          }
-        },
         "testimonial_GVYbtn": {
           "type": "testimonial",
           "settings": {
@@ -681,16 +671,6 @@
             "logo_max_width": 140,
             "logo_mobile_max_width": 100,
             "author": "&nbsp;Hashem Alshareef &nbsp;"
-          }
-        },
-        "testimonial_YdJPUF": {
-          "type": "testimonial",
-          "settings": {
-            "content": "<p>شركة محترمة و فريق عمل ممتاز استاذ احمد النجار و حسن و سيد لهم جزيل الشكر</p>",
-            "image": "shopify://shop_images/Eagle_Real_Estate.png",
-            "logo_max_width": 140,
-            "logo_mobile_max_width": 100,
-            "author": "&nbsp;Eagle Real Estate &nbsp;"
           }
         },
         "testimonial_DCqeaV": {
@@ -712,14 +692,34 @@
             "logo_mobile_max_width": 100,
             "author": "&nbsp;Youssef Ashraf &nbsp;"
           }
+        },
+        "testimonial_DABTmR": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>احب اتوجه بالشكر لكل فريق Smart furniture على تفانيهم في العمل و اختيار الطاقم بجد المدرب الزوق و بنصح الناس بالتعامل معاهم عشان بجد هما ناس محترمه ♥️♥️♥️</p>",
+            "image": "shopify://shop_images/Hany_Muhammed_Ali.png",
+            "logo_max_width": 140,
+            "logo_mobile_max_width": 100,
+            "author": "&nbsp;Hany Muhammed Ali &nbsp;"
+          }
+        },
+        "testimonial_YdJPUF": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>I bought a very comfortable mattress. It's called Relax, and I sleep very well on it. Delivery was on time, as agreed. Highly recommended.</p>",
+            "image": "shopify://shop_images/Alin_Metwally.png",
+            "logo_max_width": 140,
+            "logo_mobile_max_width": 100,
+            "author": "&nbsp;Alin Metwally"
+          }
         }
       },
       "block_order": [
-        "testimonial_DABTmR",
         "testimonial_GVYbtn",
-        "testimonial_YdJPUF",
         "testimonial_DCqeaV",
-        "testimonial_wVATyA"
+        "testimonial_wVATyA",
+        "testimonial_DABTmR",
+        "testimonial_YdJPUF"
       ],
       "name": "t:sections.testimonials.presets.testimonials.name",
       "settings": {
