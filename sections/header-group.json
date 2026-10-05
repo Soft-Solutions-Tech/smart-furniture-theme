@@ -20,6 +20,12 @@
             "text": "Testing"
           }
         },
+        "message_yC6DBr": {
+          "type": "message",
+          "settings": {
+            "text": "Announce something here"
+          }
+        },
         "message_xWrCkm": {
           "type": "message",
           "settings": {
@@ -35,6 +41,7 @@
       },
       "block_order": [
         "message_hxNBxD",
+        "message_yC6DBr",
         "message_xWrCkm",
         "message_VEiN3f"
       ],
