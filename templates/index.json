@@ -76,7 +76,7 @@
           "settings": {
             "color_scheme": "scheme-3",
             "collection": "master-bedrooms",
-            "image": "shopify://shop_images/stone.webp",
+            "image": "shopify://shop_images/stone_f29cc1ee-fc6f-431c-b5fe-1fa23ce99019.webp",
             "expand_collection": false,
             "content_position": "place-self-end-center text-center",
             "subheading": "",
@@ -177,64 +177,6 @@
         "collections_per_row_mobile": "1",
         "subheading": "",
         "title": "&nbsp;Shop by Room&nbsp;",
-        "heading_style": "h2",
-        "content": ""
-      }
-    },
-    "multi_column_eWRaXG": {
-      "type": "multi-column",
-      "blocks": {
-        "image_with_text_cyeHXg": {
-          "type": "image_with_text",
-          "settings": {
-            "image": "shopify://shop_images/140px_by_140px.jpg",
-            "title": "",
-            "heading_tag": "h3",
-            "content": "",
-            "link_url": "shopify://collections/bedrooms",
-            "link_text": ""
-          }
-        },
-        "image_with_text_KDejkt": {
-          "type": "image_with_text",
-          "settings": {
-            "title": "Column title",
-            "heading_tag": "h3",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_url": "",
-            "link_text": ""
-          }
-        },
-        "image_with_text_xRN3fE": {
-          "type": "image_with_text",
-          "settings": {
-            "title": "Column title",
-            "heading_tag": "h3",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_url": "",
-            "link_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_with_text_cyeHXg",
-        "image_with_text_KDejkt",
-        "image_with_text_xRN3fE"
-      ],
-      "name": "t:sections.multi_column.presets.multi_column.name",
-      "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": true,
-        "columns_per_row": 3,
-        "stack_on_mobile": false,
-        "show_mobile_scroll_hint": false,
-        "mobile_scroll_hint_text": "Swipe to see more →",
-        "overlap_image": false,
-        "content_alignment": "start",
-        "text_alignment": "start",
-        "spacing": "md",
-        "subheading": "About",
-        "title": "Multi-column",
         "heading_style": "h2",
         "content": ""
       }
@@ -674,7 +616,6 @@
     "slideshow",
     "custom_liquid_ymMcXn",
     "collection_list_hdgLJc",
-    "multi_column_eWRaXG",
     "new_arrivals_variants_TeKwDV",
     "custom_liquid_MbgV8d",
     "bestsellers_collections_URHg6n",
