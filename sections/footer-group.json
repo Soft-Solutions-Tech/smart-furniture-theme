@@ -17,8 +17,8 @@
         "image_mDXdpF": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/header-logo.png",
-            "image_width": 150,
+            "image": "shopify://shop_images/EN_White.png",
+            "image_width": 300,
             "link": ""
           }
         },
