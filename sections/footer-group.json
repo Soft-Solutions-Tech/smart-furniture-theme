@@ -22,16 +22,7 @@
             "link": ""
           }
         },
-        "newsletter": {
-          "type": "newsletter",
-          "settings": {
-            "title": "Newsletter",
-            "content": "<p>Sign up to our newsletter to receive exclusive offers.</p>",
-            "button_background": "",
-            "button_text_color": ""
-          }
-        },
-        "links": {
+        "links_JwmNkH": {
           "type": "links",
           "settings": {
             "menu": "footer",
@@ -39,12 +30,41 @@
             "show_menu_title": true,
             "menu_title": ""
           }
+        },
+        "links": {
+          "type": "links",
+          "settings": {
+            "menu": "shop",
+            "collapse_on_mobile": true,
+            "show_menu_title": true,
+            "menu_title": "Shop"
+          }
+        },
+        "links_778K6f": {
+          "type": "links",
+          "settings": {
+            "menu": "about-us",
+            "collapse_on_mobile": true,
+            "show_menu_title": true,
+            "menu_title": ""
+          }
+        },
+        "links_cqmnqY": {
+          "type": "links",
+          "settings": {
+            "menu": "help",
+            "collapse_on_mobile": true,
+            "show_menu_title": true,
+            "menu_title": ""
+          }
         }
       },
       "block_order": [
         "image_mDXdpF",
-        "newsletter",
-        "links"
+        "links_JwmNkH",
+        "links",
+        "links_778K6f",
+        "links_cqmnqY"
       ],
       "settings": {
         "color_scheme": "scheme-17d4397d-ae6c-4c8b-9e1a-e77b4d3ecf15",
