@@ -120,11 +120,11 @@ handle-editor-events
 
       {%- if localization.language.iso_code == 'ar' -%}
         {%- assign delivery_floor_label = 'طابق التوصيل' -%}
-        {%- assign delivery_floor_help = 'يتم احتساب رسوم التوصيل بناءً على طابق التوصيل.' -%}
+        {%- assign delivery_floor_help = 'مجاني حتى الدور الثالث، ثم تضاف 50 جنيه لكل دور بعد الثالث.' -%}
 
       {%- else -%}
         {%- assign delivery_floor_label = 'Delivery floor' -%}
-        {%- assign delivery_floor_help = 'Delivery charges are calculated based on the selected floor.' -%}
+        {%- assign delivery_floor_help = 'Free through the 3rd floor. EGP 50 is added for each floor above the 3rd.' -%}
 
       {%- endif -%}
 
@@ -153,52 +153,124 @@ handle-editor-events
           Ground Floor
         {% endif %}
         </option>
-        <option value="1-3"
-        {% if cart.attributes.delivery_floor == '1-3' %}
+        <option value="1"
+        {% if cart.attributes.delivery_floor == '1' %}
           selected
         {% endif %}
         >
 
         {% if localization.language.iso_code == 'ar' %}
-          الأدوار 1-3
+          الدور 1
         {% else %}
-          Floors 1-3
+          1st Floor
         {% endif %}
         </option>
-        <option value="4-6"
-        {% if cart.attributes.delivery_floor == '4-6' %}
+        <option value="2"
+        {% if cart.attributes.delivery_floor == '2' %}
           selected
         {% endif %}
         >
 
         {% if localization.language.iso_code == 'ar' %}
-          الأدوار 4-6
+          الدور 2
         {% else %}
-          Floors 4-6
+          2nd Floor
         {% endif %}
         </option>
-        <option value="7-9"
-        {% if cart.attributes.delivery_floor == '7-9' %}
+        <option value="3"
+        {% if cart.attributes.delivery_floor == '3' %}
           selected
         {% endif %}
         >
 
         {% if localization.language.iso_code == 'ar' %}
-          الأدوار 7-9
+          الدور 3
         {% else %}
-          Floors 7-9
+          3rd Floor
         {% endif %}
         </option>
-        <option value="10-plus"
-        {% if cart.attributes.delivery_floor == '10-plus' %}
+        <option value="4"
+        {% if cart.attributes.delivery_floor == '4' %}
           selected
         {% endif %}
         >
 
         {% if localization.language.iso_code == 'ar' %}
-          الدور 10 أو أعلى
+          الدور 4
         {% else %}
-          Floor 10+
+          4th Floor
+        {% endif %}
+        </option>
+        <option value="5"
+        {% if cart.attributes.delivery_floor == '5' %}
+          selected
+        {% endif %}
+        >
+
+        {% if localization.language.iso_code == 'ar' %}
+          الدور 5
+        {% else %}
+          5th Floor
+        {% endif %}
+        </option>
+        <option value="6"
+        {% if cart.attributes.delivery_floor == '6' %}
+          selected
+        {% endif %}
+        >
+
+        {% if localization.language.iso_code == 'ar' %}
+          الدور 6
+        {% else %}
+          6th Floor
+        {% endif %}
+        </option>
+        <option value="7"
+        {% if cart.attributes.delivery_floor == '7' %}
+          selected
+        {% endif %}
+        >
+
+        {% if localization.language.iso_code == 'ar' %}
+          الدور 7
+        {% else %}
+          7th Floor
+        {% endif %}
+        </option>
+        <option value="8"
+        {% if cart.attributes.delivery_floor == '8' %}
+          selected
+        {% endif %}
+        >
+
+        {% if localization.language.iso_code == 'ar' %}
+          الدور 8
+        {% else %}
+          8th Floor
+        {% endif %}
+        </option>
+        <option value="9"
+        {% if cart.attributes.delivery_floor == '9' %}
+          selected
+        {% endif %}
+        >
+
+        {% if localization.language.iso_code == 'ar' %}
+          الدور 9
+        {% else %}
+          9th Floor
+        {% endif %}
+        </option>
+        <option value="10"
+        {% if cart.attributes.delivery_floor == '10' %}
+          selected
+        {% endif %}
+        >
+
+        {% if localization.language.iso_code == 'ar' %}
+          الدور 10
+        {% else %}
+          10th Floor
         {% endif %}
         </option>
 
