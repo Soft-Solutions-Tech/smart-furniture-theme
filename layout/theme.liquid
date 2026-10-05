@@ -117,5 +117,62 @@
         {%- sections 'footer-group' -%}
       {%- endif -%}
     </main>
+    <script>
+  document.addEventListener('change', function (event) {
+    const floorSelect = event.target.closest(
+      'select[name="attributes[delivery_floor]"]'
+    );
+
+    if (!floorSelect) return;
+
+    const selectedFloor = floorSelect.value;
+
+    if (!selectedFloor) return;
+
+    floorSelect.setAttribute('aria-busy', 'true');
+
+    fetch(window.Shopify.routes.root + 'cart/update.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        attributes: {
+          delivery_floor: selectedFloor
+        }
+      })
+    })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('Could not save delivery floor');
+        }
+
+        return response.json();
+      })
+      .then(function (cart) {
+        document
+          .querySelectorAll('select[name="attributes[delivery_floor]"]')
+          .forEach(function (select) {
+            select.value = selectedFloor;
+          });
+
+        console.log(
+          'Delivery floor saved:',
+          cart.attributes.delivery_floor
+        );
+      })
+      .catch(function (error) {
+        console.error('Delivery floor error:', error);
+
+        alert(
+          'We could not save your delivery floor. Please select it again.'
+        );
+      })
+      .finally(function () {
+        floorSelect.removeAttribute('aria-busy');
+      });
+  });
+</script>
   </body>
 </html>
