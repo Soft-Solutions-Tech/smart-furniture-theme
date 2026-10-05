@@ -76,7 +76,7 @@
           "settings": {
             "color_scheme": "scheme-3",
             "collection": "master-bedrooms",
-            "image": "shopify://shop_images/icons_des-01b.png",
+            "image": "shopify://shop_images/stone.webp",
             "expand_collection": false,
             "content_position": "place-self-end-center text-center",
             "subheading": "",
