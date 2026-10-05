@@ -18,7 +18,7 @@
             "image": "shopify://shop_images/home_page-WEBSITE-04.webp",
             "mobile_image": "shopify://shop_images/Home_Page-MOBILE-01web.webp",
             "subheading": "",
-            "title": "new collection",
+            "title": "New Collection",
             "heading_style": "h1",
             "mobile_text_position": "place-self-center-start text-start",
             "desktop_text_position": "sm:place-self-center-start sm:text-start",
@@ -437,7 +437,7 @@
           "settings": {
             "collection": "newely-wed-collection",
             "products_count": 8,
-            "title": "&nbsp;Newely Wed&nbsp;",
+            "title": "Newly Wed&nbsp;",
             "link_url": "",
             "link_text": ""
           }
@@ -447,7 +447,7 @@
           "settings": {
             "collection": "room-refresh-collection",
             "products_count": 8,
-            "title": "&nbsp;Room Refersh&nbsp;",
+            "title": "Room Refresh&nbsp;",
             "link_url": "",
             "link_text": ""
           }
