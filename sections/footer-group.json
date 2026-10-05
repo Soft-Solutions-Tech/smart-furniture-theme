@@ -25,8 +25,8 @@
         "links_JwmNkH": {
           "type": "links",
           "settings": {
-            "menu": "footer",
-            "collapse_on_mobile": false,
+            "menu": "profile",
+            "collapse_on_mobile": true,
             "show_menu_title": true,
             "menu_title": ""
           }
