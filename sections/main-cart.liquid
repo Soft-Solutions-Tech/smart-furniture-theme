@@ -147,11 +147,13 @@
 
                 {%- if localization.language.iso_code == 'ar' -%}
                   {%- assign delivery_floor_label = 'طابق التوصيل' -%}
-                  {%- assign delivery_floor_help = 'مجاني حتى الدور الثالث، ثم تضاف 50 جنيه لكل دور بعد الثالث.' -%}
+                  {%- assign delivery_floor_help = 'رسوم الأدوار: من الأرضي حتى الدور 2 مجانًا · الدور 3: 150 جنيه · الدور 4: 300 جنيه · الدور 5: 450 جنيه · الدور 6: 600 جنيه · الدور 7 فأعلى: 750 جنيه.' -%}
+                  {%- assign delivery_floor_warning = 'الدور 8 فأعلى: يتطلب رفع المنتج بعد الدور السابع معدات خاصة يوفرها العميل.' -%}
 
                 {%- else -%}
                   {%- assign delivery_floor_label = 'Delivery floor' -%}
-                  {%- assign delivery_floor_help = 'Free through the 3rd floor. EGP 50 is added for each floor above the 3rd.' -%}
+                  {%- assign delivery_floor_help = 'Floor fees: Ground-2nd Free · 3rd EGP 150 · 4th EGP 300 · 5th EGP 450 · 6th EGP 600 · 7th+ EGP 750.' -%}
+                  {%- assign delivery_floor_warning = '8th floor or above: lifting beyond the 7th floor requires special equipment provided by the customer.' -%}
 
                 {%- endif -%}
 
@@ -175,9 +177,9 @@
                   >
 
                   {% if localization.language.iso_code == 'ar' %}
-                    الدور الأرضي
+                    الدور الأرضي (0)
                   {% else %}
-                    Ground Floor
+                    Ground Floor (0)
                   {% endif %}
                   </option>
                   <option value="1"
@@ -211,9 +213,9 @@
                   >
 
                   {% if localization.language.iso_code == 'ar' %}
-                    الدور 3
+                    الدور 3 - 150 جنيه
                   {% else %}
-                    3rd Floor
+                    3rd Floor - EGP 150
                   {% endif %}
                   </option>
                   <option value="4"
@@ -223,9 +225,9 @@
                   >
 
                   {% if localization.language.iso_code == 'ar' %}
-                    الدور 4
+                    الدور 4 - 300 جنيه
                   {% else %}
-                    4th Floor
+                    4th Floor - EGP 300
                   {% endif %}
                   </option>
                   <option value="5"
@@ -235,9 +237,9 @@
                   >
 
                   {% if localization.language.iso_code == 'ar' %}
-                    الدور 5
+                    الدور 5 - 450 جنيه
                   {% else %}
-                    5th Floor
+                    5th Floor - EGP 450
                   {% endif %}
                   </option>
                   <option value="6"
@@ -247,9 +249,9 @@
                   >
 
                   {% if localization.language.iso_code == 'ar' %}
-                    الدور 6
+                    الدور 6 - 600 جنيه
                   {% else %}
-                    6th Floor
+                    6th Floor - EGP 600
                   {% endif %}
                   </option>
                   <option value="7"
@@ -259,45 +261,21 @@
                   >
 
                   {% if localization.language.iso_code == 'ar' %}
-                    الدور 7
+                    الدور 7 - 750 جنيه
                   {% else %}
-                    7th Floor
+                    7th Floor - EGP 750
                   {% endif %}
                   </option>
-                  <option value="8"
-                  {% if cart.attributes.delivery_floor == '8' %}
+                  <option value="8-plus"
+                  {% if cart.attributes.delivery_floor == '8-plus' %}
                     selected
                   {% endif %}
                   >
 
                   {% if localization.language.iso_code == 'ar' %}
-                    الدور 8
+                    الدور 8 فأعلى - 750 جنيه
                   {% else %}
-                    8th Floor
-                  {% endif %}
-                  </option>
-                  <option value="9"
-                  {% if cart.attributes.delivery_floor == '9' %}
-                    selected
-                  {% endif %}
-                  >
-
-                  {% if localization.language.iso_code == 'ar' %}
-                    الدور 9
-                  {% else %}
-                    9th Floor
-                  {% endif %}
-                  </option>
-                  <option value="10"
-                  {% if cart.attributes.delivery_floor == '10' %}
-                    selected
-                  {% endif %}
-                  >
-
-                  {% if localization.language.iso_code == 'ar' %}
-                    الدور 10
-                  {% else %}
-                    10th Floor
+                    8th Floor or Above - EGP 750
                   {% endif %}
                   </option>
 
@@ -315,6 +293,10 @@
 
                   <p class="text-subdued text-xs">
                   {{ delivery_floor_help }}
+                  </p>
+
+                  <p class="text-xs" style="color: #ee7857; font-weight: 600;">
+                  {{ delivery_floor_warning }}
                   </p>
 
                 </div>
