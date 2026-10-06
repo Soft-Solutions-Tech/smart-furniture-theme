@@ -26,12 +26,6 @@
             "text": "Special offers and discounts up to 30% &nbsp;"
           }
         },
-        "message_xWrCkm": {
-          "type": "message",
-          "settings": {
-            "text": "To be a timer from 5th November till 7th November &nbsp;"
-          }
-        },
         "message_VEiN3f": {
           "type": "message",
           "settings": {
@@ -42,7 +36,6 @@
       "block_order": [
         "message_hxNBxD",
         "message_yC6DBr",
-        "message_xWrCkm",
         "message_VEiN3f"
       ],
       "name": "t:sections.announcement_bar.name",
@@ -53,6 +46,20 @@
         "cycle_speed": 5,
         "desktop_font_size": 11,
         "mobile_font_size": 10
+      }
+    },
+    "countdown_condensed_WGmrEx": {
+      "type": "countdown-condensed",
+      "disabled": true,
+      "name": "t:sections.countdown_timer.presets.countdown_timer.name",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "content": "Promote your current offer",
+        "link_text": "",
+        "link_url": "",
+        "expiration_date": "",
+        "expiration_behavior": "leave",
+        "desktop_justification": "space-between"
       }
     },
     "header": {
@@ -88,6 +95,7 @@
   },
   "order": [
     "announcement_bar_LEjwYQ",
+    "countdown_condensed_WGmrEx",
     "header"
   ]
 }
