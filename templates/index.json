@@ -132,8 +132,8 @@
             "content_position": "place-self-center text-center",
             "subheading": "",
             "title": "",
-            "button_text": "Kitchens",
-            "button_link": "shopify://collections/kitchens",
+            "button_text": "Storage & More",
+            "button_link": "shopify://collections/storage-more",
             "button_style": "link",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -149,8 +149,8 @@
             "content_position": "place-self-center text-center",
             "subheading": "",
             "title": "",
-            "button_text": "Kitchens",
-            "button_link": "shopify://collections/kitchens",
+            "button_text": "Mattresses",
+            "button_link": "shopify://collections/mattresses",
             "button_style": "link",
             "overlay_color": "#000000",
             "overlay_opacity": 0
