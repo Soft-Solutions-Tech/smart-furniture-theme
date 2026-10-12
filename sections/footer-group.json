@@ -28,7 +28,9 @@
           "settings": {
             "footer_column": "1",
             "title": "YOUR SMART CHOICE&nbsp;",
-            "content": "<p>Smart furniture is owned by SAI Solutions corporation&nbsp;</p>",
+            "multiline_title": "",
+            "content": "",
+            "plain_text": "Smart furniture is owned by\nSAI Solutions corporation ",
             "enable_follow_on_shop": true
           }
         },
@@ -47,7 +49,7 @@
             "footer_column": "2",
             "menu": "profile",
             "collapse_on_mobile": true,
-            "show_menu_title": false,
+            "show_menu_title": true,
             "menu_title": ""
           }
         },
