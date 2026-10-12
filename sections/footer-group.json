@@ -17,7 +17,26 @@
         "image_mDXdpF": {
           "type": "image",
           "settings": {
+            "footer_column": "1",
             "image": "shopify://shop_images/EN_White.png",
+            "image_width": 150,
+            "link": ""
+          }
+        },
+        "text_HjtrbY": {
+          "type": "text",
+          "settings": {
+            "footer_column": "1",
+            "title": "About our store",
+            "content": "",
+            "enable_follow_on_shop": true
+          }
+        },
+        "image_7TeyzJ": {
+          "type": "image",
+          "settings": {
+            "footer_column": "1",
+            "image": "shopify://shop_images/1_8e1a2b79-4e28-439e-96f1-09f4e1519857.png",
             "image_width": 150,
             "link": ""
           }
@@ -25,6 +44,7 @@
         "links_JwmNkH": {
           "type": "links",
           "settings": {
+            "footer_column": "2",
             "menu": "profile",
             "collapse_on_mobile": true,
             "show_menu_title": true,
@@ -34,6 +54,7 @@
         "links": {
           "type": "links",
           "settings": {
+            "footer_column": "3",
             "menu": "shop",
             "collapse_on_mobile": true,
             "show_menu_title": true,
@@ -43,6 +64,7 @@
         "links_778K6f": {
           "type": "links",
           "settings": {
+            "footer_column": "4",
             "menu": "about-us",
             "collapse_on_mobile": true,
             "show_menu_title": true,
@@ -52,6 +74,7 @@
         "links_cqmnqY": {
           "type": "links",
           "settings": {
+            "footer_column": "6",
             "menu": "help",
             "collapse_on_mobile": true,
             "show_menu_title": true,
@@ -61,6 +84,8 @@
       },
       "block_order": [
         "image_mDXdpF",
+        "text_HjtrbY",
+        "image_7TeyzJ",
         "links_JwmNkH",
         "links",
         "links_778K6f",
@@ -69,6 +94,10 @@
       "settings": {
         "color_scheme": "scheme-17d4397d-ae6c-4c8b-9e1a-e77b4d3ecf15",
         "separate_section_with_border": false,
+        "enable_custom_columns": true,
+        "custom_desktop_columns": 5,
+        "custom_column_gap": 48,
+        "custom_item_gap": 14,
         "show_social_media": true,
         "show_payment_icons": true,
         "show_powered_by_shopify": false,
