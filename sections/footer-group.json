@@ -27,8 +27,8 @@
           "type": "text",
           "settings": {
             "footer_column": "1",
-            "title": "About our store",
-            "content": "",
+            "title": "YOUR SMART CHOICE&nbsp;",
+            "content": "<p>Smart furniture is owned by&nbsp;</p><p>SAI Solutions corporation&nbsp;</p>",
             "enable_follow_on_shop": true
           }
         },
@@ -37,7 +37,7 @@
           "settings": {
             "footer_column": "1",
             "image": "shopify://shop_images/1_8e1a2b79-4e28-439e-96f1-09f4e1519857.png",
-            "image_width": 150,
+            "image_width": 180,
             "link": ""
           }
         },
@@ -97,7 +97,7 @@
         "enable_custom_columns": true,
         "custom_desktop_columns": 5,
         "custom_column_gap": 48,
-        "custom_item_gap": 14,
+        "custom_item_gap": 12,
         "show_social_media": true,
         "show_payment_icons": true,
         "show_powered_by_shopify": false,
