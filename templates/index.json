@@ -589,7 +589,7 @@
       "name": "t:sections.testimonials.presets.testimonials.name",
       "settings": {
         "color_scheme": "scheme-3",
-        "separate_section_with_border": true,
+        "separate_section_with_border": false,
         "auto_rotate_between_testimonials": true,
         "cycle_speed": 3,
         "font_size_factor": 1,
