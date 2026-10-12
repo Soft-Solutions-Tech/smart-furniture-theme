@@ -47,7 +47,7 @@
             "footer_column": "2",
             "menu": "profile",
             "collapse_on_mobile": true,
-            "show_menu_title": true,
+            "show_menu_title": false,
             "menu_title": ""
           }
         },
