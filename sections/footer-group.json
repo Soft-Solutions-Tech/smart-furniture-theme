@@ -22,14 +22,6 @@
             "link": ""
           }
         },
-        "image_LeMtJe": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/1_0247e357-b06b-47b8-b113-013023d147a3.png",
-            "image_width": 150,
-            "link": ""
-          }
-        },
         "links_JwmNkH": {
           "type": "links",
           "settings": {
@@ -69,7 +61,6 @@
       },
       "block_order": [
         "image_mDXdpF",
-        "image_LeMtJe",
         "links_JwmNkH",
         "links",
         "links_778K6f",
