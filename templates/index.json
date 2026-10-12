@@ -154,7 +154,7 @@
         "show_text_outside": true,
         "space_items": true,
         "stack_collections": false,
-        "collections_per_row_desktop": 4,
+        "collections_per_row_desktop": 5,
         "stack_collections_mobile": false,
         "collections_per_row_mobile": "1",
         "subheading": "",
