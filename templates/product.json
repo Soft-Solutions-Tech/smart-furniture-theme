@@ -109,7 +109,7 @@
         "complementary_products": {
           "type": "complementary_products",
           "settings": {
-            "title": "Customize your set&nbsp;",
+            "title": "Complete your room",
             "products_count": 10,
             "show_below_gallery": true,
             "stack_products": true,
@@ -164,7 +164,7 @@
         "horizontal_spacing_factor": 0.2,
         "vertical_spacing_factor": 0.2,
         "subheading": "",
-        "title": "&nbsp;Complete your room&nbsp;",
+        "title": "You might prefer",
         "heading_style": "h2",
         "content": ""
       }
