@@ -537,8 +537,6 @@
     }
   },
   "platform_customizations": {
-    "custom_css": [
-      ".wa__btn_popup {right: 10px !important; bottom: 56px !important;}"
-    ]
+    "custom_css": []
   }
 }
