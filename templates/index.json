@@ -126,8 +126,8 @@
           "type": "collection",
           "settings": {
             "color_scheme": "scheme-3",
-            "collection": "kitchens",
-            "image": "shopify://shop_images/Kitchen_-_Edited.png",
+            "collection": "storage-more",
+            "image": "shopify://shop_images/BC13_1.webp",
             "expand_collection": false,
             "content_position": "place-self-center text-center",
             "subheading": "",
@@ -143,8 +143,8 @@
           "type": "collection",
           "settings": {
             "color_scheme": "scheme-3",
-            "collection": "kitchens",
-            "image": "shopify://shop_images/Kitchen_-_Edited.png",
+            "collection": "mattresses",
+            "image": "shopify://shop_images/LOVELY-23-100_5_9bf21ff3-d80f-4750-9139-18dc21b1bdf8.webp",
             "expand_collection": false,
             "content_position": "place-self-center text-center",
             "subheading": "",
