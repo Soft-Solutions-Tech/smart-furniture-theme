@@ -18,7 +18,15 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/EN_White.png",
-            "image_width": 300,
+            "image_width": 150,
+            "link": ""
+          }
+        },
+        "image_LeMtJe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1_0247e357-b06b-47b8-b113-013023d147a3.png",
+            "image_width": 150,
             "link": ""
           }
         },
@@ -61,6 +69,7 @@
       },
       "block_order": [
         "image_mDXdpF",
+        "image_LeMtJe",
         "links_JwmNkH",
         "links",
         "links_778K6f",
@@ -75,7 +84,7 @@
         "show_country_selector": true,
         "show_country_name": true,
         "show_country_flag": true,
-        "show_locale_selector": true
+        "show_locale_selector": false
       }
     }
   },

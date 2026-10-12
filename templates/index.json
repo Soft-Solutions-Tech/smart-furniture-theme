@@ -81,7 +81,7 @@
             "content_position": "place-self-end-center text-center",
             "subheading": "",
             "title": "",
-            "button_text": "Master Bedrooms",
+            "button_text": "Bedrooms",
             "button_link": "shopify://collections/master-bedrooms",
             "button_style": "link",
             "overlay_color": "#000000",
@@ -98,7 +98,7 @@
             "content_position": "place-self-center text-center",
             "subheading": "",
             "title": "",
-            "button_text": "Living Sets",
+            "button_text": "Living rooms",
             "button_link": "shopify://collections/living-sets",
             "button_style": "link",
             "overlay_color": "#000000",
@@ -115,25 +115,8 @@
             "content_position": "place-self-center text-center",
             "subheading": "",
             "title": "",
-            "button_text": "Dining sets",
+            "button_text": "Dining rooms",
             "button_link": "shopify://collections/dining-sets",
-            "button_style": "link",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "collection_BMrnPg": {
-          "type": "collection",
-          "settings": {
-            "color_scheme": "scheme-3",
-            "collection": "",
-            "image": "shopify://shop_images/BC13.webp",
-            "expand_collection": false,
-            "content_position": "place-self-center text-center",
-            "subheading": "",
-            "title": "",
-            "button_text": "Storage & More",
-            "button_link": "",
             "button_style": "link",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -161,7 +144,6 @@
         "collection_xQWwqR",
         "collection_XEPfFp",
         "collection_fFAtVC",
-        "collection_BMrnPg",
         "collection_WGF7B8"
       ],
       "name": "Shop by Room",
