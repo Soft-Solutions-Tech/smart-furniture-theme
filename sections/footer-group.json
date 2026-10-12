@@ -96,7 +96,7 @@
         "separate_section_with_border": false,
         "enable_custom_columns": true,
         "custom_desktop_columns": 5,
-        "custom_column_gap": 100,
+        "custom_column_gap": 16,
         "custom_item_gap": 0,
         "show_social_media": true,
         "show_payment_icons": true,
