@@ -8397,3 +8397,9 @@ ul {
 .badge * {
   color: #ffffff !important;
 }
+
+
+.wa__btn_popup {
+  right: 10px !important;
+  bottom: 63px !important;
+}
