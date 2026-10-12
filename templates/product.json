@@ -101,7 +101,7 @@
             "show_below_gallery": false,
             "icon": "none",
             "title": "Delivery",
-            "content": "<p>Share some content to your customers about your products.</p>",
+            "content": "<p>Free delivery, delivered to your door within 7 to 10 working days<br/><br/></p>",
             "liquid": "{% assign current_variant = product.selected_or_first_available_variant %}\n\n{% if current_variant.metafields.custom.delivery != blank %}\n  {{ current_variant.metafields.custom.delivery | metafield_tag }}\n{% elsif product.metafields.custom.delivery != blank %}\n  {{ product.metafields.custom.delivery | metafield_tag }}\n{% endif %}",
             "page": ""
           }
