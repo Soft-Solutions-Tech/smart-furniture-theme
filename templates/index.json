@@ -192,9 +192,12 @@
         "stack_collections": false,
         "collections_per_row_desktop": 5,
         "stack_collections_mobile": false,
+        "show_mobile_scroll_hint": true,
+        "mobile_scroll_hint_text": "Swipe to see more →",
         "collections_per_row_mobile": "1",
         "subheading": "",
         "title": "&nbsp;Shop by Room&nbsp;",
+        "header_alignment": "left",
         "heading_style": "h2",
         "content": ""
       }
