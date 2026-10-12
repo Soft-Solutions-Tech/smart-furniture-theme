@@ -1,1 +1,399 @@
-{"sections":{"faq":{"type":"faq","blocks":{"category":{"type":"category","settings":{"title":"Order"}},"question-1":{"type":"question","settings":{"question":"Do you ship overseas?","answer":"<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.<\/p>"}},"question-2":{"type":"question","settings":{"question":"How long will it take to get my orders?","answer":"<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.<\/p>"}},"question-3":{"type":"question","settings":{"question":"Any question?","answer":"<p>You can contact us through our contact page! We will be happy to assist you.<\/p>"}}},"block_order":["category","question-1","question-2","question-3"],"settings":{}}},"order":["faq"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_AYwBfQ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CCFFkd": {
+          "type": "heading",
+          "settings": {
+            "text": "Who owns Smart Furniture?",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_yADGgW": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p><strong>Smart Furniture is a Joint Stock Company Part of a Worldwide European </strong>Egyptian Venture Founded in Austria in 1952 under the umbrella of S.A.I Solutions Corporation, Smart Furniture stores operated by us and some franchisees in more than 20 governates across Egypt. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CCFFkd",
+        "richtext_yADGgW"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "category": {
+          "type": "category",
+          "settings": {
+            "title": "<strong>General Questions</strong>",
+            "icon": "none",
+            "icon_width": 20
+          }
+        },
+        "question-1": {
+          "type": "question",
+          "settings": {
+            "question": "What is Smart Furniture?&nbsp;",
+            "answer": "<p>Smart Furniture is a leading furniture company in Egypt offering modern, functional, and high-quality furniture designed to fit different lifestyles and spaces.</p>"
+          }
+        },
+        "question_j7Gmwg": {
+          "type": "question",
+          "settings": {
+            "question": "Where are your showrooms located?&nbsp;",
+            "answer": "<p>Smart Furniture has multiple showrooms across Egypt. You can find the nearest showroom through our <strong>Showrooms</strong> page on the website.</p>"
+          }
+        },
+        "question_wMknp9": {
+          "type": "question",
+          "settings": {
+            "question": "Are your prices the same in all the showrooms?&nbsp;",
+            "answer": "<p>Yes, prices are unified across all Smart Furniture showrooms in Egypt to ensure fairness and transparency for all customers.</p>"
+          }
+        },
+        "question_DrGkiD": {
+          "type": "question",
+          "settings": {
+            "question": "Do you sell online?&nbsp;",
+            "answer": "<p>Yes, you can browse our full collection and place orders directly through our website.</p>"
+          }
+        },
+        "category_AkReR4": {
+          "type": "category",
+          "settings": {
+            "title": "<strong>Orders & Payments</strong>",
+            "icon": "none",
+            "icon_width": 16
+          }
+        },
+        "question_yH8rF9": {
+          "type": "question",
+          "settings": {
+            "question": "What payment methods do you accept?&nbsp;",
+            "answer": "<p>We accept several payment options including:&nbsp;</p><ul><li>Cash on delivery&nbsp;</li><li>Credit / Debit cards</li><li>Online payments&nbsp;</li><li>Installment plans with selected banks BNPL Companies.</li></ul>"
+          }
+        },
+        "question-2": {
+          "type": "question",
+          "settings": {
+            "question": "Do you offer installment plans?",
+            "answer": "<p>Yes, we offer flexible installment plans through a number of trusted banks and financial partners to make your purchase more convenient. Customers can choose from a variety of installment durations depending on the provider and the available terms at the time of purchase.<br/>Our installment partners include:</p><ul><li>Contact Financial Holding&nbsp;</li><li>ValU&nbsp;</li><li>Sympl&nbsp;</li><li>Souhoola</li></ul><p>Depending on the partner, installment plans may offer:</p><ul><li>Flexible payment periods ranging from <strong>6 up to 36 months</strong></li><li><strong>Low or zero down payment</strong> options in selected offers</li><li>Fast approval processes</li><li>Simple documentation requirements<br/><br/><br/><br/></li></ul>"
+          }
+        },
+        "question-3": {
+          "type": "question",
+          "settings": {
+            "question": "How long does delivery take?&nbsp;",
+            "answer": "<p>Delivery times may vary depending on product availability and delivery location. Some selected items are available for <strong>fast delivery starting from 48 hours</strong>, allowing you to receive your furniture quickly and conveniently.<br/></p><p>For other products, delivery is typically completed within <strong>7 to 21 working days</strong> after order confirmation, depending on the item and preparation requirements.<br/></p><p>Our team will contact you in advance to confirm the delivery date and ensure a smooth delivery and installation experience.<br/><br/></p>"
+          }
+        },
+        "category_MXRJjN": {
+          "type": "category",
+          "settings": {
+            "title": "<strong>Delivery & Assembly</strong>",
+            "icon": "none",
+            "icon_width": 20
+          }
+        },
+        "question_LXFU48": {
+          "type": "question",
+          "settings": {
+            "question": "Do you deliver all over Egypt?",
+            "answer": "<p>Yes, we deliver to most cities across Egypt. Delivery time may vary depending on location.</p>"
+          }
+        },
+        "question_HH8kzJ": {
+          "type": "question",
+          "settings": {
+            "question": "How long does delivery take?",
+            "answer": "<p>Delivery time typically ranges between <strong>7–21 days</strong>, depending on product availability and location.</p>"
+          }
+        },
+        "question_tQThmi": {
+          "type": "question",
+          "settings": {
+            "question": "Is assembly included?",
+            "answer": "<p>Yes, our professional team will handle delivery and assembly to ensure everything is installed correctly.</p>"
+          }
+        },
+        "category_gmmBNW": {
+          "type": "category",
+          "settings": {
+            "title": "<strong>Product & Quality</strong>",
+            "icon": "none",
+            "icon_width": 20
+          }
+        },
+        "question_jJFPm9": {
+          "type": "question",
+          "settings": {
+            "question": "What materials are used in your furniture?",
+            "answer": "<p>Our furniture is made from a combination of high-quality materials to ensure durability, comfort, and long-term use:</p><ul><li><strong>MDF (Medium-Density Fiberboard):</strong> Smooth, precise, and resistant to warping, perfect for detailed designs.</li><li><strong>Chipboard:</strong> Lightweight and stable, offering a cost-effective solution without compromising strength.</li><li><strong>Natural wood:</strong> Timeless, strong, and elegant, adding warmth and durability to your home.</li></ul><p>This blend guarantees that every piece of Smart Furniture is both <strong>stylish and built to last</strong>.<br/><br/></p>"
+          }
+        },
+        "question_R9CWbC": {
+          "type": "question",
+          "settings": {
+            "question": "Do you offer a warranty?",
+            "answer": "<p>Yes, Smart Furniture provides a warranty on selected products against manufacturing defects, giving you peace of mind and demonstrating our commitment to quality craftsmanship.</p><p>Our warranty coverage is as follows:&nbsp;</p><ul><li><strong>3 years</strong> – dining tables, chairs, living room furniture, coffee and side tables, and all cash-and-carry items.&nbsp;</li><li><strong>5 years</strong> – kitchens and bedrooms (master and teens).&nbsp;</li><li><strong>10 years</strong> – all mattresses.</li></ul><p>This warranty ensures that your furniture maintains its <strong>durability, quality, and functionality</strong> for years to come.<br/><br/></p>"
+          }
+        },
+        "question_cAQjBw": {
+          "type": "question",
+          "settings": {
+            "question": "Can I customize furniture?",
+            "answer": "<p>Some products offer customization options such as color, fabric, or size. Availability depends on the model.</p>"
+          }
+        },
+        "category_XAjekb": {
+          "type": "category",
+          "settings": {
+            "title": "<strong>Returns & Support</strong>",
+            "icon": "none",
+            "icon_width": 20
+          }
+        },
+        "question_KVf3J7": {
+          "type": "question",
+          "settings": {
+            "question": "What is your return policy?&nbsp;",
+            "answer": "<p>At Smart Furniture, we want you to be completely satisfied with your purchase. Returns or exchanges may be possible:</p><ul><li><strong>Before manufacturing processes start</strong> – if you change your mind or want to modify your order.</li><li><strong>After delivery</strong> – only if the product has a <strong>manufacturing defect or issue</strong>.</li></ul><p>If a <strong>refund</strong> is required, it will be processed <strong>back to the same card within 45 days</strong>, in accordance with the regulations of the Central Bank of Egypt.</p><p>Please contact our customer service team as soon as possible to initiate a return, exchange, or refund.&nbsp;</p><p>Our team will guide you through the process quickly and smoothly. <br/><br/></p>"
+          }
+        },
+        "question_8anpwA": {
+          "type": "question",
+          "settings": {
+            "question": "How can I contact customer service?&nbsp;",
+            "answer": "<p>You can reach us through multiple convenient channels:</p><ul><li><strong>Hotline:</strong> 19641</li><li><strong>Website contact form</strong></li><li><strong>Social media channels</strong></li><li><strong>Visit any Smart Furniture showroom</strong></li></ul><p>Our team is always ready to assist with orders, product inquiries, or support requests.<br/><br/></p>"
+          }
+        },
+        "category_LHLX4x": {
+          "type": "category",
+          "settings": {
+            "title": "<strong>Franchise</strong>",
+            "icon": "none",
+            "icon_width": 20
+          }
+        },
+        "question_iaAgzN": {
+          "type": "question",
+          "settings": {
+            "question": "How can I become a Smart Furniture franchisee?&nbsp;",
+            "answer": "<p>Becoming a Smart Furniture franchisee is a great opportunity to partner with Egypt’s leading furniture brand. To start the process:</p><ol><li><strong>Submit an application</strong> via our website or contact our franchise team directly.</li><li><strong>Provide business and financial information</strong> – this helps us understand your capacity and location.</li><li><strong>Initial assessment & discussion</strong> – our team will review your application and discuss opportunities, requirements, and support.</li><li><strong>Franchise agreement & training</strong> – successful candidates will receive guidance, brand training, and operational support to launch their showroom.</li></ol><p>Smart Furniture offers <strong>full support in marketing, operations, and product training</strong> to ensure the success of all franchise partners.</p><p>For more details or to share your data, contact our franchise team via <strong>Website@sai-solutions.com</strong> or call <strong>hotline 19641</strong>.<br/><br/></p>"
+          }
+        },
+        "question_ETUBzC": {
+          "type": "question",
+          "settings": {
+            "question": "What are the investment requirements?&nbsp;",
+            "answer": "<p>The initial investment depends on showroom size, location, and product range. Our franchise team will provide a detailed breakdown and guide you through financing options.</p>"
+          }
+        },
+        "question_WCgdk6": {
+          "type": "question",
+          "settings": {
+            "question": "What are the investment requirements?&nbsp;",
+            "answer": "<p>Yes, Smart Furniture provides franchisees with <strong>clearly defined territories</strong> to protect your business and ensure fair market opportunities.</p>"
+          }
+        },
+        "question_QTBPGY": {
+          "type": "question",
+          "settings": {
+            "question": "What support does Smart Furniture provide to franchisees?",
+            "answer": "<p>We provide comprehensive support, including:</p><ul><li>Marketing and advertising guidance</li><li>Staff training and operational support</li><li>Product knowledge and showroom setup assistance</li><li>Access to our full range of furniture collections<br/><br/></li></ul>"
+          }
+        },
+        "question_rXHKFw": {
+          "type": "question",
+          "settings": {
+            "question": "What is the expected return on investment (ROI)?&nbsp;",
+            "answer": "<p>ROI varies depending on location, showroom size, and sales volume. Our franchise team will provide realistic projections and support you in optimizing profitability.</p>"
+          }
+        },
+        "question_kpC4Ay": {
+          "type": "question",
+          "settings": {
+            "question": "How long does it take to open a franchise?",
+            "answer": "<p>From application to showroom opening, the process typically takes <strong>3–6 months</strong>, depending on location, approval, and setup requirements.</p>"
+          }
+        },
+        "category_G886Fk": {
+          "type": "category",
+          "settings": {
+            "title": "<strong>Showrooms</strong>",
+            "icon": "none",
+            "icon_width": 20
+          }
+        },
+        "question_nzJCem": {
+          "type": "question",
+          "settings": {
+            "question": "Where are Smart Furniture showrooms located?&nbsp;",
+            "answer": "<p>Smart Furniture has showrooms <strong>across Egypt, from the North Coast to Aswan</strong>, giving customers nationwide access to our collections. Each showroom is designed to provide a <strong>full experience</strong>, allowing you to see, feel, and test our furniture before making a purchase.</p>"
+          }
+        },
+        "question_gqMrPp": {
+          "type": "question",
+          "settings": {
+            "question": "&nbsp;Are prices the same in all showrooms?&nbsp;",
+            "answer": "<p>Yes. Smart Furniture maintains <strong>consistent prices across all showrooms</strong> in Egypt, ensuring fairness and transparency for all customers.</p>"
+          }
+        },
+        "question_LP4taK": {
+          "type": "question",
+          "settings": {
+            "question": "Can I visit a showroom without an appointment?&nbsp;",
+            "answer": "<p>Absolutely! Our showrooms welcome <strong>walk-in visitors</strong>, but booking an appointment ensures you receive <strong>personalized assistance and guidance</strong> from our sales experts.</p>"
+          }
+        },
+        "question_ACmGdn": {
+          "type": "question",
+          "settings": {
+            "question": "Do your showrooms display all products?&nbsp;",
+            "answer": "<p>Our showrooms showcase a <strong>wide selection of our collections</strong>, including living rooms, bedrooms, kitchens, dining sets, and mattresses. Some items are available for <strong>immediate cash-and-carry purchase</strong>, while others can be ordered to your specifications.</p>"
+          }
+        },
+        "question_QEYJUK": {
+          "type": "question",
+          "settings": {
+            "question": "Do showrooms provide design advice?&nbsp;",
+            "answer": "<p>Yes, our showroom team offers <strong>expert guidance on furniture selection, layout, and dimensions</strong>, helping you choose pieces that fit your space perfectly while matching your style preferences.</p>"
+          }
+        },
+        "question_T4V3E8": {
+          "type": "question",
+          "settings": {
+            "question": "Are showroom products available for fast delivery?&nbsp;",
+            "answer": "<p>Yes, selected showroom items are available for <strong>immediate delivery</strong>, starting from <strong>48 hours</strong> for cash-and-carry purchases. Our team will confirm delivery times when you visit.</p>"
+          }
+        },
+        "category_pTMUgL": {
+          "type": "category",
+          "settings": {
+            "title": "<strong>Discounts & Promotions</strong>",
+            "icon": "none",
+            "icon_width": 20
+          }
+        },
+        "question_Nq4emP": {
+          "type": "question",
+          "settings": {
+            "question": "Do you offer discounts on your products?&nbsp;",
+            "answer": "<p>Yes, Smart Furniture occasionally offers <strong>special discounts and promotions</strong> across various collections. These can include seasonal offers, limited-time deals, and bundle promotions.</p>"
+          }
+        },
+        "question_Yk9VX3": {
+          "type": "question",
+          "settings": {
+            "question": "How can I find out about current promotions?&nbsp;",
+            "answer": "<p>You can stay updated on all Smart Furniture promotions by:&nbsp;</p><ul><li>Visiting the <strong>Promotions</strong> section on our website&nbsp;</li><li>Following our <strong>social media channels</strong>&nbsp;</li><li>Subscribing to our <strong>newsletter</strong></li></ul>"
+          }
+        },
+        "question_aDVaqd": {
+          "type": "question",
+          "settings": {
+            "question": "Do you have discounts for bulk or corporate purchases?&nbsp;",
+            "answer": "<p>Yes, Smart Furniture offers <strong>special pricing for bulk orders and corporate clients</strong>. Please contact our sales team for personalized offers.</p>"
+          }
+        },
+        "question_e97hEW": {
+          "type": "question",
+          "settings": {
+            "question": "Are discounts available in all showrooms?&nbsp;",
+            "answer": "<p>All discounts and promotions are <strong>applied consistently across all Smart Furniture showrooms in Egypt</strong> and online.</p>"
+          }
+        },
+        "question_XTrtdA": {
+          "type": "question",
+          "settings": {
+            "question": "Can I combine promotions with installment plans? &nbsp;",
+            "answer": "<p>No, discounts and promotions <strong>cannot be combined with installment plans</strong>. Customers must choose either the promotion or the installment option.</p>"
+          }
+        },
+        "question_DqwGpN": {
+          "type": "question",
+          "settings": {
+            "question": "Do you offer seasonal or festival promotions?&nbsp;",
+            "answer": "<p>Yes, Smart Furniture regularly runs <strong>seasonal promotions</strong>, including national holidays, back-to-school, and year-end sales.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category",
+        "question-1",
+        "question_j7Gmwg",
+        "question_wMknp9",
+        "question_DrGkiD",
+        "category_AkReR4",
+        "question_yH8rF9",
+        "question-2",
+        "question-3",
+        "category_MXRJjN",
+        "question_LXFU48",
+        "question_HH8kzJ",
+        "question_tQThmi",
+        "category_gmmBNW",
+        "question_jJFPm9",
+        "question_R9CWbC",
+        "question_cAQjBw",
+        "category_XAjekb",
+        "question_KVf3J7",
+        "question_8anpwA",
+        "category_LHLX4x",
+        "question_iaAgzN",
+        "question_ETUBzC",
+        "question_WCgdk6",
+        "question_QTBPGY",
+        "question_rXHKFw",
+        "question_kpC4Ay",
+        "category_G886Fk",
+        "question_nzJCem",
+        "question_gqMrPp",
+        "question_LP4taK",
+        "question_ACmGdn",
+        "question_QEYJUK",
+        "question_T4V3E8",
+        "category_pTMUgL",
+        "question_Nq4emP",
+        "question_Yk9VX3",
+        "question_aDVaqd",
+        "question_e97hEW",
+        "question_XTrtdA",
+        "question_DqwGpN"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "",
+        "title": "Frequently Asked Questions",
+        "heading_style": "h2",
+        "content": ""
+      }
+    }
+  },
+  "order": [
+    "rich_text_AYwBfQ",
+    "faq"
+  ]
+}
