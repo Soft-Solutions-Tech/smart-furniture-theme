@@ -33,9 +33,33 @@ flex: none;
 display: block;
 }
 @media screen and (max-width: 699px) {
+/* On mobile, keep the custom desktop columns but flatten their spacing so
+collapsed link menus look exactly like one clean accordion group. */
 #shopify-section-{{ section.id }} .footer__block-list--custom-columns {
 grid-template-columns: 1fr;
-gap: min(var(--section-vertical-spacing), 2.5rem);
+gap: 0;
+}
+#shopify-section-{{ section.id }} .footer__custom-column {
+gap: var(--footer-custom-item-gap);
+}
+/* Give brand / image / text content breathing room before the menu accordions. */
+#shopify-section-{{ section.id }} .footer__custom-column:not(:has(.footer__block--links)) {
+margin-block-end: 1.25rem;
+}
+/* Link-only columns should join together with no large mobile gaps. */
+#shopify-section-{{ section.id }} .footer__custom-column:has(.footer__block--links):not(:has(.footer__block--image)):not(:has(.footer__block--text)):not(:has(.footer__block--newsletter)):not(:has(.footer__block--app)) {
+gap: 0;
+margin: 0;
+}
+#shopify-section-{{ section.id }} .footer__custom-column .footer__block--links {
+margin: 0;
+}
+/* Match Prestige's normal accordion-group border behavior even though
+each menu may live in a different desktop footer column. */
+#shopify-section-{{ section.id }} .footer__custom-column:has(.footer__block--links)
++ .footer__custom-column:has(.footer__block--links)
+.accordion {
+border-block-start-width: 0;
 }
 }
 </style>
@@ -105,11 +129,17 @@ gap: min(var(--section-vertical-spacing), 2.5rem);
 
             {%- when 'text' -%}
 
-              {%- if block.settings.title != blank or block.settings.content != blank or shop.features.follow_on_shop? and block.settings.enable_follow_on_shop -%}
+              {%- if block.settings.multiline_title != blank or block.settings.title != blank or block.settings.plain_text != blank or block.settings.content != blank or shop.features.follow_on_shop? and block.settings.enable_follow_on_shop -%}
 
                 <div class="v-stack gap-4 sm:gap-5">
 
-                  {%- if block.settings.title != blank -%}
+                  {%- if block.settings.multiline_title != blank -%}
+
+                    <p class="h6">
+                    {{ block.settings.multiline_title | escape | newline_to_br }}
+                    </p>
+
+                  {%- elsif block.settings.title != blank -%}
 
                     <p class="h6">
                     {{ block.settings.title }}
@@ -117,7 +147,17 @@ gap: min(var(--section-vertical-spacing), 2.5rem);
 
                   {%- endif -%}
 
-                  {%- if block.settings.content != blank -%}
+                  {%- if block.settings.plain_text != blank -%}
+
+                    <div class="prose text-subdued">
+
+                      <p>
+                      {{ block.settings.plain_text | escape | newline_to_br }}
+                      </p>
+
+                    </div>
+
+                  {%- elsif block.settings.content != blank -%}
 
                     <div class="prose text-subdued">
                       {{- block.settings.content -}}
@@ -686,9 +726,21 @@ gap: min(var(--section-vertical-spacing), 2.5rem);
   "default": "About our store"
   },
   {
+  "type": "textarea",
+  "id": "multiline_title",
+  "label": "Heading with line breaks (optional)",
+  "info": "Use this instead of Heading when you want to choose exactly where the heading moves to a new line."
+  },
+  {
   "type": "richtext",
   "id": "content",
   "label": "t:global.text.content"
+  },
+  {
+  "type": "textarea",
+  "id": "plain_text",
+  "label": "Plain text with line breaks (optional)",
+  "info": "Each line break you type here will appear as a line break in the footer. This is used instead of the rich text content when filled in."
   },
   {
   "type": "checkbox",
