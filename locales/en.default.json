@@ -1,5 +1,19 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
+    "warranty_by_tag": {
+  "years_3": "3 Years Warranty",
+  "years_5": "5 Years Warranty",
+  "years_10": "10 Years Warranty"
+},
     "page": "Page {{ page }}",
     "home": "Home",
     "accessibility": {
