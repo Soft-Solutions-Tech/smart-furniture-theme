@@ -69,7 +69,6 @@ border-block-start-width: 0;
   bordered-section
 {% endif %}
 ">
-
 <div class="container">
 
   <div class="footer__inner">
@@ -105,14 +104,17 @@ border-block-start-width: 0;
 
                 {%- capture sizes -%}
                   {{ block.settings.image_width }}px
+
                 {%- endcapture -%}
 
                 {%- capture widths -%}
                   {{ block.settings.image_width }}, {{ block.settings.image_width | times: 2 | at_most: block.settings.image.width }}
+
                 {%- endcapture -%}
 
                 {%- capture style -%}
                   --image-max-width: {{ block.settings.image_width }}px
+
                 {%- endcapture -%}
 
                 {%- if block.settings.link != blank -%}
@@ -137,12 +139,14 @@ border-block-start-width: 0;
 
                     <p class="h6">
                     {{ block.settings.multiline_title | escape | newline_to_br }}
+
                     </p>
 
                   {%- elsif block.settings.title != blank -%}
 
                     <p class="h6">
                     {{ block.settings.title }}
+
                     </p>
 
                   {%- endif -%}
@@ -153,6 +157,7 @@ border-block-start-width: 0;
 
                       <p>
                       {{ block.settings.plain_text | escape | newline_to_br }}
+
                       </p>
 
                     </div>
@@ -204,8 +209,10 @@ border-block-start-width: 0;
                 {%- endcapture -%}
 
                 <div class="v-stack gap-4 sm:gap-5
+
                 {% if block.settings.collapse_on_mobile %}
                   sm-max:hidden
+
                 {% endif %}
                 ">
 
@@ -213,6 +220,7 @@ border-block-start-width: 0;
 
                   <p class="h6">
                   {{ menu_title }}
+
                   </p>
 
                 {%- endif -%}
@@ -235,6 +243,7 @@ border-block-start-width: 0;
 
                 <p class="h6">
                 {{ block.settings.title }}
+
                 </p>
 
               {%- endif -%}
@@ -261,6 +270,7 @@ border-block-start-width: 0;
 
                     {%- capture error_message -%}
                       {{ form.errors.translated_fields['email'] }} {{ form.errors.messages['email'] }}
+
                     {%- endcapture -%}
                     {%- render 'banner', content: error_message, status: 'error' -%}
 
@@ -374,39 +384,57 @@ border-block-start-width: 0;
       <div class="footer__block-list footer__block-list--custom-columns">
 
         {%- if footer_column_1 != blank -%}
+
           <div class="footer__custom-column">
             {{- footer_column_1 -}}
+
           </div>
+
         {%- endif -%}
 
         {%- if footer_column_2 != blank -%}
+
           <div class="footer__custom-column">
             {{- footer_column_2 -}}
+
           </div>
+
         {%- endif -%}
 
         {%- if footer_column_3 != blank -%}
+
           <div class="footer__custom-column">
             {{- footer_column_3 -}}
+
           </div>
+
         {%- endif -%}
 
         {%- if footer_column_4 != blank -%}
+
           <div class="footer__custom-column">
             {{- footer_column_4 -}}
+
           </div>
+
         {%- endif -%}
 
         {%- if footer_column_5 != blank -%}
+
           <div class="footer__custom-column">
             {{- footer_column_5 -}}
+
           </div>
+
         {%- endif -%}
 
         {%- if footer_column_6 != blank -%}
+
           <div class="footer__custom-column">
             {{- footer_column_6 -}}
+
           </div>
+
         {%- endif -%}
 
       </div>
@@ -475,8 +503,24 @@ border-block-start-width: 0;
     <p class="heading text-subdued text-xxs">
     © {{ 'now' | date: '%Y' }} - {{ shop.name }}
 
-    {%- if section.settings.show_powered_by_shopify -%}
+    {%- if section.settings.custom_footer_credit != blank -%}
+      <span>
+      ·
+
+      {%- if section.settings.custom_footer_credit_link != blank -%}
+        <a href="{{ section.settings.custom_footer_credit_link }}">
+        {{ section.settings.custom_footer_credit }}
+        </a>
+
+      {%- else -%}
+        {{ section.settings.custom_footer_credit }}
+
+      {%- endif -%}
+      </span>
+
+    {%- elsif section.settings.show_powered_by_shopify -%}
       {{ powered_by_link }}
+
     {%- endif -%}
 
     </p>
@@ -489,6 +533,7 @@ border-block-start-width: 0;
 
           <li>
             {{- type | payment_type_svg_tag -}}
+
           </li>
 
         {%- endfor -%}
@@ -498,9 +543,7 @@ border-block-start-width: 0;
     {%- endif -%}
 
   </div>
-
 </div>
-
 </div>
 </div>
 {% schema %}
@@ -582,6 +625,17 @@ border-block-start-width: 0;
   "id": "show_powered_by_shopify",
   "label": "t:sections.footer.show_powered_by_shopify",
   "default": true
+  },
+  {
+  "type": "text",
+  "id": "custom_footer_credit",
+  "label": "Custom footer credit",
+  "placeholder": "Designed & Developed by Soft Solutions"
+  },
+  {
+  "type": "url",
+  "id": "custom_footer_credit_link",
+  "label": "Custom footer credit link"
   },
   {
   "type": "header",
