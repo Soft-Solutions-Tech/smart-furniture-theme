@@ -138,13 +138,49 @@
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
+        },
+        "collection_HPNJPJ": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-3",
+            "collection": "kitchens",
+            "image": "shopify://shop_images/Kitchen_-_Edited.png",
+            "expand_collection": false,
+            "content_position": "place-self-center text-center",
+            "subheading": "",
+            "title": "",
+            "button_text": "Kitchens",
+            "button_link": "shopify://collections/kitchens",
+            "button_style": "link",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_yyyatp": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-3",
+            "collection": "kitchens",
+            "image": "shopify://shop_images/Kitchen_-_Edited.png",
+            "expand_collection": false,
+            "content_position": "place-self-center text-center",
+            "subheading": "",
+            "title": "",
+            "button_text": "Kitchens",
+            "button_link": "shopify://collections/kitchens",
+            "button_style": "link",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
         }
       },
       "block_order": [
         "collection_xQWwqR",
         "collection_XEPfFp",
         "collection_fFAtVC",
-        "collection_WGF7B8"
+        "collection_WGF7B8",
+        "collection_HPNJPJ",
+        "collection_yyyatp"
       ],
       "name": "Shop by Room",
       "settings": {
@@ -154,7 +190,7 @@
         "show_text_outside": true,
         "space_items": true,
         "stack_collections": false,
-        "collections_per_row_desktop": 4,
+        "collections_per_row_desktop": 5,
         "stack_collections_mobile": false,
         "collections_per_row_mobile": "1",
         "subheading": "",
