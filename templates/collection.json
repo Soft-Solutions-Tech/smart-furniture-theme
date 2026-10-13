@@ -34,7 +34,7 @@
         "image_ArFHVi": {
           "type": "image",
           "settings": {
-            "image": "{{ collection.metafields.custom.collection_banner_desktop.value }}",
+            "image": "shopify://shop_images/Master_bedrooms_-_Desktop.webp",
             "mobile_image": "{{ collection.metafields.custom.collection_banner_mobile.value }}",
             "subheading": "Tell your story",
             "title": "Slide 2",
