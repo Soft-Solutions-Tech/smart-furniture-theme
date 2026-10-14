@@ -14,7 +14,7 @@
       "settings": {
         "color_scheme": "",
         "show_sort_by": true,
-        "products_per_page": 24,
+        "products_per_page": 20,
         "horizontal_spacing_factor": 0.2,
         "vertical_spacing_factor": 0.2,
         "show_filters": true,
