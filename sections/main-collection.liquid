@@ -1,26 +1,4 @@
 {%- liquid
-# VARIANT-BASED COLLECTION SUPPORT
-# Bestsellers, New Arrivals, and generic variant collections can be empty
-# as native Shopify collections while their exact variants live in metaobjects.
-assign variant_collection_type = ''
-assign variant_collection_items = blank
-assign bestseller_list = collection.metafields.custom.bestseller_list.value
-assign new_arrivals_list = collection.metafields.custom.new_arrivals_list.value
-assign general_variant_list = collection.metafields.custom.variant_collection_list.value
-if bestseller_list != blank and bestseller_list.items.value != blank
-assign variant_collection_type = 'bestseller'
-assign variant_collection_items = bestseller_list.items.value
-elsif new_arrivals_list != blank and new_arrivals_list.items.value != blank
-assign variant_collection_type = 'new_arrivals'
-assign variant_collection_items = new_arrivals_list.items.value
-elsif general_variant_list != blank and general_variant_list.items.value != blank
-assign variant_collection_type = 'selected_variant'
-assign variant_collection_items = general_variant_list.items.value
-endif
-assign is_variant_collection = false
-if variant_collection_items != blank
-assign is_variant_collection = true
-endif
 assign active_values_count = 0
 for filter in collection.filters
 if filter.type == 'price_range'
@@ -31,16 +9,10 @@ else
 assign active_values_count = active_values_count | plus: filter.active_values.size
 endif
 endfor
-if is_variant_collection
-assign show_filters = section.settings.show_filters
-elsif section.settings.quick_links_menu.links.size > 0 or section.settings.show_filters and collection.filters.size > 0
+if section.settings.quick_links_menu.links.size > 0 or section.settings.show_filters and collection.filters.size > 0
 assign show_filters = true
 else
 assign show_filters = false
-endif
-assign show_sort_by = section.settings.show_sort_by
-if is_variant_collection
-assign show_sort_by = false
 endif
 # First, we retrieve, based on the merchant settings, the user preferences and the available space the most appropriate size
 assign products_mobile_grid_mode = cart.attributes.products_mobile_grid_mode
@@ -87,75 +59,38 @@ CSS
 @media screen and (min-width: 1000px) {
 #shopify-section-{{ section.id }} {
 {%- comment -%}Starting from 1000px it starts to get funky, as we can have or not the sidebar{%- endcomment -%}
+
 {%- if section.settings.filter_layout == 'sidebar' and show_filters -%}
   --collection-items-per-row-compact: 4;
   --collection-items-per-row-medium: 3;
   --collection-items-per-row-large: 2;
+
 {%- else -%}
   --collection-items-per-row-compact: 6;
   --collection-items-per-row-medium: 4;
   --collection-items-per-row-large: 3;
+
 {%- endif -%}
 }
 #shopify-section-{{ section.id }} .collection {
+
 {%- if section.settings.filter_layout == 'sidebar' and show_filters -%}
   --collection-grid-template: var(--collection-sidebar-width, 0) minmax(0,1fr);
+
 {%- endif -%}
 }
 }
 @media screen and (min-width: 1400px) {
 #shopify-section-{{ section.id }} {
 {%- comment -%}Starting from 1400px we can afford having more content even in sidebar mode{%- endcomment -%}
+
 {%- if section.settings.filter_layout == 'sidebar' and show_filters -%}
   --collection-items-per-row-compact: 6;
   --collection-items-per-row-medium: 4;
   --collection-items-per-row-large: 3;
+
 {%- endif -%}
 }
-}
-/* Custom filters for metaobject / variant-based collections */
-#shopify-section-{{ section.id }} .variant-custom-filters {
-display: grid;
-gap: 1.25rem;
-}
-#shopify-section-{{ section.id }} .variant-custom-filter-group {
-display: grid;
-gap: 0.75rem;
-padding-block-end: 1rem;
-border-bottom: 1px solid rgb(0 0 0 / 0.12);
-}
-#shopify-section-{{ section.id }} .variant-custom-filter-title { font-weight: 600; }
-#shopify-section-{{ section.id }} .variant-custom-filter-checkbox {
-display: flex;
-align-items: center;
-gap: 0.625rem;
-cursor: pointer;
-}
-#shopify-section-{{ section.id }} .variant-custom-price-grid {
-display: grid;
-grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-gap: 0.75rem;
-}
-#shopify-section-{{ section.id }} .variant-custom-price-field {
-display: grid;
-gap: 0.35rem;
-}
-#shopify-section-{{ section.id }} .variant-custom-price-field input {
-width: 100%;
-min-width: 0;
-padding: 0.7rem 0.75rem;
-border: 1px solid rgb(0 0 0 / 0.18);
-background: transparent;
-color: inherit;
-}
-#shopify-section-{{ section.id }} .variant-custom-filter-clear {
-justify-self: start;
-text-decoration: underline;
-text-underline-offset: 0.2em;
-}
-#shopify-section-{{ section.id }} [data-variant-filter-item][hidden],
-#shopify-section-{{ section.id }} [data-variant-filter-empty][hidden] {
-display: none !important;
 }
 </style>
 {%- comment -%}
@@ -169,7 +104,7 @@ LIQUID
 
     <div class="v-stack gap-6 sm:gap-12">
 
-      {%- if collection.all_products_count == 0 and is_variant_collection == false -%}
+      {%- if collection.all_products_count == 0 -%}
 
         <div class="empty-state">
 
@@ -177,12 +112,10 @@ LIQUID
 
             <h1 class="h4">
             {{ collection.title }}
-
             </h1>
 
             <p>
             {{ 'collection.general.empty_collection' | t }}
-
             </p>
             {%- assign button_content = 'collection.general.continue_shopping' | t -%}
             {%- render 'button', href: routes.all_products_collection_url, size: 'xl', content: button_content -%}
@@ -193,7 +126,7 @@ LIQUID
 
       {%- else -%}
 
-        {%- if show_filters or show_sort_by or section.settings.show_grid_mode_selector or section.settings.show_results_count -%}
+        {%- if show_filters or section.settings.show_sort_by or section.settings.show_grid_mode_selector or section.settings.show_results_count -%}
           <height-observer variable="collection-toolbar" class="collection-toolbar full-bleed">
 
           <div class="collection-toolbar__button-list">
@@ -201,10 +134,8 @@ LIQUID
             {%- if show_filters -%}
 
               <div class="collection-toolbar__button-container
-
               {% if section.settings.filter_layout == 'sidebar' %}
                 md:hidden
-
               {% endif %}
               ">
               <button type="button" aria-controls="facets-drawer" class="collection-toolbar__button heading text-xxs w-full">
@@ -212,7 +143,6 @@ LIQUID
 
               {% if active_values_count > 0 %}
                 ({{ active_values_count }})
-
               {% endif -%}
               </button>
 
@@ -220,7 +150,7 @@ LIQUID
 
           {%- endif -%}
 
-          {%- if show_sort_by -%}
+          {%- if section.settings.show_sort_by -%}
             {%- assign selected_sort_by_value = collection.sort_by | default: collection.default_sort_by -%}
 
             <div class="collection-toolbar__button-container">
@@ -239,7 +169,6 @@ LIQUID
 
               <p class="h4" slot="header">
               {{ 'collection.faceting.sort_by' | t }}
-
               </p>
               <x-listbox class="popover__value-list">
 
@@ -276,15 +205,7 @@ LIQUID
         {%- if section.settings.show_results_count -%}
 
           <p class="collection-toolbar__products-count h6 text-subdued md-max:hidden">
-
-          {%- if is_variant_collection -%}
-            <span data-variant-results-count>
-            {{ 'collection.products_count' | t: count: variant_collection_items.size }}</span>
-
-          {%- else -%}
-            {{ 'collection.products_count' | t: count: collection.products_count }}
-
-          {%- endif -%}
+          {{ 'collection.products_count' | t: count: collection.products_count }}
 
           </p>
 
@@ -296,10 +217,8 @@ LIQUID
           type="button"
           value="large"
           class="collection-toolbar__button
-
           {% if products_mobile_grid_mode == 'large' %}
             is-active
-
           {% endif %}
           "
           aria-label="Switch to larger product images"
@@ -310,10 +229,8 @@ LIQUID
           type="button"
           value="medium"
           class="collection-toolbar__button
-
           {% if products_mobile_grid_mode == 'medium' %}
             is-active
-
           {% endif %}
           "
           aria-label="Switch to smaller product images"
@@ -326,10 +243,8 @@ LIQUID
           type="button"
           value="large"
           class="collection-toolbar__button
-
           {% if products_desktop_grid_mode == 'large' %}
             is-active
-
           {% endif %}
           "
           aria-label="Switch to larger product images"
@@ -340,10 +255,8 @@ LIQUID
           type="button"
           value="medium"
           class="collection-toolbar__button
-
           {% if products_desktop_grid_mode == 'medium' %}
             is-active
-
           {% endif %}
           "
           aria-label="Switch to smaller product images"
@@ -354,10 +267,8 @@ LIQUID
           type="button"
           value="compact"
           class="collection-toolbar__button
-
           {% if products_desktop_grid_mode == 'compact' %}
             is-active
-
           {% endif %}
           "
           aria-label="Switch to compact product images"
@@ -371,57 +282,9 @@ LIQUID
 
       {%- endif -%}
 
-
-      {%- if is_variant_collection and show_filters -%}
-
-        {%- capture variant_filter_content -%}
-
-          <div class="variant-custom-filters" data-variant-filter-panel>
-
-            <div class="variant-custom-filter-group">
-
-              <p class="variant-custom-filter-title">
-              In Stock
-              </p>
-              <label class="variant-custom-filter-checkbox">
-
-              <input type="checkbox" data-variant-in-stock>
-              <span>In Stock</span>
-              </label>
-
-            </div>
-
-            <div class="variant-custom-filter-group">
-
-              <p class="variant-custom-filter-title">
-              Price
-              </p>
-
-              <div class="variant-custom-price-grid">
-                <label class="variant-custom-price-field">
-                <span>From</span>
-
-                <input type="number" inputmode="decimal" min="0" step="0.01" placeholder="0" data-variant-price-min>
-                </label>
-                <label class="variant-custom-price-field">
-                <span>To</span>
-
-                <input type="number" inputmode="decimal" min="0" step="0.01" data-variant-price-max>
-                </label>
-
-              </div>
-
-            </div>
-            <button type="button" class="variant-custom-filter-clear" data-variant-filter-clear>Clear filters</button>
-
-          </div>
-
-        {%- endcapture -%}
-
-      {%- endif -%}
       <div class="collection">
 
-        {%- if is_variant_collection -%}
+        {%- paginate collection.products by section.settings.products_per_page -%}
 
           {%- if show_filters -%}
             <facets-drawer
@@ -436,11 +299,19 @@ LIQUID
             <p class="h4" slot="header">
             {{ 'collection.faceting.filters' | t }}
             </p>
-            {{- variant_filter_content -}}
+            {%- render 'facets',
+            results: collection,
+            show_filters: section.settings.show_filters,
+            open_filters_by_default: section.settings.open_filters_by_default,
+            update_on_change: false,
+            quick_links_menu: section.settings.quick_links_menu,
+            context: 'drawer'
+            -%}
 
             <div slot="footer">
+              {%- assign button_content = 'collection.faceting.apply_filters' | t -%}
               <dialog-close-button class="contents">
-              {%- render 'button', type: 'button', content: 'Apply filters', stretch: true -%}
+              {%- render 'button', type: 'button', content: button_content, stretch: true -%}
               </dialog-close-button>
 
             </div>
@@ -448,299 +319,75 @@ LIQUID
 
             {%- if section.settings.filter_layout == 'sidebar' -%}
               <safe-sticky class="facets-sidebar md-max:hidden">
-              {{- variant_filter_content -}}
+              {%- render 'facets',
+              results: collection,
+              show_filters: section.settings.show_filters,
+              open_filters_by_default: section.settings.open_filters_by_default,
+              update_on_change: true,
+              quick_links_menu: section.settings.quick_links_menu,
+              context: 'sidebar'
+              -%}
               </safe-sticky>
 
             {%- endif -%}
 
           {%- endif -%}
 
-          <div class="collection__main">
-            <product-list
-            id="product-list-{{ section.id }}"
-            class="product-list"
-            collection-mobile-layout="{{ products_mobile_grid_mode }}"
-            collection-desktop-layout="{{ products_desktop_grid_mode }}"
-            >
+          {%- if collection.products_count == 0 -%}
 
-            {%- for variant_item in variant_collection_items limit: section.settings.products_per_page -%}
-              {%- liquid
-              assign selected_variant = variant_item.variant.value
-              assign selected_product = selected_variant.product
-              assign custom_badge = variant_item.badge.value
-              assign variant_position = forloop.index
-              -%}
-
-              {%- for promo_block in section.blocks -%}
-
-                {%- if variant_position == promo_block.settings.position -%}
-                  {%- render 'collection-promo-block', block: promo_block, reveal: true -%}
-
-                {%- endif -%}
-
-              {%- endfor -%}
-
-              {%- if selected_variant != blank and selected_product != blank -%}
-
-                <div class="contents" data-variant-filter-item data-variant-price="{{ selected_variant.price }}" data-variant-available="{{ selected_variant.available }}">
-
-                  {%- case variant_collection_type -%}
-
-                  {%- when 'bestseller' -%}
-                    {%- render 'product-card-bestseller',
-                    product: selected_product,
-                    variant: selected_variant,
-                    custom_badge: custom_badge,
-                    reveal: settings.stagger_products_apparition,
-                    position: variant_position,
-                    hide_product_information: section.settings.hide_product_information,
-                    stacked: true,
-                    show_card_add_to_cart: section.settings.show_card_add_to_cart,
-                    quick_buy_context: 'collection-bestseller'
-                    -%}
-
-                  {%- when 'new_arrivals' -%}
-                    {%- render 'product-card-new-arrivals',
-                    product: selected_product,
-                    variant: selected_variant,
-                    custom_badge: custom_badge,
-                    reveal: settings.stagger_products_apparition,
-                    position: variant_position,
-                    hide_product_information: section.settings.hide_product_information,
-                    stacked: true,
-                    show_card_add_to_cart: section.settings.show_card_add_to_cart,
-                    quick_buy_context: 'collection-new-arrivals'
-                    -%}
-
-                  {%- else -%}
-                    {%- render 'product-card-selected-variant',
-                    product: selected_product,
-                    variant: selected_variant,
-                    custom_badge: custom_badge,
-                    reveal: settings.stagger_products_apparition,
-                    position: variant_position,
-                    hide_product_information: section.settings.hide_product_information,
-                    stacked: true,
-                    show_card_add_to_cart: section.settings.show_card_add_to_cart,
-                    quick_buy_context: 'collection-selected-variant'
-                    -%}
-
-                  {%- endcase -%}
-
-                </div>
-
-              {%- endif -%}
-
-            {%- endfor -%}
-            </product-list>
-
-            <div class="empty-state" data-variant-filter-empty hidden>
+            <div class="empty-state">
 
               <div class="v-stack gap-4">
 
                 <p>
-                No products match these filters.
+                {{ 'collection.faceting.no_results' | t }}
                 </p>
-                <button type="button" class="variant-custom-filter-clear" data-variant-filter-clear>Clear filters</button>
+                {%- assign button_content = 'collection.faceting.clear_filters' | t -%}
+                <facet-link>
+                {%- render 'button', href: collection.url, content: button_content -%}
+                </facet-link>
 
               </div>
 
             </div>
 
-          </div>
+          {%- else -%}
 
-        {%- else -%}
-
-          {%- paginate collection.products by section.settings.products_per_page -%}
-
-            {%- if show_filters -%}
-              <facets-drawer
-              id="facets-drawer"
-              class="facets-drawer drawer drawer--sm color-scheme color-scheme--dialog
-
-              {% if section.settings.filter_layout == 'sidebar' %}
-                md:hidden
-
-              {% endif %}
-              "
+            <div class="collection__main">
+              {%- render 'active-facets', results: collection -%}
+              <product-list
+              id="product-list-{{ section.id }}"
+              class="product-list"
+              collection-mobile-layout="{{ products_mobile_grid_mode }}"
+              collection-desktop-layout="{{ products_desktop_grid_mode }}"
               >
+              {% liquid
+              for product in collection.products
+              for block in section.blocks
+              if forloop.parentloop.index == block.settings.position
+              render 'collection-promo-block', block: block, reveal: true
+              endif
+              endfor
+              render 'product-card', product: product, reveal: settings.stagger_products_apparition, position: forloop.index, hide_product_information: section.settings.hide_product_information, stacked: true, show_card_add_to_cart: section.settings.show_card_add_to_cart
+              endfor
+              %}
+              </product-list>
+              {%- render 'pagination', paginate: paginate, facet: true -%}
 
-              <p class="h4" slot="header">
-              {{ 'collection.faceting.filters' | t }}
+            </div>
 
-              </p>
-              {%- render 'facets',
-              results: collection,
-              show_filters: section.settings.show_filters,
-              open_filters_by_default: section.settings.open_filters_by_default,
-              update_on_change: false,
-              quick_links_menu: section.settings.quick_links_menu,
-              context: 'drawer'
-              -%}
+          {%- endif -%}
 
-              <div slot="footer">
-                {%- assign button_content = 'collection.faceting.apply_filters' | t -%}
-                <dialog-close-button class="contents">
-                {%- render 'button', type: 'button', content: button_content, stretch: true -%}
-                </dialog-close-button>
-
-              </div>
-              </facets-drawer>
-
-              {%- if section.settings.filter_layout == 'sidebar' -%}
-                <safe-sticky class="facets-sidebar md-max:hidden">
-                {%- render 'facets',
-                results: collection,
-                show_filters: section.settings.show_filters,
-                open_filters_by_default: section.settings.open_filters_by_default,
-                update_on_change: true,
-                quick_links_menu: section.settings.quick_links_menu,
-                context: 'sidebar'
-                -%}
-                </safe-sticky>
-
-              {%- endif -%}
-
-            {%- endif -%}
-
-            {%- if collection.products_count == 0 -%}
-
-              <div class="empty-state">
-
-                <div class="v-stack gap-4">
-
-                  <p>
-                  {{ 'collection.faceting.no_results' | t }}
-
-                  </p>
-                  {%- assign button_content = 'collection.faceting.clear_filters' | t -%}
-                  <facet-link>
-                  {%- render 'button', href: collection.url, content: button_content -%}
-                  </facet-link>
-
-                </div>
-
-              </div>
-
-            {%- else -%}
-
-              <div class="collection__main">
-                {%- render 'active-facets', results: collection -%}
-                <product-list
-                id="product-list-{{ section.id }}"
-                class="product-list"
-                collection-mobile-layout="{{ products_mobile_grid_mode }}"
-                collection-desktop-layout="{{ products_desktop_grid_mode }}"
-                >
-                {% liquid
-                for product in collection.products
-                for block in section.blocks
-                if forloop.parentloop.index == block.settings.position
-                render 'collection-promo-block', block: block, reveal: true
-                endif
-                endfor
-                render 'product-card', product: product, reveal: settings.stagger_products_apparition, position: forloop.index, hide_product_information: section.settings.hide_product_information, stacked: true, show_card_add_to_cart: section.settings.show_card_add_to_cart
-                endfor
-                %}
-                </product-list>
-                {%- render 'pagination', paginate: paginate, facet: true -%}
-
-              </div>
-
-            {%- endif -%}
-
-          {%- endpaginate -%}
-
-        {%- endif -%}
+        {%- endpaginate -%}
 
       </div>
 
     {%- endif -%}
 
   </div>
+
 </div>
 </div>
-{%- if is_variant_collection -%}
-  <script>
-  (() => {
-  const root = document.getElementById('shopify-section-{{ section.id }}');
-  if (!root || root.dataset.variantFiltersReady === 'true') return;
-  root.dataset.variantFiltersReady = 'true';
-  const items = Array.from(root.querySelectorAll('[data-variant-filter-item]'));
-  const panels = Array.from(root.querySelectorAll('[data-variant-filter-panel]'));
-  const emptyState = root.querySelector('[data-variant-filter-empty]');
-  const resultCount = root.querySelector('[data-variant-results-count]');
-  if (!items.length || !panels.length) return;
-  const maximumPriceCents = items.reduce((maximum, item) => Math.max(maximum, Number(item.dataset.variantPrice || 0)), 0);
-  const state = { inStock: false, minimumPrice: '', maximumPrice: '' };
-  panels.forEach((panel) => {
-  const maxInput = panel.querySelector('[data-variant-price-max]');
-  if (maxInput && maximumPriceCents > 0) {
-  maxInput.max = (maximumPriceCents / 100).toFixed(2);
-  maxInput.placeholder = (maximumPriceCents / 100).toFixed(2);
-  }
-  });
-  function readPanel(panel) {
-  state.inStock = Boolean(panel.querySelector('[data-variant-in-stock]')?.checked);
-  state.minimumPrice = panel.querySelector('[data-variant-price-min]')?.value || '';
-  state.maximumPrice = panel.querySelector('[data-variant-price-max]')?.value || '';
-  }
-  function syncPanels(sourcePanel) {
-  panels.forEach((panel) => {
-  if (panel === sourcePanel) return;
-  const stock = panel.querySelector('[data-variant-in-stock]');
-  const min = panel.querySelector('[data-variant-price-min]');
-  const max = panel.querySelector('[data-variant-price-max]');
-  if (stock) stock.checked = state.inStock;
-  if (min) min.value = state.minimumPrice;
-  if (max) max.value = state.maximumPrice;
-  });
-  }
-  function applyFilters() {
-  const minimumCents = state.minimumPrice === '' ? null : Math.round(Number(state.minimumPrice) * 100);
-  const maximumCents = state.maximumPrice === '' ? null : Math.round(Number(state.maximumPrice) * 100);
-  let visibleCount = 0;
-  items.forEach((item) => {
-  const price = Number(item.dataset.variantPrice || 0);
-  const available = item.dataset.variantAvailable === 'true';
-  const visible = (!state.inStock || available)
-  && (minimumCents === null || price >= minimumCents)
-  && (maximumCents === null || price <= maximumCents);
-  item.hidden = !visible;
-  if (visible) visibleCount += 1;
-  });
-  if (emptyState) emptyState.hidden = visibleCount !== 0;
-  if (resultCount) resultCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'product' : 'products'}`;
-  }
-  panels.forEach((panel) => {
-  const onChange = () => {
-  readPanel(panel);
-  syncPanels(panel);
-  applyFilters();
-  };
-  panel.addEventListener('input', onChange);
-  panel.addEventListener('change', onChange);
-  });
-  root.querySelectorAll('[data-variant-filter-clear]').forEach((button) => {
-  button.addEventListener('click', () => {
-  state.inStock = false;
-  state.minimumPrice = '';
-  state.maximumPrice = '';
-  panels.forEach((panel) => {
-  const stock = panel.querySelector('[data-variant-in-stock]');
-  const min = panel.querySelector('[data-variant-price-min]');
-  const max = panel.querySelector('[data-variant-price-max]');
-  if (stock) stock.checked = false;
-  if (min) min.value = '';
-  if (max) max.value = '';
-  });
-  applyFilters();
-  });
-  });
-  applyFilters();
-  })();
-  </script>
-{%- endif -%}
 {% schema %}
   {
   "name": "t:sections.main_collection.name",
