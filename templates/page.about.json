@@ -263,6 +263,81 @@
         "content": ""
       }
     },
+    "image_with_text_overlay_KHQQPa": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_YRRWHf": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h4"
+          }
+        },
+        "richtext_k94WCc": {
+          "type": "richtext",
+          "settings": {
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_YRRWHf",
+        "richtext_k94WCc"
+      ],
+      "name": "t:sections.image_with_text_overlay.presets.image_with_text_overlay.name",
+      "settings": {
+        "color_scheme": "",
+        "image_size": "auto",
+        "image": "shopify://shop_images/what_is_MDF-desktop_1.jpg",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
+    "image_with_text_ekGCpk": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_4zmwNb": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_YQAH3r": {
+          "type": "heading",
+          "settings": {
+            "text": "Why MDF?",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_YdU4bm": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our furniture uses <strong>high-quality MDF</strong>, offering:&nbsp;</p><ul><li>Resistance to insects and decay&nbsp;</li><li>Moisture resistance&nbsp;</li><li>Stability in color&nbsp;</li><li>Doesn’t stretch or shrink&nbsp;</li><li>Superior fire resistance</li></ul><p>This ensures <strong>durability, consistent quality, and long-lasting performance</strong>.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_4zmwNb",
+        "heading_YQAH3r",
+        "richtext_YdU4bm"
+      ],
+      "name": "t:sections.image_with_text.presets.image_with_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "image": "shopify://shop_images/what_is_MDF-desktop_1.jpg",
+        "reveal_on_scroll": true,
+        "image_position": "end",
+        "content_width": "sm",
+        "remove_vertical_spacing": true
+      }
+    },
     "custom_liquid_LRrPqw": {
       "type": "custom-liquid",
       "name": "Every Piece tells you a story ",
@@ -295,6 +370,8 @@
     "image_with_text_7PHz7L",
     "multi_column_Jd6haC",
     "multi_column_tthK9K",
+    "image_with_text_overlay_KHQQPa",
+    "image_with_text_ekGCpk",
     "custom_liquid_LRrPqw",
     "custom_liquid_QfGMqE"
   ]
