@@ -338,6 +338,27 @@
         "remove_vertical_spacing": true
       }
     },
+    "blog_posts_Wfzaaa": {
+      "type": "blog-posts",
+      "name": "t:sections.blog_posts.presets.blog_posts.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "blog": "news",
+        "posts_count": 3,
+        "stack_on_mobile": false,
+        "show_category": true,
+        "show_date": false,
+        "show_excerpt": true,
+        "show_read_more": true,
+        "subheading": "",
+        "title": "Blog posts",
+        "heading_style": "h2",
+        "content": "",
+        "button_link": "",
+        "button_text": "View all"
+      }
+    },
     "custom_liquid_LRrPqw": {
       "type": "custom-liquid",
       "name": "Every Piece tells you a story ",
@@ -372,6 +393,7 @@
     "multi_column_tthK9K",
     "image_with_text_overlay_KHQQPa",
     "image_with_text_ekGCpk",
+    "blog_posts_Wfzaaa",
     "custom_liquid_LRrPqw",
     "custom_liquid_QfGMqE"
   ]
