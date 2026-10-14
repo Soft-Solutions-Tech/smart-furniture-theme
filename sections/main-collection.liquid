@@ -32,7 +32,7 @@ assign active_values_count = active_values_count | plus: filter.active_values.si
 endif
 endfor
 if is_variant_collection
-assign show_filters = false
+assign show_filters = section.settings.show_filters
 elsif section.settings.quick_links_menu.links.size > 0 or section.settings.show_filters and collection.filters.size > 0
 assign show_filters = true
 else
@@ -112,6 +112,50 @@ CSS
   --collection-items-per-row-large: 3;
 {%- endif -%}
 }
+}
+/* Custom filters for metaobject / variant-based collections */
+#shopify-section-{{ section.id }} .variant-custom-filters {
+display: grid;
+gap: 1.25rem;
+}
+#shopify-section-{{ section.id }} .variant-custom-filter-group {
+display: grid;
+gap: 0.75rem;
+padding-block-end: 1rem;
+border-bottom: 1px solid rgb(0 0 0 / 0.12);
+}
+#shopify-section-{{ section.id }} .variant-custom-filter-title { font-weight: 600; }
+#shopify-section-{{ section.id }} .variant-custom-filter-checkbox {
+display: flex;
+align-items: center;
+gap: 0.625rem;
+cursor: pointer;
+}
+#shopify-section-{{ section.id }} .variant-custom-price-grid {
+display: grid;
+grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+gap: 0.75rem;
+}
+#shopify-section-{{ section.id }} .variant-custom-price-field {
+display: grid;
+gap: 0.35rem;
+}
+#shopify-section-{{ section.id }} .variant-custom-price-field input {
+width: 100%;
+min-width: 0;
+padding: 0.7rem 0.75rem;
+border: 1px solid rgb(0 0 0 / 0.18);
+background: transparent;
+color: inherit;
+}
+#shopify-section-{{ section.id }} .variant-custom-filter-clear {
+justify-self: start;
+text-decoration: underline;
+text-underline-offset: 0.2em;
+}
+#shopify-section-{{ section.id }} [data-variant-filter-item][hidden],
+#shopify-section-{{ section.id }} [data-variant-filter-empty][hidden] {
+display: none !important;
 }
 </style>
 {%- comment -%}
@@ -234,7 +278,8 @@ LIQUID
           <p class="collection-toolbar__products-count h6 text-subdued md-max:hidden">
 
           {%- if is_variant_collection -%}
-            {{ 'collection.products_count' | t: count: variant_collection_items.size }}
+            <span data-variant-results-count>
+            {{ 'collection.products_count' | t: count: variant_collection_items.size }}</span>
 
           {%- else -%}
             {{ 'collection.products_count' | t: count: collection.products_count }}
@@ -326,9 +371,89 @@ LIQUID
 
       {%- endif -%}
 
+
+      {%- if is_variant_collection and show_filters -%}
+
+        {%- capture variant_filter_content -%}
+
+          <div class="variant-custom-filters" data-variant-filter-panel>
+
+            <div class="variant-custom-filter-group">
+
+              <p class="variant-custom-filter-title">
+              In Stock
+              </p>
+              <label class="variant-custom-filter-checkbox">
+
+              <input type="checkbox" data-variant-in-stock>
+              <span>In Stock</span>
+              </label>
+
+            </div>
+
+            <div class="variant-custom-filter-group">
+
+              <p class="variant-custom-filter-title">
+              Price
+              </p>
+
+              <div class="variant-custom-price-grid">
+                <label class="variant-custom-price-field">
+                <span>From</span>
+
+                <input type="number" inputmode="decimal" min="0" step="0.01" placeholder="0" data-variant-price-min>
+                </label>
+                <label class="variant-custom-price-field">
+                <span>To</span>
+
+                <input type="number" inputmode="decimal" min="0" step="0.01" data-variant-price-max>
+                </label>
+
+              </div>
+
+            </div>
+            <button type="button" class="variant-custom-filter-clear" data-variant-filter-clear>Clear filters</button>
+
+          </div>
+
+        {%- endcapture -%}
+
+      {%- endif -%}
       <div class="collection">
 
         {%- if is_variant_collection -%}
+
+          {%- if show_filters -%}
+            <facets-drawer
+            id="facets-drawer"
+            class="facets-drawer drawer drawer--sm color-scheme color-scheme--dialog
+            {% if section.settings.filter_layout == 'sidebar' %}
+              md:hidden
+            {% endif %}
+            "
+            >
+
+            <p class="h4" slot="header">
+            {{ 'collection.faceting.filters' | t }}
+            </p>
+            {{- variant_filter_content -}}
+
+            <div slot="footer">
+              <dialog-close-button class="contents">
+              {%- render 'button', type: 'button', content: 'Apply filters', stretch: true -%}
+              </dialog-close-button>
+
+            </div>
+            </facets-drawer>
+
+            {%- if section.settings.filter_layout == 'sidebar' -%}
+              <safe-sticky class="facets-sidebar md-max:hidden">
+              {{- variant_filter_content -}}
+              </safe-sticky>
+
+            {%- endif -%}
+
+          {%- endif -%}
 
           <div class="collection__main">
             <product-list
@@ -357,53 +482,70 @@ LIQUID
 
               {%- if selected_variant != blank and selected_product != blank -%}
 
-                {%- case variant_collection_type -%}
+                <div class="contents" data-variant-filter-item data-variant-price="{{ selected_variant.price }}" data-variant-available="{{ selected_variant.available }}">
 
-                {%- when 'bestseller' -%}
-                  {%- render 'product-card-bestseller',
-                  product: selected_product,
-                  variant: selected_variant,
-                  custom_badge: custom_badge,
-                  reveal: settings.stagger_products_apparition,
-                  position: variant_position,
-                  hide_product_information: section.settings.hide_product_information,
-                  stacked: true,
-                  show_card_add_to_cart: section.settings.show_card_add_to_cart,
-                  quick_buy_context: 'collection-bestseller'
-                  -%}
+                  {%- case variant_collection_type -%}
 
-                {%- when 'new_arrivals' -%}
-                  {%- render 'product-card-new-arrivals',
-                  product: selected_product,
-                  variant: selected_variant,
-                  custom_badge: custom_badge,
-                  reveal: settings.stagger_products_apparition,
-                  position: variant_position,
-                  hide_product_information: section.settings.hide_product_information,
-                  stacked: true,
-                  show_card_add_to_cart: section.settings.show_card_add_to_cart,
-                  quick_buy_context: 'collection-new-arrivals'
-                  -%}
+                  {%- when 'bestseller' -%}
+                    {%- render 'product-card-bestseller',
+                    product: selected_product,
+                    variant: selected_variant,
+                    custom_badge: custom_badge,
+                    reveal: settings.stagger_products_apparition,
+                    position: variant_position,
+                    hide_product_information: section.settings.hide_product_information,
+                    stacked: true,
+                    show_card_add_to_cart: section.settings.show_card_add_to_cart,
+                    quick_buy_context: 'collection-bestseller'
+                    -%}
 
-                {%- else -%}
-                  {%- render 'product-card-selected-variant',
-                  product: selected_product,
-                  variant: selected_variant,
-                  custom_badge: custom_badge,
-                  reveal: settings.stagger_products_apparition,
-                  position: variant_position,
-                  hide_product_information: section.settings.hide_product_information,
-                  stacked: true,
-                  show_card_add_to_cart: section.settings.show_card_add_to_cart,
-                  quick_buy_context: 'collection-selected-variant'
-                  -%}
+                  {%- when 'new_arrivals' -%}
+                    {%- render 'product-card-new-arrivals',
+                    product: selected_product,
+                    variant: selected_variant,
+                    custom_badge: custom_badge,
+                    reveal: settings.stagger_products_apparition,
+                    position: variant_position,
+                    hide_product_information: section.settings.hide_product_information,
+                    stacked: true,
+                    show_card_add_to_cart: section.settings.show_card_add_to_cart,
+                    quick_buy_context: 'collection-new-arrivals'
+                    -%}
 
-                {%- endcase -%}
+                  {%- else -%}
+                    {%- render 'product-card-selected-variant',
+                    product: selected_product,
+                    variant: selected_variant,
+                    custom_badge: custom_badge,
+                    reveal: settings.stagger_products_apparition,
+                    position: variant_position,
+                    hide_product_information: section.settings.hide_product_information,
+                    stacked: true,
+                    show_card_add_to_cart: section.settings.show_card_add_to_cart,
+                    quick_buy_context: 'collection-selected-variant'
+                    -%}
+
+                  {%- endcase -%}
+
+                </div>
 
               {%- endif -%}
 
             {%- endfor -%}
             </product-list>
+
+            <div class="empty-state" data-variant-filter-empty hidden>
+
+              <div class="v-stack gap-4">
+
+                <p>
+                No products match these filters.
+                </p>
+                <button type="button" class="variant-custom-filter-clear" data-variant-filter-clear>Clear filters</button>
+
+              </div>
+
+            </div>
 
           </div>
 
@@ -518,6 +660,87 @@ LIQUID
   </div>
 </div>
 </div>
+{%- if is_variant_collection -%}
+  <script>
+  (() => {
+  const root = document.getElementById('shopify-section-{{ section.id }}');
+  if (!root || root.dataset.variantFiltersReady === 'true') return;
+  root.dataset.variantFiltersReady = 'true';
+  const items = Array.from(root.querySelectorAll('[data-variant-filter-item]'));
+  const panels = Array.from(root.querySelectorAll('[data-variant-filter-panel]'));
+  const emptyState = root.querySelector('[data-variant-filter-empty]');
+  const resultCount = root.querySelector('[data-variant-results-count]');
+  if (!items.length || !panels.length) return;
+  const maximumPriceCents = items.reduce((maximum, item) => Math.max(maximum, Number(item.dataset.variantPrice || 0)), 0);
+  const state = { inStock: false, minimumPrice: '', maximumPrice: '' };
+  panels.forEach((panel) => {
+  const maxInput = panel.querySelector('[data-variant-price-max]');
+  if (maxInput && maximumPriceCents > 0) {
+  maxInput.max = (maximumPriceCents / 100).toFixed(2);
+  maxInput.placeholder = (maximumPriceCents / 100).toFixed(2);
+  }
+  });
+  function readPanel(panel) {
+  state.inStock = Boolean(panel.querySelector('[data-variant-in-stock]')?.checked);
+  state.minimumPrice = panel.querySelector('[data-variant-price-min]')?.value || '';
+  state.maximumPrice = panel.querySelector('[data-variant-price-max]')?.value || '';
+  }
+  function syncPanels(sourcePanel) {
+  panels.forEach((panel) => {
+  if (panel === sourcePanel) return;
+  const stock = panel.querySelector('[data-variant-in-stock]');
+  const min = panel.querySelector('[data-variant-price-min]');
+  const max = panel.querySelector('[data-variant-price-max]');
+  if (stock) stock.checked = state.inStock;
+  if (min) min.value = state.minimumPrice;
+  if (max) max.value = state.maximumPrice;
+  });
+  }
+  function applyFilters() {
+  const minimumCents = state.minimumPrice === '' ? null : Math.round(Number(state.minimumPrice) * 100);
+  const maximumCents = state.maximumPrice === '' ? null : Math.round(Number(state.maximumPrice) * 100);
+  let visibleCount = 0;
+  items.forEach((item) => {
+  const price = Number(item.dataset.variantPrice || 0);
+  const available = item.dataset.variantAvailable === 'true';
+  const visible = (!state.inStock || available)
+  && (minimumCents === null || price >= minimumCents)
+  && (maximumCents === null || price <= maximumCents);
+  item.hidden = !visible;
+  if (visible) visibleCount += 1;
+  });
+  if (emptyState) emptyState.hidden = visibleCount !== 0;
+  if (resultCount) resultCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'product' : 'products'}`;
+  }
+  panels.forEach((panel) => {
+  const onChange = () => {
+  readPanel(panel);
+  syncPanels(panel);
+  applyFilters();
+  };
+  panel.addEventListener('input', onChange);
+  panel.addEventListener('change', onChange);
+  });
+  root.querySelectorAll('[data-variant-filter-clear]').forEach((button) => {
+  button.addEventListener('click', () => {
+  state.inStock = false;
+  state.minimumPrice = '';
+  state.maximumPrice = '';
+  panels.forEach((panel) => {
+  const stock = panel.querySelector('[data-variant-in-stock]');
+  const min = panel.querySelector('[data-variant-price-min]');
+  const max = panel.querySelector('[data-variant-price-max]');
+  if (stock) stock.checked = false;
+  if (min) min.value = '';
+  if (max) max.value = '';
+  });
+  applyFilters();
+  });
+  });
+  applyFilters();
+  })();
+  </script>
+{%- endif -%}
 {% schema %}
   {
   "name": "t:sections.main_collection.name",
