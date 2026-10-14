@@ -71,31 +71,6 @@
 
       text-align: right;
     }
-
-
-    /* Right edge fade */
-
-    #shopify-section-{{ section.id }} .multi-column-scroll-wrapper--hint::after {
-      content: "";
-
-      position: absolute;
-
-      z-index: 2;
-
-      top: 0;
-      right: 0;
-      bottom: 0;
-
-      width: 3rem;
-
-      pointer-events: none;
-
-      background: linear-gradient(
-        to right,
-        transparent,
-        {{ section.settings.color_scheme.settings.background }}
-      );
-    }
   }
 
 
@@ -339,8 +314,8 @@
     {
       "type": "checkbox",
       "id": "show_mobile_scroll_hint",
-      "label": "Show mobile swipe hint + fade",
-      "info": "Shows a swipe message and right-edge fade on mobile only. Stack on mobile must be turned off.",
+      "label": "Show mobile swipe hint",
+      "info": "Shows a swipe message on mobile only. Stack on mobile must be turned off.",
       "default": false
     },
 
