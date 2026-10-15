@@ -416,7 +416,7 @@
             "icon": "picto-delivery-truck",
             "custom_icon": "shopify://shop_images/1_7bf66f84-21c2-407c-af40-8ab7e52c9d6c.png",
             "icon_width": 64,
-            "mobile_icon_width": 24,
+            "mobile_icon_width": 64,
             "title": "Products tested and approved by FIRA International&nbsp;",
             "content": ""
           }
@@ -427,7 +427,7 @@
             "icon": "picto-customer-support",
             "custom_icon": "shopify://shop_images/Untitled_design_6f48d776-442c-4786-9e7f-43dd7b3f2560.png",
             "icon_width": 64,
-            "mobile_icon_width": 24,
+            "mobile_icon_width": 64,
             "title": "Production quality system optimized by <strong>German experts, Schuler-AG</strong> &nbsp;",
             "content": ""
           }
@@ -438,7 +438,7 @@
             "icon": "picto-shield",
             "custom_icon": "shopify://shop_images/3_44d09cc2-b0af-4f92-9e85-65ae38ad32ea.png",
             "icon_width": 64,
-            "mobile_icon_width": 24,
+            "mobile_icon_width": 64,
             "title": "ISO 9001:2015 certified by Intertek&nbsp;",
             "content": ""
           }
