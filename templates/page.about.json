@@ -263,42 +263,6 @@
         "content": ""
       }
     },
-    "image_with_text_overlay_KHQQPa": {
-      "type": "image-with-text-overlay",
-      "blocks": {
-        "heading_YRRWHf": {
-          "type": "heading",
-          "settings": {
-            "text": "",
-            "heading_tag": "h4"
-          }
-        },
-        "richtext_k94WCc": {
-          "type": "richtext",
-          "settings": {
-            "content": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_YRRWHf",
-        "richtext_k94WCc"
-      ],
-      "name": "t:sections.image_with_text_overlay.presets.image_with_text_overlay.name",
-      "settings": {
-        "color_scheme": "",
-        "image_size": "auto",
-        "image": "shopify://shop_images/what_is_MDF-desktop_1.jpg",
-        "allow_transparent_header": false,
-        "reveal_on_scroll": true,
-        "remove_vertical_spacing": true,
-        "content_width": "md",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "overlay_color": "#000000",
-        "overlay_opacity": 30
-      }
-    },
     "image_with_text_ekGCpk": {
       "type": "image-with-text",
       "blocks": {
@@ -311,14 +275,14 @@
         "heading_YQAH3r": {
           "type": "heading",
           "settings": {
-            "text": "Why MDF?",
+            "text": "What is MDF?",
             "heading_tag": "h1"
           }
         },
         "richtext_YdU4bm": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Our furniture uses <strong>high-quality MDF</strong>, offering:&nbsp;</p><ul><li>Resistance to insects and decay&nbsp;</li><li>Moisture resistance&nbsp;</li><li>Stability in color&nbsp;</li><li>Doesn’t stretch or shrink&nbsp;</li><li>Superior fire resistance</li></ul><p>This ensures <strong>durability, consistent quality, and long-lasting performance</strong>.<br/><br/></p>"
+            "content": "<p>MDF is a wood panel made of pine trees and their branches &nbsp;&nbsp;</p><p>Special adhesives are added the mixture is pressed & heated &nbsp;&nbsp;</p><p>The boards are then cut to the required sizes &nbsp;&nbsp;</p><p>MDF surface is completely smooth, its colors do not change over time &nbsp;&nbsp;</p><p>The wood is then cracked and chopped &nbsp;&nbsp;</p><p>In the next stage the plates are formed and compressed &nbsp;&nbsp;</p><p>Afterward, the outer layer coating is pressed &nbsp;&nbsp;</p><p>We import raw material from the E.U. to endure high quality <em>(Note: written as \"endure\" on the graphic, likely intended as \"ensure\")</em></p>"
           }
         }
       },
@@ -326,6 +290,45 @@
         "subheading_4zmwNb",
         "heading_YQAH3r",
         "richtext_YdU4bm"
+      ],
+      "name": "t:sections.image_with_text.presets.image_with_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "image": "shopify://shop_images/MDF.jpg",
+        "reveal_on_scroll": true,
+        "image_position": "end",
+        "content_width": "sm",
+        "remove_vertical_spacing": true
+      }
+    },
+    "image_with_text_VYr96Q": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_FDB3en": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_HTLq4N": {
+          "type": "heading",
+          "settings": {
+            "text": "Why MDF?",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_gGneKE": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our furniture uses <strong>high-quality MDF</strong>, offering:&nbsp;</p><ul><li>Resistance to insects and decay&nbsp;</li><li>Moisture resistance&nbsp;</li><li>Stability in color&nbsp;</li><li>Doesn’t stretch or shrink&nbsp;</li><li>Superior fire resistance</li></ul><p>This ensures <strong>durability, consistent quality, and long-lasting performance</strong>.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_FDB3en",
+        "heading_HTLq4N",
+        "richtext_gGneKE"
       ],
       "name": "t:sections.image_with_text.presets.image_with_text.name",
       "settings": {
@@ -391,8 +394,8 @@
     "image_with_text_7PHz7L",
     "multi_column_Jd6haC",
     "multi_column_tthK9K",
-    "image_with_text_overlay_KHQQPa",
     "image_with_text_ekGCpk",
+    "image_with_text_VYr96Q",
     "blog_posts_Wfzaaa",
     "custom_liquid_LRrPqw",
     "custom_liquid_QfGMqE"
