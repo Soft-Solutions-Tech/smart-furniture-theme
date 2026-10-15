@@ -169,7 +169,7 @@
       "name": "t:sections.multi_column.presets.multi_column.name",
       "settings": {
         "color_scheme": "",
-        "separate_section_with_border": true,
+        "separate_section_with_border": false,
         "columns_per_row": 2,
         "stack_on_mobile": false,
         "show_mobile_scroll_hint": false,
@@ -459,6 +459,111 @@
         "text_alignment": "center"
       }
     },
+    "image_with_text_LXqcBW": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_BrVzUC": {
+          "type": "heading",
+          "settings": {
+            "text": "Showrooms & Nation Wide Presence",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_TmqMji": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Smart Furniture showrooms span <strong>across Egypt, from the North Coast to Aswan</strong>, allowing customers to experience our collections firsthand:&nbsp;</p><ul><li><strong>Consistent pricing</strong> across all showrooms&nbsp;</li><li><strong>Walk-in visits</strong> welcome; personalized assistance by appointment&nbsp;</li><li>Wide selection of <strong>living rooms, bedrooms, kitchens, dining sets, and mattresses</strong>&nbsp;</li><li>Selected items available for <strong>fast delivery from 48 hours</strong>&nbsp;</li><li>Expert guidance on <strong>layout, selection, and customization</strong></li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BrVzUC",
+        "richtext_TmqMji"
+      ],
+      "name": "t:sections.image_with_text.presets.image_with_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "reveal_on_scroll": true,
+        "image_position": "start",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "rich_text_JE8yU9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_KRBxqg": {
+          "type": "heading",
+          "settings": {
+            "text": "Franchise Opportunities",
+            "heading_tag": "h1"
+          }
+        },
+        "subheading_DC66B4": {
+          "type": "subheading",
+          "settings": {
+            "text": "Smart Furniture offers <strong>franchise opportunities</strong> for entrepreneurs looking to partner with Egypt’s leading furniture brand &nbsp;"
+          }
+        },
+        "richtext_qMpBE9": {
+          "type": "richtext",
+          "settings": {
+            "content": "<ul><li>Submit an application via <a href=\"mailto:website@sai-solutions.com\" target=\"_blank\"><span style=\"text-decoration:underline\"><strong>website@sai-solutions.com</strong></span></a> or call <strong>19641</strong></li><li>Receive <strong>guidance, brand training, and operational support</strong>&nbsp;</li><li>Clear <strong>territory rights</strong> and ongoing support in <strong>marketing, operations, and product knowledge</strong></li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_KRBxqg",
+        "subheading_DC66B4",
+        "richtext_qMpBE9"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "content_width": "sm",
+        "text_position": "start",
+        "remove_vertical_spacing": false
+      }
+    },
+    "rich_text_VaC3yk": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_kWWEBi": {
+          "type": "heading",
+          "settings": {
+            "text": "Our Commitment",
+            "heading_tag": "h1"
+          }
+        },
+        "subheading_aKqhei": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "richtext_LNiYKe": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Smart Furniture is more than a furniture brand. We are <strong>your partner in creating beautiful, functional, and lasting spaces</strong>. Combining <strong>expert Egyptian craftsmanship, advanced production technology, and rigorous quality standards</strong>, our furniture <strong>enhances homes, enriches lives, and delivers exceptional value</strong>—reflecting our commitment to <strong>style, comfort, and customer satisfaction</strong>.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kWWEBi",
+        "subheading_aKqhei",
+        "richtext_LNiYKe"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
     "custom_liquid_QfGMqE": {
       "type": "custom-liquid",
       "name": "USPs ",
@@ -484,6 +589,9 @@
     "image_with_text_VYr96Q",
     "rich_text_ALTpdp",
     "text_with_icons_46xpyx",
+    "image_with_text_LXqcBW",
+    "rich_text_JE8yU9",
+    "rich_text_VaC3yk",
     "custom_liquid_QfGMqE"
   ]
 }
