@@ -24,7 +24,7 @@
         "image_7bMKEm": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/about-banner.jpg",
+            "image": "shopify://shop_images/1G4A6752_81f08be5-aebb-48e7-a6e2-6261bcef887b.jpg",
             "subheading": "",
             "title": "",
             "heading_style": "h1",
@@ -273,7 +273,7 @@
         "color_scheme": "",
         "separate_section_with_border": false,
         "columns_per_row": 5,
-        "stack_on_mobile": false,
+        "stack_on_mobile": true,
         "show_mobile_scroll_hint": false,
         "mobile_scroll_hint_text": "Swipe to see more →",
         "overlap_image": false,
@@ -484,7 +484,7 @@
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": false,
-        "reveal_on_scroll": true,
+        "reveal_on_scroll": false,
         "image_position": "start",
         "content_width": "sm",
         "remove_vertical_spacing": false
@@ -546,7 +546,7 @@
         "richtext_LNiYKe": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Smart Furniture is more than a furniture brand. We are <strong>your partner in creating beautiful, functional, and lasting spaces</strong>. Combining <strong>expert Egyptian craftsmanship, advanced production technology, and rigorous quality standards</strong>, our furniture <strong>enhances homes, enriches lives, and delivers exceptional value</strong>—reflecting our commitment to <strong>style, comfort, and customer satisfaction</strong>.<br/><br/></p>"
+            "content": "<p>Smart Furniture is more than a furniture brand. We are <strong>your partner in creating beautiful, functional, and lasting spaces</strong>. Combining <strong>expert Egyptian craftsmanship, advanced production technology, and rigorous quality standards</strong>, our furniture <strong>enhances homes, enriches lives, and delivers exceptional value </strong>— reflecting our commitment to <strong>style, comfort, and customer satisfaction</strong>.<br/><br/></p>"
           }
         }
       },
