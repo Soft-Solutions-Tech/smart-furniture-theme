@@ -155,7 +155,7 @@
           "type": "collection",
           "name": "All Sizes",
           "settings": {
-            "collection": "",
+            "collection": "all-sizes",
             "products_count": 8,
             "title": "All sizes",
             "link_url": "",
@@ -165,31 +165,31 @@
         "collection_De6ABg": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "120-150-cm",
             "products_count": 8,
             "title": "120cm-150cm",
             "link_url": "",
-            "link_text": "View all"
+            "link_text": ""
           }
         },
         "collection_kjY3pw": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "155-195-cm",
             "products_count": 8,
             "title": "155cm-195cm",
             "link_url": "",
-            "link_text": "View all"
+            "link_text": ""
           }
         },
         "collection_tpVtWc": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "200-255-cm",
             "products_count": 8,
             "title": "200cm-255cm",
             "link_url": "",
-            "link_text": "View all"
+            "link_text": ""
           }
         }
       },
