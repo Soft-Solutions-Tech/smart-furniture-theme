@@ -23,7 +23,6 @@ if product.selected_variant != blank
 assign has_selected_variant_context = true
 endif
 
-assign variant_card_badge = card_variant.metafields.custom.card_badge.value
 
 capture card_url
 echo product.url
@@ -78,28 +77,6 @@ else
 assign valu_monthly_price = product.price | divided_by: 36
 endif
 comment
-LAST CHANCE DISCOUNT BADGE
-Uses the highest percentage discount across the product variants,
-matching the regular product card discount logic.
-endcomment
-assign last_chance_discount = 0
-if is_last_chance
-if has_selected_variant_context and card_variant != blank
-if card_variant.compare_at_price > card_variant.price
-assign last_chance_discount = card_variant.compare_at_price | minus: card_variant.price | times: 100.0 | divided_by: card_variant.compare_at_price | round
-endif
-else
-for badge_variant in product.variants
-if badge_variant.compare_at_price > badge_variant.price
-assign variant_discount = badge_variant.compare_at_price | minus: badge_variant.price | times: 100.0 | divided_by: badge_variant.compare_at_price | round
-if variant_discount > last_chance_discount
-assign last_chance_discount = variant_discount
-endif
-endif
-endfor
-endif
-endif
-comment
 LAST CHANCE INVENTORY
 Adds together the remaining positive inventory
 from all inventory-tracked variants.
@@ -142,44 +119,24 @@ PRODUCT MEDIA
 
   <div class="product-card__figure">
 
-    {%- if is_last_chance -%}
-      <badge-list class="badge-list badge-list--vertical">
-
-      {%- if show_badges and variant_card_badge != blank -%}
-        <span class="badge badge--custom badge--{{ variant_card_badge | handle }}">
-        {{- variant_card_badge -}}
-        </span>
-      {%- endif -%}
-
-      <span class="badge badge--on-sale last-chance-badge">
-      LAST CHANCE
-      </span>
-
-      {%- if last_chance_discount > 0 -%}
-        <span class="badge badge--on-sale">
-        -{{ last_chance_discount }}%
-        </span>
-
-      {%- endif -%}
-      </badge-list>
-
-    {%- elsif show_badges -%}
+    {%- if show_badges or is_last_chance -%}
       {%- if has_selected_variant_context -%}
         {%- render 'product-badges',
         product: product,
         variant: card_variant,
         vertical: true,
-        context: 'product'
+        context: 'product',
+        include_custom: show_badges
         -%}
       {%- else -%}
         {%- render 'product-badges',
         product: product,
         variant: card_variant,
         vertical: true,
-        context: 'card'
+        context: 'card',
+        include_custom: show_badges
         -%}
       {%- endif -%}
-
     {%- endif -%}
     <a
     href="{{ card_url }}"
