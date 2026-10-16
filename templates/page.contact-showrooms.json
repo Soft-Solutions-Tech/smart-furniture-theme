@@ -106,6 +106,36 @@
         "text_alignment": "center"
       }
     },
+    "scrolling_content_7z4dBE": {
+      "type": "scrolling-content",
+      "blocks": {
+        "text_gfcQyJ": {
+          "type": "text",
+          "settings": {
+            "text": "Hotline 19641"
+          }
+        }
+      },
+      "block_order": [
+        "text_gfcQyJ"
+      ],
+      "name": "t:sections.scrolling_content.presets.scrolling_content.name",
+      "settings": {
+        "separate_section_with_border": false,
+        "scrolling_speed": 0.3,
+        "scroll_direction": "left",
+        "pause_on_hover": false,
+        "text_font": "body",
+        "text_font_size_mobile": 24,
+        "text_font_size_desktop": 36,
+        "section_vertical_spacing_mobile": 60,
+        "section_vertical_spacing_desktop": 80,
+        "item_horizontal_spacing_mobile": 80,
+        "item_horizontal_spacing_desktop": 120,
+        "background": "#002659",
+        "text_color": "#FFFFFF"
+      }
+    },
     "1790784958e87d1dd4": {
       "type": "apps",
       "blocks": {
@@ -198,6 +228,7 @@
     "slideshow_EErkX6",
     "17843073756ebc09c9",
     "custom_liquid_3jxX4T",
+    "scrolling_content_7z4dBE",
     "1790784958e87d1dd4",
     "timeline_4n8V4J",
     "custom_liquid_iXr8Lm"
