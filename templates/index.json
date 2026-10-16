@@ -203,7 +203,7 @@
       }
     },
     "new_arrivals_variants_TeKwDV": {
-      "type": "new-arrivals-variants",
+      "type": "featured-collections",
       "blocks": {
         "collection_WkRinw": {
           "type": "collection",
@@ -250,7 +250,7 @@
       }
     },
     "bestsellers_collections_URHg6n": {
-      "type": "Bestsellers-Collections",
+      "type": "featured-collections",
       "blocks": {
         "collection_mJnFcX": {
           "type": "collection",
@@ -441,7 +441,7 @@
       }
     },
     "featured_var_collections_WbmrJG": {
-      "type": "featured-var-collections",
+      "type": "featured-collections",
       "blocks": {
         "collection_iUw6td": {
           "type": "collection",

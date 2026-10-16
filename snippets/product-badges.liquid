@@ -18,12 +18,22 @@ assign variant = variant | default: product.selected_or_first_available_variant
     {%- case stripped_badge_type -%}
 
     {%- when 'custom' -%}
+      {%- assign variant_card_badge = variant.metafields.custom.card_badge.value -%}
+
+      {%- if variant_card_badge != blank -%}
+        <span class="badge badge--custom badge--{{ variant_card_badge | handle }}">
+        {{- variant_card_badge -}}
+        </span>
+      {%- endif -%}
+
       {%- assign custom_badges = product.metafields.custom.badges.value -%}
 
       {%- for custom_badge in custom_badges -%}
-        <span class="badge badge--custom badge--{{ custom_badge | handle }}">
-        {{- custom_badge -}}
-        </span>
+        {%- unless custom_badge == variant_card_badge -%}
+          <span class="badge badge--custom badge--{{ custom_badge | handle }}">
+          {{- custom_badge -}}
+          </span>
+        {%- endunless -%}
 
       {%- endfor -%}
 
