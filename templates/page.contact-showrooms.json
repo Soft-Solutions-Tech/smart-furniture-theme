@@ -106,34 +106,31 @@
         "text_alignment": "center"
       }
     },
-    "scrolling_content_7z4dBE": {
-      "type": "scrolling-content",
+    "text_with_icons_tEB6z8": {
+      "type": "text-with-icons",
       "blocks": {
-        "text_gfcQyJ": {
-          "type": "text",
+        "item_LRCUTE": {
+          "type": "item",
           "settings": {
-            "text": "Hotline 19641"
+            "icon": "picto-phone",
+            "icon_width": 24,
+            "mobile_icon_width": 24,
+            "title": "Hotline",
+            "content": "<p>19641</p>"
           }
         }
       },
       "block_order": [
-        "text_gfcQyJ"
+        "item_LRCUTE"
       ],
-      "name": "t:sections.scrolling_content.presets.scrolling_content.name",
+      "name": "t:sections.text_with_icons.presets.text_with_icons.name",
       "settings": {
+        "color_scheme": "scheme-17d4397d-ae6c-4c8b-9e1a-e77b4d3ecf15",
         "separate_section_with_border": false,
-        "scrolling_speed": 0.3,
-        "scroll_direction": "left",
-        "pause_on_hover": false,
-        "text_font": "body",
-        "text_font_size_mobile": 24,
-        "text_font_size_desktop": 36,
-        "section_vertical_spacing_mobile": 60,
-        "section_vertical_spacing_desktop": 80,
-        "item_horizontal_spacing_mobile": 250,
-        "item_horizontal_spacing_desktop": 250,
-        "background": "#002659",
-        "text_color": "#FFFFFF"
+        "stack_on_mobile": false,
+        "icon_color": "",
+        "text_color": "",
+        "text_alignment": "center"
       }
     },
     "1790784958e87d1dd4": {
@@ -228,7 +225,7 @@
     "slideshow_EErkX6",
     "17843073756ebc09c9",
     "custom_liquid_3jxX4T",
-    "scrolling_content_7z4dBE",
+    "text_with_icons_tEB6z8",
     "1790784958e87d1dd4",
     "timeline_4n8V4J",
     "custom_liquid_iXr8Lm"
