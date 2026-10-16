@@ -154,7 +154,7 @@
         {%- endif -%}
 
         {%- if block.settings.link_text != blank -%}
-          {%- assign button_link = block.settings.link_url | default: block.settings.collection.url | default: '#' -%}
+          {%- assign button_link = block.settings.collection.url | default: '#' -%}
 
           <div class="justify-self-center">
             {%- render 'button', href: button_link, content: block.settings.link_text -%}
@@ -353,12 +353,6 @@
   "id": "title",
   "label": "t:global.text.heading",
   "info": "t:sections.featured_collections.blocks.collection.title_info"
-  },
-  {
-  "type": "url",
-  "id": "link_url",
-  "label": "t:global.text.link_url",
-  "info": "t:sections.featured_collections.blocks.collection.default_link_url"
   },
   {
   "type": "text",
