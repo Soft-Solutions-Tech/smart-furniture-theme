@@ -51,11 +51,13 @@ assign is_last_chance = product.metafields.custom.last_chance.value
         {%- endif -%}
 
       {%- when 'sold_out' -%}
-        {%- if is_last_chance == false and settings.show_sold_out_badge and variant.available == false -%}
-          <sold-out-badge class="badge badge--sold-out">
-            {{- 'product.general.sold_out_badge' | t -}}
-          </sold-out-badge>
-        {%- endif -%}
+        {%- unless is_last_chance -%}
+          {%- if settings.show_sold_out_badge and variant.available == false -%}
+            <sold-out-badge class="badge badge--sold-out">
+              {{- 'product.general.sold_out_badge' | t -}}
+            </sold-out-badge>
+          {%- endif -%}
+        {%- endunless -%}
 
       {%- when 'discount' -%}
         {%- if settings.show_discount -%}
