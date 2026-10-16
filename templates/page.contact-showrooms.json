@@ -106,33 +106,6 @@
         "text_alignment": "center"
       }
     },
-    "text_with_icons_tEB6z8": {
-      "type": "text-with-icons",
-      "blocks": {
-        "item_LRCUTE": {
-          "type": "item",
-          "settings": {
-            "icon": "picto-phone",
-            "icon_width": 24,
-            "mobile_icon_width": 24,
-            "title": "Hotline",
-            "content": "<p>19641</p>"
-          }
-        }
-      },
-      "block_order": [
-        "item_LRCUTE"
-      ],
-      "name": "t:sections.text_with_icons.presets.text_with_icons.name",
-      "settings": {
-        "color_scheme": "scheme-17d4397d-ae6c-4c8b-9e1a-e77b4d3ecf15",
-        "separate_section_with_border": false,
-        "stack_on_mobile": false,
-        "icon_color": "",
-        "text_color": "",
-        "text_alignment": "center"
-      }
-    },
     "1790784958e87d1dd4": {
       "type": "apps",
       "blocks": {
@@ -170,15 +143,16 @@
         "item_n68mar": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/1G4A6771_1f0e6804-5522-480f-83d2-3b754290c763.jpg",
             "label": "About Us",
-            "subheading": "ssssss",
-            "title": "ssssss",
-            "heading_style": "h2",
-            "content": "<p>sssssssss</p>",
-            "link_text": "Know ore us",
+            "subheading": "Crafted by S.A.I Solutions &nbsp;",
+            "title": "&nbsp;Smart Furniture is backed by the manufacturing expertise of S.A.I Solutions, with a furniture manufacturing journey dating back to 2004.",
+            "heading_style": "h4",
+            "content": "",
+            "link_text": "Learn More",
             "link_url": "shopify://pages/about",
             "link_style": "link",
-            "mobile_text_color": "#ffffff"
+            "mobile_text_color": "#002659"
           }
         },
         "item_MiqBXJ": {
@@ -225,7 +199,6 @@
     "slideshow_EErkX6",
     "17843073756ebc09c9",
     "custom_liquid_3jxX4T",
-    "text_with_icons_tEB6z8",
     "1790784958e87d1dd4",
     "timeline_4n8V4J",
     "custom_liquid_iXr8Lm"
