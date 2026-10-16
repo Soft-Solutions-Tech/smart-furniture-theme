@@ -146,7 +146,7 @@
             "image": "shopify://shop_images/1G4A6771_1f0e6804-5522-480f-83d2-3b754290c763.jpg",
             "label": "About Us",
             "subheading": "Crafted by S.A.I Solutions &nbsp;",
-            "title": "&nbsp;Smart Furniture is backed by the manufacturing expertise of S.A.I Solutions, with a furniture manufacturing journey dating back to 2004.",
+            "title": "Smart Furniture is backed by the manufacturing expertise of S.A.I Solutions, with a furniture manufacturing journey dating back to 2004.",
             "heading_style": "h4",
             "content": "",
             "link_text": "Learn More",
@@ -158,12 +158,13 @@
         "item_MiqBXJ": {
           "type": "item",
           "settings": {
-            "label": "&nbsp;Catalogues&nbsp;",
+            "image": "shopify://shop_images/DIVO-TOTAL-B-L1.jpg",
+            "label": "&nbsp;Catalogs",
             "subheading": "",
             "title": "",
             "heading_style": "h2",
             "content": "",
-            "link_text": "Know all the Catalogues",
+            "link_text": "Explore our Catalogs",
             "link_url": "shopify://pages/catalog",
             "link_style": "link",
             "mobile_text_color": "#ffffff"
