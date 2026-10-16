@@ -58,11 +58,11 @@
         "show_next_section_button": false,
         "media_size": "auto",
         "show_initial_transition": false,
-        "autoplay": true,
-        "autoplay_pause_on_video": true,
+        "autoplay": false,
+        "autoplay_pause_on_video": false,
         "cycle_speed": 5,
-        "background": "#000000",
-        "controls_color": "#ffffff"
+        "background": "rgba(0,0,0,0)",
+        "controls_color": "rgba(0,0,0,0)"
       }
     },
     "17843073756ebc09c9": {
