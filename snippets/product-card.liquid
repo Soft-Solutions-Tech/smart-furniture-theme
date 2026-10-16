@@ -17,6 +17,35 @@ This component is used in collection and featured collection to render a single 
 @param {object} [block]
 {%- enddoc -%}
 {%- liquid
+assign card_variant = product.selected_variant | default: product.selected_or_first_available_variant
+assign has_selected_variant_context = false
+if product.selected_variant != blank
+assign has_selected_variant_context = true
+endif
+
+assign variant_card_badge = card_variant.metafields.custom.card_badge.value
+
+capture card_url
+echo product.url
+if has_selected_variant_context and card_variant != blank
+echo '?variant='
+echo card_variant.id
+endif
+endcapture
+assign card_url = card_url | strip
+
+assign card_available = product.available
+if has_selected_variant_context and card_variant != blank
+assign card_available = card_variant.available
+endif
+
+assign can_direct_add = false
+if card_variant != blank and product.selling_plan_groups.size == 0
+if has_selected_variant_context or product.variants.size == 1
+assign can_direct_add = true
+endif
+endif
+
 assign show_card_add_to_cart = show_card_add_to_cart | default: false, allow_false: true
 if hide_product_information
 assign show_badges = false
@@ -43,7 +72,11 @@ comment
 VALU MONTHLY PAYMENT
 Current Shopify product price divided by 36 months.
 endcomment
+if has_selected_variant_context and card_variant != blank
+assign valu_monthly_price = card_variant.price | divided_by: 36
+else
 assign valu_monthly_price = product.price | divided_by: 36
+endif
 comment
 LAST CHANCE DISCOUNT BADGE
 Uses the highest percentage discount across the product variants,
@@ -51,6 +84,11 @@ matching the regular product card discount logic.
 endcomment
 assign last_chance_discount = 0
 if is_last_chance
+if has_selected_variant_context and card_variant != blank
+if card_variant.compare_at_price > card_variant.price
+assign last_chance_discount = card_variant.compare_at_price | minus: card_variant.price | times: 100.0 | divided_by: card_variant.compare_at_price | round
+endif
+else
 for badge_variant in product.variants
 if badge_variant.compare_at_price > badge_variant.price
 assign variant_discount = badge_variant.compare_at_price | minus: badge_variant.price | times: 100.0 | divided_by: badge_variant.compare_at_price | round
@@ -60,6 +98,7 @@ endif
 endif
 endfor
 endif
+endif
 comment
 LAST CHANCE INVENTORY
 Adds together the remaining positive inventory
@@ -68,6 +107,14 @@ endcomment
 assign last_chance_inventory = 0
 assign last_chance_inventory_tracked = false
 if is_last_chance
+if has_selected_variant_context and card_variant != blank
+if card_variant.inventory_management != blank and card_variant.inventory_policy != 'continue'
+assign last_chance_inventory_tracked = true
+if card_variant.inventory_quantity > 0
+assign last_chance_inventory = card_variant.inventory_quantity
+endif
+endif
+else
 for variant in product.variants
 if variant.inventory_management != blank
 assign last_chance_inventory_tracked = true
@@ -76,6 +123,7 @@ assign last_chance_inventory = last_chance_inventory | plus: variant.inventory_q
 endif
 endif
 endfor
+endif
 endif
 -%}
 <product-card
@@ -96,6 +144,13 @@ PRODUCT MEDIA
 
     {%- if is_last_chance -%}
       <badge-list class="badge-list badge-list--vertical">
+
+      {%- if show_badges and variant_card_badge != blank -%}
+        <span class="badge badge--custom badge--{{ variant_card_badge | handle }}">
+        {{- variant_card_badge -}}
+        </span>
+      {%- endif -%}
+
       <span class="badge badge--on-sale last-chance-badge">
       LAST CHANCE
       </span>
@@ -109,15 +164,25 @@ PRODUCT MEDIA
       </badge-list>
 
     {%- elsif show_badges -%}
-      {%- render 'product-badges',
-      product: product,
-      vertical: true,
-      context: 'card'
-      -%}
+      {%- if has_selected_variant_context -%}
+        {%- render 'product-badges',
+        product: product,
+        variant: card_variant,
+        vertical: true,
+        context: 'product'
+        -%}
+      {%- else -%}
+        {%- render 'product-badges',
+        product: product,
+        variant: card_variant,
+        vertical: true,
+        context: 'card'
+        -%}
+      {%- endif -%}
 
     {%- endif -%}
     <a
-    href="{{ product.url }}"
+    href="{{ card_url }}"
     class="product-card__media"
     draggable="false"
     data-instant
@@ -144,9 +209,13 @@ PRODUCT MEDIA
     if section.index > 3 or position > 3
     assign main_media_loading_strategy = 'lazy'
     endif
-    # If the "custom.card_image" metafield exists for this product we use this one,
-    # otherwise we default to the featured image
+    # Native variant collections expose the included variant as product.selected_variant.
+    # Use that exact variant image when available, otherwise preserve the normal card image behavior.
+    if has_selected_variant_context and card_variant.featured_media != blank
+    assign featured_media = card_variant.featured_media
+    else
     assign featured_media = product.metafields.custom.card_image.value | default: product.featured_media
+    endif
     -%}
 
     {%- capture main_image_classes -%}
@@ -179,9 +248,9 @@ PRODUCT MEDIA
     -%}
     </a>
 
-    {%- if show_quick_buy and product.available -%}
+    {%- if show_quick_buy and card_available -%}
 
-      {%- if product.variants.size == 1 and product.selling_plan_groups.size == 0 -%}
+      {%- if can_direct_add -%}
         <product-form>
 
         {%- form 'product', product -%}
@@ -201,7 +270,7 @@ PRODUCT MEDIA
           <input
           type="hidden"
           name="id"
-          value="{{ product.selected_or_first_available_variant.id }}"
+          value="{{ card_variant.id }}"
           >
           <button
           type="submit"
@@ -233,7 +302,7 @@ PRODUCT MEDIA
         {%- render 'icon' with 'plus' -%}
         </button>
         <quick-buy-modal
-        handle="{{ product.handle }}?variant={{ product.selected_or_first_available_variant.id }}"
+        handle="{{ product.handle }}?variant={{ card_variant.id }}"
         class="quick-buy-modal modal"
         id="{{ quick_buy_id }}"
         aria-label="{{ 'product.general.choose_options_with_title' | t: title: product.title | escape }}"
@@ -284,7 +353,7 @@ PRODUCT INFO
 
           {%- if show_title -%}
             <a
-            href="{{ product.url }}"
+            href="{{ card_url }}"
             class="product-title
 
             {% if text_class != blank %}
@@ -310,10 +379,17 @@ PRODUCT INFO
           {%- endif -%}
 
           {%- if show_prices -%}
-            {%- render 'price-list',
-            product: product,
-            context: 'card'
-            -%}
+            {%- if has_selected_variant_context -%}
+              {%- render 'price-list',
+              variant: card_variant,
+              context: 'card'
+              -%}
+            {%- else -%}
+              {%- render 'price-list',
+              product: product,
+              context: 'card'
+              -%}
+            {%- endif -%}
             {%- comment -%}
             ------------------------------------------------------------
             VALU INSTALLMENT LINE
@@ -475,9 +551,9 @@ PRODUCT INFO
 
     <div class="product-card__bottom-button" style="width: 100%; margin-top: 10px;">
 
-      {%- if product.available -%}
+      {%- if card_available -%}
 
-        {%- if product.variants.size == 1 and product.selling_plan_groups.size == 0 -%}
+        {%- if can_direct_add -%}
           <product-form style="display: block; width: 100%;">
 
           {%- form 'product', product -%}
