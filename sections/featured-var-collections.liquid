@@ -216,8 +216,7 @@
         {%- endif -%}
 
         {%- if block.settings.link_text != blank -%} 
-          {%- assign button_link = block.settings.link_url | default: block.settings.collection.url | default: '#' -%}
-
+            {%- assign button_link = block.settings.collection.url | default: '#' -%}
           <div class="justify-self-center">
             {%- render 'button', href: button_link, content: block.settings.link_text -%}
 
