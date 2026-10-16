@@ -130,8 +130,8 @@
         "text_font_size_desktop": 36,
         "section_vertical_spacing_mobile": 60,
         "section_vertical_spacing_desktop": 80,
-        "item_horizontal_spacing_mobile": 80,
-        "item_horizontal_spacing_desktop": 120,
+        "item_horizontal_spacing_mobile": 250,
+        "item_horizontal_spacing_desktop": 250,
         "background": "#002659",
         "text_color": "#FFFFFF"
       }
