@@ -21,7 +21,6 @@
 >
   <form method="GET" action="{{ request.path }}" class="facets">
     {%- comment -%}We always reset to the first page so that when criteria change, the page is restored to the first one{%- endcomment -%}
-
     <input type="hidden" name="page" value="">
 
     {%- if results.current_type != blank or results.current_vendor != blank -%}
@@ -37,119 +36,30 @@
     {%- endif -%}
 
     <div class="accordion-list">
-
       {%- if quick_links_menu.links.size > 0 -%}
-
         {%- capture filter_content -%}
           <div class="v-stack gap-2.5">
             {%- for link in quick_links_menu.links -%}
-              <a href="{{ link.url }}" {% unless link.active %}class="link-faded"{% endunless %}>
-                {{ link.title }}
-              </a>
+              <a href="{{ link.url }}" {% unless link.active %}class="link-faded"{% endunless %}>{{ link.title }}</a>
             {%- endfor -%}
           </div>
         {%- endcapture -%}
 
         {%- render 'accordion', title: quick_links_menu.title, content: filter_content, open: open_filters_by_default, show_arrow: true -%}
-
       {%- endif -%}
 
       {%- if show_filters -%}
-
         {%- for filter in results.filters -%}
-
-          {%- if request.page_type == 'collection' -%}
-
-            {%- liquid
-              assign show_this_filter = false
-              assign filter_key = filter.param_name
-              assign current_collection = collection.handle
-
-              if filter_key == 'filter.v.availability' or filter_key == 'filter.v.price'
-                assign show_this_filter = true
-              endif
-
-              case current_collection
-
-                when 'bedrooms', 'master-bedrooms', 'teens-bedrooms'
-                  if filter_key == 'filter.v.m.custom.bed_size' or filter_key == 'filter.v.m.custom.wardrobe_size' or filter_key == 'filter.v.m.custom.wardrobe_style'
-                    assign show_this_filter = true
-                  endif
-
-                when 'beds'
-                  if filter_key == 'filter.v.m.custom.bed_size'
-                    assign show_this_filter = true
-                  endif
-
-                when 'wardrobes'
-                  if filter_key == 'filter.v.m.custom.wardrobe_size' or filter_key == 'filter.v.m.custom.wardrobe_style'
-                    assign show_this_filter = true
-                  endif
-
-                when 'dining-rooms', 'dining-sets', 'dining-tables'
-                  if filter_key == 'filter.v.m.custom.table_size'
-                    assign show_this_filter = true
-                  endif
-
-                when 'dining-chairs'
-                  if filter_key == 'filter.v.m.custom.color' or filter_key == 'filter.v.m.custom.material'
-                    assign show_this_filter = true
-                  endif
-
-                when 'living-rooms', 'living-sets', 'sofa-beds'
-                  if filter_key == 'filter.v.m.custom.color' or filter_key == 'filter.v.m.custom.fabric'
-                    assign show_this_filter = true
-                  endif
-
-                when 'l-shapes'
-                  if filter_key == 'filter.v.m.custom.color' or filter_key == 'filter.v.m.custom.fabric' or filter_key == 'filter.v.m.custom.l_shape_width'
-                    assign show_this_filter = true
-                  endif
-
-                when 'mattresses'
-                  if filter_key == 'filter.v.m.custom.mattress_size' or filter_key == 'filter.p.m.custom.spring_type'
-                    assign show_this_filter = true
-                  endif
-
-              endcase
-            -%}
-
-            {%- unless show_this_filter -%}
-              {%- continue -%}
-            {%- endunless -%}
-
-          {%- endif -%}
-
           {%- capture filter_content -%}
-
             {%- if filter.type == 'boolean' or filter.param_name == 'filter.v.availability' -%}
-
               {%- if filter.param_name == 'filter.v.availability' -%}
-
                 <div class="checkbox-control">
-                  <input
-                    id="{{ id_prefix }}-{{ filter.param_name }}"
-                    type="checkbox"
-                    class="switch"
-                    name="{{ filter.param_name }}"
-                    value="1"
-                    {% if filter.active_values.size > 0 %}checked{% endif %}
-                  >
-
-                  <label
-                    for="{{ id_prefix }}-{{ filter.param_name }}"
-                    class="text-subdued"
-                  >
-                    {{- 'collection.faceting.in_stock_only' | t -}}
-                  </label>
+                  <input id="{{ id_prefix }}-{{ filter.param_name }}" type="checkbox" class="switch" name="{{ filter.param_name }}" value="1" {% if filter.active_values.size > 0 %}checked{% endif %}>
+                  <label for="{{ id_prefix }}-{{ filter.param_name }}" class="text-subdued">{{- 'collection.faceting.in_stock_only' | t -}}</label>
                 </div>
-
               {%- else -%}
-
                 <div class="v-stack gap-2.5">
-
                   {%- for filter_value in filter.values -%}
-
                     {%- liquid
                       if section.settings.show_filter_values_count
                         assign label = filter_value.label | append: ' (' | append: filter_value.count | append: ')'
@@ -159,43 +69,19 @@
                     -%}
 
                     <div class="checkbox-control">
+                      {%- capture boolean_index -%}{% increment filter_boolean %}{%- endcapture -%}
 
-                      {%- capture boolean_index -%}
-                        {% increment filter_boolean %}
-                      {%- endcapture -%}
-
-                      <input
-                        id="{{ id_prefix }}-{{ filter_value.param_name }}-{{ boolean_index }}"
-                        type="checkbox"
-                        class="switch"
-                        name="{{ filter_value.param_name }}"
-                        value="{{ filter_value.value }}"
-                        {% if filter_value.active %}checked{% endif %}
-                      >
-
-                      <label
-                        for="{{ id_prefix }}-{{ filter_value.param_name }}-{{ boolean_index }}"
-                        class="text-subdued"
-                      >
-                        {{ label }}
-                      </label>
-
+                      <input id="{{ id_prefix }}-{{ filter_value.param_name }}-{{ boolean_index }}" type="checkbox" class="switch" name="{{ filter_value.param_name }}" value="{{ filter_value.value }}" {% if filter_value.active %}checked{% endif %}>
+                      <label for="{{ id_prefix }}-{{ filter_value.param_name }}-{{ boolean_index }}" class="text-subdued">{{ label }}</label>
                     </div>
-
                   {%- endfor -%}
-
                 </div>
-
               {%- endif -%}
-
             {%- else -%}
-
               {%- assign downcase_label = filter.label | downcase -%}
 
               {%- case filter.type -%}
-
                 {%- when 'list' -%}
-
                   {%- liquid
                     if filter.presentation == 'image'
                       assign wrapper_class_list = 'v-stack gap-2'
@@ -207,17 +93,14 @@
                   -%}
 
                   <div class="{{ wrapper_class_list }}">
-
                     {% liquid
                       for filter_value in filter.values
                         assign value_id_prefix = id_prefix | append: '-' | append: forloop.index
 
                         if filter.presentation == 'image'
                           render 'option-value', type: 'image_filter', filter_value: filter_value, id_prefix: value_id_prefix
-
                         elsif filter.presentation == 'swatch' or color_label_list contains downcase_label
                           render 'option-value', type: 'swatch', filter_value: filter_value, show_tooltip: true, id_prefix: value_id_prefix
-
                         else
                           if section.settings.show_filter_values_count
                             assign label = filter_value.label | append: ' (' | append: filter_value.count | append: ')'
@@ -226,37 +109,27 @@
                           endif
 
                           render 'checkbox', hide_checkbox: true, label: label, name: filter_value.param_name, value: filter_value.value, checked: filter_value.active, id_prefix: value_id_prefix
-
                         endif
                       endfor
                     %}
-
                   </div>
 
                 {%- when 'price_range' -%}
-
                   {%- render 'price-range', filter: filter -%}
-
               {%- endcase -%}
-
             {%- endif -%}
-
           {%- endcapture -%}
 
           {%- if filter_content != blank -%}
             {%- render 'accordion', title: filter.label, content: filter_content, open: open_filters_by_default, show_arrow: true -%}
           {%- endif -%}
-
         {%- endfor -%}
-
       {%- endif -%}
-
     </div>
 
     <noscript style="display: block; margin-top: 20px;">
       {%- assign button_content = 'collection.faceting.apply_filters' | t -%}
       {%- render 'button', content: button_content, stretch: true -%}
     </noscript>
-
   </form>
 </facets-form>
