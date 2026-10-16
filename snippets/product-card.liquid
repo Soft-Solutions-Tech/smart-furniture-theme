@@ -573,7 +573,7 @@ PRODUCT INFO
             <input
             type="hidden"
             name="id"
-            value="{{ product.selected_or_first_available_variant.id }}"
+            value="{{ card_variant.id }}"
             >
 
             {%- capture bottom_add_to_cart_text -%}
@@ -608,7 +608,7 @@ PRODUCT INFO
           aria_controls: bottom_quick_buy_id
           -%}
           <quick-buy-modal
-          handle="{{ product.handle }}?variant={{ product.selected_or_first_available_variant.id }}"
+          handle="{{ product.handle }}?variant={{ card_variant.id }}"
           class="quick-buy-modal modal"
           id="{{ bottom_quick_buy_id }}"
           aria-label="{{ 'product.general.choose_options_with_title' | t: title: product.title | escape }}"
