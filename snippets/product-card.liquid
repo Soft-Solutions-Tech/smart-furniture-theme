@@ -13,6 +13,7 @@ This component is used in collection and featured collection to render a single 
 @param {boolean} [hide_product_information] - if set to true, all content are not rendered, to create image-based grid
 @param {boolean} [show_card_add_to_cart] - show the optional full-width Add to cart / Choose options button
 @param {string} [quick_buy_context] - a unique text to dissociate quick buy if the same product is embedded multiple times
+@param {boolean} [restrict_quick_buy_to_collection_variants] - when true, quick buy only exposes variants present in the current collection context
 @param {object} [section]
 @param {object} [block]
 {%- enddoc -%}
@@ -43,6 +44,29 @@ if card_variant != blank and product.selling_plan_groups.size == 0
 if product.variants.size == 1
 assign can_direct_add = true
 endif
+endif
+
+assign restrict_quick_buy_to_collection_variants = restrict_quick_buy_to_collection_variants | default: false, allow_false: true
+assign allowed_variant_combinations_json = blank
+
+if restrict_quick_buy_to_collection_variants and product.variants.size > 0
+capture allowed_variant_combinations_json
+echo '['
+for allowed_variant in product.variants
+echo '['
+for allowed_option_value in allowed_variant.options
+echo allowed_option_value.id | json
+unless forloop.last
+echo ','
+endunless
+endfor
+echo ']'
+unless forloop.last
+echo ','
+endunless
+endfor
+echo ']'
+endcapture
 endif
 
 assign show_card_add_to_cart = show_card_add_to_cart | default: false, allow_false: true
@@ -260,6 +284,9 @@ PRODUCT MEDIA
         </button>
         <quick-buy-modal
         handle="{{ product.handle }}?variant={{ card_variant.id }}"
+        {% if allowed_variant_combinations_json != blank %}
+          data-allowed-variant-combinations="{{ allowed_variant_combinations_json | escape }}"
+        {% endif %}
         class="quick-buy-modal modal"
         id="{{ quick_buy_id }}"
         aria-label="{{ 'product.general.choose_options_with_title' | t: title: product.title | escape }}"
@@ -566,6 +593,9 @@ PRODUCT INFO
           -%}
           <quick-buy-modal
           handle="{{ product.handle }}?variant={{ card_variant.id }}"
+          {% if allowed_variant_combinations_json != blank %}
+            data-allowed-variant-combinations="{{ allowed_variant_combinations_json | escape }}"
+          {% endif %}
           class="quick-buy-modal modal"
           id="{{ bottom_quick_buy_id }}"
           aria-label="{{ 'product.general.choose_options_with_title' | t: title: product.title | escape }}"

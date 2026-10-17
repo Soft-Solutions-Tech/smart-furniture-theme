@@ -190,6 +190,88 @@
 
       root.dataset.variantCollectionsLoaderBound = 'true';
 
+      const bindRestrictedQuickBuyModal = (modal) => {
+        if (modal.dataset.collectionVariantRestrictionBound === 'true') return;
+
+        let allowedCombinations;
+
+        try {
+          allowedCombinations = JSON.parse(modal.dataset.allowedVariantCombinations || '[]')
+            .map((combination) => combination.map(String));
+        } catch (error) {
+          return;
+        }
+
+        if (allowedCombinations.length === 0) return;
+
+        modal.dataset.collectionVariantRestrictionBound = 'true';
+
+        const refreshAllowedOptions = () => {
+          const inputs = Array.from(modal.querySelectorAll('input[data-option-position]'));
+          if (inputs.length === 0) return;
+
+          const selectedByPosition = new Map();
+
+          inputs.forEach((input) => {
+            if (input.checked) {
+              selectedByPosition.set(Number.parseInt(input.dataset.optionPosition, 10) - 1, String(input.value));
+            }
+
+            if (input.dataset.collectionOriginalDisabled === undefined) {
+              input.dataset.collectionOriginalDisabled = input.disabled ? 'true' : 'false';
+            }
+          });
+
+          inputs.forEach((input) => {
+            const position = Number.parseInt(input.dataset.optionPosition, 10) - 1;
+            const candidateValue = String(input.value);
+
+            const isAllowed = allowedCombinations.some((combination) => {
+              if (String(combination[position]) !== candidateValue) return false;
+
+              for (const [selectedPosition, selectedValue] of selectedByPosition) {
+                if (selectedPosition === position) continue;
+
+                if (
+                  combination[selectedPosition] === undefined ||
+                  String(combination[selectedPosition]) !== selectedValue
+                ) {
+                  return false;
+                }
+              }
+
+              return true;
+            });
+
+            const label = input.closest('label') || (
+              input.id ? modal.querySelector(`label[for="${CSS.escape(input.id)}"]`) : null
+            );
+            const visualOption = input.closest('.popover__value-option') || label;
+
+            if (visualOption) {
+              visualOption.hidden = !isAllowed;
+            }
+
+            input.disabled = !isAllowed || input.dataset.collectionOriginalDisabled === 'true';
+          });
+        };
+
+        const observer = new MutationObserver(refreshAllowedOptions);
+        observer.observe(modal, { childList: true, subtree: true });
+
+        modal.addEventListener('change', (event) => {
+          if (event.target.matches('input[data-option-position]')) {
+            queueMicrotask(refreshAllowedOptions);
+          }
+        });
+
+        refreshAllowedOptions();
+      };
+
+      const bindRestrictedQuickBuyModals = (scope) => {
+        scope.querySelectorAll('quick-buy-modal[data-allowed-variant-combinations]').forEach(bindRestrictedQuickBuyModal);
+      };
+
       const loadCollection = async (slide) => {
         if (slide.dataset.variantCollectionLoaded === 'true') return;
 
@@ -230,6 +312,7 @@
           });
 
           target.replaceChildren(...cards);
+          bindRestrictedQuickBuyModals(target);
           slide.dataset.variantCollectionLoaded = 'true';
 
           if (typeof target.select === 'function') {
