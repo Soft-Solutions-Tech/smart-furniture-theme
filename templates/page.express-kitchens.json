@@ -222,28 +222,21 @@
     "image_with_text_erX69V": {
       "type": "image-with-text",
       "blocks": {
-        "subheading_z3R4QD": {
-          "type": "subheading",
-          "settings": {
-            "text": "Subheading"
-          }
-        },
         "heading_gjnGiC": {
           "type": "heading",
           "settings": {
-            "text": "Image with text",
+            "text": "Ready When You Are",
             "heading_tag": "h1"
           }
         },
         "richtext_HAXdDt": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+            "content": "<p>Our Express Kitchens are designed for faster move-ins, with delivery within <strong>7–10 business days</strong>. Choose from a range of available dimensions to find the configuration that fits your space.</p>"
           }
         }
       },
       "block_order": [
-        "subheading_z3R4QD",
         "heading_gjnGiC",
         "richtext_HAXdDt"
       ],
@@ -260,28 +253,21 @@
     "image_with_text_Ljbh6K": {
       "type": "image-with-text",
       "blocks": {
-        "subheading_9LXxpt": {
-          "type": "subheading",
-          "settings": {
-            "text": "Subheading"
-          }
-        },
         "heading_UbCCgC": {
           "type": "heading",
           "settings": {
-            "text": "Image with text",
+            "text": "Designed to Fit Your Space &nbsp;",
             "heading_tag": "h1"
           }
         },
         "richtext_h8qdaR": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+            "content": "<p>Express Kitchens are available in multiple dimensions and are sold <strong>without marble countertops</strong>, giving you the flexibility to choose the countertop that best suits your style and needs.</p>"
           }
         }
       },
       "block_order": [
-        "subheading_9LXxpt",
         "heading_UbCCgC",
         "richtext_h8qdaR"
       ],
