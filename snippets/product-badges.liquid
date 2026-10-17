@@ -14,6 +14,16 @@ assign badge_types = types | default: 'custom, last_chance, sold_out, discount' 
 assign variant = variant | default: product.selected_or_first_available_variant
 assign include_custom = include_custom | default: true, allow_false: true
 assign is_last_chance = product.metafields.custom.last_chance.value
+
+unless is_last_chance
+for product_tag in product.tags
+assign normalized_product_tag = product_tag | downcase | strip
+if normalized_product_tag == 'last chance'
+assign is_last_chance = true
+break
+endif
+endfor
+endunless
 -%}
 
 {%- capture badges -%}
