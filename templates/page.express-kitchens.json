@@ -201,6 +201,10 @@
         "collection_kjY3pw",
         "collection_tpVtWc"
       ],
+      "custom_css": [
+        "/* Tall (3:4) fill card — this section only */[class*=\"product-card\"] [class*=\"media\"],[class*=\"product-card\"] [class*=\"image-wrapper\"] {aspect-ratio: 3 / 4 !important; padding-bottom: 0 !important; height: auto !important;}",
+        "[class*=\"product-card\"] img {width: 100% !important; height: 100% !important; object-fit: cover !important;}"
+      ],
       "name": "t:sections.featured_collections.presets.featured_collections.name",
       "settings": {
         "color_scheme": "scheme-3",
