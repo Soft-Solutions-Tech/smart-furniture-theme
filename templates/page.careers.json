@@ -24,8 +24,9 @@
         "image_gYz8yQ": {
           "type": "image",
           "settings": {
-            "subheading": "Tell your story",
-            "title": "Slide 1",
+            "image": "shopify://shop_images/Gemini_Generated_Image_ve8n1bve8n1bve8n.jpg",
+            "subheading": "",
+            "title": "",
             "heading_style": "h1",
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
@@ -96,6 +97,7 @@
       "settings": {
         "color_scheme": "scheme-3",
         "separate_section_with_border": false,
+        "image": "shopify://shop_images/1G4A6727_1.jpg",
         "reveal_on_scroll": true,
         "image_position": "end",
         "content_width": "sm",
