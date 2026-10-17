@@ -15,7 +15,9 @@
         "image_taENR8": {
           "type": "image",
           "settings": {
-            "subheading": "Express Kitchens",
+            "image": "shopify://shop_images/Express_Kitchen_-website.webp",
+            "mobile_image": "shopify://shop_images/Express_Kitchen_-mobile.jpg",
+            "subheading": "",
             "title": "",
             "heading_style": "h1",
             "mobile_text_position": "place-self-center-start text-start",
@@ -345,6 +347,7 @@
         "image_yjQkYF": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/1_web_3.jpg",
             "subheading": "Looking for a custom solution?",
             "title": "",
             "heading_style": "h1",
