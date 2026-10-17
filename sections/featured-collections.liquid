@@ -86,7 +86,15 @@
         {% if forloop.first %}
           is-selected
         {% endif %}
-        " {{ block.shopify_attributes }}>
+        "
+        {% if section.settings.isolate_variant_collections and block.settings.collection != blank %}
+          data-isolated-variant-collection
+          data-collection-url="{{ block.settings.collection.url }}"
+          data-products-count="{{ block.settings.products_count }}"
+          data-hide-product-information="{{ section.settings.hide_product_information }}"
+          data-show-card-add-to-cart="{{ section.settings.show_card_add_to_cart }}"
+        {% endif %}
+        {{ block.shopify_attributes }}>
 
         {%- capture product_list -%}
           {%- assign should_reveal = false -%}
@@ -111,7 +119,7 @@
         {%- endcapture -%}
 
         {%- if section.settings.stack_products -%}
-          <product-list class="product-list
+          <product-list data-featured-products-target class="product-list
           {% if section.settings.hide_product_information %}
             product-list--compact
           {% endif %}
@@ -130,6 +138,7 @@
           </button>
           </carousel-prev-button>
           <scroll-carousel
+          data-featured-products-target
           id="{{ product_carousel_id }}"
           group-cells
           allow-drag
@@ -172,6 +181,78 @@
 </div>
 
 </div>
+
+{%- if section.settings.isolate_variant_collections -%}
+  <script>
+    (() => {
+      const root = document.getElementById('shopify-section-{{ section.id }}');
+      if (!root || root.dataset.variantCollectionsLoaderBound === 'true') return;
+
+      root.dataset.variantCollectionsLoaderBound = 'true';
+
+      const loadCollection = async (slide) => {
+        if (slide.dataset.variantCollectionLoaded === 'true') return;
+
+        const collectionUrl = slide.dataset.collectionUrl;
+        const target = slide.querySelector('[data-featured-products-target]');
+        if (!collectionUrl || !target) return;
+
+        try {
+          const url = new URL(collectionUrl, window.location.origin);
+          url.searchParams.set('view', 'variant-loader');
+
+          const response = await fetch(url.toString(), {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+          });
+
+          if (!response.ok) return;
+
+          const html = await response.text();
+          const documentFragment = new DOMParser().parseFromString(html, 'text/html');
+          const loader = documentFragment.querySelector('[data-variant-collection-loader]');
+          if (!loader) return;
+
+          const productCount = Number.parseInt(slide.dataset.productsCount || '8', 10);
+          const cards = Array.from(loader.querySelectorAll(':scope > product-card')).slice(0, productCount);
+          if (cards.length === 0) return;
+
+          const hideProductInformation = slide.dataset.hideProductInformation === 'true';
+          const showCardAddToCart = slide.dataset.showCardAddToCart === 'true';
+
+          cards.forEach((card) => {
+            if (hideProductInformation) {
+              card.querySelector('.product-card__info')?.remove();
+            }
+
+            if (!showCardAddToCart) {
+              card.querySelector('.product-card__bottom-button')?.remove();
+            }
+          });
+
+          target.replaceChildren(...cards);
+          slide.dataset.variantCollectionLoaded = 'true';
+
+          if (typeof target.select === 'function') {
+            target.select(0, { instant: true });
+          }
+
+          target.dispatchEvent(new Event('scroll'));
+          window.dispatchEvent(new Event('resize'));
+        } catch (error) {
+          console.warn('Featured variant collection could not be loaded in isolated context.', error);
+        }
+      };
+
+      root.querySelectorAll('[data-isolated-variant-collection]').forEach(loadCollection);
+
+      document.addEventListener('shopify:section:load', (event) => {
+        if (event.target?.id === root.id) {
+          root.querySelectorAll('[data-isolated-variant-collection]').forEach(loadCollection);
+        }
+      });
+    })();
+  </script>
+{%- endif -%}
 {%- endif -%}
 {% schema %}
   {
@@ -206,6 +287,13 @@
   "type": "checkbox",
   "id": "show_card_add_to_cart",
   "label": "Show Add to cart button",
+  "default": false
+  },
+  {
+  "type": "checkbox",
+  "id": "isolate_variant_collections",
+  "label": "Variant collection compatibility mode",
+  "info": "Use this when multiple tabs contain different variants of the same product. Each collection is loaded in its own collection context.",
   "default": false
   },
   {
