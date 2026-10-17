@@ -75,7 +75,7 @@
           "type": "image",
           "settings": {
             "color_scheme": "",
-            "image": "shopify://shop_images/stone.webp",
+            "image": "shopify://shop_images/1_web_1.jpg",
             "column_count": "8",
             "row_count": 2,
             "add_padding": false,
@@ -94,7 +94,7 @@
           "type": "image",
           "settings": {
             "color_scheme": "",
-            "image": "shopify://shop_images/Memory.webp",
+            "image": "shopify://shop_images/8.jpg",
             "column_count": "4",
             "row_count": 1,
             "add_padding": false,
@@ -113,6 +113,45 @@
           "type": "image",
           "settings": {
             "color_scheme": "",
+            "image": "shopify://shop_images/1_web_3.jpg",
+            "column_count": "4",
+            "row_count": 1,
+            "add_padding": false,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_wQcAX3": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/1_web_4.jpg",
+            "column_count": "4",
+            "row_count": 1,
+            "add_padding": false,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_McA4b4": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/1_web_7.jpg",
             "column_count": "4",
             "row_count": 1,
             "add_padding": false,
@@ -131,7 +170,9 @@
       "block_order": [
         "image_6aQKgU",
         "image_kieVh7",
-        "image_6WFH9k"
+        "image_6WFH9k",
+        "image_wQcAX3",
+        "image_McA4b4"
       ],
       "name": "Our Kitchens",
       "settings": {
@@ -139,7 +180,7 @@
         "separate_section_with_border": false,
         "desktop_row_height": 290,
         "mobile_row_height": 180,
-        "section_width": "lg",
+        "section_width": "md",
         "spacing": "md",
         "subheading": "",
         "title": "&nbsp;Our Kitchens&nbsp;",
