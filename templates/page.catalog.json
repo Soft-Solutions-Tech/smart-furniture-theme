@@ -24,6 +24,7 @@
         "image_3YecR8": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Catalogue_banner-desktop.jpg",
             "subheading": "Tell your story",
             "title": "Slide 1",
             "heading_style": "h1",
