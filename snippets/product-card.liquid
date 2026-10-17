@@ -90,6 +90,16 @@ assign show_prices = true
 assign show_secondary_image = show_secondary_image | default: settings.show_secondary_image, allow_false: true
 assign show_swatches = show_swatches | default: true, allow_false: true
 assign is_last_chance = product.metafields.custom.last_chance.value
+
+unless is_last_chance
+for product_tag in product.tags
+assign normalized_product_tag = product_tag | downcase | strip
+if normalized_product_tag == 'last chance'
+assign is_last_chance = true
+break
+endif
+endfor
+endunless
 endif
 comment
 VALU MONTHLY PAYMENT
@@ -409,7 +419,7 @@ PRODUCT INFO
             {%- comment -%}
             ------------------------------------------------------------
             LAST CHANCE STOCK
-            Only appears for products carrying the Last Chance metafield.
+            Only appears for products carrying the Last Chance tag or metafield.
             ------------------------------------------------------------
             {%- endcomment -%}
 
