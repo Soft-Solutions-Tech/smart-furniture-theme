@@ -1,0 +1,22 @@
+<div data-variant-collection-loader>
+  {%- if collection != blank -%}
+    {%- for product in collection.products limit: 50 -%}
+      {%- render 'product-card',
+        product: product,
+        reveal: false,
+        position: forloop.index,
+        hide_product_information: false,
+        stacked: false,
+        show_card_add_to_cart: true,
+        quick_buy_context: collection.handle
+      -%}
+    {%- endfor -%}
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Variant collection loader",
+  "settings": []
+}
+{% endschema %}
