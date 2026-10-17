@@ -82,6 +82,17 @@
       <featured-collections-carousel id="{{ wrapper_carousel_id }}" class="featured-collections-carousel">
 
       {%- for block in section.blocks -%}
+        {%- liquid
+          assign featured_collection = block.settings.collection
+
+          if block.settings.collection != blank and block.settings.collection.handle != blank
+            assign resolved_collection = collections[block.settings.collection.handle]
+
+            if resolved_collection != blank
+              assign featured_collection = resolved_collection
+            endif
+          endif
+        -%}
 
         <div class="featured-collections-carousel__item
         {% if forloop.first %}
@@ -97,7 +108,7 @@
 
           {%- endif -%}
 
-          {%- for product in block.settings.collection.products limit: block.settings.products_count -%}
+          {%- for product in featured_collection.products limit: block.settings.products_count -%}
             {%- render 'product-card', product: product, reveal: should_reveal, position: forloop.index, hide_product_information: section.settings.hide_product_information, show_card_add_to_cart: section.settings.show_card_add_to_cart, block: block -%}
 
           {%- else -%}
@@ -154,7 +165,7 @@
         {%- endif -%}
 
         {%- if block.settings.link_text != blank -%}
-          {%- assign button_link = block.settings.collection.url | default: '#' -%}
+          {%- assign button_link = featured_collection.url | default: block.settings.collection.url | default: '#' -%}
 
           <div class="justify-self-center">
             {%- render 'button', href: button_link, content: block.settings.link_text -%}
