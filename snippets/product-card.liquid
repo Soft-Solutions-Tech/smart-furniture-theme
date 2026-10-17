@@ -40,7 +40,7 @@ endif
 
 assign can_direct_add = false
 if card_variant != blank and product.selling_plan_groups.size == 0
-if has_selected_variant_context or product.variants.size == 1
+if product.variants.size == 1
 assign can_direct_add = true
 endif
 endif
