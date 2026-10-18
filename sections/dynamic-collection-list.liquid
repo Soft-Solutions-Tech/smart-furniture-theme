@@ -76,29 +76,41 @@ assign clean_content_position = section.settings.content_position | replace: ' t
   justify-items: end !important;
   }
 
-  #shopify-section-{{ section.id }} .collection-list__swipe-hint {
+  /* ============================================
+  MOBILE SWIPE HINT
+  Matches the Collection List heading-row pattern
+  ============================================ */
+  #shopify-section-{{ section.id }} .collection-list-mobile-scroll-hint {
   display: none;
   }
 
   @media screen and (max-width: 699px) {
-  #shopify-section-{{ section.id }} .collection-list__swipe-hint {
+  #shopify-section-{{ section.id }} .collection-list-heading-row {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  justify-self: end;
+  justify-content: space-between;
+  gap: 1rem;
   width: 100%;
-  gap: 0.4rem;
-  margin: 0 0 0.5rem;
-  padding-inline: 0.25rem;
-  text-align: right;
-  font-size: 0.75rem;
-  line-height: 1.2;
-  opacity: 0.65;
   }
 
-  #shopify-section-{{ section.id }} .collection-list__swipe-hint svg {
-  width: 0.9rem;
-  height: 0.9rem;
+  #shopify-section-{{ section.id }} .collection-list-heading-row__header {
+  flex: 1;
+  min-width: 0;
+  }
+
+  #shopify-section-{{ section.id }} .collection-list-mobile-scroll-hint {
+  display: block;
+  flex-shrink: 0;
+  margin: 0;
+  font-family: var(--text-font-family);
+  font-weight: var(--text-font-weight);
+  font-style: var(--text-font-style);
+  font-size: 0.7rem;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  text-align: right;
   }
   }
   </style>
@@ -140,26 +152,26 @@ assign clean_content_position = section.settings.content_position | replace: ' t
   ">
 
   <div class="section-stack">
-    {% if section.settings.show_swipe_hint and stack_mobile == false and featured_collections_count > 1 %}
-      <div class="collection-list__swipe-hint sm:hidden" aria-hidden="true">
-        <span>
-          {% if localization.language.iso_code == 'ar' %}
-            اسحب لرؤية المزيد
-          {% else %}
-            Swipe to see more
-          {% endif %}
-        </span>
-        {%- render 'icon' with 'arrow-right', direction_aware: true -%}
-      </div>
-    {% endif %}
 
-    {%- render 'section-header',
-    subheading: section.settings.subheading,
-    heading: section.settings.title,
-    heading_style: section.settings.heading_style,
-    content: section.settings.content,
-    text_alignment: 'center'
-    -%}
+    <div class="collection-list-heading-row">
+
+      <div class="collection-list-heading-row__header">
+        {%- render 'section-header',
+        subheading: section.settings.subheading,
+        heading: section.settings.title,
+        heading_style: section.settings.heading_style,
+        content: section.settings.content,
+        text_alignment: 'center'
+        -%}
+      </div>
+
+      {%- if section.settings.show_mobile_scroll_hint and stack_mobile == false and featured_collections_count > 1 -%}
+        <div class="collection-list-mobile-scroll-hint">
+          {{ section.settings.mobile_scroll_hint_text | escape }}
+        </div>
+      {%- endif -%}
+
+    </div>
 
     {% capture collection_list %}
 
@@ -432,11 +444,22 @@ bleed lg:unbleed"
   "default": true
   },
   {
+  "type": "header",
+  "content": "Mobile scrolling"
+  },
+  {
   "type": "checkbox",
-  "id": "show_swipe_hint",
-  "label": "Show swipe hint on mobile",
-  "info": "Shows 'Swipe to see more' at the top right when mobile collections use the horizontal carousel.",
-  "default": true
+  "id": "show_mobile_scroll_hint",
+  "label": "Show mobile swipe hint",
+  "info": "Shows a swipe message on mobile only. Stack collections on mobile must be turned off.",
+  "default": false
+  },
+  {
+  "type": "text",
+  "id": "mobile_scroll_hint_text",
+  "label": "Mobile swipe hint text",
+  "default": "Swipe to see more →",
+  "visible_if": "{{ section.settings.show_mobile_scroll_hint }}"
   },
   {
   "type": "select",
