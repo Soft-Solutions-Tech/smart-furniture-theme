@@ -11,6 +11,8 @@
   "current": {
     "icon_stroke_width": 1,
     "section_vertical_spacing": "md",
+    "button_border_radius": 4,
+    "input_border_radius": 8,
     "default_color_scheme": "scheme-1",
     "product_rating_color": "#fad163",
     "product_on_sale_accent": "#002659",
