@@ -529,6 +529,7 @@
         "color_scheme": "scheme-3",
         "separate_section_with_border": false,
         "image": "shopify://shop_images/sh.webp",
+        "mobile_image": "shopify://shop_images/showroom-mobile.webp",
         "reveal_on_scroll": true,
         "image_position": "start",
         "content_width": "sm",
