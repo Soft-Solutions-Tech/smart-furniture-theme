@@ -84,9 +84,13 @@ assign clean_content_position = section.settings.content_position | replace: ' t
   #shopify-section-{{ section.id }} .collection-list__swipe-hint {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  justify-self: end;
+  width: 100%;
   gap: 0.4rem;
-  margin-top: 0.75rem;
+  margin: 0 0 0.5rem;
+  padding-inline: 0.25rem;
+  text-align: right;
   font-size: 0.75rem;
   line-height: 1.2;
   opacity: 0.65;
@@ -136,6 +140,19 @@ assign clean_content_position = section.settings.content_position | replace: ' t
   ">
 
   <div class="section-stack">
+    {% if section.settings.show_swipe_hint and stack_mobile == false and featured_collections_count > 1 %}
+      <div class="collection-list__swipe-hint sm:hidden" aria-hidden="true">
+        <span>
+          {% if localization.language.iso_code == 'ar' %}
+            اسحب لرؤية المزيد
+          {% else %}
+            Swipe to see more
+          {% endif %}
+        </span>
+        {%- render 'icon' with 'arrow-right', direction_aware: true -%}
+      </div>
+    {% endif %}
+
     {%- render 'section-header',
     subheading: section.settings.subheading,
     heading: section.settings.title,
@@ -313,19 +330,6 @@ bleed lg:unbleed"
 
 </div>
 
-{% if section.settings.show_swipe_hint and stack_mobile == false and featured_collections_count > 1 %}
-  <div class="collection-list__swipe-hint sm:hidden" aria-hidden="true">
-    <span>
-      {% if localization.language.iso_code == 'ar' %}
-        اسحب لرؤية المزيد
-      {% else %}
-        Swipe to see more
-      {% endif %}
-    </span>
-    {%- render 'icon' with 'arrow-right', direction_aware: true -%}
-  </div>
-{% endif %}
-
 {% endif %}
 
 </div>
@@ -430,8 +434,8 @@ bleed lg:unbleed"
   {
   "type": "checkbox",
   "id": "show_swipe_hint",
-  "label": "Show 'Swipe to see more' on mobile",
-  "info": "Shown only when mobile collections are displayed as a horizontal carousel.",
+  "label": "Show swipe hint on mobile",
+  "info": "Shows 'Swipe to see more' at the top right when mobile collections use the horizontal carousel.",
   "default": true
   },
   {
