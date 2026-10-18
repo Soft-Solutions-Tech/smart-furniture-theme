@@ -99,6 +99,56 @@
           "distance_right": 30,
           "distance_bottom": 30
         }
+      },
+      "6104654530966737613": {
+        "type": "shopify://apps/mapstore/blocks/settings-style/9db04c0e-9dae-40e3-91ef-8a5ae8d59857",
+        "disabled": false,
+        "settings": {
+          "radius": 4,
+          "font_heading": 18,
+          "font_body": 14,
+          "font_buttons": 13,
+          "button_padding_y": 4,
+          "button_padding_x": 8,
+          "background": "#fff",
+          "text": "#18181b",
+          "links": "#27272a",
+          "icons": "#27272a",
+          "pin_cluster": "#18181b",
+          "button_text": "#18181b",
+          "button_border": "#18181b",
+          "button_background": "#f9fafb",
+          "button_active_text": "#f9fafb",
+          "button_active_border": "#18181b",
+          "button_active_background": "#18181b"
+        }
+      },
+      "13937820621346730850": {
+        "type": "shopify://apps/mapstore/blocks/settings-text/9db04c0e-9dae-40e3-91ef-8a5ae8d59857",
+        "disabled": false,
+        "settings": {
+          "show_on_map": "Show on map",
+          "business_hours": "Business hours",
+          "monday": "Monday",
+          "tuesday": "Tuesday",
+          "wednesday": "Wednesday",
+          "thursday": "Thursday",
+          "friday": "Friday",
+          "saturday": "Saturday",
+          "sunday": "Sunday",
+          "directions": "Directions",
+          "no_results": "No results",
+          "filters_all": "All",
+          "search_placeholder": "Search by name or address",
+          "search_submit": "Search",
+          "website": "Website",
+          "email": "Email",
+          "reviews": "reviews",
+          "share": "Share",
+          "find_nearby": "Find stores near me",
+          "you_are_here": "You are here",
+          "reset": "Reset"
+        }
       }
     },
     "color_schemes": {
