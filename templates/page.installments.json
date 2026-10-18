@@ -24,12 +24,12 @@
         "image_Bithnq": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/about-banner.jpg",
-            "subheading": "&nbsp;Furnish your home today and pay over time with the flexible installment plans offered by Smart Furniture. Through our trusted partners, you can enjoy modern furniture with convenient payment options designed to suit your needs. &nbsp;",
-            "title": "&nbsp;<strong>Furnish Today, Pay Later – Start Now</strong>&nbsp;",
+            "image": "shopify://shop_images/Installment_Page_Banner-Website.webp",
+            "subheading": "",
+            "title": "",
             "heading_style": "h1",
-            "mobile_text_position": "place-self-center-start text-start",
-            "desktop_text_position": "sm:place-self-center-start sm:text-start",
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
             "content_max_width": 780,
             "button_1_text": "Download our Installments Catalogs",
             "button_1_link": "https://cdn.shopify.com/s/files/1/0978/4967/2043/files/Installment_Offers_-Valu.pdf?v=1790782729&attachment",
