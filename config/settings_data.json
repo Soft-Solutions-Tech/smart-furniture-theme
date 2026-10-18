@@ -543,7 +543,10 @@
   "platform_customizations": {
     "custom_css": [
       ".product-card__media,.product-card__image,.product-gallery__media,.product-gallery__media img,.collection-card,.collection-card img {border-radius: 6px; overflow: hidden;}",
-      ".badge {border-radius: 4px;}"
+      ".badge {border-radius: 4px;}",
+      ".collection-toolbar * {border-color: transparent !important;}",
+      ".collection-toolbar {border-color: rgb(0 38 89 / 0.08) !important;}",
+      ".facets-sidebar .accordion {border-color: transparent !important;}"
     ]
   }
 }
