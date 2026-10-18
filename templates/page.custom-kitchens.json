@@ -69,6 +69,63 @@
         "text_alignment": "center"
       }
     },
+    "multi_column_4XxMgJ": {
+      "type": "multi-column",
+      "blocks": {
+        "image_with_text_FHmxE6": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Step 1: Site Measurement&nbsp;",
+            "heading_tag": "h3",
+            "content": "<p>A specialized measurement expert visits the site to take accurate dimensions and assess the space.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_H69WLC": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Step 2: &nbsp;Design Consultation&nbsp;",
+            "heading_tag": "h3",
+            "content": "<p>Once the measurements are completed, our engineering team contacts the client to schedule a meeting. During this session, they:&nbsp;</p><ul><li>Present the initial kitchen design or concept.&nbsp;</li><li>Refine the layout according to the client’s preferences.&nbsp;</li><li>Select colors, finishes, and materials.&nbsp;</li></ul>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_FhFG9A": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Step 3: Production & Installation",
+            "heading_tag": "h3",
+            "content": "<p>Once the client approves the final design, the kitchen moves into production, which typically takes around 21 days. After manufacturing is complete, our professional installation team handles the on-site installation, ensuring a flawless finish and the highest quality standards.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_FHmxE6",
+        "image_with_text_H69WLC",
+        "image_with_text_FhFG9A"
+      ],
+      "name": "t:sections.multi_column.presets.multi_column.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "columns_per_row": 3,
+        "stack_on_mobile": false,
+        "show_mobile_scroll_hint": false,
+        "mobile_scroll_hint_text": "Swipe to see more →",
+        "overlap_image": false,
+        "content_alignment": "start",
+        "text_alignment": "start",
+        "spacing": "md",
+        "subheading": "",
+        "title": "How it works",
+        "heading_style": "h2",
+        "content": ""
+      }
+    },
     "media_grid_8FECta": {
       "type": "media-grid",
       "blocks": {
@@ -690,6 +747,7 @@
   "order": [
     "slideshow_aRGEft",
     "custom_liquid_3CHJjQ",
+    "multi_column_4XxMgJ",
     "media_grid_8FECta",
     "multi_column_JVKnBf",
     "multi_column_ARc3KF",
