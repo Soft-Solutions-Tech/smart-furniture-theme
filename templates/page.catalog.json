@@ -71,7 +71,7 @@
         "image_with_text_ctxmLA": {
           "type": "image_with_text",
           "settings": {
-            "image": "shopify://shop_images/BC13.webp",
+            "image": "shopify://shop_images/Full_Catalog_Thumbnail.webp",
             "title": "Full Catalog",
             "heading_tag": "h3",
             "content": "",
@@ -82,7 +82,7 @@
         "image_with_text_hCh3Fq": {
           "type": "image_with_text",
           "settings": {
-            "image": "shopify://shop_images/Memory.webp",
+            "image": "shopify://shop_images/Hot_Offers_Leaflet_Thumbnail.jpg",
             "title": "Hot offers Leaflet",
             "heading_tag": "h3",
             "content": "",
@@ -93,7 +93,7 @@
         "image_with_text_8eNEVA": {
           "type": "image_with_text",
           "settings": {
-            "image": "shopify://shop_images/Aura_3_-_table.webp",
+            "image": "shopify://shop_images/Installment_Offers_-Valu-Thumbnails.webp",
             "title": "Installment Offers -Valu",
             "heading_tag": "h3",
             "content": "",
@@ -101,22 +101,23 @@
             "link_text": "Download Catalog"
           }
         },
-        "image_with_text_4TNrMr": {
-          "type": "image_with_text",
-          "settings": {
-            "image": "shopify://shop_images/Kitchen.webp",
-            "title": "Kitchens Catalog - Arabic Version",
-            "heading_tag": "h3",
-            "content": "",
-            "link_url": "https://cdn.shopify.com/s/files/1/0978/4967/2043/files/Kitchens_Catalog_-_Arabic_Version.pdf?v=1790782726&attachment",
-            "link_text": "Download Catalog"
-          }
-        },
         "image_with_text_KxW7tL": {
           "type": "image_with_text",
           "settings": {
-            "image": "shopify://shop_images/stone.webp",
+            "image": "shopify://shop_images/Kitchens_Catalog_-_English_Version-Thumbnails.webp",
             "title": "Kitchens Catalog - English Version",
+            "heading_tag": "h3",
+            "content": "",
+            "link_url": "https://cdn.shopify.com/s/files/1/0978/4967/2043/files/Kitchens_Catalog_-_English_Version.pdf?v=1790782727&attachment",
+            "link_text": "Download Catalog"
+          }
+        },
+        "image_with_text_G4pkBz": {
+          "type": "image_with_text",
+          "name": "Kitchens Catalog Arabic",
+          "settings": {
+            "image": "shopify://shop_images/Kitchens_Catalog_-_Arabic_Version_-Thumbnail.webp",
+            "title": "Kitchens Catalog - Arabic Version",
             "heading_tag": "h3",
             "content": "",
             "link_url": "https://cdn.shopify.com/s/files/1/0978/4967/2043/files/Kitchens_Catalog_-_English_Version.pdf?v=1790782727&attachment",
@@ -128,8 +129,8 @@
         "image_with_text_ctxmLA",
         "image_with_text_hCh3Fq",
         "image_with_text_8eNEVA",
-        "image_with_text_4TNrMr",
-        "image_with_text_KxW7tL"
+        "image_with_text_KxW7tL",
+        "image_with_text_G4pkBz"
       ],
       "name": "Catalogs & Leaflets",
       "settings": {
