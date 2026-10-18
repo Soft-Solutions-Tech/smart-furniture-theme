@@ -96,9 +96,9 @@ VALU MONTHLY PAYMENT
 Current Shopify product price divided by 36 months.
 endcomment
 if has_selected_variant_context and card_variant != blank
-assign valu_monthly_price = card_variant.price | divided_by: 36
+assign valu_monthly_price = card_variant.price | divided_by: 6
 else
-assign valu_monthly_price = product.price | divided_by: 36
+assign valu_monthly_price = product.price | divided_by: 6
 endif
 comment
 LAST CHANCE INVENTORY
