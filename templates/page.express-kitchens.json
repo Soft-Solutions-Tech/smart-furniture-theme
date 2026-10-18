@@ -245,6 +245,8 @@
       "settings": {
         "color_scheme": "scheme-3",
         "separate_section_with_border": true,
+        "image": "shopify://shop_images/Kitchen_Ready_when_you_-desktop.webp",
+        "mobile_image": "shopify://shop_images/Kitchen_Ready_when_you_-mobile.webp",
         "reveal_on_scroll": true,
         "image_position": "start",
         "content_width": "sm",
@@ -288,6 +290,7 @@
         "image_3nxpJr": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Kitchen_Catalogue_Banner-desktop_069f0bb7-fcb7-492e-9de1-301337f045f9.webp",
             "subheading": "",
             "title": "",
             "heading_style": "h1",
@@ -334,7 +337,6 @@
         "image_yjQkYF": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/1_web_3.jpg",
             "subheading": "Looking for a custom solution?",
             "title": "",
             "heading_style": "h1",
