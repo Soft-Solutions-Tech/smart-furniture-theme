@@ -18,7 +18,7 @@
         "show_image": true,
         "reveal": true,
         "enable_parallax": true,
-        "show_collection_title": true,
+        "show_collection_title": false,
         "show_collection_description": true,
         "show_breadcrumb": true,
         "content_width": "xs",
