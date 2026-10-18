@@ -19,9 +19,9 @@
         "reveal": true,
         "enable_parallax": true,
         "show_collection_title": false,
-        "show_collection_description": true,
+        "show_collection_description": false,
         "show_breadcrumb": true,
-        "content_width": "xs",
+        "content_width": "xxs",
         "text_alignment": "center",
         "overlay_color": "#000000",
         "overlay_opacity": 30
