@@ -107,7 +107,10 @@
     },
     "main": {
       "type": "main-collection",
-      "custom_css": [],
+      "custom_css": [
+        ".product-card__image--primary {width: 100% !important; height: auto !important; aspect-ratio: 1 / 1 !important; object-fit: contain !important; object-position: center !important;}",
+        ".product-card__image--secondary {object-fit: contain !important;}"
+      ],
       "settings": {
         "color_scheme": "scheme-3",
         "hide_product_information": false,
