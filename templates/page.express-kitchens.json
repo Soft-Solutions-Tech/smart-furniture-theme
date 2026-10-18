@@ -340,6 +340,8 @@
         "image_yjQkYF": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/custom_kitchen-desktop.webp",
+            "mobile_image": "shopify://shop_images/custom_kitchen-mobile.webp",
             "subheading": "Looking for a custom solution?",
             "title": "",
             "heading_style": "h1",
