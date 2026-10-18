@@ -64,6 +64,10 @@
     },
     "header": {
       "type": "header",
+      "custom_css": [
+        ".header__dropdown-menu {border-radius: 8px;}",
+        "@media screen and (min-width: 1000px) {.popover {border-radius: 10px; }}"
+      ],
       "settings": {
         "color_scheme": "scheme-3ead584f-e372-429d-a081-9b153597c365",
         "enable_sticky": true,
