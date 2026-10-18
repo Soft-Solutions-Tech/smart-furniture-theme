@@ -75,6 +75,25 @@ assign clean_content_position = section.settings.content_position | replace: ' t
   text-align: right !important;
   justify-items: end !important;
   }
+  #shopify-section-{{ section.id }} .collection-list__swipe-hint {
+  display: none;
+  }
+  @media screen and (max-width: 699px) {
+  #shopify-section-{{ section.id }} .collection-list__swipe-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  opacity: 0.65;
+  }
+  #shopify-section-{{ section.id }} .collection-list__swipe-hint svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  }
+  }
   </style>
   {%- comment -%}
   ------------------------------------------------------------------------------------------------------------------------
@@ -291,6 +310,19 @@ bleed lg:unbleed"
 
 </div>
 
+{% if section.settings.show_swipe_hint and stack_mobile == false and featured_collections_count > 1 %}
+  <div class="collection-list__swipe-hint sm:hidden" aria-hidden="true">
+    <span>
+      {% if localization.language.iso_code == 'ar' %}
+        اسحب لرؤية المزيد
+      {% else %}
+        Swipe to see more
+      {% endif %}
+    </span>
+    {%- render 'icon' with 'arrow-right', direction_aware: true -%}
+  </div>
+{% endif %}
+
 {% endif %}
 
 </div>
@@ -390,6 +422,13 @@ bleed lg:unbleed"
   "type": "checkbox",
   "id": "stack_collections_mobile",
   "label": "t:sections.collection_list.stack_collections_mobile",
+  "default": true
+  },
+  {
+  "type": "checkbox",
+  "id": "show_swipe_hint",
+  "label": "Show 'Swipe to see more' on mobile",
+  "info": "Shown only when mobile collections are displayed as a horizontal carousel.",
   "default": true
   },
   {
