@@ -72,7 +72,7 @@
         "color_scheme": "scheme-3ead584f-e372-429d-a081-9b153597c365",
         "enable_sticky": true,
         "hide_on_scroll": true,
-        "show_separation_border": true,
+        "show_separation_border": false,
         "reduce_padding": true,
         "logo": "shopify://shop_images/header-logo.png",
         "logo_max_width": 150,
