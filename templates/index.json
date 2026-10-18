@@ -211,7 +211,6 @@
             "collection": "new-arrivals",
             "products_count": 8,
             "title": "",
-            "link_url": "",
             "link_text": ""
           }
         }
@@ -225,6 +224,7 @@
         "separate_section_with_border": false,
         "hide_product_information": false,
         "show_card_add_to_cart": true,
+        "isolate_variant_collections": false,
         "stack_products": false,
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 4,
@@ -258,7 +258,6 @@
             "collection": "bestsellers",
             "products_count": 50,
             "title": "",
-            "link_url": "",
             "link_text": ""
           }
         }
@@ -272,6 +271,7 @@
         "separate_section_with_border": false,
         "hide_product_information": false,
         "show_card_add_to_cart": true,
+        "isolate_variant_collections": false,
         "stack_products": true,
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 4,
@@ -439,7 +439,6 @@
             "collection": "final-stock-collection",
             "products_count": 8,
             "title": "",
-            "link_url": "",
             "link_text": ""
           }
         },
@@ -449,7 +448,6 @@
             "collection": "newly-wed-collection",
             "products_count": 8,
             "title": "Newly Wed&nbsp;",
-            "link_url": "",
             "link_text": ""
           }
         },
@@ -459,7 +457,6 @@
             "collection": "room-refresh-collection",
             "products_count": 8,
             "title": "Room Refresh&nbsp;",
-            "link_url": "",
             "link_text": ""
           }
         }
@@ -475,6 +472,7 @@
         "separate_section_with_border": false,
         "hide_product_information": false,
         "show_card_add_to_cart": true,
+        "isolate_variant_collections": false,
         "stack_products": true,
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 4,
@@ -530,7 +528,7 @@
       "settings": {
         "color_scheme": "scheme-3",
         "separate_section_with_border": false,
-        "image": "shopify://shop_images/Gemini_Generated_Image_nmesjgnmesjgnmes.jpg",
+        "image": "shopify://shop_images/sh.webp",
         "reveal_on_scroll": true,
         "image_position": "start",
         "content_width": "sm",
