@@ -17,7 +17,7 @@
         "allow_transparent_header": true,
         "show_image": true,
         "reveal": true,
-        "enable_parallax": true,
+        "enable_parallax": false,
         "show_collection_title": false,
         "show_collection_description": false,
         "show_breadcrumb": true,
