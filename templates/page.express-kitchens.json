@@ -278,6 +278,8 @@
       "settings": {
         "color_scheme": "scheme-3",
         "separate_section_with_border": true,
+        "image": "shopify://shop_images/Fit_your_room-desktop.webp",
+        "mobile_image": "shopify://shop_images/Fit_your_room-mobile.webp",
         "reveal_on_scroll": true,
         "image_position": "end",
         "content_width": "sm",
