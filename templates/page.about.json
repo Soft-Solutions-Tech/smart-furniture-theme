@@ -133,7 +133,7 @@
       "name": "t:sections.image_with_text.presets.image_with_text.name",
       "settings": {
         "color_scheme": "scheme-3",
-        "separate_section_with_border": true,
+        "separate_section_with_border": false,
         "image": "shopify://shop_images/who_we_are-desktop.webp",
         "mobile_image": "shopify://shop_images/who_we_are-mobile.webp",
         "reveal_on_scroll": true,
@@ -160,7 +160,7 @@
       "name": "t:sections.logo_list.presets.logo_list.name",
       "settings": {
         "color_scheme": "scheme-3",
-        "separate_section_with_border": true,
+        "separate_section_with_border": false,
         "subheading": "",
         "title": "",
         "heading_style": "h2",
