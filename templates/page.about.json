@@ -389,7 +389,7 @@
       "name": "t:sections.image_with_text.presets.image_with_text.name",
       "settings": {
         "color_scheme": "scheme-3",
-        "separate_section_with_border": true,
+        "separate_section_with_border": false,
         "image": "shopify://shop_images/Why_MDF-desktop.webp",
         "mobile_image": "shopify://shop_images/Why_MDF-MOBILE_1b586edd-0861-42b3-a264-ee886918ea99.webp",
         "reveal_on_scroll": true,
