@@ -20,11 +20,11 @@
         "enable_parallax": false,
         "show_collection_title": false,
         "show_collection_description": false,
-        "show_breadcrumb": true,
+        "show_breadcrumb": false,
         "content_width": "xxs",
         "text_alignment": "center",
         "overlay_color": "#000000",
-        "overlay_opacity": 30
+        "overlay_opacity": 0
       }
     },
     "slideshow_gAhKnz": {
