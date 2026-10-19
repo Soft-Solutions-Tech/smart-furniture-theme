@@ -75,7 +75,7 @@
           "type": "collection",
           "settings": {
             "color_scheme": "scheme-3",
-            "collection": "master-bedrooms",
+            "collection": "bedrooms",
             "image": "shopify://shop_images/stone_f29cc1ee-fc6f-431c-b5fe-1fa23ce99019.webp",
             "expand_collection": false,
             "content_position": "place-self-end-center text-center",
@@ -92,7 +92,7 @@
           "type": "collection",
           "settings": {
             "color_scheme": "scheme-3",
-            "collection": "living-sets",
+            "collection": "living-rooms",
             "image": "shopify://shop_images/Memory.webp",
             "expand_collection": false,
             "content_position": "place-self-center text-center",
@@ -109,7 +109,7 @@
           "type": "collection",
           "settings": {
             "color_scheme": "scheme-3",
-            "collection": "dining-sets",
+            "collection": "dining-rooms",
             "image": "shopify://shop_images/Aura_3_-_table.webp",
             "expand_collection": false,
             "content_position": "place-self-center text-center",
