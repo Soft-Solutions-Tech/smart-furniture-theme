@@ -14,7 +14,14 @@
       "settings": {
         "color_scheme": "scheme-3",
         "show_title": true,
-        "collections": [],
+        "collections": [
+          "bedrooms",
+          "dining-rooms",
+          "storage-more",
+          "living-rooms",
+          "mattresses",
+          "kitchens"
+        ],
         "collections_per_row_mobile": "2",
         "collections_per_row_desktop": 4,
         "image_size": "sm",
