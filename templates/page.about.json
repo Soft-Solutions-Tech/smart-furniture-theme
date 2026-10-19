@@ -90,6 +90,8 @@
       "settings": {
         "color_scheme": "",
         "image_size": "auto",
+        "image": "shopify://shop_images/1-desktop.webp",
+        "mobile_image": "shopify://shop_images/1-mobile.webp",
         "allow_transparent_header": false,
         "reveal_on_scroll": true,
         "remove_vertical_spacing": true,
