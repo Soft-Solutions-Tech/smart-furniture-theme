@@ -82,7 +82,7 @@
             "subheading": "",
             "title": "",
             "button_text": "Bedrooms",
-            "button_link": "shopify://collections/master-bedrooms",
+            "button_link": "shopify://collections/bedrooms",
             "button_style": "link",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -99,7 +99,7 @@
             "subheading": "",
             "title": "",
             "button_text": "Living rooms",
-            "button_link": "shopify://collections/living-sets",
+            "button_link": "shopify://collections/living-rooms",
             "button_style": "link",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -116,7 +116,7 @@
             "subheading": "",
             "title": "",
             "button_text": "Dining rooms",
-            "button_link": "shopify://collections/dining-sets",
+            "button_link": "shopify://collections/dining-rooms",
             "button_style": "link",
             "overlay_color": "#000000",
             "overlay_opacity": 0
