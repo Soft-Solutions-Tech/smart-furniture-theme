@@ -131,32 +131,49 @@ border-block-start-width: 0;
 
             {%- when 'text' -%}
 
-              {%- if block.settings.multiline_title != blank or block.settings.title != blank or block.settings.plain_text != blank or block.settings.content != blank or shop.features.follow_on_shop? and block.settings.enable_follow_on_shop -%}
+              {%- liquid
+                assign footer_title = block.settings.title
+                assign footer_multiline_title = block.settings.multiline_title
+                assign footer_plain_text = block.settings.plain_text
+
+                if localization.language.iso_code == 'ar'
+                  if block.settings.arabic_title != blank
+                    assign footer_title = block.settings.arabic_title
+                    assign footer_multiline_title = blank
+                  endif
+
+                  if block.settings.arabic_plain_text != blank
+                    assign footer_plain_text = block.settings.arabic_plain_text
+                  endif
+                endif
+              -%}
+
+              {%- if footer_multiline_title != blank or footer_title != blank or footer_plain_text != blank or block.settings.content != blank or shop.features.follow_on_shop? and block.settings.enable_follow_on_shop -%}
 
                 <div class="v-stack gap-4 sm:gap-5">
 
-                  {%- if block.settings.multiline_title != blank -%}
+                  {%- if footer_multiline_title != blank -%}
 
                     <p class="h6">
-                    {{ block.settings.multiline_title | escape | newline_to_br }}
+                    {{ footer_multiline_title | escape | newline_to_br }}
 
                     </p>
 
-                  {%- elsif block.settings.title != blank -%}
+                  {%- elsif footer_title != blank -%}
 
                     <p class="h6">
-                    {{ block.settings.title }}
+                    {{ footer_title }}
 
                     </p>
 
                   {%- endif -%}
 
-                  {%- if block.settings.plain_text != blank -%}
+                  {%- if footer_plain_text != blank -%}
 
                     <div class="prose text-subdued">
 
                       <p>
-                      {{ block.settings.plain_text | escape | newline_to_br }}
+                      {{ footer_plain_text | escape | newline_to_br }}
 
                       </p>
 
@@ -780,6 +797,12 @@ border-block-start-width: 0;
   "default": "About our store"
   },
   {
+  "type": "inline_richtext",
+  "id": "arabic_title",
+  "label": "Arabic heading (optional)",
+  "info": "Shown instead of the heading when the storefront language is Arabic."
+  },
+  {
   "type": "textarea",
   "id": "multiline_title",
   "label": "Heading with line breaks (optional)",
@@ -795,6 +818,12 @@ border-block-start-width: 0;
   "id": "plain_text",
   "label": "Plain text with line breaks (optional)",
   "info": "Each line break you type here will appear as a line break in the footer. This is used instead of the rich text content when filled in."
+  },
+  {
+  "type": "textarea",
+  "id": "arabic_plain_text",
+  "label": "Arabic plain text (optional)",
+  "info": "Shown instead of Plain text when the storefront language is Arabic. Line breaks are preserved."
   },
   {
   "type": "checkbox",
