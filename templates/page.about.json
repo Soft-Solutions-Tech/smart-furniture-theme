@@ -142,6 +142,34 @@
         "remove_vertical_spacing": true
       }
     },
+    "logo_list_JQHqjG": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_EdBGaR": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/S.A.I_-_PNG.png",
+            "logo_width": 120,
+            "link": "https://sai-solutions.com/"
+          }
+        }
+      },
+      "block_order": [
+        "logo_EdBGaR"
+      ],
+      "name": "t:sections.logo_list.presets.logo_list.name",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "separate_section_with_border": true,
+        "subheading": "",
+        "title": "",
+        "heading_style": "h2",
+        "stack_on_mobile": true,
+        "items_per_row": 3,
+        "logo_item_background": "",
+        "logo_item_border": ""
+      }
+    },
     "multi_column_Jd6haC": {
       "type": "multi-column",
       "blocks": {
@@ -603,6 +631,7 @@
     "slideshow_kbJfiY",
     "image_with_text_overlay_GniiFJ",
     "image_with_text_7PHz7L",
+    "logo_list_JQHqjG",
     "multi_column_Jd6haC",
     "rich_text_nKfT33",
     "multi_column_tthK9K",
