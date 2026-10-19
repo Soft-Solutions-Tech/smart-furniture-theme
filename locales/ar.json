@@ -78,7 +78,9 @@
       "collection_title": "التشكيلة"
     },
     "warranty_by_tag": {
-      "years_10": "ضمان 10 سنوات"
+      "years_10": "ضمان 10 سنوات",
+      "years_3": "ضمان 3 سنوات",
+      "years_5": "ضمان 5 سنوات"
     }
   },
   "header": {
@@ -1751,6 +1753,9 @@
         },
         "location_nearby_other_items": {
           "one": "يوجد موقع واحد قريب يتوفر به أغراضك"
+        },
+        "stock_details": {
+          "in_stock": "متوفر في المخزون"
         }
       },
       "open_graph_meta_tag": {
