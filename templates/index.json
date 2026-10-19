@@ -29,7 +29,7 @@
             "button_1_background": "#002659",
             "button_1_text_color": "#ffffff",
             "button_2_text": "",
-            "button_2_link": "shopify://pages/about",
+            "button_2_link": "shopify://pages/about-us",
             "button_2_style": "solid",
             "button_2_background": "#ffffff",
             "button_2_text_color": "#002659",
@@ -528,7 +528,7 @@
       "settings": {
         "color_scheme": "scheme-3",
         "separate_section_with_border": false,
-        "image": "shopify://shop_images/Untitled_design_1_bd10e10f-9cd3-440b-b2e5-1c2237462f83.png",
+        "image": "shopify://shop_images/showroom_-desktop.webp",
         "mobile_image": "shopify://shop_images/showroom-mobile.webp",
         "reveal_on_scroll": true,
         "image_position": "start",
