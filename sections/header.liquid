@@ -446,7 +446,13 @@ SECONDARY NAVIGATION AREA
           aria-label="{{ 'general.localization.change_language_accessibility_text' | t | escape }}"
           aria-expanded="false"
           >
-          {{- localization.language.iso_code | upcase -}}
+          {%- if localization.language.iso_code == 'ar' -%}
+            Al 3arabeya
+          {%- elsif localization.language.iso_code == 'en' -%}
+            English
+          {%- else -%}
+            {{- localization.language.endonym_name | capitalize -}}
+          {%- endif -%}
           {%- render 'icon' with 'chevron-down' -%}
           </button>
           <x-popover
@@ -487,7 +493,13 @@ SECONDARY NAVIGATION AREA
               {% endif %}
               "
               >
-              {{- language.iso_code | upcase -}}
+              {%- if language.iso_code == 'ar' -%}
+                Al 3arabeya
+              {%- elsif language.iso_code == 'en' -%}
+                English
+              {%- else -%}
+                {{- language.endonym_name | capitalize -}}
+              {%- endif -%}
               </button>
 
             {%- endfor -%}
