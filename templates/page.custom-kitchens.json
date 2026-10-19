@@ -134,8 +134,8 @@
           "settings": {
             "color_scheme": "",
             "image": "shopify://shop_images/1_web_1.jpg",
-            "column_count": "8",
-            "row_count": 2,
+            "column_count": "4",
+            "row_count": 1,
             "add_padding": false,
             "title": "",
             "heading_tag": "h4",
@@ -242,6 +242,63 @@
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
+        },
+        "image_thmFbM": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/9.webp",
+            "column_count": "4",
+            "row_count": 1,
+            "add_padding": false,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_j7NdwY": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/5.jpg",
+            "column_count": "4",
+            "row_count": 1,
+            "add_padding": false,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_6PDzPM": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/6.jpg",
+            "column_count": "4",
+            "row_count": 1,
+            "add_padding": false,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
         }
       },
       "block_order": [
@@ -250,7 +307,10 @@
         "image_6WFH9k",
         "image_wQcAX3",
         "image_McA4b4",
-        "image_jgdNFa"
+        "image_jgdNFa",
+        "image_thmFbM",
+        "image_j7NdwY",
+        "image_6PDzPM"
       ],
       "name": "Our Kitchens",
       "settings": {
@@ -466,8 +526,8 @@
           "settings": {
             "color_scheme": "",
             "image": "shopify://shop_images/30.jpg",
-            "column_count": "8",
-            "row_count": 2,
+            "column_count": "4",
+            "row_count": 1,
             "add_padding": false,
             "title": "",
             "heading_tag": "h4",
@@ -574,6 +634,177 @@
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
+        },
+        "image_FfXPHm": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/8_1.jpg",
+            "column_count": "4",
+            "row_count": 1,
+            "add_padding": false,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_DayMFW": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/7.jpg",
+            "column_count": "4",
+            "row_count": 1,
+            "add_padding": false,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_CJCYYk": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/6.webp",
+            "column_count": "4",
+            "row_count": 1,
+            "add_padding": false,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_CHhLKM": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/29.webp",
+            "column_count": "4",
+            "row_count": 1,
+            "add_padding": false,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_NWhULA": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/28.webp",
+            "column_count": "4",
+            "row_count": 1,
+            "add_padding": false,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_qq7Qxg": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/26.webp",
+            "column_count": "4",
+            "row_count": 1,
+            "add_padding": false,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_HXz9pJ": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/25.webp",
+            "column_count": "4",
+            "row_count": 1,
+            "add_padding": false,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_YQYy4z": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/20.webp",
+            "column_count": "4",
+            "row_count": 1,
+            "add_padding": false,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_UjchUU": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/27.webp",
+            "column_count": "4",
+            "row_count": 1,
+            "add_padding": false,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
         }
       },
       "block_order": [
@@ -582,7 +813,16 @@
         "image_kXK6An",
         "image_6BXtYA",
         "image_dYTykj",
-        "image_i8hFcm"
+        "image_i8hFcm",
+        "image_FfXPHm",
+        "image_DayMFW",
+        "image_CJCYYk",
+        "image_CHhLKM",
+        "image_NWhULA",
+        "image_qq7Qxg",
+        "image_HXz9pJ",
+        "image_YQYy4z",
+        "image_UjchUU"
       ],
       "name": "Real Kitchens real homes",
       "settings": {
