@@ -25,8 +25,8 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Catalogue_banner-desktop_3ac65d34-a738-4399-8737-2787befe7e57.webp",
-            "subheading": "Tell your story",
-            "title": "Slide 1",
+            "subheading": "",
+            "title": "&nbsp;Catalogs & Leaflets&nbsp;",
             "heading_style": "h1",
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
