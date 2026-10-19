@@ -82,7 +82,7 @@
             "subheading": "",
             "title": "",
             "button_text": "Bedrooms",
-            "button_link": "shopify://collections/bedrooms",
+            "button_link": "shopify://collections/master-bedrooms",
             "button_style": "link",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -99,7 +99,7 @@
             "subheading": "",
             "title": "",
             "button_text": "Living rooms",
-            "button_link": "shopify://collections/living-rooms",
+            "button_link": "shopify://collections/living-sets",
             "button_style": "link",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -116,7 +116,7 @@
             "subheading": "",
             "title": "",
             "button_text": "Dining rooms",
-            "button_link": "shopify://collections/dining-rooms",
+            "button_link": "shopify://collections/dining-sets",
             "button_style": "link",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -528,7 +528,7 @@
       "settings": {
         "color_scheme": "scheme-3",
         "separate_section_with_border": false,
-        "image": "shopify://shop_images/sh.webp",
+        "image": "shopify://shop_images/Gemini_Generated_Image_nmesjgnmesjgnmes.jpg",
         "mobile_image": "shopify://shop_images/showroom-mobile.webp",
         "reveal_on_scroll": true,
         "image_position": "start",
