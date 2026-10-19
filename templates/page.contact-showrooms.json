@@ -165,7 +165,7 @@
             "heading_style": "h6",
             "content": "",
             "link_text": "Explore our Catalogs",
-            "link_url": "shopify://pages/catalog",
+            "link_url": "shopify://pages/furniture-catalogs",
             "link_style": "link",
             "mobile_text_color": "#ffffff"
           }
