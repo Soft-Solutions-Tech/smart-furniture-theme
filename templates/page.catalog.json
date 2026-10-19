@@ -25,6 +25,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Catalogue_banner-desktop_3ac65d34-a738-4399-8737-2787befe7e57.webp",
+            "mobile_image": "shopify://shop_images/Catalogue_banner-mobile_1.webp",
             "subheading": "",
             "title": "&nbsp;Catalogs & Leaflets&nbsp;",
             "heading_style": "h1",
