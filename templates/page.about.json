@@ -134,6 +134,8 @@
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": true,
+        "image": "shopify://shop_images/who_we_are-desktop.webp",
+        "mobile_image": "shopify://shop_images/who_we_are-mobile.webp",
         "reveal_on_scroll": true,
         "image_position": "start",
         "content_width": "sm",
