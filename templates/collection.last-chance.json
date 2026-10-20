@@ -15,8 +15,10 @@
         "image_6hp7FU": {
           "type": "image",
           "settings": {
-            "subheading": "Tell your story",
-            "title": "Slide 2",
+            "image": "{{ collection.metafields.custom.collection_banner_desktop.value }}",
+            "mobile_image": "{{ collection.metafields.custom.collection_banner_mobile.value }}",
+            "subheading": "",
+            "title": "{{ collection.title }}",
             "heading_style": "h1",
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
