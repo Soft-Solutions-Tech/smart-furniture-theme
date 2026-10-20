@@ -25,6 +25,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Installment_Page_Banner-Website.webp",
+            "mobile_image": "shopify://shop_images/Installment_Page_Banner-MOBILE-02_1.jpg",
             "subheading": "",
             "title": "",
             "heading_style": "h1",
