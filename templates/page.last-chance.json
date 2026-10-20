@@ -24,7 +24,7 @@
         "image_Lg86C4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Last_Chance-desktop.jpg",
+            "image": "shopify://shop_images/Last_Chance-desktop.webp",
             "mobile_image": "shopify://shop_images/last_chance-mobile.jpg",
             "subheading": "",
             "title": "Last Chance",
