@@ -135,8 +135,9 @@ slot="main-panel"
   {%- for link in menu.links -%}
     {%- liquid
     assign link_title_downcase = link.title | strip | downcase
+    assign link_url_downcase = link.url | downcase
     assign is_last_chance = false
-    if link_title_downcase contains 'last chance'
+    if link_title_downcase contains 'last chance' or link_url_downcase contains 'last-chance'
     assign is_last_chance = true
     endif
     -%}
