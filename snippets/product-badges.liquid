@@ -46,7 +46,11 @@ assign is_last_chance = product.metafields.custom.last_chance.value
       {%- when 'last_chance' -%}
         {%- if is_last_chance -%}
           <span class="badge badge--on-sale last-chance-badge">
-            LAST CHANCE
+            {%- if localization.language.iso_code == 'ar' -%}
+              الفرصة الأخيرة
+            {%- else -%}
+              LAST CHANCE
+            {%- endif -%}
           </span>
         {%- endif -%}
 
