@@ -16,6 +16,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_9q0p0u9q0p0u9q0p.jpg",
+            "mobile_image": "shopify://shop_images/kitchen_banner_-Mobile.webp",
             "subheading": "",
             "title": "Custom Kitchen",
             "heading_style": "h1",
