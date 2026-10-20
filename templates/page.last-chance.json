@@ -26,8 +26,8 @@
           "settings": {
             "image": "shopify://shop_images/Last_Chance-desktop.jpg",
             "mobile_image": "shopify://shop_images/last_chance-mobile.jpg",
-            "subheading": "Tell your story",
-            "title": "Slide 2",
+            "subheading": "Last Chance",
+            "title": "",
             "heading_style": "h1",
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
@@ -55,8 +55,8 @@
       ],
       "name": "t:sections.slideshow.presets.slideshow.name",
       "settings": {
-        "allow_transparent_header": true,
-        "show_next_section_button": true,
+        "allow_transparent_header": false,
+        "show_next_section_button": false,
         "media_size": "auto",
         "show_initial_transition": false,
         "autoplay": true,
