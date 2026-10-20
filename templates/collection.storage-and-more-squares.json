@@ -13,7 +13,9 @@
       "type": "collection-banner",
       "settings": {
         "color_scheme": "",
-        "image_size": "xs",
+        "image": "{{ collection.metafields.custom.collection_banner_desktop.value }}",
+        "mobile_image": "{{ collection.metafields.custom.collection_banner_mobile.value }}",
+        "image_size": "auto",
         "allow_transparent_header": false,
         "show_image": true,
         "reveal": true,
