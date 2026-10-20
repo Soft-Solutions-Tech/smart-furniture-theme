@@ -123,12 +123,23 @@
           "settings": {
             "content": "<p>Smart Furniture is Egypt’s largest furniture factory and one of the largest in the Middle East, producing 700–800 bedrooms per week, depending on design, material availability, and production schedule. With over 2,000 dedicated employees and 10,000 sq meter of factory space, we combine advanced technology, craftsmanship, and expertise to bring our unique vision to homes and businesses.We are proud Egyptian manufacturers. Our professional Egyptian workforce has played a central role in providing the best end-user experience, including free installation services for all customers.We have successfully completed 250 projects in Egypt and 87 in North America and the Middle East, demonstrating our expertise and trust on a global scale.Time Delivery: For projects, we ship complete orders within 5–7 working days.<br/><br/></p>"
           }
+        },
+        "button_diBQ6E": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "For more about projects",
+            "url": "https://sai-solutions.com/",
+            "background": "",
+            "text_color": ""
+          }
         }
       },
       "block_order": [
         "subheading_j7mfrx",
         "heading_BVLfTb",
-        "richtext_NDcMeg"
+        "richtext_NDcMeg",
+        "button_diBQ6E"
       ],
       "name": "t:sections.image_with_text.presets.image_with_text.name",
       "settings": {
@@ -140,34 +151,6 @@
         "image_position": "start",
         "content_width": "sm",
         "remove_vertical_spacing": true
-      }
-    },
-    "logo_list_JQHqjG": {
-      "type": "logo-list",
-      "blocks": {
-        "logo_EdBGaR": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/S.A.I_-_PNG.png",
-            "logo_width": 120,
-            "link": "https://sai-solutions.com/"
-          }
-        }
-      },
-      "block_order": [
-        "logo_EdBGaR"
-      ],
-      "name": "t:sections.logo_list.presets.logo_list.name",
-      "settings": {
-        "color_scheme": "scheme-3",
-        "separate_section_with_border": false,
-        "subheading": "",
-        "title": "",
-        "heading_style": "h2",
-        "stack_on_mobile": true,
-        "items_per_row": 3,
-        "logo_item_background": "",
-        "logo_item_border": ""
       }
     },
     "multi_column_Jd6haC": {
@@ -631,7 +614,6 @@
     "slideshow_kbJfiY",
     "image_with_text_overlay_GniiFJ",
     "image_with_text_7PHz7L",
-    "logo_list_JQHqjG",
     "multi_column_Jd6haC",
     "rich_text_nKfT33",
     "multi_column_tthK9K",
