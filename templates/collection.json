@@ -35,7 +35,7 @@
           "settings": {
             "image": "{{ collection.metafields.custom.collection_banner_desktop.value }}",
             "mobile_image": "{{ collection.metafields.custom.collection_banner_mobile.value }}",
-            "subheading": "Tell your story",
+            "subheading": "",
             "title": "{{ collection.title }}",
             "heading_style": "h1",
             "mobile_text_position": "place-self-center text-center",
