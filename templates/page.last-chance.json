@@ -24,6 +24,8 @@
         "image_Lg86C4": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Last_Chance-desktop.jpg",
+            "mobile_image": "shopify://shop_images/last_chance-mobile.jpg",
             "subheading": "Tell your story",
             "title": "Slide 2",
             "heading_style": "h1",
@@ -44,7 +46,7 @@
             "background_opacity": 50,
             "text_color": "#ffffff",
             "border_color": "",
-            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2) 0%, rgba(4, 4, 4, 0.65) 100%)"
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.65) 100%)"
           }
         }
       },
@@ -73,7 +75,6 @@
             "collection": "",
             "products_count": 8,
             "title": "",
-            "link_url": "",
             "link_text": "View all"
           }
         }
@@ -86,6 +87,8 @@
         "color_scheme": "",
         "separate_section_with_border": true,
         "hide_product_information": false,
+        "show_card_add_to_cart": false,
+        "isolate_variant_collections": false,
         "stack_products": false,
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 4,
