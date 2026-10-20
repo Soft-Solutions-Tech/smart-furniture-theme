@@ -182,6 +182,11 @@ PRIMARY NAVIGATION AREA
       {%- for link in menu.links -%}
         {% liquid
         assign link_title_downcase = link.title | strip | downcase
+        assign link_url_downcase = link.url | downcase
+        assign is_last_chance_link = false
+        if is_last_chance_link or link_url_downcase contains 'last-chance'
+        assign is_last_chance_link = true
+        endif
         if link_title_downcase contains 'installment'
         continue
         endif
@@ -196,14 +201,14 @@ PRIMARY NAVIGATION AREA
         %}
 
         <li class="header__primary-nav-item
-        {% if link_title_downcase contains 'last chance' %}
+        {% if is_last_chance_link %}
           header__last-chance-item
         {% endif %}
         ">
 
         {%- if link.levels == 0 and mega_menu_block == '' -%}
 
-          {%- if link_title_downcase contains 'last chance' -%}
+          {%- if is_last_chance_link -%}
             <span class="header__last-chance-dot" aria-hidden="true"></span>
 
           {%- endif -%}
@@ -217,7 +222,7 @@ PRIMARY NAVIGATION AREA
 
           {% endif %}
 
-          {% if link_title_downcase contains 'last chance' %}
+          {% if is_last_chance_link %}
             header__last-chance-link
 
           {% endif %}
