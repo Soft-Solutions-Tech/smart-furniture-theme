@@ -16,7 +16,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Home_Banner_EN_Desktop.png",
-            "mobile_image": "shopify://shop_images/Gemini_Generated_Image_r0zovor0zovor0zo.jpg",
+            "mobile_image": "shopify://shop_images/Home_Banner_EN_Mobile.png",
             "subheading": "",
             "title": "",
             "heading_style": "h1",
