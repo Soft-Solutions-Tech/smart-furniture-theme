@@ -15,8 +15,8 @@
         "image_taENR8": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Express_Kitchen_-desktop_6d75789b-a41c-44a3-9d9e-fd3b4e206161.webp",
-            "mobile_image": "shopify://shop_images/Express_Kitchen_-mobile_2.webp",
+            "image": "shopify://shop_images/Express_Kitchens_Desktop_Banner.png",
+            "mobile_image": "shopify://shop_images/Express_Kitchens_Mobile_Banner.png",
             "subheading": "",
             "title": "",
             "heading_style": "h1",
