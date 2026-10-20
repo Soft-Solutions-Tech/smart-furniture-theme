@@ -886,6 +886,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Kitchen_Catalogue_Banner-desktop_d8103572-d531-4a69-8594-e0c05305c4ce.webp",
+            "mobile_image": "shopify://shop_images/Kitchen_Catalogue_Banner-desktop.webp",
             "subheading": "",
             "title": "",
             "heading_style": "h1",
