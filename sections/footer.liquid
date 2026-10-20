@@ -32,6 +32,26 @@ flex: none;
 #shopify-section-{{ section.id }} .footer__custom-column .constrained-image {
 display: block;
 }
+
+/* LAST CHANCE FOOTER LINK: match header red text + red dot */
+#shopify-section-{{ section.id }} .footer__last-chance-link {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+color: #e50b0b !important;
+font-weight: 700 !important;
+}
+
+#shopify-section-{{ section.id }} .footer__last-chance-dot {
+display: inline-block;
+width: 9px;
+height: 9px;
+min-width: 9px;
+flex: 0 0 9px;
+border-radius: 50%;
+background: #e50b0b;
+}
+
 @media screen and (max-width: 699px) {
 /* On mobile, keep the custom desktop columns but flatten their spacing so
 collapsed link menus look exactly like one clean accordion group. */
@@ -195,11 +215,23 @@ border-block-start-width: 0;
                   <ul class="v-stack gap-2.5 unstyled-list" role="list">
 
                     {%- for link in menu.links -%}
+                      {%- liquid
+                        assign footer_link_title = link.title | strip | downcase
+                        assign footer_link_url = link.url | downcase
+                        assign is_footer_last_chance = false
+
+                        if footer_link_title contains 'last chance' or footer_link_url contains 'last-chance'
+                          assign is_footer_last_chance = true
+                        endif
+                      -%}
 
                       <li>
-                        <a href="{{ link.url }}" class="link-faded">
-                        {{ link.title }}</a>
-
+                        <a href="{{ link.url }}" class="link-faded{% if is_footer_last_chance %} footer__last-chance-link{% endif %}">
+                          {%- if is_footer_last_chance -%}
+                            <span class="footer__last-chance-dot" aria-hidden="true"></span>
+                          {%- endif -%}
+                          <span>{{ link.title }}</span>
+                        </a>
                       </li>
 
                     {%- endfor -%}
