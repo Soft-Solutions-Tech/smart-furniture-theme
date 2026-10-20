@@ -25,6 +25,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_mb8bo0mb8bo0mb8b.jpg",
+            "mobile_image": "shopify://shop_images/Showrooms_Contact_us_Banner_EN_Mobile.png",
             "subheading": "",
             "title": "",
             "heading_style": "h1",
