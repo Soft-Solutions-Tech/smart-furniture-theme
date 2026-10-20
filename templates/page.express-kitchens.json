@@ -341,7 +341,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/custom_kitchen-desktop.webp",
-            "mobile_image": "shopify://shop_images/custom_kitchen-mobile.webp",
+            "mobile_image": "shopify://shop_images/custom_kitchen-desktop_07e19d24-0e15-4495-9289-bbc9ae1241a4.webp",
             "subheading": "Looking for a custom solution?",
             "title": "",
             "heading_style": "h1",
