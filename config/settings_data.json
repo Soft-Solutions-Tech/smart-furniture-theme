@@ -36,7 +36,7 @@
     "currency_code_enabled": false,
     "stagger_products_apparition": true,
     "round_color_swatches": true,
-    "color_swatch_config": "Brown:#5A3825\nBeige:#D8C3A5\nGrey:#808080\nOff White:#F4F0E8\nSage Green:#9CAF88\nGreen:#66785F\nDark Beige:#9F8C76\nLight Beige:#E4D5B7\nBlack:#000000\nBlue:#0000FF\nPurple:#800080\nSilver:#C0C0C0\nWhite:#FFFFFF\nبني:#5A3825\nبيج:#D8C3A5\nرمادي:#808080\nبيج غامق:#9F8C76\nبيج فاتح:#E4D5B7\nأسود:#000000\nأزرق:#0000FF\nبنفسجي:#800080\nفضي:#C0C0C0\nأبيض:#FFFFFF",
+    "color_swatch_config": "Brown:#5A3825\nBeige:#D8C3A5\nGrey:#808080\nOff White:#F4F0E8\nSage Green:#9CAF88\nGreen:#66785F\nDark Beige:#9F8C76\nLight Beige:#E4D5B7\nBlack:#000000\nBlue:#0000FF\nPurple:#800080\nSilver:#C0C0C0\nWhite:#FFFFFF\nبني:#5A3825\nبيج:#D8C3A5\nرمادي:#808080\nأبيض مائل للصفرة:#F4F0E8\nأخضر مريمي:#9CAF88\nأخضر:#66785F\nبيج غامق:#9F8C76\nبيج فاتح:#E4D5B7\nأسود:#000000\nأزرق:#0000FF\nبنفسجي:#800080\nفضي:#C0C0C0\nأبيض:#FFFFFF",
     "product_image_aspect_ratio": "short_crop",
     "product_title_max_lines": 0,
     "product_card_text_font": "body",
