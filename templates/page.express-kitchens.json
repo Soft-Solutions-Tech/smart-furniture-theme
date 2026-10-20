@@ -293,7 +293,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Kitchen_Catalogue_Banner-desktop_069f0bb7-fcb7-492e-9de1-301337f045f9.webp",
-            "mobile_image": "shopify://shop_images/Kitchen_Catalogue_Banner-mobile.webp",
+            "mobile_image": "shopify://shop_images/Kitchen_Catalogue_Banner-desktop.webp",
             "subheading": "",
             "title": "",
             "heading_style": "h1",
