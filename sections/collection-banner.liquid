@@ -1,4 +1,20 @@
-{%- if section.settings.show_image == false or collection.image == blank and section.settings.image == blank -%}
+{%- liquid
+  assign banner_desktop = section.settings.image
+  assign banner_mobile = section.settings.mobile_image
+
+  if localization.language.iso_code == 'ar' and section.settings.image != blank
+    assign ar_desktop = collection.metafields.custom.collection_banner_desktop_ar.value
+    assign ar_mobile = collection.metafields.custom.collection_banner_mobile_ar.value
+    if ar_desktop != blank
+      assign banner_desktop = ar_desktop
+    endif
+    if ar_mobile != blank
+      assign banner_mobile = ar_mobile
+    endif
+  endif
+-%}
+
+{%- if section.settings.show_image == false or collection.image == blank and banner_desktop == blank -%}
   {%- assign show_image = false -%}
 {%- else -%}
   {%- assign show_image = true -%}
@@ -62,16 +78,16 @@
     <div class="content-over-media content-over-media--{{ section.settings.image_size }}">
       {%- capture picture_content -%}
         <picture>
-          {%- if section.settings.mobile_image != blank -%}
+          {%- if banner_mobile != blank -%}
             <source
                 media="(max-width: 699px)"
-                srcset="{{ section.settings.mobile_image | image_url: width: 400 }} 400w, {{ section.settings.mobile_image | image_url: width: 600 }} 600w, {{ section.settings.mobile_image | image_url: width: 800 }} 800w, {{ section.settings.mobile_image | image_url: width: 1000 }} 1000w"
-                width="{{ section.settings.mobile_image.width }}"
-                height="{{ section.settings.mobile_image.height }}"
+                srcset="{{ banner_mobile | image_url: width: 400 }} 400w, {{ banner_mobile | image_url: width: 600 }} 600w, {{ banner_mobile | image_url: width: 800 }} 800w, {{ banner_mobile | image_url: width: 1000 }} 1000w"
+                width="{{ banner_mobile.width }}"
+                height="{{ banner_mobile.height }}"
             >
           {%- endif -%}
 
-          {%- assign image = section.settings.image | default: collection.image -%}
+          {%- assign image = banner_desktop | default: collection.image -%}
           {{- image | image_url: width: image.width | image_tag: fetchpriority: 'high', widths: '300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200' -}}
         </picture>
       {%- endcapture -%}
