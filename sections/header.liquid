@@ -184,7 +184,7 @@ PRIMARY NAVIGATION AREA
         assign link_title_downcase = link.title | strip | downcase
         assign link_url_downcase = link.url | downcase
         assign is_last_chance_link = false
-        if is_last_chance_link or link_url_downcase contains 'last-chance'
+        if link_title_downcase contains 'last chance' or link_url_downcase contains 'last-chance'
         assign is_last_chance_link = true
         endif
         if link_title_downcase contains 'installment'
