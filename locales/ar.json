@@ -109,7 +109,6 @@
       "sold_out_badge": "نفد من المخزون",
       "on_sale_badge": "تخفيض",
       "last_chance_badge": "آخر فرصة",
-      "new_arrival_badge": "وصل حديثًا",
       "bestseller_badge": "الأكثر مبيعاً",
       "discount_badge_html": "وفِّر {{ savings }}",
       "sku": "وحدة إدارة المخزون:",
