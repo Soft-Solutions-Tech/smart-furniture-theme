@@ -122,7 +122,7 @@
         "one": "الألوان المتاحة: {{ count }}",
         "other": "الألوان المتاحة: {{ count }}"
       },
-      "new_arrival_badge": "آخر فرصة"
+      "new_arrival_badge": "وصل حديثًا"
     },
     "gallery": {
       "close": "إغلاق المعرض",
