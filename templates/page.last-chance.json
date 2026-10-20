@@ -26,8 +26,8 @@
           "settings": {
             "image": "shopify://shop_images/Last_Chance-desktop.jpg",
             "mobile_image": "shopify://shop_images/last_chance-mobile.jpg",
-            "subheading": "Last Chance",
-            "title": "",
+            "subheading": "",
+            "title": "Last Chance",
             "heading_style": "h1",
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
