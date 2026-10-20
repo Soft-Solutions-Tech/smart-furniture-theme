@@ -27,8 +27,16 @@ assign is_last_chance = product.metafields.custom.last_chance.value
           {%- assign variant_card_badge = variant.metafields.custom.card_badge.value -%}
 
           {%- if variant_card_badge != blank -%}
-            <span class="badge badge--custom badge--{{ variant_card_badge | handle }}">
-              {{- variant_card_badge -}}
+            {%- assign variant_badge_handle = variant_card_badge | handle -%}
+            <span class="badge badge--custom badge--{{ variant_badge_handle }}">
+              {%- case variant_badge_handle -%}
+                {%- when 'new-arrival', 'new-arrivals' -%}
+                  {{- 'product.general.new_arrival_badge' | t -}}
+                {%- when 'bestseller', 'best-seller', 'bestsellers', 'best-sellers' -%}
+                  {{- 'product.general.bestseller_badge' | t -}}
+                {%- else -%}
+                  {{- variant_card_badge -}}
+              {%- endcase -%}
             </span>
           {%- endif -%}
 
@@ -36,8 +44,16 @@ assign is_last_chance = product.metafields.custom.last_chance.value
 
           {%- for custom_badge in custom_badges -%}
             {%- unless custom_badge == variant_card_badge -%}
-              <span class="badge badge--custom badge--{{ custom_badge | handle }}">
-                {{- custom_badge -}}
+              {%- assign custom_badge_handle = custom_badge | handle -%}
+              <span class="badge badge--custom badge--{{ custom_badge_handle }}">
+                {%- case custom_badge_handle -%}
+                  {%- when 'new-arrival', 'new-arrivals' -%}
+                    {{- 'product.general.new_arrival_badge' | t -}}
+                  {%- when 'bestseller', 'best-seller', 'bestsellers', 'best-sellers' -%}
+                    {{- 'product.general.bestseller_badge' | t -}}
+                  {%- else -%}
+                    {{- custom_badge -}}
+                {%- endcase -%}
               </span>
             {%- endunless -%}
           {%- endfor -%}
@@ -46,11 +62,7 @@ assign is_last_chance = product.metafields.custom.last_chance.value
       {%- when 'last_chance' -%}
         {%- if is_last_chance -%}
           <span class="badge badge--on-sale last-chance-badge">
-            {%- if localization.language.iso_code == 'ar' -%}
-              الفرصة الأخيرة
-            {%- else -%}
-              LAST CHANCE
-            {%- endif -%}
+            {{- 'product.general.last_chance_badge' | t -}}
           </span>
         {%- endif -%}
 
