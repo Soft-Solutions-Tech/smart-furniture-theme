@@ -10,10 +10,10 @@
 {
   "general": {
     "warranty_by_tag": {
-  "years_3": "3 Years Warranty",
-  "years_5": "5 Years Warranty",
-  "years_10": "10 Years Warranty"
-},
+      "years_3": "3 Years Warranty",
+      "years_5": "5 Years Warranty",
+      "years_10": "10 Years Warranty"
+    },
     "page": "Page {{ page }}",
     "home": "Home",
     "accessibility": {
@@ -117,7 +117,7 @@
       "view_in_space": "View in your space",
       "taxes_included": "Tax included.",
       "taxes_excluded": "Tax excluded.",
-      "shipping_policy_html": "<a href=\"{{ link }}\" class=\"link\">Shipping calculated<\/a> at checkout",
+      "shipping_policy_html": "<a href=\"{{ link }}\" class=\"link\">Shipping calculated</a> at checkout",
       "size_chart": "Size chart",
       "available_colors_count": {
         "one": "{{ count }} color available",
@@ -466,7 +466,7 @@
   "password": {
     "general": {
       "follow_us": "Follow us",
-      "powered_by": "This shop is powered by",
+      "powered_by": "This shop is    Smart Furniture ",
       "store_owner": "Store owner?",
       "login": "Login"
     },
