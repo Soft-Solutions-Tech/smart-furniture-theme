@@ -341,7 +341,6 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Custem_Kitchen_-Desktop-en.webp",
-            "mobile_image": "shopify://shop_images/Custem_Kitchen_-mobile-En.webp",
             "subheading": "Looking for a custom solution?",
             "title": "",
             "heading_style": "h1",
