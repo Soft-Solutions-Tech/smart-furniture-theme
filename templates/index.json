@@ -309,7 +309,8 @@
       "settings": {
         "color_scheme": "scheme-17d4397d-ae6c-4c8b-9e1a-e77b4d3ecf15",
         "image_size": "auto",
-        "image": "shopify://shop_images/beach_house-website-en.webp",
+        "image": "shopify://shop_images/Beach_House_-Desktop-En.webp",
+        "mobile_image": "shopify://shop_images/Beach_House_-mobile-En_1.webp",
         "allow_transparent_header": false,
         "reveal_on_scroll": true,
         "remove_vertical_spacing": true,
