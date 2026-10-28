@@ -72,7 +72,7 @@
         "image_with_text_ctxmLA": {
           "type": "image_with_text",
           "settings": {
-            "image": "shopify://shop_images/Full_Catalog_Thumbnail.webp",
+            "image": "shopify://shop_images/Full_Catalog_-_Thumbnail.webp",
             "title": "Full Catalog",
             "heading_tag": "h3",
             "content": "",
@@ -83,22 +83,22 @@
         "image_with_text_hCh3Fq": {
           "type": "image_with_text",
           "settings": {
-            "image": "shopify://shop_images/Hot_Offers_Leaflet_Thumbnail.jpg",
+            "image": "shopify://shop_images/Hot_offers_Leaflet_-_Thumbnail.webp",
             "title": "Hot offers Leaflet",
             "heading_tag": "h3",
             "content": "",
-            "link_url": "https://cdn.shopify.com/s/files/1/0978/4967/2043/files/Hot_offers_Leaflet.pdf?v=1790782733&attachment",
+            "link_url": "https://cdn.shopify.com/s/files/1/0978/4967/2043/files/Hot_offers_Leaflet_e1710dec-93a8-4dc7-8d79-6f563dad7981.pdf?v=1793222705&attachment",
             "link_text": "Download Catalog"
           }
         },
         "image_with_text_8eNEVA": {
           "type": "image_with_text",
           "settings": {
-            "image": "shopify://shop_images/Installment_Offers_-Valu-Thumbnails.webp",
+            "image": "shopify://shop_images/Installment_Offers_-Valu-_Thumbnail.webp",
             "title": "Installment Offers -Valu",
             "heading_tag": "h3",
             "content": "",
-            "link_url": "https://cdn.shopify.com/s/files/1/0978/4967/2043/files/Installment_Offers_-Valu.pdf?v=1790782729&attachment",
+            "link_url": "https://cdn.shopify.com/s/files/1/0978/4967/2043/files/Installment_offers_Leaflet_-ValU.pdf?v=1793222704&attachment",
             "link_text": "Download Catalog"
           }
         },
