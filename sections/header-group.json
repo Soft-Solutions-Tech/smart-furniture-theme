@@ -50,14 +50,13 @@
     },
     "countdown_condensed_WGmrEx": {
       "type": "countdown-condensed",
-      "disabled": true,
       "name": "t:sections.countdown_timer.presets.countdown_timer.name",
       "settings": {
         "color_scheme": "scheme-3",
-        "content": "Promote your current offer",
+        "content": "Le Marche offer Ends",
         "link_text": "",
         "link_url": "",
-        "expiration_date": "",
+        "expiration_date": "2026-11-07 11:59",
         "expiration_behavior": "leave",
         "desktop_justification": "space-between"
       }
