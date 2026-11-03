@@ -15,8 +15,8 @@
         "slide-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Home_Page_-_desktop-En.webp",
-            "mobile_image": "shopify://shop_images/Home_Page_-_mobile-En.webp",
+            "image": "shopify://shop_images/home_page-WEBSITE-03_web_3f55c791-d587-470c-b313-a9e320bc1a8c.webp",
+            "mobile_image": "shopify://shop_images/home_page-mobile_size.webp",
             "subheading": "",
             "title": "",
             "heading_style": "h1",
