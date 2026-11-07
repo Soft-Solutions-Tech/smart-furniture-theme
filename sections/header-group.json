@@ -41,19 +41,6 @@
         "mobile_font_size": 10
       }
     },
-    "countdown_condensed_WGmrEx": {
-      "type": "countdown-condensed",
-      "name": "t:sections.countdown_timer.presets.countdown_timer.name",
-      "settings": {
-        "color_scheme": "scheme-3",
-        "content": "Le Marche offer Ends",
-        "link_text": "",
-        "link_url": "",
-        "expiration_date": "2026-11-07 11:59",
-        "expiration_behavior": "leave",
-        "desktop_justification": "space-between"
-      }
-    },
     "header": {
       "type": "header",
       "custom_css": [
@@ -92,7 +79,6 @@
   },
   "order": [
     "announcement_bar_LEjwYQ",
-    "countdown_condensed_WGmrEx",
     "header"
   ]
 }
